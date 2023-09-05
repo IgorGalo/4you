@@ -48,6 +48,11 @@ public class TelaEscolha extends javax.swing.JFrame {
         cadasrarBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
         cadasrarBtn.setForeground(new java.awt.Color(255, 255, 255));
         cadasrarBtn.setText("CADASTRAR");
+        cadasrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadasrarBtnActionPerformed(evt);
+            }
+        });
 
         entrarBtn.setBackground(new java.awt.Color(233, 68, 190));
         entrarBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
@@ -109,7 +114,20 @@ public class TelaEscolha extends javax.swing.JFrame {
 
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
         // TODO add your handling code here:
+        
+        TelaEntrar telaEntrar = new TelaEntrar();
+        telaEntrar.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        telaEntrar.setVisible(true);
     }//GEN-LAST:event_entrarBtnActionPerformed
+
+    private void cadasrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadasrarBtnActionPerformed
+        // TODO add your handling code here:
+        
+        TelaCadastrar telaCadastro = new TelaCadastrar();
+        telaCadastro.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        telaCadastro.setVisible(true);
+        
+    }//GEN-LAST:event_cadasrarBtnActionPerformed
 
     /**
      * @param args the command line arguments

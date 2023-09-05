@@ -64,6 +64,7 @@ public class TelaEntrar extends javax.swing.JFrame {
         jLabel1.setText("ENTRAR");
 
         jLabel2.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("   NOME DO USUÁRIO / E-MAIL   ");
 
         senhaTxt.setBackground(new java.awt.Color(83, 41, 71));
@@ -78,6 +79,7 @@ public class TelaEntrar extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SENHA");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

@@ -93,6 +93,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NOME COMPLETO");
 
         NomeUsurioTxt.setBackground(new java.awt.Color(83, 41, 71));
@@ -106,6 +107,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("NOME DE USUÁRIO");
 
         SenhaTxt.setBackground(new java.awt.Color(83, 41, 71));
@@ -119,6 +121,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("SENHA");
 
         EmaiTxt.setBackground(new java.awt.Color(83, 41, 71));
@@ -132,6 +135,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("E-MAIL");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
