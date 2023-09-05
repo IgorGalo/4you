@@ -284,6 +284,8 @@ public class TelaCadastrar extends javax.swing.JFrame {
             Logger.getLogger(TelaCadastrar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        TelaCadastrar.this.dispose();
+        
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed

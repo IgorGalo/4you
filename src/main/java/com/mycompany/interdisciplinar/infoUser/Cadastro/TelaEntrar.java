@@ -50,6 +50,11 @@ public class TelaEntrar extends javax.swing.JFrame {
         entrarBtn.setForeground(new java.awt.Color(255, 255, 255));
         entrarBtn.setText("ENTRAR");
         entrarBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+        entrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrarBtnActionPerformed(evt);
+            }
+        });
 
         NomeEmaiTxt.setBackground(new java.awt.Color(83, 41, 71));
         NomeEmaiTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -193,6 +198,14 @@ public class TelaEntrar extends javax.swing.JFrame {
         
         TelaEntrar.this.dispose();
     }//GEN-LAST:event_voltarBtnActionPerformed
+
+    private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        TelaEntrar.this.dispose();
+    }//GEN-LAST:event_entrarBtnActionPerformed
 
     /**
      * @param args the command line arguments
