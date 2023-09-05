@@ -15,6 +15,8 @@ public class TelaEntrar extends javax.swing.JFrame {
      */
     public TelaEntrar() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -34,6 +36,7 @@ public class TelaEntrar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         senhaTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        voltarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +128,17 @@ public class TelaEntrar extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
+        voltarBtn.setBackground(new java.awt.Color(83, 41, 71));
+        voltarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
+        voltarBtn.setForeground(new java.awt.Color(233, 68, 190));
+        voltarBtn.setText("<<VOLTAR");
+        voltarBtn.setBorder(null);
+        voltarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,13 +147,19 @@ public class TelaEntrar extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(voltarBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addComponent(voltarBtn)
+                .addGap(1, 1, 1)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,6 +183,16 @@ public class TelaEntrar extends javax.swing.JFrame {
     private void senhaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_senhaTxtActionPerformed
+
+    private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
+        // TODO add your handling code here:
+        
+        TelaEscolha telaEscolha = new TelaEscolha();
+        telaEscolha.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        telaEscolha.setVisible(true);
+        
+        TelaEntrar.this.dispose();
+    }//GEN-LAST:event_voltarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,5 +241,6 @@ public class TelaEntrar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField senhaTxt;
+    private javax.swing.JButton voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,6 +20,8 @@ public class TelaCadastrar extends javax.swing.JFrame {
      */
     public TelaCadastrar() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -45,6 +47,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         EmaiTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        voltarBtn = new javax.swing.JButton();
 
         NomeEmaiTxt.setBackground(new java.awt.Color(83, 41, 71));
         NomeEmaiTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -195,8 +198,19 @@ public class TelaCadastrar extends javax.swing.JFrame {
                 .addComponent(SenhaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(cadastrarBtn)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        voltarBtn.setBackground(new java.awt.Color(83, 41, 71));
+        voltarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
+        voltarBtn.setForeground(new java.awt.Color(233, 68, 190));
+        voltarBtn.setText("<<VOLTAR");
+        voltarBtn.setBorder(null);
+        voltarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,13 +220,18 @@ public class TelaCadastrar extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(voltarBtn)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
+                .addComponent(voltarBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -267,6 +286,16 @@ public class TelaCadastrar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
+    private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
+        // TODO add your handling code here:
+        
+        TelaEscolha telaEscolha = new TelaEscolha();
+        telaEscolha.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        telaEscolha.setVisible(true);
+        
+        TelaCadastrar.this.dispose();
+    }//GEN-LAST:event_voltarBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,5 +347,6 @@ public class TelaCadastrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,6 +15,8 @@ public class TelaEscolha extends javax.swing.JFrame {
      */
     public TelaEscolha() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,6 +33,7 @@ public class TelaEscolha extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cadasrarBtn = new javax.swing.JToggleButton();
         entrarBtn = new javax.swing.JToggleButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,8 +98,10 @@ public class TelaEscolha extends javax.swing.JFrame {
                 .addComponent(cadasrarBtn)
                 .addGap(26, 26, 26)
                 .addComponent(entrarBtn)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,6 +123,8 @@ public class TelaEscolha extends javax.swing.JFrame {
         TelaEntrar telaEntrar = new TelaEntrar();
         telaEntrar.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaEntrar.setVisible(true);
+        
+        TelaEscolha.this.dispose();
     }//GEN-LAST:event_entrarBtnActionPerformed
 
     private void cadasrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadasrarBtnActionPerformed
@@ -126,6 +133,8 @@ public class TelaEscolha extends javax.swing.JFrame {
         TelaCadastrar telaCadastro = new TelaCadastrar();
         telaCadastro.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaCadastro.setVisible(true);
+        
+        TelaEscolha.this.dispose();
         
     }//GEN-LAST:event_cadasrarBtnActionPerformed
 
@@ -170,6 +179,7 @@ public class TelaEscolha extends javax.swing.JFrame {
     private javax.swing.JToggleButton entrarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
