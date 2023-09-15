@@ -59,6 +59,7 @@ public class TelaEntrar extends javax.swing.JFrame {
         NomeEmaiTxt.setBackground(new java.awt.Color(83, 41, 71));
         NomeEmaiTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
         NomeEmaiTxt.setForeground(new java.awt.Color(204, 204, 204));
+        NomeEmaiTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NomeEmaiTxt.setText("                                                  ");
         NomeEmaiTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
         NomeEmaiTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +79,7 @@ public class TelaEntrar extends javax.swing.JFrame {
         senhaTxt.setBackground(new java.awt.Color(83, 41, 71));
         senhaTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
         senhaTxt.setForeground(new java.awt.Color(204, 204, 204));
+        senhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         senhaTxt.setText("                                                  ");
         senhaTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
         senhaTxt.addActionListener(new java.awt.event.ActionListener() {

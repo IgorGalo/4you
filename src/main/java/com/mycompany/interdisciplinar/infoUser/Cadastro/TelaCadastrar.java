@@ -88,6 +88,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         NomeCompletoTxt.setBackground(new java.awt.Color(83, 41, 71));
         NomeCompletoTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
         NomeCompletoTxt.setForeground(new java.awt.Color(204, 204, 204));
+        NomeCompletoTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NomeCompletoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
         NomeCompletoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +103,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         NomeUsurioTxt.setBackground(new java.awt.Color(83, 41, 71));
         NomeUsurioTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
         NomeUsurioTxt.setForeground(new java.awt.Color(204, 204, 204));
+        NomeUsurioTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NomeUsurioTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
         NomeUsurioTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +118,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         SenhaTxt.setBackground(new java.awt.Color(83, 41, 71));
         SenhaTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
         SenhaTxt.setForeground(new java.awt.Color(204, 204, 204));
+        SenhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         SenhaTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
         SenhaTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +133,7 @@ public class TelaCadastrar extends javax.swing.JFrame {
         EmaiTxt.setBackground(new java.awt.Color(83, 41, 71));
         EmaiTxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
         EmaiTxt.setForeground(new java.awt.Color(204, 204, 204));
+        EmaiTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EmaiTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
         EmaiTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
