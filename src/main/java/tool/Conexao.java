@@ -1,4 +1,4 @@
-package com.mycompany.interdisciplinar.infoUser.Cadastro;
+package tool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

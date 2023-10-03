@@ -1,4 +1,4 @@
-package com.mycompany.interdisciplinar.dadosUsuario;
+package model;
 
 public class Usuario {
     
