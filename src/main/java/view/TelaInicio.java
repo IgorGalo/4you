@@ -26,65 +26,124 @@ public class TelaInicio extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuBar5 = new javax.swing.JMenuBar();
+        jMenu9 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuBar6 = new javax.swing.JMenuBar();
+        jMenu11 = new javax.swing.JMenu();
+        jMenu12 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        quizBtn = new javax.swing.JButton();
+        pesqBtn = new javax.swing.JButton();
+        perfilBtn = new javax.swing.JButton();
+        inicioBtn = new javax.swing.JButton();
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("File");
+        jMenuBar3.add(jMenu5);
+
+        jMenu6.setText("Edit");
+        jMenuBar3.add(jMenu6);
+
+        jMenu7.setText("File");
+        jMenuBar4.add(jMenu7);
+
+        jMenu8.setText("Edit");
+        jMenuBar4.add(jMenu8);
+
+        jMenu9.setText("File");
+        jMenuBar5.add(jMenu9);
+
+        jMenu10.setText("Edit");
+        jMenuBar5.add(jMenu10);
+
+        jMenu11.setText("File");
+        jMenuBar6.add(jMenu11);
+
+        jMenu12.setText("Edit");
+        jMenuBar6.add(jMenu12);
 
         jPanel1.setBackground(new java.awt.Color(83, 41, 71));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
 
-        jButton1.setBackground(new java.awt.Color(83, 41, 71));
-        jButton1.setForeground(new java.awt.Color(233, 68, 190));
-        jButton1.setText("INICIO");
-        jButton1.setBorderPainted(false);
+        quizBtn.setBackground(new java.awt.Color(83, 41, 71));
+        quizBtn.setForeground(new java.awt.Color(233, 68, 190));
+        quizBtn.setText("QUIZ");
+        quizBtn.setBorderPainted(false);
 
-        jButton2.setBackground(new java.awt.Color(83, 41, 71));
-        jButton2.setForeground(new java.awt.Color(233, 68, 190));
-        jButton2.setText("QUIZ");
-        jButton2.setBorderPainted(false);
-
-        jButton3.setBackground(new java.awt.Color(83, 41, 71));
-        jButton3.setForeground(new java.awt.Color(233, 68, 190));
-        jButton3.setText("PESQUISA");
-        jButton3.setBorderPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        pesqBtn.setBackground(new java.awt.Color(83, 41, 71));
+        pesqBtn.setForeground(new java.awt.Color(233, 68, 190));
+        pesqBtn.setText("PESQUISA");
+        pesqBtn.setBorderPainted(false);
+        pesqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                pesqBtnActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(83, 41, 71));
-        jButton4.setForeground(new java.awt.Color(233, 68, 190));
-        jButton4.setText("PERFIL");
-        jButton4.setBorderPainted(false);
+        perfilBtn.setBackground(new java.awt.Color(83, 41, 71));
+        perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
+        perfilBtn.setText("PERFIL");
+        perfilBtn.setBorderPainted(false);
+
+        inicioBtn.setBackground(new java.awt.Color(83, 41, 71));
+        inicioBtn.setForeground(new java.awt.Color(233, 68, 190));
+        inicioBtn.setText("INICIO");
+        inicioBtn.setBorderPainted(false);
+        inicioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicioBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(45, 45, 45)
-                .addComponent(jButton3)
-                .addGap(29, 29, 29)
-                .addComponent(jButton2)
-                .addGap(32, 32, 32)
-                .addComponent(jButton4)
-                .addGap(46, 46, 46))
+                .addGap(43, 43, 43)
+                .addComponent(inicioBtn)
+                .addGap(34, 34, 34)
+                .addComponent(pesqBtn)
+                .addGap(18, 18, 18)
+                .addComponent(quizBtn)
+                .addGap(38, 38, 38)
+                .addComponent(perfilBtn)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(359, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(356, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4))
-                .addGap(14, 14, 14))
+                    .addComponent(pesqBtn)
+                    .addComponent(quizBtn)
+                    .addComponent(perfilBtn)
+                    .addComponent(inicioBtn))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -95,44 +154,42 @@ public class TelaInicio extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
+        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesqBtnActionPerformed
+
+    private void inicioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_inicioBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField EmaiTxt;
-    private javax.swing.JTextField EmaiTxt1;
-    private javax.swing.JTextField NomeCompletoTxt;
-    private javax.swing.JTextField NomeCompletoTxt1;
-    private javax.swing.JTextField NomeUsurioTxt;
-    private javax.swing.JTextField NomeUsurioTxt1;
-    private javax.swing.JTextField SenhaTxt;
-    private javax.swing.JTextField SenhaTxt1;
-    private javax.swing.JButton cadastrarBtn;
-    private javax.swing.JButton cadastrarBtn1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton inicioBtn;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuBar jMenuBar5;
+    private javax.swing.JMenuBar jMenuBar6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JButton perfilBtn;
+    private javax.swing.JButton pesqBtn;
+    private javax.swing.JButton quizBtn;
     // End of variables declaration//GEN-END:variables
 }
