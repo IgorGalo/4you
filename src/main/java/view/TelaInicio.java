@@ -108,6 +108,11 @@ public class TelaInicio extends javax.swing.JPanel {
         perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
         perfilBtn.setText("PERFIL");
         perfilBtn.setBorderPainted(false);
+        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilBtnActionPerformed(evt);
+            }
+        });
 
         inicioBtn.setBackground(new java.awt.Color(83, 41, 71));
         inicioBtn.setForeground(new java.awt.Color(233, 68, 190));
@@ -165,6 +170,10 @@ public class TelaInicio extends javax.swing.JPanel {
     private void inicioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inicioBtnActionPerformed
+
+    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
+        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

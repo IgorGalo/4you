@@ -26,9 +26,54 @@ public class TelaPesquisar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        inicioBtn = new javax.swing.JButton();
+        quizBtn = new javax.swing.JButton();
+        pesqBtn = new javax.swing.JButton();
+        perfilBtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jTextField4 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        inicioBtn1 = new javax.swing.JButton();
+        quizBtn1 = new javax.swing.JButton();
+        pesqBtn1 = new javax.swing.JButton();
+        perfilBtn1 = new javax.swing.JButton();
+
+        inicioBtn.setBackground(new java.awt.Color(83, 41, 71));
+        inicioBtn.setForeground(new java.awt.Color(233, 68, 190));
+        inicioBtn.setText("INICIO");
+        inicioBtn.setBorderPainted(false);
+        inicioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicioBtnActionPerformed(evt);
+            }
+        });
+
+        quizBtn.setBackground(new java.awt.Color(83, 41, 71));
+        quizBtn.setForeground(new java.awt.Color(233, 68, 190));
+        quizBtn.setText("QUIZ");
+        quizBtn.setBorderPainted(false);
+
+        pesqBtn.setBackground(new java.awt.Color(83, 41, 71));
+        pesqBtn.setForeground(new java.awt.Color(233, 68, 190));
+        pesqBtn.setText("PESQUISA");
+        pesqBtn.setBorderPainted(false);
+        pesqBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesqBtnActionPerformed(evt);
+            }
+        });
+
+        perfilBtn.setBackground(new java.awt.Color(83, 41, 71));
+        perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
+        perfilBtn.setText("PERFIL");
+        perfilBtn.setBorderPainted(false);
+        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilBtnActionPerformed(evt);
+            }
+        });
 
         setPreferredSize(new java.awt.Dimension(500, 400));
 
@@ -42,7 +87,48 @@ public class TelaPesquisar extends javax.swing.JPanel {
         jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
 
         jTextField4.setBackground(new java.awt.Color(83, 41, 71));
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+
+        jList1.setBackground(new java.awt.Color(83, 41, 71));
+        jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+        jScrollPane1.setViewportView(jList1);
+
+        inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        inicioBtn1.setText("INICIO");
+        inicioBtn1.setBorderPainted(false);
+        inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicioBtn1ActionPerformed(evt);
+            }
+        });
+
+        quizBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        quizBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        quizBtn1.setText("QUIZ");
+        quizBtn1.setBorderPainted(false);
+
+        pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        pesqBtn1.setText("PESQUISA");
+        pesqBtn1.setBorderPainted(false);
+        pesqBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesqBtn1ActionPerformed(evt);
+            }
+        });
+
+        perfilBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        perfilBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        perfilBtn1.setText("PERFIL");
+        perfilBtn1.setBorderPainted(false);
+        perfilBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilBtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -50,7 +136,18 @@ public class TelaPesquisar extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(inicioBtn1)
+                        .addGap(34, 34, 34)
+                        .addComponent(pesqBtn1)
+                        .addGap(18, 18, 18)
+                        .addComponent(quizBtn1)
+                        .addGap(38, 38, 38)
+                        .addComponent(perfilBtn1))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextField4)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -58,7 +155,15 @@ public class TelaPesquisar extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(363, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pesqBtn1)
+                    .addComponent(quizBtn1)
+                    .addComponent(perfilBtn1)
+                    .addComponent(inicioBtn1))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -77,25 +182,59 @@ public class TelaPesquisar extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jButton4)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(378, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void inicioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inicioBtnActionPerformed
+
+    private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
+        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesqBtnActionPerformed
+
+    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
+        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtnActionPerformed
+
+    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inicioBtn1ActionPerformed
+
+    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesqBtn1ActionPerformed
+
+    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtn1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton inicioBtn;
+    private javax.swing.JButton inicioBtn1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton perfilBtn;
+    private javax.swing.JButton perfilBtn1;
+    private javax.swing.JButton pesqBtn;
+    private javax.swing.JButton pesqBtn1;
+    private javax.swing.JButton quizBtn;
+    private javax.swing.JButton quizBtn1;
     // End of variables declaration//GEN-END:variables
 }
