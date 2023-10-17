@@ -4,6 +4,15 @@
  */
 package view;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author 0068948
@@ -27,22 +36,19 @@ public class TelaPerfil extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        perfilLabel = new javax.swing.JLabel();
         inicioBtn1 = new javax.swing.JButton();
         quizBtn1 = new javax.swing.JButton();
         pesqBtn1 = new javax.swing.JButton();
         perfilBtn1 = new javax.swing.JButton();
+        editarPerfilBtn = new javax.swing.JButton();
 
         jPanel4.setBackground(new java.awt.Color(83, 41, 71));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
         jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\0068948\\Desktop\\peer__1_-removebg-preview.png")); // NOI18N
-        jLabel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(233, 68, 190));
@@ -54,12 +60,9 @@ public class TelaPerfil extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(233, 68, 190));
-        jLabel4.setText("Sequidores");
+        jLabel4.setText("Seguidores");
 
-        jButton1.setBackground(new java.awt.Color(83, 41, 71));
-        jButton1.setForeground(new java.awt.Color(233, 68, 190));
-        jButton1.setText("Editar Perfil");
-        jButton1.setBorder(null);
+        perfilLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\0068948\\Desktop\\perf (2).png")); // NOI18N
 
         inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
         inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
@@ -96,6 +99,16 @@ public class TelaPerfil extends javax.swing.JPanel {
             }
         });
 
+        editarPerfilBtn.setBackground(new java.awt.Color(83, 41, 71));
+        editarPerfilBtn.setForeground(new java.awt.Color(233, 68, 190));
+        editarPerfilBtn.setText("Editar Perfil");
+        editarPerfilBtn.setBorderPainted(false);
+        editarPerfilBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarPerfilBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -103,49 +116,50 @@ public class TelaPerfil extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(jLabel2))
-                        .addGap(84, 84, 84)
+                        .addGap(44, 44, 44)
+                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67)
                         .addComponent(jLabel1)
                         .addGap(50, 50, 50)
                         .addComponent(jLabel3)
                         .addGap(43, 43, 43)
                         .addComponent(jLabel4))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(52, 52, 52)
                         .addComponent(inicioBtn1)
                         .addGap(34, 34, 34)
                         .addComponent(pesqBtn1)
                         .addGap(18, 18, 18)
                         .addComponent(quizBtn1)
                         .addGap(38, 38, 38)
-                        .addComponent(perfilBtn1)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addComponent(perfilBtn1))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(editarPerfilBtn)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4))))
+                            .addComponent(jLabel4)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(perfilLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                .addComponent(editarPerfilBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesqBtn1)
                     .addComponent(quizBtn1)
                     .addComponent(perfilBtn1)
                     .addComponent(inicioBtn1))
-                .addGap(14, 14, 14))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -176,16 +190,39 @@ public class TelaPerfil extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtn1ActionPerformed
 
+    private void editarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPerfilBtnActionPerformed
+        JFileChooser janelaArquivo = new JFileChooser();
+//        janelaArquivo.setFileFilter(new FileNameExtensionFilter( "png"));
+
+        System.out.println("Escolha o arquivo que contenha as cartas.");
+        int operacao = janelaArquivo.showSaveDialog(janelaArquivo);
+
+        if (operacao == JFileChooser.APPROVE_OPTION) {
+            File arquivo = janelaArquivo.getSelectedFile();
+            String endereco = arquivo.getPath();
+            System.out.println(endereco);
+
+            BufferedImage img = null;
+            try {
+                //img = ImageIO.read(new File(endereco));
+                img = ImageIO.read(arquivo);
+                perfilLabel.setIcon(new ImageIcon(img));
+            } catch (IOException ex) {
+                Logger.getLogger(TelaPerfil.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_editarPerfilBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton editarPerfilBtn;
     private javax.swing.JButton inicioBtn1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton perfilBtn1;
+    private javax.swing.JLabel perfilLabel;
     private javax.swing.JButton pesqBtn1;
     private javax.swing.JButton quizBtn1;
     // End of variables declaration//GEN-END:variables

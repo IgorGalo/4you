@@ -43,6 +43,27 @@ public class Usuario {
     public void setSenha(String Senha) {
         this.Senha = Senha;
     }
+
+    @Override
+    public String toString() {
+        return this.NomeUsuario;
+    }
+
+    public Usuario(int IDusuario, String NomeCompleto, String NomeUsuario, String Email, String Senha) {
+        this.IDusuario = IDusuario;
+        this.NomeCompleto = NomeCompleto;
+        this.NomeUsuario = NomeUsuario;
+        this.Email = Email;
+        this.Senha = Senha;
+    }
+
+    public Usuario( String NomeCompleto) {
+        this.NomeCompleto = NomeCompleto;
+    }
+
+    public Usuario( ) {
+
+    }
     
     
 

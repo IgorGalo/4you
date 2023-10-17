@@ -45,10 +45,10 @@ public class TelaInicio extends javax.swing.JPanel {
         jMenu11 = new javax.swing.JMenu();
         jMenu12 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
-        quizBtn = new javax.swing.JButton();
-        pesqBtn = new javax.swing.JButton();
-        perfilBtn = new javax.swing.JButton();
-        inicioBtn = new javax.swing.JButton();
+        inicioBtn1 = new javax.swing.JButton();
+        quizBtn1 = new javax.swing.JButton();
+        pesqBtn1 = new javax.swing.JButton();
+        perfilBtn1 = new javax.swing.JButton();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -89,38 +89,38 @@ public class TelaInicio extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(83, 41, 71));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
 
-        quizBtn.setBackground(new java.awt.Color(83, 41, 71));
-        quizBtn.setForeground(new java.awt.Color(233, 68, 190));
-        quizBtn.setText("QUIZ");
-        quizBtn.setBorderPainted(false);
-
-        pesqBtn.setBackground(new java.awt.Color(83, 41, 71));
-        pesqBtn.setForeground(new java.awt.Color(233, 68, 190));
-        pesqBtn.setText("PESQUISA");
-        pesqBtn.setBorderPainted(false);
-        pesqBtn.addActionListener(new java.awt.event.ActionListener() {
+        inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        inicioBtn1.setText("INICIO");
+        inicioBtn1.setBorderPainted(false);
+        inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesqBtnActionPerformed(evt);
+                inicioBtn1ActionPerformed(evt);
             }
         });
 
-        perfilBtn.setBackground(new java.awt.Color(83, 41, 71));
-        perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
-        perfilBtn.setText("PERFIL");
-        perfilBtn.setBorderPainted(false);
-        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
+        quizBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        quizBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        quizBtn1.setText("QUIZ");
+        quizBtn1.setBorderPainted(false);
+
+        pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        pesqBtn1.setText("PESQUISA");
+        pesqBtn1.setBorderPainted(false);
+        pesqBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilBtnActionPerformed(evt);
+                pesqBtn1ActionPerformed(evt);
             }
         });
 
-        inicioBtn.setBackground(new java.awt.Color(83, 41, 71));
-        inicioBtn.setForeground(new java.awt.Color(233, 68, 190));
-        inicioBtn.setText("INICIO");
-        inicioBtn.setBorderPainted(false);
-        inicioBtn.addActionListener(new java.awt.event.ActionListener() {
+        perfilBtn1.setBackground(new java.awt.Color(83, 41, 71));
+        perfilBtn1.setForeground(new java.awt.Color(233, 68, 190));
+        perfilBtn1.setText("PERFIL");
+        perfilBtn1.setBorderPainted(false);
+        perfilBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inicioBtnActionPerformed(evt);
+                perfilBtn1ActionPerformed(evt);
             }
         });
 
@@ -128,27 +128,27 @@ public class TelaInicio extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(inicioBtn)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(55, Short.MAX_VALUE)
+                .addComponent(inicioBtn1)
                 .addGap(34, 34, 34)
-                .addComponent(pesqBtn)
+                .addComponent(pesqBtn1)
                 .addGap(18, 18, 18)
-                .addComponent(quizBtn)
+                .addComponent(quizBtn1)
                 .addGap(38, 38, 38)
-                .addComponent(perfilBtn)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addComponent(perfilBtn1)
+                .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(356, Short.MAX_VALUE)
+                .addContainerGap(367, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pesqBtn)
-                    .addComponent(quizBtn)
-                    .addComponent(perfilBtn)
-                    .addComponent(inicioBtn))
-                .addGap(17, 17, 17))
+                    .addComponent(pesqBtn1)
+                    .addComponent(quizBtn1)
+                    .addComponent(perfilBtn1)
+                    .addComponent(inicioBtn1))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -163,21 +163,21 @@ public class TelaInicio extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
-    }//GEN-LAST:event_pesqBtnActionPerformed
-
-    private void inicioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtnActionPerformed
+    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inicioBtnActionPerformed
+    }//GEN-LAST:event_inicioBtn1ActionPerformed
 
-    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
+    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesqBtn1ActionPerformed
+
+    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
-    }//GEN-LAST:event_perfilBtnActionPerformed
+    }//GEN-LAST:event_perfilBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton inicioBtn;
+    private javax.swing.JButton inicioBtn1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
@@ -197,8 +197,8 @@ public class TelaInicio extends javax.swing.JPanel {
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuBar jMenuBar6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton perfilBtn;
-    private javax.swing.JButton pesqBtn;
-    private javax.swing.JButton quizBtn;
+    private javax.swing.JButton perfilBtn1;
+    private javax.swing.JButton pesqBtn1;
+    private javax.swing.JButton quizBtn1;
     // End of variables declaration//GEN-END:variables
 }

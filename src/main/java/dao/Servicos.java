@@ -33,7 +33,7 @@ public class Servicos {
 
     public Usuario consultarPorFiltro(Usuario filtro) {
         try {
-            Usuario retorno = new Usuario();
+            Usuario retorno = null;
             Connection c = Conexao.obterConexao();
 
             String sql = "SELECT * FROM fiyyou.usuario ";
@@ -43,18 +43,18 @@ public class Servicos {
                 sql += "WHERE ";
                 boolean useiFiltro = false;
                 if (filtro.getNomeUsuario() != null && !filtro.getNomeUsuario().equalsIgnoreCase("")) {
-                    sql += "nomeusuario = '" + filtro.getNomeUsuario() + "' ";
+                    sql += "nomeusuario = '" + filtro.getNomeUsuario().trim() + "' ";
                     useiFiltro = true;
                 }
                 if (filtro.getEmail() != null && !filtro.getEmail().equalsIgnoreCase("")) {
-                    sql += "email = '" + filtro.getEmail() + "'";
+                    sql += "email = '" + filtro.getEmail().trim() + "'";
                     useiFiltro = true;
                 }
                 if (filtro.getSenha() != null && !filtro.getSenha().equalsIgnoreCase("")) {
                     if (useiFiltro) {
                         sql += " AND ";
                     }
-                    sql += "senha = '" + filtro.getSenha() + "'";
+                    sql += "senha = '" + filtro.getSenha().trim() + "'";
                     useiFiltro = true;
                 }
             }
@@ -63,6 +63,10 @@ public class Servicos {
             ResultSet resultado = consulta.executeQuery(sql);
 
             c.close();
+            System.out.println("retorna: " + retorno);
+            if(resultado.next()){
+                retorno=new Usuario(resultado.getString("nomeusuario"));
+            }
             return retorno;
         } catch (SQLException ex) {
             Logger.getLogger(Servicos.class.getName()).log(Level.SEVERE, null, ex);

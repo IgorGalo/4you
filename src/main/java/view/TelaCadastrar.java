@@ -8,6 +8,7 @@ import dao.Servicos;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import model.Usuario;
 
 /**
@@ -21,8 +22,7 @@ public class TelaCadastrar extends javax.swing.JPanel {
      */
     public TelaCadastrar() {
         initComponents();
-        
-        
+
     }
 
     /**
@@ -259,22 +259,27 @@ public class TelaCadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_NomeCompletoTxtActionPerformed
 
     private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
-        try {
-            // TODO add your handling code here:
+        if (NomeCompletoTxt.getText().equalsIgnoreCase("") || NomeUsurioTxt.getText().equalsIgnoreCase("") || 
+                SenhaTxt.getText().equalsIgnoreCase("") || EmaiTxt.getText().equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
+        } else {
+            try {
+                // TODO add your handling code here:
 
-            Usuario dados = new Usuario();
-            dados.setNomeCompleto(NomeCompletoTxt.getText());
-            dados.setNomeUsuario(NomeUsurioTxt.getText());
-            dados.setEmail(EmaiTxt.getText());
-            dados.setSenha(SenhaTxt.getText());
+                Usuario dados = new Usuario();
+                dados.setNomeCompleto(NomeCompletoTxt.getText());
+                dados.setNomeUsuario(NomeUsurioTxt.getText());
+                dados.setEmail(EmaiTxt.getText());
+                dados.setSenha(SenhaTxt.getText());
 
-            Servicos sa = new Servicos();
-            sa.cadastrarUsuario(dados);
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaCadastrar.class.getName()).log(Level.SEVERE, null, ex);
+                Servicos sa = new Servicos();
+                sa.cadastrarUsuario(dados);
+            } catch (SQLException ex) {
+                Logger.getLogger(TelaCadastrar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
         }
-
-        //TelaCadastrar.this.dispose();
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
 
