@@ -259,26 +259,24 @@ public class TelaCadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_NomeCompletoTxtActionPerformed
 
     private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
-        if (NomeCompletoTxt.getText().equalsIgnoreCase("") || NomeUsurioTxt.getText().equalsIgnoreCase("") || 
-                SenhaTxt.getText().equalsIgnoreCase("") || EmaiTxt.getText().equalsIgnoreCase("")) {
+        if (NomeCompletoTxt.getText().equalsIgnoreCase("") || NomeUsurioTxt.getText().equalsIgnoreCase("")
+                || SenhaTxt.getText().equalsIgnoreCase("") || EmaiTxt.getText().equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
         } else {
-            try {
-                // TODO add your handling code here:
+            // TODO add your handling code here:
 
-                Usuario dados = new Usuario();
-                dados.setNomeCompleto(NomeCompletoTxt.getText());
-                dados.setNomeUsuario(NomeUsurioTxt.getText());
-                dados.setEmail(EmaiTxt.getText());
-                dados.setSenha(SenhaTxt.getText());
-
-                Servicos sa = new Servicos();
-                sa.cadastrarUsuario(dados);
-            } catch (SQLException ex) {
-                Logger.getLogger(TelaCadastrar.class.getName()).log(Level.SEVERE, null, ex);
+            Usuario dados = new Usuario();
+            dados.setNomeCompleto(NomeCompletoTxt.getText());
+            dados.setNomeUsuario(NomeUsurioTxt.getText());
+            dados.setEmail(EmaiTxt.getText());
+            dados.setSenha(SenhaTxt.getText());
+            Servicos sa = new Servicos();
+            boolean cadastrou = sa.cadastrarUsuario(dados);
+            if (!cadastrou) {
+                JOptionPane.showMessageDialog(this, "Não foi possível cadastrar o usuário");
+            } else {
+                FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
             }
-
-            FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
         }
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 

@@ -14,21 +14,26 @@ import java.util.logging.Logger;
 
 public class Servicos {
 
-    public void cadastrarUsuario(Usuario dados) throws SQLException {
+    public boolean cadastrarUsuario(Usuario dados) {
 
         Connection c = Conexao.obterConexao();
 
         String sql = "INSERT INTO fiyyou.USUARIO (NomeCompleto, NomeUsuario, Email, Senha)"
                 + " VALUES (?, ?, ? , ?)";
 
-        PreparedStatement insercao = c.prepareStatement(sql);
+        try {
+            PreparedStatement insercao = c.prepareStatement(sql);
 
-        insercao.setString(1, dados.getNomeCompleto());
-        insercao.setString(2, dados.getNomeUsuario());
-        insercao.setString(3, dados.getEmail());
-        insercao.setString(4, dados.getSenha());
-        insercao.executeQuery();
-        c.close();
+            insercao.setString(1, dados.getNomeCompleto());
+            insercao.setString(2, dados.getNomeUsuario());
+            insercao.setString(3, dados.getEmail());
+            insercao.setString(4, dados.getSenha());
+            insercao.execute();
+            c.close();
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
     }
 
     public Usuario consultarPorFiltro(Usuario filtro) {
@@ -43,7 +48,7 @@ public class Servicos {
                 sql += "WHERE ";
                 boolean useiFiltro = false;
                 if (filtro.getNomeUsuario() != null && !filtro.getNomeUsuario().equalsIgnoreCase("")) {
-                    sql += "nomeusuario = '" + filtro.getNomeUsuario().trim() + "' ";
+                    sql += "nomeusuario = '" + filtro.getNomeUsuario().trim() + "'";
                     useiFiltro = true;
                 }
                 if (filtro.getEmail() != null && !filtro.getEmail().equalsIgnoreCase("")) {
@@ -64,8 +69,8 @@ public class Servicos {
 
             c.close();
             System.out.println("retorna: " + retorno);
-            if(resultado.next()){
-                retorno=new Usuario(resultado.getString("nomeusuario"));
+            if (resultado.next()) {
+                retorno = new Usuario(resultado.getString("nomeusuario"));
             }
             return retorno;
         } catch (SQLException ex) {

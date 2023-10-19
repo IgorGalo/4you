@@ -20,7 +20,7 @@ public class Conexao {
             Class.forName("org.postgresql.Driver");
 
             ifConexao = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("Deu certo!");
+            //System.out.println("Deu certo!");
             return ifConexao;
         } catch (ClassNotFoundException ex) {
             System.out.println("Deu erro: classe não encontrada " + ex.getMessage());

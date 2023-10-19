@@ -4,17 +4,25 @@
  */
 package view;
 
+import javax.swing.ButtonGroup;
+
 /**
  *
  * @author 0068948
  */
 public class TelaPesquisar extends javax.swing.JPanel {
 
-    /**
-     * Creates new form tELApESQ
-     */
+    private ButtonGroup escolhaPesquisa;
+    
     public TelaPesquisar() {
         initComponents();
+        config();
+    }
+    
+    private void config(){
+        escolhaPesquisa = new ButtonGroup();
+        escolhaPesquisa.add(usuarioBtn);
+        escolhaPesquisa.add(itemBtn);
     }
 
     /**
@@ -39,6 +47,8 @@ public class TelaPesquisar extends javax.swing.JPanel {
         quizBtn1 = new javax.swing.JButton();
         pesqBtn1 = new javax.swing.JButton();
         perfilBtn1 = new javax.swing.JButton();
+        usuarioBtn = new javax.swing.JRadioButton();
+        itemBtn = new javax.swing.JRadioButton();
 
         inicioBtn.setBackground(new java.awt.Color(83, 41, 71));
         inicioBtn.setForeground(new java.awt.Color(233, 68, 190));
@@ -130,24 +140,38 @@ public class TelaPesquisar extends javax.swing.JPanel {
             }
         });
 
+        usuarioBtn.setBackground(new java.awt.Color(83, 41, 71));
+        usuarioBtn.setForeground(new java.awt.Color(233, 68, 190));
+        usuarioBtn.setText("Usuário");
+
+        itemBtn.setForeground(new java.awt.Color(233, 68, 190));
+        itemBtn.setText("Item");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(inicioBtn1)
-                        .addGap(34, 34, 34)
-                        .addComponent(pesqBtn1)
-                        .addGap(18, 18, 18)
-                        .addComponent(quizBtn1)
-                        .addGap(38, 38, 38)
-                        .addComponent(perfilBtn1))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField4)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)))
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(inicioBtn1)
+                                .addGap(34, 34, 34)
+                                .addComponent(pesqBtn1)
+                                .addGap(18, 18, 18)
+                                .addComponent(quizBtn1)
+                                .addGap(38, 38, 38)
+                                .addComponent(perfilBtn1))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField4)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(usuarioBtn)
+                        .addGap(58, 58, 58)
+                        .addComponent(itemBtn)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -156,8 +180,12 @@ public class TelaPesquisar extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usuarioBtn)
+                    .addComponent(itemBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesqBtn1)
                     .addComponent(quizBtn1)
@@ -216,6 +244,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton inicioBtn;
     private javax.swing.JButton inicioBtn1;
+    private javax.swing.JRadioButton itemBtn;
     private javax.swing.JButton jButton4;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel4;
@@ -227,5 +256,6 @@ public class TelaPesquisar extends javax.swing.JPanel {
     private javax.swing.JButton pesqBtn1;
     private javax.swing.JButton quizBtn;
     private javax.swing.JButton quizBtn1;
+    private javax.swing.JRadioButton usuarioBtn;
     // End of variables declaration//GEN-END:variables
 }

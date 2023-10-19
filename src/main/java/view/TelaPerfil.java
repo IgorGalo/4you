@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -45,6 +47,7 @@ public class TelaPerfil extends javax.swing.JPanel {
         pesqBtn1 = new javax.swing.JButton();
         perfilBtn1 = new javax.swing.JButton();
         editarPerfilBtn = new javax.swing.JButton();
+        labelperfil = new javax.swing.JLabel();
 
         jPanel4.setBackground(new java.awt.Color(83, 41, 71));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
@@ -61,8 +64,6 @@ public class TelaPerfil extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(233, 68, 190));
         jLabel4.setText("Seguidores");
-
-        perfilLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\0068948\\Desktop\\perf (2).png")); // NOI18N
 
         inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
         inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
@@ -109,6 +110,8 @@ public class TelaPerfil extends javax.swing.JPanel {
             }
         });
 
+        labelperfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\0068948\\Desktop\\perfil.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -116,44 +119,48 @@ public class TelaPerfil extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel1)
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel3)
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(inicioBtn1)
-                        .addGap(34, 34, 34)
-                        .addComponent(pesqBtn1)
-                        .addGap(18, 18, 18)
-                        .addComponent(quizBtn1)
-                        .addGap(38, 38, 38)
-                        .addComponent(perfilBtn1))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(editarPerfilBtn)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addComponent(editarPerfilBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(labelperfil, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(50, 50, 50)
+                .addComponent(jLabel3)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel4)
+                .addGap(76, 76, 76))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(inicioBtn1)
+                .addGap(34, 34, 34)
+                .addComponent(pesqBtn1)
+                .addGap(18, 18, 18)
+                .addComponent(quizBtn1)
+                .addGap(38, 38, 38)
+                .addComponent(perfilBtn1)
+                .addGap(60, 60, 60))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)))
+                            .addComponent(jLabel4)
+                            .addComponent(labelperfil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(perfilLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(perfilLabel)
+                        .addGap(62, 62, 62)))
                 .addComponent(editarPerfilBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesqBtn1)
                     .addComponent(quizBtn1)
@@ -178,21 +185,9 @@ public class TelaPerfil extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inicioBtn1ActionPerformed
-
-    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
-    }//GEN-LAST:event_pesqBtn1ActionPerformed
-
-    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
-    }//GEN-LAST:event_perfilBtn1ActionPerformed
-
     private void editarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPerfilBtnActionPerformed
         JFileChooser janelaArquivo = new JFileChooser();
-//        janelaArquivo.setFileFilter(new FileNameExtensionFilter( "png"));
+        //janelaArquivo.setFileFilter(new FileNameExtensionFilter("JPEG"));
 
         System.out.println("Escolha o arquivo que contenha as cartas.");
         int operacao = janelaArquivo.showSaveDialog(janelaArquivo);
@@ -206,12 +201,25 @@ public class TelaPerfil extends javax.swing.JPanel {
             try {
                 //img = ImageIO.read(new File(endereco));
                 img = ImageIO.read(arquivo);
-                perfilLabel.setIcon(new ImageIcon(img));
+                Image imgFinal = img.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+                labelperfil.setIcon(new ImageIcon(imgFinal));
             } catch (IOException ex) {
                 Logger.getLogger(TelaPerfil.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_editarPerfilBtnActionPerformed
+
+    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtn1ActionPerformed
+
+    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesqBtn1ActionPerformed
+
+    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inicioBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -221,6 +229,7 @@ public class TelaPerfil extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel labelperfil;
     private javax.swing.JButton perfilBtn1;
     private javax.swing.JLabel perfilLabel;
     private javax.swing.JButton pesqBtn1;

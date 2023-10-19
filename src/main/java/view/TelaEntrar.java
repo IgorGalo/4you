@@ -35,7 +35,7 @@ public class TelaEntrar extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         entrarBtn = new javax.swing.JButton();
-        NomeUsuxt = new javax.swing.JTextField();
+        Nometxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -60,15 +60,15 @@ public class TelaEntrar extends javax.swing.JPanel {
             }
         });
 
-        NomeUsuxt.setBackground(new java.awt.Color(83, 41, 71));
-        NomeUsuxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        NomeUsuxt.setForeground(new java.awt.Color(204, 204, 204));
-        NomeUsuxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        NomeUsuxt.setText("                                                  ");
-        NomeUsuxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
-        NomeUsuxt.addActionListener(new java.awt.event.ActionListener() {
+        Nometxt.setBackground(new java.awt.Color(83, 41, 71));
+        Nometxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
+        Nometxt.setForeground(new java.awt.Color(204, 204, 204));
+        Nometxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Nometxt.setText("                                                  ");
+        Nometxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+        Nometxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeUsuxtActionPerformed(evt);
+                NometxtActionPerformed(evt);
             }
         });
 
@@ -97,7 +97,7 @@ public class TelaEntrar extends javax.swing.JPanel {
                 .addGap(80, 80, 80)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NomeUsuxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Nometxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(senhaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(25, 25, 25)
@@ -121,7 +121,7 @@ public class TelaEntrar extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeUsuxt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Nometxt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -184,22 +184,27 @@ public class TelaEntrar extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("escolha", new TelaEscolha());
     }//GEN-LAST:event_voltarBtnActionPerformed
 
-    private void NomeUsuxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeUsuxtActionPerformed
+    private void NometxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NometxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeUsuxtActionPerformed
+    }//GEN-LAST:event_NometxtActionPerformed
 
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
         Usuario filtro = new Usuario();
-        filtro.setNomeUsuario(NomeUsuxt.getText());
+
+        if (Nometxt.getText().contains("@")) {
+            filtro.setEmail(Nometxt.getText());
+        } else {
+            filtro.setNomeUsuario(Nometxt.getText());
+        }
         filtro.setSenha(senhaTxt.getText());
 
-        Servicos servicos=new Servicos();
-        Usuario resultado=
-        servicos.consultarPorFiltro(filtro);
+        Servicos servicos = new Servicos();
+        Usuario resultado
+                = servicos.consultarPorFiltro(filtro);
 
-        if(resultado != null){
+        if (resultado != null) {
             FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "USUÁRIO OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -207,7 +212,7 @@ public class TelaEntrar extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField NomeUsuxt;
+    private javax.swing.JTextField Nometxt;
     private javax.swing.JButton entrarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
