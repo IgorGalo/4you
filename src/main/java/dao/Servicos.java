@@ -63,12 +63,10 @@ public class Servicos {
                     useiFiltro = true;
                 }
             }
-            System.out.println("Nossa isntrução SQL: " + sql);
             Statement consulta = c.createStatement();
             ResultSet resultado = consulta.executeQuery(sql);
 
             c.close();
-            System.out.println("retorna: " + retorno);
             if (resultado.next()) {
                 retorno = new Usuario(resultado.getString("nomeusuario"));
             }

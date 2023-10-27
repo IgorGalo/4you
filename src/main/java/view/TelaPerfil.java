@@ -195,7 +195,6 @@ public class TelaPerfil extends javax.swing.JPanel {
         JFileChooser janelaArquivo = new JFileChooser();
         //janelaArquivo.setFileFilter(new FileNameExtensionFilter("JPEG"));
 
-        System.out.println("Escolha o arquivo que contenha as cartas.");
         int operacao = janelaArquivo.showSaveDialog(janelaArquivo);
 
         if (operacao == JFileChooser.APPROVE_OPTION) {
