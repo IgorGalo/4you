@@ -79,6 +79,11 @@ public class TelaPerfil extends javax.swing.JPanel {
         quizBtn1.setForeground(new java.awt.Color(233, 68, 190));
         quizBtn1.setText("QUIZ");
         quizBtn1.setBorderPainted(false);
+        quizBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizBtn1ActionPerformed(evt);
+            }
+        });
 
         pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
         pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
@@ -94,6 +99,7 @@ public class TelaPerfil extends javax.swing.JPanel {
         perfilBtn1.setForeground(new java.awt.Color(233, 68, 190));
         perfilBtn1.setText("PERFIL");
         perfilBtn1.setBorderPainted(false);
+        perfilBtn1.setEnabled(false);
         perfilBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 perfilBtn1ActionPerformed(evt);
@@ -110,7 +116,7 @@ public class TelaPerfil extends javax.swing.JPanel {
             }
         });
 
-        labelperfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\0068948\\Desktop\\perfil.png")); // NOI18N
+        labelperfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\0068948\\Desktop\\png-transparent-account-icon-man (2).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -175,7 +181,7 @@ public class TelaPerfil extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 500, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +216,6 @@ public class TelaPerfil extends javax.swing.JPanel {
     }//GEN-LAST:event_editarPerfilBtnActionPerformed
 
     private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtn1ActionPerformed
 
     private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
@@ -218,8 +223,12 @@ public class TelaPerfil extends javax.swing.JPanel {
     }//GEN-LAST:event_pesqBtn1ActionPerformed
 
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        // TODO add your handling code here:
+        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtn1ActionPerformed
+
+    private void quizBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
+    }//GEN-LAST:event_quizBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

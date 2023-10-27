@@ -93,6 +93,7 @@ public class TelaInicio extends javax.swing.JPanel {
         inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
         inicioBtn1.setText("INICIO");
         inicioBtn1.setBorderPainted(false);
+        inicioBtn1.setEnabled(false);
         inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inicioBtn1ActionPerformed(evt);
@@ -103,6 +104,11 @@ public class TelaInicio extends javax.swing.JPanel {
         quizBtn1.setForeground(new java.awt.Color(233, 68, 190));
         quizBtn1.setText("QUIZ");
         quizBtn1.setBorderPainted(false);
+        quizBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizBtn1ActionPerformed(evt);
+            }
+        });
 
         pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
         pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
@@ -174,6 +180,10 @@ public class TelaInicio extends javax.swing.JPanel {
     private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtn1ActionPerformed
+
+    private void quizBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
+    }//GEN-LAST:event_quizBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

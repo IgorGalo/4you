@@ -119,11 +119,17 @@ public class TelaPesquisar extends javax.swing.JPanel {
         quizBtn1.setForeground(new java.awt.Color(233, 68, 190));
         quizBtn1.setText("QUIZ");
         quizBtn1.setBorderPainted(false);
+        quizBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizBtn1ActionPerformed(evt);
+            }
+        });
 
         pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
         pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
         pesqBtn1.setText("PESQUISA");
         pesqBtn1.setBorderPainted(false);
+        pesqBtn1.setEnabled(false);
         pesqBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesqBtn1ActionPerformed(evt);
@@ -221,7 +227,6 @@ public class TelaPesquisar extends javax.swing.JPanel {
     }//GEN-LAST:event_inicioBtnActionPerformed
 
     private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesqBtnActionPerformed
 
     private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
@@ -229,16 +234,18 @@ public class TelaPesquisar extends javax.swing.JPanel {
     }//GEN-LAST:event_perfilBtnActionPerformed
 
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        // TODO add your handling code here:
+        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtn1ActionPerformed
 
     private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesqBtn1ActionPerformed
 
     private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtn1ActionPerformed
+
+    private void quizBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
+    }//GEN-LAST:event_quizBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

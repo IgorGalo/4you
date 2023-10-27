@@ -267,6 +267,9 @@
             <Property name="text" type="java.lang.String" value="QUIZ"/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quizBtn1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pesqBtn1">
           <Properties>
@@ -278,6 +281,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="PESQUISA"/>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pesqBtn1ActionPerformed"/>
