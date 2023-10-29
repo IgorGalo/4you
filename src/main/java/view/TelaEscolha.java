@@ -14,9 +14,7 @@ public class TelaEscolha extends javax.swing.JPanel {
      * Creates new form escolha
      */
     public TelaEscolha() {
-        initComponents();
-        
-        
+        initComponents();        
     }
 
     /**
@@ -30,31 +28,17 @@ public class TelaEscolha extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        cadasrarBtn = new javax.swing.JToggleButton();
+        srplabel = new javax.swing.JLabel();
         entrarBtn = new javax.swing.JToggleButton();
+        cadastrarBtn = new javax.swing.JToggleButton();
+        bemVindoLabel = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(83, 41, 71));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(233, 68, 190));
-        jLabel1.setText("Sistema de Recomendação Personalizada");
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(233, 68, 190));
-        jLabel2.setText("Bem-Vind@ ao");
-
-        cadasrarBtn.setBackground(new java.awt.Color(233, 68, 190));
-        cadasrarBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
-        cadasrarBtn.setForeground(new java.awt.Color(255, 255, 255));
-        cadasrarBtn.setText("CADASTRAR");
-        cadasrarBtn.setBorderPainted(false);
-        cadasrarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadasrarBtnActionPerformed(evt);
-            }
-        });
+        srplabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+        srplabel.setForeground(new java.awt.Color(233, 68, 190));
+        srplabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        srplabel.setText("Sistema de Recomendação Personalizada");
 
         entrarBtn.setBackground(new java.awt.Color(233, 68, 190));
         entrarBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
@@ -67,37 +51,49 @@ public class TelaEscolha extends javax.swing.JPanel {
             }
         });
 
+        cadastrarBtn.setBackground(new java.awt.Color(233, 68, 190));
+        cadastrarBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
+        cadastrarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        cadastrarBtn.setText("CADASTRAR");
+        cadastrarBtn.setBorderPainted(false);
+        cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarBtnActionPerformed(evt);
+            }
+        });
+
+        bemVindoLabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+        bemVindoLabel.setForeground(new java.awt.Color(233, 68, 190));
+        bemVindoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bemVindoLabel.setText("Bem Vind@ ao");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(cadastrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(cadasrarBtn))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(entrarBtn)))
-                .addGap(35, 35, 35))
+                        .addGap(10, 10, 10)
+                        .addComponent(entrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(srplabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bemVindoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jLabel2)
+                .addContainerGap(96, Short.MAX_VALUE)
+                .addComponent(bemVindoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(srplabel)
+                .addGap(58, 58, 58)
+                .addComponent(cadastrarBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addComponent(cadasrarBtn)
-                .addGap(26, 26, 26)
                 .addComponent(entrarBtn)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(112, 112, 112))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -123,26 +119,23 @@ public class TelaEscolha extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cadasrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadasrarBtnActionPerformed
-        // TODO add your handling code here:
-
-        FramePrincipal.trocaPainel("painel cadastro", new TelaCadastrar());
-
-    }//GEN-LAST:event_cadasrarBtnActionPerformed
-
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
         // TODO add your handling code here:
 
         FramePrincipal.trocaPainel("painel entrar", new TelaEntrar());
     }//GEN-LAST:event_entrarBtnActionPerformed
 
+    private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
+        FramePrincipal.trocaPainel("painel cadastrar", new TelaCadastrar());
+    }//GEN-LAST:event_cadastrarBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton cadasrarBtn;
+    private javax.swing.JLabel bemVindoLabel;
+    private javax.swing.JToggleButton cadastrarBtn;
     private javax.swing.JToggleButton entrarBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel srplabel;
     // End of variables declaration//GEN-END:variables
 }
