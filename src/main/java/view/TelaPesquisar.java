@@ -13,13 +13,13 @@ import javax.swing.ButtonGroup;
 public class TelaPesquisar extends javax.swing.JPanel {
 
     private ButtonGroup escolhaPesquisa;
-    
+
     public TelaPesquisar() {
         initComponents();
         config();
     }
-    
-    private void config(){
+
+    private void config() {
         escolhaPesquisa = new ButtonGroup();
         escolhaPesquisa.add(usuarioBtn);
         escolhaPesquisa.add(itemBtn);
@@ -38,17 +38,22 @@ public class TelaPesquisar extends javax.swing.JPanel {
         quizBtn = new javax.swing.JButton();
         pesqBtn = new javax.swing.JButton();
         perfilBtn = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         inicioBtn1 = new javax.swing.JButton();
-        quizBtn1 = new javax.swing.JButton();
+        quizBtn2 = new javax.swing.JButton();
+        pesqBtn2 = new javax.swing.JButton();
+        perfilBtn2 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        perfilLabel = new javax.swing.JLabel();
+        inicioBtn3 = new javax.swing.JButton();
+        quizBtn3 = new javax.swing.JButton();
         pesqBtn1 = new javax.swing.JButton();
         perfilBtn1 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         usuarioBtn = new javax.swing.JRadioButton();
         itemBtn = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         inicioBtn.setBackground(new java.awt.Color(83, 41, 71));
         inicioBtn.setForeground(new java.awt.Color(233, 68, 190));
@@ -85,51 +90,78 @@ public class TelaPesquisar extends javax.swing.JPanel {
             }
         });
 
-        setPreferredSize(new java.awt.Dimension(500, 400));
-
-        jButton4.setBackground(new java.awt.Color(83, 41, 71));
-        jButton4.setForeground(new java.awt.Color(233, 68, 190));
-        jButton4.setText("🔎");
-        jButton4.setBorder(null);
-
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
-
-        jTextField4.setBackground(new java.awt.Color(83, 41, 71));
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
-
-        jList1.setBackground(new java.awt.Color(83, 41, 71));
-        jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
-        jScrollPane1.setViewportView(jList1);
-
         inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
         inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        inicioBtn1.setText("INICIO");
+        inicioBtn1.setText("🏠");
         inicioBtn1.setBorderPainted(false);
+        inicioBtn1.setEnabled(false);
         inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inicioBtn1ActionPerformed(evt);
             }
         });
 
-        quizBtn1.setBackground(new java.awt.Color(83, 41, 71));
-        quizBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        quizBtn1.setText("QUIZ");
-        quizBtn1.setBorderPainted(false);
-        quizBtn1.addActionListener(new java.awt.event.ActionListener() {
+        quizBtn2.setBackground(new java.awt.Color(83, 41, 71));
+        quizBtn2.setForeground(new java.awt.Color(233, 68, 190));
+        quizBtn2.setText("❔");
+        quizBtn2.setBorderPainted(false);
+        quizBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizBtn1ActionPerformed(evt);
+                quizBtn2ActionPerformed(evt);
+            }
+        });
+
+        pesqBtn2.setBackground(new java.awt.Color(83, 41, 71));
+        pesqBtn2.setForeground(new java.awt.Color(233, 68, 190));
+        pesqBtn2.setText("🔎");
+        pesqBtn2.setBorderPainted(false);
+        pesqBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesqBtn2ActionPerformed(evt);
+            }
+        });
+
+        perfilBtn2.setBackground(new java.awt.Color(83, 41, 71));
+        perfilBtn2.setForeground(new java.awt.Color(233, 68, 190));
+        perfilBtn2.setText("👤");
+        perfilBtn2.setBorderPainted(false);
+        perfilBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilBtn2ActionPerformed(evt);
+            }
+        });
+
+        setPreferredSize(new java.awt.Dimension(500, 400));
+
+        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
+        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
+        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+
+        inicioBtn3.setBackground(new java.awt.Color(83, 41, 71));
+        inicioBtn3.setForeground(new java.awt.Color(233, 68, 190));
+        inicioBtn3.setText("🏠");
+        inicioBtn3.setBorderPainted(false);
+        inicioBtn3.setEnabled(false);
+        inicioBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicioBtn3ActionPerformed(evt);
+            }
+        });
+
+        quizBtn3.setBackground(new java.awt.Color(83, 41, 71));
+        quizBtn3.setForeground(new java.awt.Color(233, 68, 190));
+        quizBtn3.setText("❔");
+        quizBtn3.setBorderPainted(false);
+        quizBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizBtn3ActionPerformed(evt);
             }
         });
 
         pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
         pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        pesqBtn1.setText("PESQUISA");
+        pesqBtn1.setText("🔎");
         pesqBtn1.setBorderPainted(false);
-        pesqBtn1.setEnabled(false);
         pesqBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesqBtn1ActionPerformed(evt);
@@ -138,13 +170,26 @@ public class TelaPesquisar extends javax.swing.JPanel {
 
         perfilBtn1.setBackground(new java.awt.Color(83, 41, 71));
         perfilBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        perfilBtn1.setText("PERFIL");
+        perfilBtn1.setText("👤");
         perfilBtn1.setBorderPainted(false);
+        perfilBtn1.setMaximumSize(new java.awt.Dimension(31, 23));
+        perfilBtn1.setMinimumSize(new java.awt.Dimension(31, 23));
+        perfilBtn1.setPreferredSize(new java.awt.Dimension(31, 23));
         perfilBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 perfilBtn1ActionPerformed(evt);
             }
         });
+
+        jTextField4.setBackground(new java.awt.Color(83, 41, 71));
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+
+        jButton4.setBackground(new java.awt.Color(83, 41, 71));
+        jButton4.setForeground(new java.awt.Color(233, 68, 190));
+        jButton4.setText("🔎");
+        jButton4.setBorder(null);
 
         usuarioBtn.setBackground(new java.awt.Color(83, 41, 71));
         usuarioBtn.setForeground(new java.awt.Color(233, 68, 190));
@@ -153,77 +198,90 @@ public class TelaPesquisar extends javax.swing.JPanel {
         itemBtn.setForeground(new java.awt.Color(233, 68, 190));
         itemBtn.setText("Item");
 
+        jList1.setBackground(new java.awt.Color(83, 41, 71));
+        jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+        jScrollPane1.setViewportView(jList1);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(inicioBtn1)
-                                .addGap(34, 34, 34)
-                                .addComponent(pesqBtn1)
-                                .addGap(18, 18, 18)
-                                .addComponent(quizBtn1)
-                                .addGap(38, 38, 38)
-                                .addComponent(perfilBtn1))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField4)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(usuarioBtn)
-                        .addGap(58, 58, 58)
-                        .addComponent(itemBtn)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(122, 122, 122)
+                            .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(64, 64, 64)
+                            .addComponent(inicioBtn3)
+                            .addGap(88, 88, 88)
+                            .addComponent(pesqBtn1)
+                            .addGap(94, 94, 94)
+                            .addComponent(quizBtn3)
+                            .addGap(88, 88, 88)
+                            .addComponent(perfilBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(17, 17, 17)
+                            .addComponent(jButton4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(151, 151, 151)
+                    .addComponent(usuarioBtn)
+                    .addGap(58, 58, 58)
+                    .addComponent(itemBtn)
+                    .addContainerGap(177, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usuarioBtn)
-                    .addComponent(itemBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(perfilLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pesqBtn1)
-                    .addComponent(quizBtn1)
-                    .addComponent(perfilBtn1)
-                    .addComponent(inicioBtn1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(pesqBtn1)
+                        .addComponent(quizBtn3)
+                        .addComponent(perfilBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inicioBtn3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(38, 38, 38)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(usuarioBtn)
+                        .addComponent(itemBtn))
+                    .addContainerGap(337, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jButton4)
-                .addContainerGap(458, Short.MAX_VALUE))
+            .addGap(0, 500, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButton4)
-                .addContainerGap(378, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void inicioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtnActionPerformed
-        // TODO add your handling code here:
+        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtnActionPerformed
 
     private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
@@ -234,24 +292,39 @@ public class TelaPesquisar extends javax.swing.JPanel {
     }//GEN-LAST:event_perfilBtnActionPerformed
 
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
+        // TODO add your handling code here:
     }//GEN-LAST:event_inicioBtn1ActionPerformed
 
-    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
-    }//GEN-LAST:event_perfilBtn1ActionPerformed
+    private void quizBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn2ActionPerformed
+    }//GEN-LAST:event_quizBtn2ActionPerformed
 
-    private void quizBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn1ActionPerformed
+    private void pesqBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn2ActionPerformed
+    }//GEN-LAST:event_pesqBtn2ActionPerformed
+
+    private void perfilBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn2ActionPerformed
+    }//GEN-LAST:event_perfilBtn2ActionPerformed
+
+    private void inicioBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn3ActionPerformed
+
+    }//GEN-LAST:event_inicioBtn3ActionPerformed
+
+    private void quizBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn3ActionPerformed
         FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
-    }//GEN-LAST:event_quizBtn1ActionPerformed
+    }//GEN-LAST:event_quizBtn3ActionPerformed
 
     private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
-
+        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesqBtn1ActionPerformed
+
+    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
+        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton inicioBtn;
     private javax.swing.JButton inicioBtn1;
+    private javax.swing.JButton inicioBtn3;
     private javax.swing.JRadioButton itemBtn;
     private javax.swing.JButton jButton4;
     private javax.swing.JList<String> jList1;
@@ -260,10 +333,14 @@ public class TelaPesquisar extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JButton perfilBtn;
     private javax.swing.JButton perfilBtn1;
+    private javax.swing.JButton perfilBtn2;
+    private javax.swing.JLabel perfilLabel;
     private javax.swing.JButton pesqBtn;
     private javax.swing.JButton pesqBtn1;
+    private javax.swing.JButton pesqBtn2;
     private javax.swing.JButton quizBtn;
-    private javax.swing.JButton quizBtn1;
+    private javax.swing.JButton quizBtn2;
+    private javax.swing.JButton quizBtn3;
     private javax.swing.JRadioButton usuarioBtn;
     // End of variables declaration//GEN-END:variables
 }
