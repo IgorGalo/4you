@@ -237,15 +237,16 @@ public class TelaPesquisar extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtn1ActionPerformed
 
-    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
-    }//GEN-LAST:event_pesqBtn1ActionPerformed
-
     private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
     }//GEN-LAST:event_perfilBtn1ActionPerformed
 
     private void quizBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
     }//GEN-LAST:event_quizBtn1ActionPerformed
+
+    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
+
+    }//GEN-LAST:event_pesqBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

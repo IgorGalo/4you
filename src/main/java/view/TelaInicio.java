@@ -134,8 +134,8 @@ public class TelaInicio extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
                 .addComponent(inicioBtn1)
                 .addGap(34, 34, 34)
                 .addComponent(pesqBtn1)
@@ -143,7 +143,7 @@ public class TelaInicio extends javax.swing.JPanel {
                 .addComponent(quizBtn1)
                 .addGap(38, 38, 38)
                 .addComponent(perfilBtn1)
-                .addGap(52, 52, 52))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,10 +169,6 @@ public class TelaInicio extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inicioBtn1ActionPerformed
-
     private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesqBtn1ActionPerformed
@@ -184,6 +180,10 @@ public class TelaInicio extends javax.swing.JPanel {
     private void quizBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
     }//GEN-LAST:event_quizBtn1ActionPerformed
+
+    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inicioBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
