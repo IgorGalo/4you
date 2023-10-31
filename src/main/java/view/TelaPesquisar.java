@@ -141,7 +141,6 @@ public class TelaPesquisar extends javax.swing.JPanel {
         inicioBtn3.setForeground(new java.awt.Color(233, 68, 190));
         inicioBtn3.setText("🏠");
         inicioBtn3.setBorderPainted(false);
-        inicioBtn3.setEnabled(false);
         inicioBtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inicioBtn3ActionPerformed(evt);
@@ -162,6 +161,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
         pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
         pesqBtn1.setText("🔎");
         pesqBtn1.setBorderPainted(false);
+        pesqBtn1.setEnabled(false);
         pesqBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesqBtn1ActionPerformed(evt);
