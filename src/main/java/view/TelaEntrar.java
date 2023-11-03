@@ -179,8 +179,6 @@ public class TelaEntrar extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
-        // TODO add your handling code here:
-
         FramePrincipal.trocaPainel("escolha", new TelaEscolha());
     }//GEN-LAST:event_voltarBtnActionPerformed
 
@@ -189,24 +187,24 @@ public class TelaEntrar extends javax.swing.JPanel {
     }//GEN-LAST:event_NometxtActionPerformed
 
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
-        Usuario filtro = new Usuario();
+//        Usuario filtro = new Usuario();
+//
+//        if (Nometxt.getText().contains("@")) {
+//            filtro.setEmail(Nometxt.getText());
+//        } else {
+//            filtro.setNomeUsuario(Nometxt.getText());
+//        }
+//        filtro.setSenha(senhaTxt.getText());
+//
+//        Servicos servicos = new Servicos();
+//        Usuario resultado
+//                = servicos.consultarPorFiltro(filtro);
 
-        if (Nometxt.getText().contains("@")) {
-            filtro.setEmail(Nometxt.getText());
-        } else {
-            filtro.setNomeUsuario(Nometxt.getText());
-        }
-        filtro.setSenha(senhaTxt.getText());
-
-        Servicos servicos = new Servicos();
-        Usuario resultado
-                = servicos.consultarPorFiltro(filtro);
-
-        if (resultado != null) {
+//        if (resultado != null) {
             FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-        } else {
-            JOptionPane.showMessageDialog(this, "USUÁRIO OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
-        }
+//        } else {
+//            JOptionPane.showMessageDialog(this, "USUÁRIO OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+//        }
 
     }//GEN-LAST:event_entrarBtnActionPerformed
 

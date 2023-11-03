@@ -281,14 +281,12 @@ public class TelaPesquisar extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inicioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtnActionPerformed
-        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtnActionPerformed
 
     private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
     }//GEN-LAST:event_pesqBtnActionPerformed
 
     private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtnActionPerformed
 
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
@@ -305,7 +303,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
     }//GEN-LAST:event_perfilBtn2ActionPerformed
 
     private void inicioBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn3ActionPerformed
-
+        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtn3ActionPerformed
 
     private void quizBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn3ActionPerformed
@@ -313,7 +311,6 @@ public class TelaPesquisar extends javax.swing.JPanel {
     }//GEN-LAST:event_quizBtn3ActionPerformed
 
     private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesqBtn1ActionPerformed
 
     private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed

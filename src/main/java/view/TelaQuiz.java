@@ -32,6 +32,9 @@ public class TelaQuiz extends javax.swing.JPanel {
         quizBtn = new javax.swing.JButton();
         pesqBtn = new javax.swing.JButton();
         perfilBtn = new javax.swing.JButton();
+        srplabel = new javax.swing.JLabel();
+        novoTesteBtn = new javax.swing.JToggleButton();
+        testeAntigoBtn = new javax.swing.JToggleButton();
 
         jPanel4.setBackground(new java.awt.Color(83, 41, 71));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
@@ -81,10 +84,38 @@ public class TelaQuiz extends javax.swing.JPanel {
             }
         });
 
+        srplabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+        srplabel.setForeground(new java.awt.Color(233, 68, 190));
+        srplabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        srplabel.setText("O que deseja fazer?");
+
+        novoTesteBtn.setBackground(new java.awt.Color(233, 68, 190));
+        novoTesteBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
+        novoTesteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        novoTesteBtn.setText("INICIAR UM NOVO TESTE");
+        novoTesteBtn.setBorderPainted(false);
+        novoTesteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoTesteBtnActionPerformed(evt);
+            }
+        });
+
+        testeAntigoBtn.setBackground(new java.awt.Color(233, 68, 190));
+        testeAntigoBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
+        testeAntigoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        testeAntigoBtn.setText("ACESSAR TESTE ANTIGO");
+        testeAntigoBtn.setBorderPainted(false);
+        testeAntigoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testeAntigoBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(srplabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -98,7 +129,12 @@ public class TelaQuiz extends javax.swing.JPanel {
                         .addGap(94, 94, 94)
                         .addComponent(quizBtn)
                         .addGap(88, 88, 88)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(novoTesteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(testeAntigoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -106,7 +142,13 @@ public class TelaQuiz extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(perfilLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
+                .addGap(88, 88, 88)
+                .addComponent(srplabel)
+                .addGap(45, 45, 45)
+                .addComponent(novoTesteBtn)
+                .addGap(29, 29, 29)
+                .addComponent(testeAntigoBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(pesqBtn)
@@ -148,13 +190,24 @@ public class TelaQuiz extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtnActionPerformed
 
+    private void novoTesteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoTesteBtnActionPerformed
+        FramePrincipal.trocaPainel("painel perguntas", new TelaPerguntas());
+    }//GEN-LAST:event_novoTesteBtnActionPerformed
+
+    private void testeAntigoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testeAntigoBtnActionPerformed
+        FramePrincipal.trocaPainel("painel teste antogo", new TelaTesteAntigo());
+    }//GEN-LAST:event_testeAntigoBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton inicioBtn1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JToggleButton novoTesteBtn;
     private javax.swing.JButton perfilBtn;
     private javax.swing.JLabel perfilLabel;
     private javax.swing.JButton pesqBtn;
     private javax.swing.JButton quizBtn;
+    private javax.swing.JLabel srplabel;
+    private javax.swing.JToggleButton testeAntigoBtn;
     // End of variables declaration//GEN-END:variables
 }
