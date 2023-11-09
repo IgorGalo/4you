@@ -1,4 +1,4 @@
-package dao;
+package model;
 
 import tool.Conexao;
 import model.Usuario;

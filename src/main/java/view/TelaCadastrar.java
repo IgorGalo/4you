@@ -4,7 +4,7 @@
  */
 package view;
 
-import dao.Servicos;
+import model.Servicos;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
