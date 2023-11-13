@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author flavi
@@ -15,6 +17,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
      */
     public TelaPerguntas() {
         initComponents();
+    }
+    
+    private void jop(){
+        //JOptionPane.showOptionDialog(cadastrarBtn, "", TOOL_TIP_TEXT_KEY, WIDTH, HEIGHT, icon, options, enviarbtn);
     }
 
     /**
