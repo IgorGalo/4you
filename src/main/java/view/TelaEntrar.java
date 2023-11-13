@@ -4,7 +4,7 @@
  */
 package view;
 
-import model.Servicos;
+import dao.Servicos;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Usuario;
