@@ -188,18 +188,18 @@
                               <EmptySpace min="49" pref="49" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn41" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn42" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn43" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn31" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn32" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn33" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="42" max="32767" attributes="0"/>
@@ -211,18 +211,18 @@
                       <EmptySpace min="49" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcaoBtn1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcaoBtn2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcaoBtn3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcaoBtn21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcaoBtn22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcaoBtn23" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -240,46 +240,46 @@
                               <EmptySpace min="49" pref="49" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton19" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn51" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton20" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn52" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton22" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn53" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn81" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn82" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton18" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn83" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton21" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn71" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton23" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn72" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton24" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn73" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn61" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn62" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn63" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton30" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn91" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton25" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn92" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton26" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn93" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton27" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn11" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton28" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn12" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton29" min="-2" max="-2" attributes="0"/>
+                                      <Component id="opcaoBtn13" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
@@ -299,81 +299,81 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn23" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn31" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn32" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn33" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn41" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn42" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn43" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton19" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton20" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn51" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn52" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn53" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn61" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn62" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn63" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn71" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn72" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn73" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton18" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn81" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn82" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn83" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton30" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton25" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton26" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn91" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn92" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn93" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton28" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton29" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcaoBtn13" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
                       <Component id="enviarbtn" min="-2" max="-2" attributes="0"/>
@@ -395,7 +395,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 1:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn1">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -403,7 +403,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn2">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -411,7 +411,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn3">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -419,7 +419,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn3ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
@@ -434,7 +434,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 2:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn21">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -442,7 +442,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn22">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -450,7 +450,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn23">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -458,10 +458,10 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton6ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn23ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn41">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -469,7 +469,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn42">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -477,7 +477,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn43">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -485,7 +485,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton9ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn43ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
@@ -500,7 +500,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 3:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn31">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -508,7 +508,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton11">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn32">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -516,7 +516,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn33">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -524,7 +524,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton12ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn33ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -539,7 +539,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 4:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton13">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn61">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -547,7 +547,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton14">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn62">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -555,7 +555,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton15">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn63">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -563,10 +563,10 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton15ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn63ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton16">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn81">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -574,7 +574,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton17">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn82">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -594,7 +594,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 5:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton18">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn83">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -602,10 +602,10 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton18ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn83ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton19">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn51">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -625,7 +625,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 7:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton20">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn52">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -633,7 +633,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton21">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn71">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -641,7 +641,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton22">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn53">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -649,10 +649,10 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton22ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn53ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton23">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn72">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -660,7 +660,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton24">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn73">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -668,7 +668,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton24ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn73ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
@@ -695,7 +695,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 8:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton25">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn92">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -703,7 +703,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton26">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn93">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -711,7 +711,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton26ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn93ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
@@ -726,7 +726,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 10:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton27">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn11">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -734,7 +734,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton28">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn12">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -742,7 +742,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton29">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn13">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -750,7 +750,7 @@
                 <Property name="text" type="java.lang.String" value="jRadioButton3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton29ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoBtn13ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
@@ -765,7 +765,7 @@
                 <Property name="text" type="java.lang.String" value="Pergunta 9:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton30">
+            <Component class="javax.swing.JRadioButton" name="opcaoBtn91">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
