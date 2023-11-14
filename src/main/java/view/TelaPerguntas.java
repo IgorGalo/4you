@@ -652,7 +652,20 @@ public class TelaPerguntas extends javax.swing.JPanel {
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
 
     private void enviarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarbtnActionPerformed
-        // TODO add your handling code here:
+        if((opcaoBtn1.isSelected() || opcaoBtn2.isSelected()|| opcaoBtn3.isSelected()) && 
+                (opcaoBtn21.isSelected() || opcaoBtn22.isSelected()|| opcaoBtn23.isSelected()) &&
+                (opcaoBtn31.isSelected() || opcaoBtn32.isSelected()|| opcaoBtn33.isSelected()) &&
+                (opcaoBtn41.isSelected() || opcaoBtn42.isSelected()|| opcaoBtn43.isSelected()) &&
+                (opcaoBtn51.isSelected() || opcaoBtn52.isSelected()|| opcaoBtn53.isSelected()) &&
+                (opcaoBtn61.isSelected() || opcaoBtn62.isSelected()|| opcaoBtn63.isSelected()) &&
+                (opcaoBtn71.isSelected() || opcaoBtn72.isSelected()|| opcaoBtn73.isSelected()) &&
+                (opcaoBtn81.isSelected() || opcaoBtn82.isSelected()|| opcaoBtn83.isSelected()) &&
+                (opcaoBtn91.isSelected() || opcaoBtn92.isSelected()|| opcaoBtn93.isSelected()) &&
+                (opcaoBtn11.isSelected() || opcaoBtn12.isSelected()|| opcaoBtn13.isSelected())){
+            FramePrincipal.trocaPainel("resultado", new TelaResultado());
+        }else{
+            JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
+        }
     }//GEN-LAST:event_enviarbtnActionPerformed
 
 
