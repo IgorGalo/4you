@@ -124,10 +124,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pergunta 1:");
 
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("jRadioButton1");
 
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("jRadioButton2");
 
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("jRadioButton3");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,12 +141,15 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(233, 68, 190));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Pergunta 1:");
+        jLabel2.setText("Pergunta 2:");
 
+        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton4.setText("jRadioButton1");
 
+        jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton5.setText("jRadioButton2");
 
+        jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton6.setText("jRadioButton3");
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,10 +157,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton7.setText("jRadioButton1");
 
+        jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton8.setText("jRadioButton2");
 
+        jRadioButton9.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton9.setText("jRadioButton3");
         jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,12 +174,15 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(233, 68, 190));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Pergunta 1:");
+        jLabel3.setText("Pergunta 3:");
 
+        jRadioButton10.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton10.setText("jRadioButton1");
 
+        jRadioButton11.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton11.setText("jRadioButton2");
 
+        jRadioButton12.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton12.setText("jRadioButton3");
         jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,12 +193,15 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(233, 68, 190));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Pergunta 1:");
+        jLabel4.setText("Pergunta 4:");
 
+        jRadioButton13.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton13.setText("jRadioButton1");
 
+        jRadioButton14.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton14.setText("jRadioButton2");
 
+        jRadioButton15.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton15.setText("jRadioButton3");
         jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,15 +209,18 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton16.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton16.setText("jRadioButton1");
 
+        jRadioButton17.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton17.setText("jRadioButton2");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(233, 68, 190));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Pergunta 1:");
+        jLabel5.setText("Pergunta 5:");
 
+        jRadioButton18.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton18.setText("jRadioButton3");
         jRadioButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,17 +228,21 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton19.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton19.setText("jRadioButton1");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(233, 68, 190));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Pergunta 1:");
+        jLabel6.setText("Pergunta 7:");
 
+        jRadioButton20.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton20.setText("jRadioButton2");
 
+        jRadioButton21.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton21.setText("jRadioButton1");
 
+        jRadioButton22.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton22.setText("jRadioButton3");
         jRadioButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,8 +250,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton23.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton23.setText("jRadioButton2");
 
+        jRadioButton24.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton24.setText("jRadioButton3");
         jRadioButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,15 +264,17 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(233, 68, 190));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Pergunta 1:");
+        jLabel7.setText("Pergunta 6:");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(233, 68, 190));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Pergunta 1:");
+        jLabel8.setText("Pergunta 8:");
 
+        jRadioButton25.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton25.setText("jRadioButton2");
 
+        jRadioButton26.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton26.setText("jRadioButton3");
         jRadioButton26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,12 +285,15 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(233, 68, 190));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Pergunta 1:");
+        jLabel9.setText("Pergunta 10:");
 
+        jRadioButton27.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton27.setText("jRadioButton1");
 
+        jRadioButton28.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton28.setText("jRadioButton2");
 
+        jRadioButton29.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton29.setText("jRadioButton3");
         jRadioButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,8 +304,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(233, 68, 190));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Pergunta 1:");
+        jLabel10.setText("Pergunta 9:");
 
+        jRadioButton30.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton30.setText("jRadioButton1");
 
         enviarbtn.setBackground(new java.awt.Color(233, 68, 190));
