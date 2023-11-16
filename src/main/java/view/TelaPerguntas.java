@@ -4,8 +4,11 @@
  */
 package view;
 
+import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.plaf.basic.BasicBorders;
 
 /**
  *
@@ -23,66 +26,114 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private ButtonGroup pergunta8Group;
     private ButtonGroup pergunta9Group;
     private ButtonGroup pergunta10Group;
-    
+    private ArrayList<JRadioButton> todosRadioBtn;
+    private ArrayList<ArrayList<JRadioButton>> arrayBtn;
+
     public TelaPerguntas() {
         initComponents();
+        addBtnVet();
+        //arraybtn = new ArrayList<JRadioButton>();
         BttonGroup();
     }
-    
-    private void BttonGroup(){
+
+    private void addBtnVet() {
+
+        todosRadioBtn = new ArrayList<>();
+        arrayBtn = new ArrayList<>();
+        todosRadioBtn.add(opcaoBtn1);
+        todosRadioBtn.add(opcaoBtn2);
+        todosRadioBtn.add(opcaoBtn3);
+        todosRadioBtn.add(opcaoBtn21);
+        todosRadioBtn.add(opcaoBtn22);
+        todosRadioBtn.add(opcaoBtn23);
+        todosRadioBtn.add(opcaoBtn31);
+        todosRadioBtn.add(opcaoBtn32);
+        todosRadioBtn.add(opcaoBtn33);
+        todosRadioBtn.add(opcaoBtn41);
+        todosRadioBtn.add(opcaoBtn42);
+        todosRadioBtn.add(opcaoBtn43);
+        todosRadioBtn.add(opcaoBtn51);
+        todosRadioBtn.add(opcaoBtn52);
+        todosRadioBtn.add(opcaoBtn53);
+        todosRadioBtn.add(opcaoBtn61);
+        todosRadioBtn.add(opcaoBtn62);
+        todosRadioBtn.add(opcaoBtn63);
+        todosRadioBtn.add(opcaoBtn71);
+        todosRadioBtn.add(opcaoBtn72);
+        todosRadioBtn.add(opcaoBtn73);
+        todosRadioBtn.add(opcaoBtn81);
+        todosRadioBtn.add(opcaoBtn82);
+        todosRadioBtn.add(opcaoBtn83);
+        todosRadioBtn.add(opcaoBtn91);
+        todosRadioBtn.add(opcaoBtn92);
+        todosRadioBtn.add(opcaoBtn93);
+        todosRadioBtn.add(opcaoBtn11);
+        todosRadioBtn.add(opcaoBtn12);
+        todosRadioBtn.add(opcaoBtn13);
+
+        int cont = 0;
+        for (int i = 0; i < arrayBtn.size(); i++) {
+            for (int ii = cont; ii < 3; ii++) {
+                arrayBtn.get(i).add(todosRadioBtn.get(ii));
+                cont = ii;
+            }
+        }
+    }
+
+    private void BttonGroup() {
         pergunta1Group = new ButtonGroup();
         pergunta1Group.add(opcaoBtn1);
         pergunta1Group.add(opcaoBtn2);
         pergunta1Group.add(opcaoBtn3);
-        
+
         pergunta2Group = new ButtonGroup();
         pergunta2Group.add(opcaoBtn21);
         pergunta2Group.add(opcaoBtn22);
         pergunta2Group.add(opcaoBtn23);
-        
+
         pergunta3Group = new ButtonGroup();
         pergunta3Group.add(opcaoBtn31);
         pergunta3Group.add(opcaoBtn32);
         pergunta3Group.add(opcaoBtn33);
-        
+
         pergunta4Group = new ButtonGroup();
         pergunta4Group.add(opcaoBtn41);
         pergunta4Group.add(opcaoBtn42);
         pergunta4Group.add(opcaoBtn43);
-        
+
         pergunta5Group = new ButtonGroup();
         pergunta5Group.add(opcaoBtn51);
         pergunta5Group.add(opcaoBtn52);
         pergunta5Group.add(opcaoBtn53);
-        
+
         pergunta6Group = new ButtonGroup();
         pergunta6Group.add(opcaoBtn61);
         pergunta6Group.add(opcaoBtn62);
         pergunta6Group.add(opcaoBtn63);
-        
+
         pergunta7Group = new ButtonGroup();
         pergunta7Group.add(opcaoBtn71);
         pergunta7Group.add(opcaoBtn72);
         pergunta7Group.add(opcaoBtn73);
-        
+
         pergunta8Group = new ButtonGroup();
         pergunta8Group.add(opcaoBtn81);
         pergunta8Group.add(opcaoBtn82);
         pergunta8Group.add(opcaoBtn83);
-        
+
         pergunta9Group = new ButtonGroup();
         pergunta9Group.add(opcaoBtn91);
         pergunta9Group.add(opcaoBtn92);
         pergunta9Group.add(opcaoBtn93);
-        
+
         pergunta10Group = new ButtonGroup();
         pergunta10Group.add(opcaoBtn11);
         pergunta10Group.add(opcaoBtn12);
         pergunta10Group.add(opcaoBtn13);
-        
+
     }
-    
-    private void jop(){
+
+    private void jop() {
         //JOptionPane.showOptionDialog(cadastrarBtn, "", TOOL_TIP_TEXT_KEY, WIDTH, HEIGHT, icon, options, enviarbtn);
     }
 
@@ -603,7 +654,21 @@ public class TelaPerguntas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void clearRadioBtn() {
+        pergunta1Group.clearSelection();
+        pergunta2Group.clearSelection();
+        pergunta3Group.clearSelection();
+        pergunta4Group.clearSelection();
+        pergunta5Group.clearSelection();
+        pergunta6Group.clearSelection();
+        pergunta7Group.clearSelection();
+        pergunta8Group.clearSelection();
+        pergunta9Group.clearSelection();
+        pergunta10Group.clearSelection();
+    }
+
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
+        clearRadioBtn();
         FramePrincipal.trocaPainel("quiz", new TelaQuiz());
     }//GEN-LAST:event_voltarBtnActionPerformed
 
@@ -652,18 +717,18 @@ public class TelaPerguntas extends javax.swing.JPanel {
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
 
     private void enviarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarbtnActionPerformed
-        if((opcaoBtn1.isSelected() || opcaoBtn2.isSelected()|| opcaoBtn3.isSelected()) && 
-                (opcaoBtn21.isSelected() || opcaoBtn22.isSelected()|| opcaoBtn23.isSelected()) &&
-                (opcaoBtn31.isSelected() || opcaoBtn32.isSelected()|| opcaoBtn33.isSelected()) &&
-                (opcaoBtn41.isSelected() || opcaoBtn42.isSelected()|| opcaoBtn43.isSelected()) &&
-                (opcaoBtn51.isSelected() || opcaoBtn52.isSelected()|| opcaoBtn53.isSelected()) &&
-                (opcaoBtn61.isSelected() || opcaoBtn62.isSelected()|| opcaoBtn63.isSelected()) &&
-                (opcaoBtn71.isSelected() || opcaoBtn72.isSelected()|| opcaoBtn73.isSelected()) &&
-                (opcaoBtn81.isSelected() || opcaoBtn82.isSelected()|| opcaoBtn83.isSelected()) &&
-                (opcaoBtn91.isSelected() || opcaoBtn92.isSelected()|| opcaoBtn93.isSelected()) &&
-                (opcaoBtn11.isSelected() || opcaoBtn12.isSelected()|| opcaoBtn13.isSelected())){
+        if ((opcaoBtn1.isSelected() || opcaoBtn2.isSelected() || opcaoBtn3.isSelected())
+                && (opcaoBtn21.isSelected() || opcaoBtn22.isSelected() || opcaoBtn23.isSelected())
+                && (opcaoBtn31.isSelected() || opcaoBtn32.isSelected() || opcaoBtn33.isSelected())
+                && (opcaoBtn41.isSelected() || opcaoBtn42.isSelected() || opcaoBtn43.isSelected())
+                && (opcaoBtn51.isSelected() || opcaoBtn52.isSelected() || opcaoBtn53.isSelected())
+                && (opcaoBtn61.isSelected() || opcaoBtn62.isSelected() || opcaoBtn63.isSelected())
+                && (opcaoBtn71.isSelected() || opcaoBtn72.isSelected() || opcaoBtn73.isSelected())
+                && (opcaoBtn81.isSelected() || opcaoBtn82.isSelected() || opcaoBtn83.isSelected())
+                && (opcaoBtn91.isSelected() || opcaoBtn92.isSelected() || opcaoBtn93.isSelected())
+                && (opcaoBtn11.isSelected() || opcaoBtn12.isSelected() || opcaoBtn13.isSelected())) {
             FramePrincipal.trocaPainel("resultado", new TelaResultado());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
         }
     }//GEN-LAST:event_enviarbtnActionPerformed
