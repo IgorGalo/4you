@@ -4,7 +4,7 @@
  */
 package view;
 
-import dao.Servicos;
+import dao.UsuarioDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Usuario;
@@ -196,7 +196,7 @@ public class TelaEntrar extends javax.swing.JPanel {
         }
         filtro.setSenha(senhaTxt.getText());
 
-        Servicos servicos = new Servicos();
+        UsuarioDAO servicos = new UsuarioDAO();
         Usuario resultado
                 = servicos.consultarPorFiltro(filtro);
 

@@ -4,6 +4,7 @@
  */
 package view;
 
+import control.Analise;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
@@ -239,13 +240,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel1.setText("Pergunta 1:");
 
         opcaoBtn1.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn1.setText("jRadioButton1");
+        opcaoBtn1.setText("1° opção");
 
         opcaoBtn2.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn2.setText("jRadioButton2");
+        opcaoBtn2.setText("2° opção");
 
         opcaoBtn3.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn3.setText("jRadioButton3");
+        opcaoBtn3.setText("Nenhuma");
         opcaoBtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn3ActionPerformed(evt);
@@ -258,13 +259,18 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel2.setText("Pergunta 2:");
 
         opcaoBtn21.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn21.setText("jRadioButton1");
+        opcaoBtn21.setText("1° opção");
 
         opcaoBtn22.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn22.setText("jRadioButton2");
+        opcaoBtn22.setText("2° opção");
+        opcaoBtn22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoBtn22ActionPerformed(evt);
+            }
+        });
 
         opcaoBtn23.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn23.setText("jRadioButton3");
+        opcaoBtn23.setText("Nenhuma");
         opcaoBtn23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn23ActionPerformed(evt);
@@ -272,13 +278,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         });
 
         opcaoBtn41.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn41.setText("jRadioButton1");
+        opcaoBtn41.setText("1° opção");
 
         opcaoBtn42.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn42.setText("jRadioButton2");
+        opcaoBtn42.setText("2° opção");
 
         opcaoBtn43.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn43.setText("jRadioButton3");
+        opcaoBtn43.setText("Nenhuma");
         opcaoBtn43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn43ActionPerformed(evt);
@@ -291,13 +297,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel3.setText("Pergunta 3:");
 
         opcaoBtn31.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn31.setText("jRadioButton1");
+        opcaoBtn31.setText("1° opção");
 
         opcaoBtn32.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn32.setText("jRadioButton2");
+        opcaoBtn32.setText("2° opção");
 
         opcaoBtn33.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn33.setText("jRadioButton3");
+        opcaoBtn33.setText("Nenhuma");
         opcaoBtn33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn33ActionPerformed(evt);
@@ -310,13 +316,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel4.setText("Pergunta 4:");
 
         opcaoBtn61.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn61.setText("jRadioButton1");
+        opcaoBtn61.setText("1° opção");
 
         opcaoBtn62.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn62.setText("jRadioButton2");
+        opcaoBtn62.setText("2° opção");
 
         opcaoBtn63.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn63.setText("jRadioButton3");
+        opcaoBtn63.setText("Nenhuma");
         opcaoBtn63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn63ActionPerformed(evt);
@@ -324,10 +330,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
         });
 
         opcaoBtn81.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn81.setText("jRadioButton1");
+        opcaoBtn81.setText("1° opção");
 
         opcaoBtn82.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn82.setText("jRadioButton2");
+        opcaoBtn82.setText("2° opção");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(233, 68, 190));
@@ -335,7 +341,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel5.setText("Pergunta 5:");
 
         opcaoBtn83.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn83.setText("jRadioButton3");
+        opcaoBtn83.setText("Nenhuma");
         opcaoBtn83.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn83ActionPerformed(evt);
@@ -343,7 +349,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         });
 
         opcaoBtn51.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn51.setText("jRadioButton1");
+        opcaoBtn51.setText("1° opção");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(233, 68, 190));
@@ -351,13 +357,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel6.setText("Pergunta 7:");
 
         opcaoBtn52.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn52.setText("jRadioButton2");
+        opcaoBtn52.setText("2° opção");
 
         opcaoBtn71.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn71.setText("jRadioButton1");
+        opcaoBtn71.setText("1° opção");
 
         opcaoBtn53.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn53.setText("jRadioButton3");
+        opcaoBtn53.setText("Nenhuma");
         opcaoBtn53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn53ActionPerformed(evt);
@@ -365,10 +371,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
         });
 
         opcaoBtn72.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn72.setText("jRadioButton2");
+        opcaoBtn72.setText("2° opção");
 
         opcaoBtn73.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn73.setText("jRadioButton3");
+        opcaoBtn73.setText("Nenhuma");
         opcaoBtn73.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn73ActionPerformed(evt);
@@ -386,10 +392,15 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel8.setText("Pergunta 8:");
 
         opcaoBtn92.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn92.setText("jRadioButton2");
+        opcaoBtn92.setText("2° opção");
+        opcaoBtn92.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoBtn92ActionPerformed(evt);
+            }
+        });
 
         opcaoBtn93.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn93.setText("jRadioButton3");
+        opcaoBtn93.setText("Nenhuma");
         opcaoBtn93.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn93ActionPerformed(evt);
@@ -402,13 +413,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel9.setText("Pergunta 10:");
 
         opcaoBtn11.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn11.setText("jRadioButton1");
+        opcaoBtn11.setText("1° opção");
 
         opcaoBtn12.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn12.setText("jRadioButton2");
+        opcaoBtn12.setText("2° opção");
 
         opcaoBtn13.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn13.setText("jRadioButton3");
+        opcaoBtn13.setText("Nenhuma");
         opcaoBtn13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcaoBtn13ActionPerformed(evt);
@@ -421,7 +432,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jLabel10.setText("Pergunta 9:");
 
         opcaoBtn91.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn91.setText("jRadioButton1");
+        opcaoBtn91.setText("1° opção");
 
         enviarbtn.setBackground(new java.awt.Color(233, 68, 190));
         enviarbtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -441,95 +452,101 @@ public class TelaPerguntas extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn41)
-                                .addGap(30, 30, 30)
-                                .addComponent(opcaoBtn42)
-                                .addGap(50, 50, 50)
-                                .addComponent(opcaoBtn43))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn31)
-                                .addGap(30, 30, 30)
-                                .addComponent(opcaoBtn32)
-                                .addGap(50, 50, 50)
-                                .addComponent(opcaoBtn33)))
-                        .addContainerGap(42, Short.MAX_VALUE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
                         .addComponent(opcaoBtn1)
-                        .addGap(30, 30, 30)
+                        .addGap(42, 42, 42)
                         .addComponent(opcaoBtn2)
-                        .addGap(50, 50, 50)
+                        .addGap(27, 27, 27)
                         .addComponent(opcaoBtn3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(opcaoBtn21)
-                        .addGap(30, 30, 30)
-                        .addComponent(opcaoBtn22)
-                        .addGap(50, 50, 50)
-                        .addComponent(opcaoBtn23)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(80, 80, 80)
+                        .addComponent(opcaoBtn41)
+                        .addGap(37, 37, 37)
+                        .addComponent(opcaoBtn42)
+                        .addGap(34, 34, 34)
+                        .addComponent(opcaoBtn43)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(opcaoBtn11)
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(opcaoBtn12)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(opcaoBtn13))
+                                    .addComponent(enviarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(opcaoBtn21)
+                                        .addGap(39, 39, 39)
+                                        .addComponent(opcaoBtn22)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(opcaoBtn23))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(opcaoBtn31)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(opcaoBtn32)
+                                        .addGap(31, 31, 31)
+                                        .addComponent(opcaoBtn33))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(81, 81, 81)
                                 .addComponent(opcaoBtn51)
-                                .addGap(30, 30, 30)
+                                .addGap(37, 37, 37)
                                 .addComponent(opcaoBtn52)
-                                .addGap(50, 50, 50)
+                                .addGap(34, 34, 34)
                                 .addComponent(opcaoBtn53))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn81)
-                                .addGap(30, 30, 30)
-                                .addComponent(opcaoBtn82)
-                                .addGap(50, 50, 50)
-                                .addComponent(opcaoBtn83))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn71)
-                                .addGap(30, 30, 30)
-                                .addComponent(opcaoBtn72)
-                                .addGap(50, 50, 50)
-                                .addComponent(opcaoBtn73))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
                                 .addComponent(opcaoBtn61)
-                                .addGap(30, 30, 30)
+                                .addGap(40, 40, 40)
                                 .addComponent(opcaoBtn62)
-                                .addGap(50, 50, 50)
+                                .addGap(35, 35, 35)
                                 .addComponent(opcaoBtn63))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn91)
-                                .addGap(30, 30, 30)
-                                .addComponent(opcaoBtn92)
-                                .addGap(50, 50, 50)
-                                .addComponent(opcaoBtn93))
+                                .addGap(79, 79, 79)
+                                .addComponent(opcaoBtn71)
+                                .addGap(39, 39, 39)
+                                .addComponent(opcaoBtn72)
+                                .addGap(34, 34, 34)
+                                .addComponent(opcaoBtn73))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn11)
-                                .addGap(30, 30, 30)
-                                .addComponent(opcaoBtn12)
-                                .addGap(50, 50, 50)
-                                .addComponent(opcaoBtn13))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addComponent(enviarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(77, 77, 77)
+                                .addComponent(opcaoBtn81)
+                                .addGap(34, 34, 34)
+                                .addComponent(opcaoBtn82)
+                                .addGap(40, 40, 40)
+                                .addComponent(opcaoBtn83)))
+                        .addGap(0, 95, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(opcaoBtn91)
+                .addGap(37, 37, 37)
+                .addComponent(opcaoBtn92)
+                .addGap(34, 34, 34)
+                .addComponent(opcaoBtn93)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,10 +582,11 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn51)
-                    .addComponent(opcaoBtn52)
-                    .addComponent(opcaoBtn53))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(opcaoBtn51)
+                        .addComponent(opcaoBtn52))
+                    .addComponent(opcaoBtn53, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -579,24 +597,27 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(opcaoBtn71)
-                    .addComponent(opcaoBtn72)
-                    .addComponent(opcaoBtn73))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(opcaoBtn73)
+                        .addComponent(opcaoBtn72)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn81)
-                    .addComponent(opcaoBtn82)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(opcaoBtn81)
+                        .addComponent(opcaoBtn82))
                     .addComponent(opcaoBtn83))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn91)
-                    .addComponent(opcaoBtn92)
-                    .addComponent(opcaoBtn93))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(opcaoBtn91)
+                        .addComponent(opcaoBtn92))
+                    .addComponent(opcaoBtn93, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -604,7 +625,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                     .addComponent(opcaoBtn11)
                     .addComponent(opcaoBtn12)
                     .addComponent(opcaoBtn13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(enviarbtn)
                 .addGap(14, 14, 14))
         );
@@ -635,7 +656,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                     .addComponent(perfilLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -648,9 +669,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 918, Short.MAX_VALUE)
+            .addGap(0, 937, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -672,33 +693,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("quiz", new TelaQuiz());
     }//GEN-LAST:event_voltarBtnActionPerformed
 
-    private void opcaoBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn3ActionPerformed
-
-    private void opcaoBtn23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn23ActionPerformed
-
-    private void opcaoBtn43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn43ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn43ActionPerformed
-
-    private void opcaoBtn33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn33ActionPerformed
-
-    private void opcaoBtn63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn63ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn63ActionPerformed
-
     private void opcaoBtn83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn83ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_opcaoBtn83ActionPerformed
-
-    private void opcaoBtn53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn53ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn53ActionPerformed
 
     private void opcaoBtn73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn73ActionPerformed
         // TODO add your handling code here:
@@ -717,21 +714,63 @@ public class TelaPerguntas extends javax.swing.JPanel {
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
 
     private void enviarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarbtnActionPerformed
-        if ((opcaoBtn1.isSelected() || opcaoBtn2.isSelected() || opcaoBtn3.isSelected())
-                && (opcaoBtn21.isSelected() || opcaoBtn22.isSelected() || opcaoBtn23.isSelected())
-                && (opcaoBtn31.isSelected() || opcaoBtn32.isSelected() || opcaoBtn33.isSelected())
-                && (opcaoBtn41.isSelected() || opcaoBtn42.isSelected() || opcaoBtn43.isSelected())
-                && (opcaoBtn51.isSelected() || opcaoBtn52.isSelected() || opcaoBtn53.isSelected())
-                && (opcaoBtn61.isSelected() || opcaoBtn62.isSelected() || opcaoBtn63.isSelected())
-                && (opcaoBtn71.isSelected() || opcaoBtn72.isSelected() || opcaoBtn73.isSelected())
-                && (opcaoBtn81.isSelected() || opcaoBtn82.isSelected() || opcaoBtn83.isSelected())
-                && (opcaoBtn91.isSelected() || opcaoBtn92.isSelected() || opcaoBtn93.isSelected())
-                && (opcaoBtn11.isSelected() || opcaoBtn12.isSelected() || opcaoBtn13.isSelected())) {
-            FramePrincipal.trocaPainel("resultado", new TelaResultado());
-        } else {
-            JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
-        }
+//        if ((opcaoBtn1.isSelected() || opcaoBtn2.isSelected() || opcaoBtn3.isSelected())
+//                && (opcaoBtn21.isSelected() || opcaoBtn22.isSelected() || opcaoBtn23.isSelected())
+//                && (opcaoBtn31.isSelected() || opcaoBtn32.isSelected() || opcaoBtn33.isSelected())
+//                && (opcaoBtn41.isSelected() || opcaoBtn42.isSelected() || opcaoBtn43.isSelected())
+//                && (opcaoBtn51.isSelected() || opcaoBtn52.isSelected() || opcaoBtn53.isSelected())
+//                && (opcaoBtn61.isSelected() || opcaoBtn62.isSelected() || opcaoBtn63.isSelected())
+//                && (opcaoBtn71.isSelected() || opcaoBtn72.isSelected() || opcaoBtn73.isSelected())
+//                && (opcaoBtn81.isSelected() || opcaoBtn82.isSelected() || opcaoBtn83.isSelected())
+//                && (opcaoBtn91.isSelected() || opcaoBtn92.isSelected() || opcaoBtn93.isSelected())
+//                && (opcaoBtn11.isSelected() || opcaoBtn12.isSelected() || opcaoBtn13.isSelected())) {
+            Analise analise = new Analise();
+            
+            analise.calculaResultado(pergunta1Group.getSelection(),pergunta2Group.getSelection(),
+                    pergunta3Group.getSelection(),pergunta4Group.getSelection(),
+                    pergunta5Group.getSelection(),pergunta6Group.getSelection(),
+                    pergunta7Group.getSelection(),pergunta8Group.getSelection(),
+                    pergunta9Group.getSelection(),pergunta10Group.getSelection());
+            
+            //FramePrincipal.trocaPainel("resultado", new TelaResultado());
+//        } else {
+//            JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
+//        }
+        
+        
     }//GEN-LAST:event_enviarbtnActionPerformed
+
+    private void opcaoBtn63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn63ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn63ActionPerformed
+
+    private void opcaoBtn53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn53ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn53ActionPerformed
+
+    private void opcaoBtn43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn43ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn43ActionPerformed
+
+    private void opcaoBtn33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn33ActionPerformed
+
+    private void opcaoBtn23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn23ActionPerformed
+
+    private void opcaoBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn3ActionPerformed
+
+    private void opcaoBtn22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn22ActionPerformed
+
+    private void opcaoBtn92ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn92ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcaoBtn92ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

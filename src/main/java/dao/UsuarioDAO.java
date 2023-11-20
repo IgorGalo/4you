@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Usuario;
 
-public class Servicos {
+public class UsuarioDAO {
 
     public boolean cadastrarUsuario(Usuario dados) {
 
@@ -73,7 +73,7 @@ public class Servicos {
             }
             return retorno;
         } catch (SQLException ex) {
-            Logger.getLogger(Servicos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage() + "Erro: ");
             return null;
         }

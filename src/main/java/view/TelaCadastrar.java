@@ -4,7 +4,7 @@
  */
 package view;
 
-import dao.Servicos;
+import dao.UsuarioDAO;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -270,7 +270,7 @@ public class TelaCadastrar extends javax.swing.JPanel {
             dados.setNomeUsuario(NomeUsurioTxt.getText());
             dados.setEmail(EmaiTxt.getText());
             dados.setSenha(SenhaTxt.getText());
-            Servicos sa = new Servicos();
+            UsuarioDAO sa = new UsuarioDAO();
             boolean cadastrou = sa.cadastrarUsuario(dados);
             if (!cadastrou) {
                 JOptionPane.showMessageDialog(this, "Não foi possível cadastrar o usuário");
