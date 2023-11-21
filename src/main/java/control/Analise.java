@@ -96,57 +96,121 @@ public class Analise {
 
                 break;
             case 2:
+                
+                break;
+        }
+        
+        switch (opcao2) {
+            case 3:
+                
+                break;
+            case 4:
+
+                break;
+            case 5:
 
                 break;
         }
         
-        switch (opcao1) {
-            case 0:
+        switch (opcao3) {
+            case 6:
                 
                 break;
-            case 1:
+            case 7:
 
                 break;
-            case 2:
+            case 8:
 
                 break;
         }
         
-        switch (opcao1) {
-            case 0:
+        switch (opcao4) {
+            case 9:
                 
                 break;
-            case 1:
+            case 10:
 
                 break;
-            case 2:
+            case 11:
 
                 break;
         }
         
-        switch (opcao1) {
-            case 0:
+        switch (opcao5) {
+            case 12:
                 
                 break;
-            case 1:
+            case 13:
 
                 break;
-            case 2:
+            case 14:
 
                 break;
         }
         
-        switch (opcao1) {
-            case 0:
+        switch (opcao6) {
+            case 15:
                 
                 break;
-            case 1:
+            case 16:
 
                 break;
-            case 2:
+            case 17:
 
                 break;
         }
+        
+        switch (opcao7) {
+            case 18:
+                
+                break;
+            case 19:
+
+                break;
+            case 20:
+
+                break;
+        }
+        
+        switch (opcao8) {
+            case 21:
+                
+                break;
+            case 22:
+
+                break;
+            case 23:
+
+                break;
+        }
+        
+        switch (opcao9) {
+            case 24:
+                
+                break;
+            case 25:
+
+                break;
+            case 26:
+
+                break;
+        }
+        
+        switch (opcao10) {
+            case 27:
+                
+                break;
+            case 28:
+
+                break;
+            case 29:
+
+                break;
+        }
+        
+        
+        
+        
 
         FramePrincipal.trocaPainel("resultado", new TelaResultado());
 
