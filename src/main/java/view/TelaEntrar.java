@@ -15,9 +15,8 @@ import model.Usuario;
  */
 public class TelaEntrar extends javax.swing.JPanel {
 
-    /**
-     * Creates new form entrar
-     */
+    String nomeuser;
+
     public TelaEntrar() {
         initComponents();
 
@@ -188,17 +187,18 @@ public class TelaEntrar extends javax.swing.JPanel {
 
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
         Usuario filtro = new Usuario();
-
         if (Nometxt.getText().contains("@")) {
             filtro.setEmail(Nometxt.getText());
         } else {
-            filtro.setNomeUsuario(Nometxt.getText());
+            filtro.setNomeUsuario(Nometxt.getText().trim());
+            filtro.getNomeUsuario();
+            this.nomeuser = Nometxt.getText().trim();
+            System.out.println(nomeuser);
         }
         filtro.setSenha(senhaTxt.getText());
 
         UsuarioDAO servicos = new UsuarioDAO();
-        Usuario resultado
-                = servicos.consultarPorFiltro(filtro);
+        Usuario resultado = servicos.consultarPorFiltro(filtro);
 
         if (resultado != null) {
             FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
@@ -206,6 +206,10 @@ public class TelaEntrar extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "USUÁRIO OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+
+    public String getNomeuser() {
+        return nomeuser;
     }//GEN-LAST:event_entrarBtnActionPerformed
 
 

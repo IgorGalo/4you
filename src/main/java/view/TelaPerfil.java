@@ -4,9 +4,14 @@
  */
 package view;
 
+import dao.UsuarioDAO;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,7 +19,9 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import model.Imagem;
 
 /**
  *
@@ -29,6 +36,7 @@ public class TelaPerfil extends javax.swing.JPanel {
         initComponents();
         Icon imagemPerfilInicio = new ImageIcon("src\\main\\java\\image\\7725022-perfil-icone-ui-icon-vet.png");
         labelperfil.setIcon(imagemPerfilInicio);
+        adicionarImagemDoBanco();
     }
 
     /**
@@ -211,25 +219,85 @@ public class TelaPerfil extends javax.swing.JPanel {
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtn1ActionPerformed
+    private void adicionarImagemDoBanco() {
+        UsuarioDAO servicos = new UsuarioDAO();
+        Imagem imagemBanco = servicos.consultarImagem();
+
+        if (imagemBanco != null) {
+            ByteArrayInputStream bais = new ByteArrayInputStream(imagemBanco.getImg());
+            try {
+                BufferedImage img = ImageIO.read(bais);
+                ImageIcon imgConvertida = new ImageIcon(img.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+
+                //labelperfil.setIcon(new ImageIcon(imgConvertida));
+                labelperfil.setIcon(imgConvertida);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+    }
+
+    private byte[] converterImagemParaByte(File file) throws FileNotFoundException {
+        FileInputStream fis = new FileInputStream(file);
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        try {
+            for (int readNum; (readNum = fis.read(buf)) != -1;) {
+                bos.write(buf, 0, readNum);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        byte[] bytes = bos.toByteArray();
+
+        return bytes;
+    }
+
+    public void cadastrarImagem(UsuarioDAO sa, Imagem imgembyte, String endereco, File arquivo) {
+
+        sa.cadastrarImagem(imgembyte, endereco);
+
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(arquivo);
+            Image imgFinal = img.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+            labelperfil.setIcon(new ImageIcon(imgFinal));
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPerfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private void editarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPerfilBtnActionPerformed
         JFileChooser janelaArquivo = new JFileChooser();
-        //janelaArquivo.setFileFilter(new FileNameExtensionFilter("JPEG"));
+        TelaEntrar user = new TelaEntrar();
 
         int operacao = janelaArquivo.showSaveDialog(janelaArquivo);
 
         if (operacao == JFileChooser.APPROVE_OPTION) {
-            File arquivo = janelaArquivo.getSelectedFile();
-            String endereco = arquivo.getPath();
-            System.out.println(endereco);
-
-            BufferedImage img = null;
             try {
-                //img = ImageIO.read(new File(endereco));
-                img = ImageIO.read(arquivo);
-                Image imgFinal = img.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-                labelperfil.setIcon(new ImageIcon(imgFinal));
-            } catch (IOException ex) {
+
+                //LIMITAR A ALGUNS DIRETÓRIOS PNJ JPEG JPG
+                File arquivo = janelaArquivo.getSelectedFile();
+                String endereco = arquivo.getPath();
+                System.out.println(endereco);
+
+                byte[] byteImage = converterImagemParaByte(new File(endereco));
+
+                Imagem imgembyte = new Imagem(byteImage);
+
+                UsuarioDAO sa = new UsuarioDAO();
+                Imagem retorno = sa.consultarImagem();
+                if (retorno == null) {
+                    cadastrarImagem(sa, imgembyte, endereco, arquivo);
+                } else {
+                    sa.deletaImagem();
+                    cadastrarImagem(sa, imgembyte, endereco, arquivo);
+
+                }
+
+            } catch (FileNotFoundException ex) {
                 Logger.getLogger(TelaPerfil.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
