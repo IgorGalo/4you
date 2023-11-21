@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import java.awt.BorderLayout;
@@ -19,13 +15,8 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     public FramePrincipal() {
         initComponents();
-
         configuraTrocaPaineis();
-        
-        //this.setLocationRelativeTo(null);
-
         trocaPainel("escolha", new TelaEscolha());
-
     }
 
     private void configuraTrocaPaineis() {

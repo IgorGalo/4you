@@ -1,6 +1,7 @@
 package control;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Vector;
 import javax.swing.ButtonModel;
 import javax.swing.JRadioButton;
@@ -10,71 +11,61 @@ import view.TelaResultado;
 public class Analise {
 
     public void calculaResultado(ButtonModel p1, ButtonModel p2, ButtonModel p3, ButtonModel p4,
-            ButtonModel p5, ButtonModel p6, ButtonModel p7, ButtonModel p8, ButtonModel p9, ButtonModel p10, ArrayList<JRadioButton> todosRadioBtn) {
+            ButtonModel p5, ButtonModel p6, ButtonModel p7, ButtonModel p8, ButtonModel p9, ButtonModel p10, ArrayList<JRadioButton> todosRadioBtn, int escolha) {
 
-        int opcao1 = 0, opcao2 = 0, opcao3 = 0, opcao4 = 0, opcao5 = 0, opcao6 = 0, opcao7 = 0, opcao8 = 0, opcao9 = 0, opcao10 = 0;
+        int perg1 = 0, perg2 = 0, perg3 = 0, perg4 = 0, perg5 = 0, perg6 = 0, perg7 = 0, perg8 = 0, perg9 = 0, perg10 = 0;
 
-        Vector<Integer> opcoes = new Vector<>();
+        Vector<String> opcoes = new Vector<>();
 
         for (int i = 0; i < todosRadioBtn.size(); i++) {
             if (todosRadioBtn.get(i).getModel() == p1) {
                 System.out.println(i);
-                opcao1 = i;
-                opcoes.add(i);
+                perg1 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p2) {
                 System.out.println(i);
-                opcao2 = i;
-                opcoes.add(i);
+                perg2 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p3) {
                 System.out.println(i);
-                opcao3 = i;
-                opcoes.add(i);
+                perg3 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p4) {
                 System.out.println(i);
-                opcao4 = i;
-                opcoes.add(i);
+                perg4 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p5) {
                 System.out.println(i);
-                opcao5 = i;
-                opcoes.add(i);
+                perg5 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p6) {
                 System.out.println(i);
-                opcao6 = i;
-                opcoes.add(i);
+                perg6 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p7) {
                 System.out.println(i);
-                opcao7 = i;
-                opcoes.add(i);
+                perg7 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p8) {
                 System.out.println(i);
-                opcao8 = i;
-                opcoes.add(i);
+                perg8 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p9) {
                 System.out.println(i);
-                opcao9 = i;
-                opcoes.add(i);
+                perg9 = i;
             }
 
             if (todosRadioBtn.get(i).getModel() == p10) {
                 System.out.println(i);
-                opcao10 = i;
-                opcoes.add(i);
+                perg10 = i;
             }
         }
 //        for (int i = 0; i < opcoes.size(); i++) {
@@ -88,21 +79,39 @@ public class Analise {
 //            }
 //        }
 
-        switch (opcao1) {
+        switch (perg1) {
             case 0:
-                
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("terror");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+
+                        break;
+                }
                 break;
             case 1:
 
                 break;
             case 2:
-                
+
                 break;
         }
-        
-        switch (opcao2) {
+
+        switch (perg2) {
             case 3:
-                
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("romance");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+
+                        break;
+                }
                 break;
             case 4:
 
@@ -111,10 +120,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao3) {
+
+        switch (perg3) {
             case 6:
-                
+
                 break;
             case 7:
 
@@ -123,10 +132,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao4) {
+
+        switch (perg4) {
             case 9:
-                
+
                 break;
             case 10:
 
@@ -135,10 +144,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao5) {
+
+        switch (perg5) {
             case 12:
-                
+
                 break;
             case 13:
 
@@ -147,10 +156,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao6) {
+
+        switch (perg6) {
             case 15:
-                
+
                 break;
             case 16:
 
@@ -159,10 +168,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao7) {
+
+        switch (perg7) {
             case 18:
-                
+
                 break;
             case 19:
 
@@ -171,10 +180,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao8) {
+
+        switch (perg8) {
             case 21:
-                
+
                 break;
             case 22:
 
@@ -183,10 +192,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao9) {
+
+        switch (perg9) {
             case 24:
-                
+
                 break;
             case 25:
 
@@ -195,10 +204,10 @@ public class Analise {
 
                 break;
         }
-        
-        switch (opcao10) {
+
+        switch (perg10) {
             case 27:
-                
+
                 break;
             case 28:
 
@@ -207,10 +216,13 @@ public class Analise {
 
                 break;
         }
-        
-        
-        
-        
+
+        if (opcoes.size() > 3) {
+
+            Collections.shuffle(opcoes);
+
+            String pesquisa = opcoes.get(0);
+        }
 
         FramePrincipal.trocaPainel("resultado", new TelaResultado());
 
