@@ -730,7 +730,8 @@ public class TelaPerguntas extends javax.swing.JPanel {
                     pergunta3Group.getSelection(),pergunta4Group.getSelection(),
                     pergunta5Group.getSelection(),pergunta6Group.getSelection(),
                     pergunta7Group.getSelection(),pergunta8Group.getSelection(),
-                    pergunta9Group.getSelection(),pergunta10Group.getSelection());
+                    pergunta9Group.getSelection(),pergunta10Group.getSelection(), todosRadioBtn);
+            clearRadioBtn();
             
             //FramePrincipal.trocaPainel("resultado", new TelaResultado());
 //        } else {
