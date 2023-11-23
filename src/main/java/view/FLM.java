@@ -54,27 +54,30 @@ public class FLM extends javax.swing.JPanel {
             }
         });
 
-        filmeBtn.setBackground(new java.awt.Color(233, 68, 190));
-        filmeBtn.setForeground(new java.awt.Color(255, 255, 255));
-        filmeBtn.setText("FILME");
+        filmeBtn.setBackground(new java.awt.Color(83, 41, 71));
+        filmeBtn.setForeground(new java.awt.Color(233, 68, 190));
+        filmeBtn.setText("FILME 🎥");
+        filmeBtn.setBorder(null);
         filmeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filmeBtnActionPerformed(evt);
             }
         });
 
-        livroBtn.setBackground(new java.awt.Color(233, 68, 190));
-        livroBtn.setForeground(new java.awt.Color(255, 255, 255));
-        livroBtn.setText("LIVRO");
+        livroBtn.setBackground(new java.awt.Color(83, 41, 71));
+        livroBtn.setForeground(new java.awt.Color(233, 68, 190));
+        livroBtn.setText("LIVRO 📖");
+        livroBtn.setBorder(null);
         livroBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 livroBtnActionPerformed(evt);
             }
         });
 
-        musicaBtn.setBackground(new java.awt.Color(233, 68, 190));
-        musicaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        musicaBtn.setText("MÚSICA");
+        musicaBtn.setBackground(new java.awt.Color(83, 41, 71));
+        musicaBtn.setForeground(new java.awt.Color(233, 68, 190));
+        musicaBtn.setText("MÚSICA ♫");
+        musicaBtn.setBorder(null);
         musicaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 musicaBtnActionPerformed(evt);
@@ -89,36 +92,36 @@ public class FLM extends javax.swing.JPanel {
                 .addComponent(voltarBtn)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(327, 327, 327)
-                .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(filmeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(livroBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(musicaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(82, 82, 82))
+                        .addGap(327, 327, 327)
+                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(livroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(filmeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(musicaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(117, 117, 117)))))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(perfilLabel)
-                .addGap(59, 59, 59)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39)
-                .addComponent(filmeBtn)
                 .addGap(40, 40, 40)
-                .addComponent(livroBtn)
-                .addGap(45, 45, 45)
-                .addComponent(musicaBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(filmeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(livroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(musicaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(voltarBtn))
         );
 

@@ -1,10 +1,16 @@
 package control;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonModel;
 import javax.swing.JRadioButton;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
+import org.jsoup.nodes.Document;
 import view.FramePrincipal;
 import view.TelaResultado;
 
@@ -123,7 +129,16 @@ public class Analise {
 
         switch (perg3) {
             case 6:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("drama");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 7:
 
@@ -135,7 +150,16 @@ public class Analise {
 
         switch (perg4) {
             case 9:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("musical");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 10:
 
@@ -147,7 +171,16 @@ public class Analise {
 
         switch (perg5) {
             case 12:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("ficção científica");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 13:
 
@@ -159,7 +192,16 @@ public class Analise {
 
         switch (perg6) {
             case 15:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("documentário");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 16:
 
@@ -171,7 +213,16 @@ public class Analise {
 
         switch (perg7) {
             case 18:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("comédia");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 19:
 
@@ -183,7 +234,16 @@ public class Analise {
 
         switch (perg8) {
             case 21:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("aventura");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 22:
 
@@ -195,7 +255,16 @@ public class Analise {
 
         switch (perg9) {
             case 24:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("ação");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 25:
 
@@ -207,7 +276,16 @@ public class Analise {
 
         switch (perg10) {
             case 27:
+                switch (escolha) {
+                    case 1:
+                        opcoes.add("mistério");
+                        break;
+                    case 2:
+                        break;
+                    case 3:
 
+                        break;
+                }
                 break;
             case 28:
 
@@ -221,10 +299,51 @@ public class Analise {
 
             Collections.shuffle(opcoes);
 
-            String pesquisa = opcoes.get(0);
         }
 
-        FramePrincipal.trocaPainel("resultado", new TelaResultado());
+        String pesquisa = opcoes.get(0) + " + " + opcoes.get(1) + " + " + opcoes.get(2);
+
+        System.out.println(opcoes + " " + pesquisa);
+
+        ArrayList<String> resultado = new ArrayList<>();
+
+        switch (escolha) {
+            case 1:
+                //fazPesquisaFilme(pesquisa);
+                break;
+            default:
+                throw new AssertionError();
+        }
+
+        FramePrincipal.trocaPainel("resultado", new TelaResultado(resultado));
 
     }
+
+    private void fazPesquisaFilme(String pesquisa) {
+
+        try {
+            ArrayList<String> resultado = new ArrayList<>();
+            Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+" + pesquisa + "&rlz=1C1GCEU_pt-BRBR1051BR1051&oq=filmes" + pesquisa + "&gs_lcrp=EgZjaHJvbWUyCwgAEEUYJxg5GIoFMgYIARBFGEAyBwgCEAAYgAQyBwgDEAAYgAQyCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhge0gEJNTAzMGowajE1qAIAsAIA&sourceid=chrome&ie=UTF-8"
+                    + "").get();
+            int w = 2, z = 10;
+            for (int i = 1; i < 10; i = i + 2) {
+                try {
+                    String y = doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1];
+                } catch (Exception ERRO) {
+                    w = 1;
+                    z = 5;
+                }
+
+            }
+            for (int i = 1; i <= z; i = i + w) {
+                System.out.println(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
+                resultado.add(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
+            }   
+            //return resultado;
+        } catch (IOException ex) {
+            Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 }

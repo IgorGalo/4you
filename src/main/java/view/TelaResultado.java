@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 0068948
@@ -13,7 +15,7 @@ public class TelaResultado extends javax.swing.JPanel {
     /**
      * Creates new form TelaResultado
      */
-    public TelaResultado() {
+    public TelaResultado(ArrayList<String> resultado) {
         initComponents();
     }
 
