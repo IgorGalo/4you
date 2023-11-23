@@ -415,6 +415,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         ptxt1.setBackground(new java.awt.Color(83, 41, 71));
         ptxt1.setColumns(20);
         ptxt1.setForeground(new java.awt.Color(233, 68, 190));
+        ptxt1.setLineWrap(true);
         ptxt1.setRows(5);
         jScrollPane1.setViewportView(ptxt1);
 
@@ -567,27 +568,28 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         .addComponent(enviarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(94, Short.MAX_VALUE))
             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
             .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(opcaoBtn1)
@@ -739,9 +741,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private void setText() {
         switch (this.escolha) {
             case 1:
-                ptxt1.setText("Você prefere explorar \n"
+                ptxt1.setText("Você prefere explorar "
                         + "narrativas que despertam uma sensação de medo e suspense "
-                        + "\nou aquelas que proporcionam uma atmosfera mais leve e descontraída?");
+                        + "ou aquelas que proporcionam uma atmosfera mais leve e descontraída?");
                 ptxt2.setText("Você prefere se envolver mais nas histórias das relações "
                         + "\nhumanas, com personagens enfrentando os desafios emocionais, "
                         + "\nou você prefere tramas que se concentram em outras inâmicas e aspectos da vida?");

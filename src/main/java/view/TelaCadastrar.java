@@ -5,10 +5,13 @@
 package view;
 
 import dao.UsuarioDAO;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.Imagem;
 import model.Usuario;
 
 /**
@@ -259,25 +262,38 @@ public class TelaCadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_NomeCompletoTxtActionPerformed
 
     private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
-        if (NomeCompletoTxt.getText().equalsIgnoreCase("") || NomeUsurioTxt.getText().equalsIgnoreCase("")
-                || SenhaTxt.getText().equalsIgnoreCase("") || EmaiTxt.getText().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
-        } else {
-            // TODO add your handling code here:
-
-            Usuario dados = new Usuario();
-            dados.setNomeCompleto(NomeCompletoTxt.getText());
-            dados.setNomeUsuario(NomeUsurioTxt.getText());
-            dados.setEmail(EmaiTxt.getText());
-            dados.setSenha(SenhaTxt.getText());
-            UsuarioDAO sa = new UsuarioDAO();
-            boolean cadastrou = sa.cadastrarUsuario(dados);
-            if (!cadastrou) {
-                JOptionPane.showMessageDialog(this, "Não foi possível cadastrar o usuário");
+//        try {
+            if (NomeCompletoTxt.getText().equalsIgnoreCase("") || NomeUsurioTxt.getText().equalsIgnoreCase("")
+                    || SenhaTxt.getText().equalsIgnoreCase("") || EmaiTxt.getText().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
             } else {
-                FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
+                // TODO add your handling code here:
+                
+                Usuario dados = new Usuario();
+                dados.setNomeCompleto(NomeCompletoTxt.getText());
+                dados.setNomeUsuario(NomeUsurioTxt.getText());
+                dados.setEmail(EmaiTxt.getText());
+                dados.setSenha(SenhaTxt.getText());
+                UsuarioDAO sa = new UsuarioDAO();
+                boolean cadastrou = sa.cadastrarUsuario(dados);
+                if (!cadastrou) {
+                    JOptionPane.showMessageDialog(this, "Não foi possível cadastrar o usuário");
+                } else {
+                    FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
+                }
             }
-        }
+            
+//            UsuarioDAO foto = new UsuarioDAO();
+//            
+//            TelaPerfil telaPerfil = new TelaPerfil();
+//            
+//            byte[] byteImagemPadrao = telaPerfil.converterImagemParaByte(new File("src\\main\\resources\\perfil.png"));
+//            Imagem imagemPadrao = new Imagem(byteImagemPadrao);
+//            
+//            foto.cadastrarImagem(imagemPadrao, "src\\main\\resources\\perfil.png");
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(TelaCadastrar.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
 

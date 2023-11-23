@@ -110,7 +110,7 @@ public class Analise {
             case 3:
                 switch (escolha) {
                     case 1:
-                        opcoes.add("romance");
+                        opcoes.add("amor");
                         break;
                     case 2:
                         break;
@@ -173,7 +173,7 @@ public class Analise {
             case 12:
                 switch (escolha) {
                     case 1:
-                        opcoes.add("ficção científica");
+                        opcoes.add("ficçãocientífica");
                         break;
                     case 2:
                         break;
@@ -301,7 +301,7 @@ public class Analise {
 
         }
 
-        String pesquisa = opcoes.get(0) + " + " + opcoes.get(1) + " + " + opcoes.get(2);
+        String pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
 
         System.out.println(opcoes + " " + pesquisa);
 
@@ -309,7 +309,7 @@ public class Analise {
 
         switch (escolha) {
             case 1:
-                //fazPesquisaFilme(pesquisa);
+                fazPesquisaFilme(pesquisa);
                 break;
             default:
                 throw new AssertionError();
@@ -323,7 +323,7 @@ public class Analise {
 
         try {
             ArrayList<String> resultado = new ArrayList<>();
-            Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+" + pesquisa + "&rlz=1C1GCEU_pt-BRBR1051BR1051&oq=filmes" + pesquisa + "&gs_lcrp=EgZjaHJvbWUyCwgAEEUYJxg5GIoFMgYIARBFGEAyBwgCEAAYgAQyBwgDEAAYgAQyCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhge0gEJNTAzMGowajE1qAIAsAIA&sourceid=chrome&ie=UTF-8"
+            Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+" + pesquisa + "&rlz=1C1GCEU_pt-BRBR1051BR1051&oq=filmes" + pesquisa + "&sourceid=chrome&ie=UTF-8"
                     + "").get();
             int w = 2, z = 10;
             for (int i = 1; i < 10; i = i + 2) {
@@ -342,6 +342,7 @@ public class Analise {
             //return resultado;
         } catch (IOException ex) {
             Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
 
     }

@@ -29,12 +29,9 @@ import model.Imagem;
  */
 public class TelaPerfil extends javax.swing.JPanel {
 
-    /**
-     * Creates new form TelaPerfil
-     */
     public TelaPerfil() {
         initComponents();
-        Icon imagemPerfilInicio = new ImageIcon("src\\main\\java\\image\\7725022-perfil-icone-ui-icon-vet.png");
+        Icon imagemPerfilInicio = new ImageIcon("src\\main\\resources\\perfil.png");
         labelperfil.setIcon(imagemPerfilInicio);
         adicionarImagemDoBanco();
     }
@@ -239,7 +236,7 @@ public class TelaPerfil extends javax.swing.JPanel {
 
     }
 
-    private byte[] converterImagemParaByte(File file) throws FileNotFoundException {
+    public byte[] converterImagemParaByte(File file) throws FileNotFoundException {
         FileInputStream fis = new FileInputStream(file);
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
