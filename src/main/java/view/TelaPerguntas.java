@@ -22,11 +22,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private ButtonGroup pergunta3Group;
     private ButtonGroup pergunta4Group;
     private ButtonGroup pergunta5Group;
-    private ButtonGroup pergunta6Group;
-    private ButtonGroup pergunta7Group;
-    private ButtonGroup pergunta8Group;
-    private ButtonGroup pergunta9Group;
-    private ButtonGroup pergunta10Group;
     private ArrayList<JRadioButton> todosRadioBtn;
     private ArrayList<ArrayList<JRadioButton>> arrayBtn;
     private int escolha;
@@ -60,21 +55,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         todosRadioBtn.add(opcaoBtn51);
         todosRadioBtn.add(opcaoBtn52);
         todosRadioBtn.add(opcaoBtn53);
-        todosRadioBtn.add(opcaoBtn61);
-        todosRadioBtn.add(opcaoBtn62);
-        todosRadioBtn.add(opcaoBtn63);
-        todosRadioBtn.add(opcaoBtn71);
-        todosRadioBtn.add(opcaoBtn72);
-        todosRadioBtn.add(opcaoBtn73);
-        todosRadioBtn.add(opcaoBtn81);
-        todosRadioBtn.add(opcaoBtn82);
-        todosRadioBtn.add(opcaoBtn83);
-        todosRadioBtn.add(opcaoBtn91);
-        todosRadioBtn.add(opcaoBtn92);
-        todosRadioBtn.add(opcaoBtn93);
-        todosRadioBtn.add(opcaoBtn11);
-        todosRadioBtn.add(opcaoBtn12);
-        todosRadioBtn.add(opcaoBtn13);
 
         int cont = 0;
         for (int i = 0; i < arrayBtn.size(); i++) {
@@ -110,32 +90,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         pergunta5Group.add(opcaoBtn51);
         pergunta5Group.add(opcaoBtn52);
         pergunta5Group.add(opcaoBtn53);
-
-        pergunta6Group = new ButtonGroup();
-        pergunta6Group.add(opcaoBtn61);
-        pergunta6Group.add(opcaoBtn62);
-        pergunta6Group.add(opcaoBtn63);
-
-        pergunta7Group = new ButtonGroup();
-        pergunta7Group.add(opcaoBtn71);
-        pergunta7Group.add(opcaoBtn72);
-        pergunta7Group.add(opcaoBtn73);
-
-        pergunta8Group = new ButtonGroup();
-        pergunta8Group.add(opcaoBtn81);
-        pergunta8Group.add(opcaoBtn82);
-        pergunta8Group.add(opcaoBtn83);
-
-        pergunta9Group = new ButtonGroup();
-        pergunta9Group.add(opcaoBtn91);
-        pergunta9Group.add(opcaoBtn92);
-        pergunta9Group.add(opcaoBtn93);
-
-        pergunta10Group = new ButtonGroup();
-        pergunta10Group.add(opcaoBtn11);
-        pergunta10Group.add(opcaoBtn12);
-        pergunta10Group.add(opcaoBtn13);
-
     }
 
     private void jop() {
@@ -170,24 +124,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
         opcaoBtn31 = new javax.swing.JRadioButton();
         opcaoBtn32 = new javax.swing.JRadioButton();
         opcaoBtn33 = new javax.swing.JRadioButton();
-        opcaoBtn61 = new javax.swing.JRadioButton();
-        opcaoBtn62 = new javax.swing.JRadioButton();
-        opcaoBtn63 = new javax.swing.JRadioButton();
-        opcaoBtn81 = new javax.swing.JRadioButton();
-        opcaoBtn82 = new javax.swing.JRadioButton();
-        opcaoBtn83 = new javax.swing.JRadioButton();
         opcaoBtn51 = new javax.swing.JRadioButton();
         opcaoBtn52 = new javax.swing.JRadioButton();
-        opcaoBtn71 = new javax.swing.JRadioButton();
         opcaoBtn53 = new javax.swing.JRadioButton();
-        opcaoBtn72 = new javax.swing.JRadioButton();
-        opcaoBtn73 = new javax.swing.JRadioButton();
-        opcaoBtn92 = new javax.swing.JRadioButton();
-        opcaoBtn93 = new javax.swing.JRadioButton();
-        opcaoBtn11 = new javax.swing.JRadioButton();
-        opcaoBtn12 = new javax.swing.JRadioButton();
-        opcaoBtn13 = new javax.swing.JRadioButton();
-        opcaoBtn91 = new javax.swing.JRadioButton();
         enviarbtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ptxt1 = new javax.swing.JTextArea();
@@ -197,18 +136,8 @@ public class TelaPerguntas extends javax.swing.JPanel {
         ptxt3 = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         ptxt4 = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        ptxt6 = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         ptxt5 = new javax.swing.JTextArea();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        ptxt7 = new javax.swing.JTextArea();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        ptxt8 = new javax.swing.JTextArea();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        ptxt9 = new javax.swing.JTextArea();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        ptxt10 = new javax.swing.JTextArea();
 
         cadastrarBtn.setBackground(new java.awt.Color(233, 68, 190));
         cadastrarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -309,42 +238,11 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
 
-        opcaoBtn61.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn61.setText("1° opção");
-
-        opcaoBtn62.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn62.setText("2° opção");
-
-        opcaoBtn63.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn63.setText("Nenhuma");
-        opcaoBtn63.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn63ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn81.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn81.setText("1° opção");
-
-        opcaoBtn82.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn82.setText("2° opção");
-
-        opcaoBtn83.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn83.setText("Nenhuma");
-        opcaoBtn83.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn83ActionPerformed(evt);
-            }
-        });
-
         opcaoBtn51.setForeground(new java.awt.Color(255, 255, 255));
         opcaoBtn51.setText("1° opção");
 
         opcaoBtn52.setForeground(new java.awt.Color(255, 255, 255));
         opcaoBtn52.setText("2° opção");
-
-        opcaoBtn71.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn71.setText("1° opção");
 
         opcaoBtn53.setForeground(new java.awt.Color(255, 255, 255));
         opcaoBtn53.setText("Nenhuma");
@@ -353,50 +251,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 opcaoBtn53ActionPerformed(evt);
             }
         });
-
-        opcaoBtn72.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn72.setText("2° opção");
-
-        opcaoBtn73.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn73.setText("Nenhuma");
-        opcaoBtn73.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn73ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn92.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn92.setText("2° opção");
-        opcaoBtn92.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn92ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn93.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn93.setText("Nenhuma");
-        opcaoBtn93.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn93ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn11.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn11.setText("1° opção");
-
-        opcaoBtn12.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn12.setText("2° opção");
-
-        opcaoBtn13.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn13.setText("Nenhuma");
-        opcaoBtn13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn13ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn91.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn91.setText("1° opção");
 
         enviarbtn.setBackground(new java.awt.Color(233, 68, 190));
         enviarbtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -445,14 +299,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         ptxt4.setRows(5);
         jScrollPane5.setViewportView(ptxt4);
 
-        jScrollPane6.setBorder(null);
-
-        ptxt6.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt6.setColumns(20);
-        ptxt6.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt6.setRows(5);
-        jScrollPane6.setViewportView(ptxt6);
-
         jScrollPane7.setBorder(null);
 
         ptxt5.setBackground(new java.awt.Color(83, 41, 71));
@@ -461,135 +307,67 @@ public class TelaPerguntas extends javax.swing.JPanel {
         ptxt5.setRows(5);
         jScrollPane7.setViewportView(ptxt5);
 
-        jScrollPane8.setBorder(null);
-
-        ptxt7.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt7.setColumns(20);
-        ptxt7.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt7.setRows(5);
-        jScrollPane8.setViewportView(ptxt7);
-
-        jScrollPane9.setBorder(null);
-
-        ptxt8.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt8.setColumns(20);
-        ptxt8.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt8.setRows(5);
-        jScrollPane9.setViewportView(ptxt8);
-
-        jScrollPane10.setBorder(null);
-
-        ptxt9.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt9.setColumns(20);
-        ptxt9.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt9.setRows(5);
-        jScrollPane10.setViewportView(ptxt9);
-
-        jScrollPane11.setBorder(null);
-
-        ptxt10.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt10.setColumns(20);
-        ptxt10.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt10.setRows(5);
-        jScrollPane11.setViewportView(ptxt10);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(opcaoBtn71)
-                        .addGap(39, 39, 39)
-                        .addComponent(opcaoBtn72)
-                        .addGap(34, 34, 34)
-                        .addComponent(opcaoBtn73))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(opcaoBtn61)
-                            .addGap(40, 40, 40)
-                            .addComponent(opcaoBtn62)
-                            .addGap(35, 35, 35)
-                            .addComponent(opcaoBtn63))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(opcaoBtn31)
-                            .addGap(38, 38, 38)
-                            .addComponent(opcaoBtn32)
-                            .addGap(31, 31, 31)
-                            .addComponent(opcaoBtn33))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn21)
-                                .addGap(39, 39, 39)
-                                .addComponent(opcaoBtn22)
-                                .addGap(33, 33, 33)
-                                .addComponent(opcaoBtn23))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn1)
-                                .addGap(42, 42, 42)
-                                .addComponent(opcaoBtn2)
-                                .addGap(27, 27, 27)
-                                .addComponent(opcaoBtn3)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn51)
-                                .addGap(37, 37, 37)
-                                .addComponent(opcaoBtn52)
-                                .addGap(34, 34, 34)
-                                .addComponent(opcaoBtn53))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn41)
-                                .addGap(37, 37, 37)
-                                .addComponent(opcaoBtn42)
-                                .addGap(34, 34, 34)
-                                .addComponent(opcaoBtn43))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(opcaoBtn81)
-                        .addGap(34, 34, 34)
-                        .addComponent(opcaoBtn82)
-                        .addGap(40, 40, 40)
-                        .addComponent(opcaoBtn83))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(opcaoBtn91)
-                        .addGap(37, 37, 37)
-                        .addComponent(opcaoBtn92)
-                        .addGap(34, 34, 34)
-                        .addComponent(opcaoBtn93))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(opcaoBtn11)
-                        .addGap(37, 37, 37)
-                        .addComponent(opcaoBtn12)
-                        .addGap(35, 35, 35)
-                        .addComponent(opcaoBtn13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(enviarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3))
+            .addComponent(jScrollPane1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(opcaoBtn31)
+                                .addGap(38, 38, 38)
+                                .addComponent(opcaoBtn32)
+                                .addGap(31, 31, 31)
+                                .addComponent(opcaoBtn33))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(opcaoBtn21)
+                                    .addGap(39, 39, 39)
+                                    .addComponent(opcaoBtn22)
+                                    .addGap(33, 33, 33)
+                                    .addComponent(opcaoBtn23))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(opcaoBtn1)
+                                    .addGap(42, 42, 42)
+                                    .addComponent(opcaoBtn2)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(opcaoBtn3)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(opcaoBtn51)
+                                    .addGap(37, 37, 37)
+                                    .addComponent(opcaoBtn52)
+                                    .addGap(34, 34, 34)
+                                    .addComponent(opcaoBtn53))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(opcaoBtn41)
+                                    .addGap(37, 37, 37)
+                                    .addComponent(opcaoBtn42)
+                                    .addGap(34, 34, 34)
+                                    .addComponent(opcaoBtn43))))
+                        .addGap(0, 88, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(enviarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(opcaoBtn1)
@@ -624,47 +402,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         .addComponent(opcaoBtn51)
                         .addComponent(opcaoBtn52))
                     .addComponent(opcaoBtn53, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn61)
-                    .addComponent(opcaoBtn62)
-                    .addComponent(opcaoBtn63))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(opcaoBtn71)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(opcaoBtn73)
-                        .addComponent(opcaoBtn72)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(opcaoBtn81)
-                        .addComponent(opcaoBtn82))
-                    .addComponent(opcaoBtn83))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(opcaoBtn91, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(opcaoBtn92))
-                    .addComponent(opcaoBtn93, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn11)
-                    .addComponent(opcaoBtn12)
-                    .addComponent(opcaoBtn13))
-                .addGap(28, 28, 28)
+                .addGap(42, 42, 42)
                 .addComponent(enviarbtn)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -706,9 +446,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1362, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1362, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -718,11 +458,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         pergunta3Group.clearSelection();
         pergunta4Group.clearSelection();
         pergunta5Group.clearSelection();
-        pergunta6Group.clearSelection();
-        pergunta7Group.clearSelection();
-        pergunta8Group.clearSelection();
-        pergunta9Group.clearSelection();
-        pergunta10Group.clearSelection();
     }
 
     private void tiraScrool() {
@@ -731,32 +466,26 @@ public class TelaPerguntas extends javax.swing.JPanel {
         ptxt3.setLineWrap(true);
         ptxt4.setLineWrap(true);
         ptxt5.setLineWrap(true);
-        ptxt6.setLineWrap(true);
-        ptxt7.setLineWrap(true);
-        ptxt8.setLineWrap(true);
-        ptxt9.setLineWrap(true);
-        ptxt10.setLineWrap(true);
     }
 
     private void setText() {
         switch (this.escolha) {
             case 1:
-                ptxt1.setText("Você prefere explorar "
-                        + "narrativas que despertam uma sensação de medo e suspense "
-                        + "ou aquelas que proporcionam uma atmosfera mais leve e descontraída?");
-                ptxt2.setText("Você prefere se envolver mais nas histórias das relações "
-                        + "\nhumanas, com personagens enfrentando os desafios emocionais, "
-                        + "\nou você prefere tramas que se concentram em outras inâmicas e aspectos da vida?");
-                ptxt3.setText("Você prefere: refletir sobre a complexicidade da vida "
-                        + "\nou experiências cinematográficas mais leves e descontraídas?");
-                ptxt4.setText("Costuma prestar atenção especialmente na trilha sonora e nas perfomances musicais integradas à história, "
-                        + "\n ou tende a focar mais nos diálogo e na trama em si?");
-                ptxt5.setText("Você prefere narrativas que exploram mundos imaginários e conceitos futuristas, desafiando os limites da realidade");
-                ptxt6.setText("");
-                ptxt7.setText("");
-                ptxt8.setText("");
-                ptxt9.setText("");
-                ptxt10.setText("");
+                ptxt1.setText("Você prefere filmeds que porporcionem momentos leves e divertidos, \n"
+                        + "capazes de arrancar um sorriso mesmo nas situações mais inusitadas, ou \n"
+                        + "prefere filmes que retratam momentos intensos e emocionais que fazem você\n"
+                        + "refletir sobre a complexidade da vida?");
+                ptxt2.setText("Você se interessa por narrativas cinematográficas que exploram a realidade, \n"
+                        + "oferecendo uma perspectiva mais profunda sobre diferentes assuntos e \n"
+                        + "experiêciaas de vida, ou prefere tramas que se afastam mais da realidade em \n"
+                        + "busca de entretenimento ficcional, explorando mundos imaginários?");
+                ptxt3.setText("Você se empolga com tramas cheias de adrenalina e reviravoltas, ou presta atenção,\n"
+                        + "especialmente, na trilha sonora e nas performances musicais integradas à história?");
+                ptxt4.setText("Você gosta de se explorar em narrativas que despertam uma sensação de medo e suspense ou \n"
+                        + "se envolver mais nas histórias que exloram os nuances das relações humanas?");
+                ptxt5.setText("Você se sente mais atraído por narrativas que desafiem sua capacidade de dedução e mantêm\n"
+                        + "você intrigado do início ao fim, ou as que exploram terras desconhecidas, desafios \n"
+                        + "emocionantes e jornadas inesperadas?");
                 break;
             case 2:
                 ptxt1.setText("");
@@ -764,11 +493,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 ptxt3.setText("");
                 ptxt4.setText("");
                 ptxt5.setText("");
-                ptxt6.setText("");
-                ptxt7.setText("");
-                ptxt8.setText("");
-                ptxt9.setText("");
-                ptxt10.setText("");
                 break;
             case 3:
                 ptxt1.setText("");
@@ -776,11 +500,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 ptxt3.setText("");
                 ptxt4.setText("");
                 ptxt5.setText("");
-                ptxt6.setText("");
-                ptxt7.setText("");
-                ptxt8.setText("");
-                ptxt9.setText("");
-                ptxt10.setText("");
                 break;
         }
     }
@@ -789,22 +508,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         clearRadioBtn();
         FramePrincipal.trocaPainel("quiz", new TelaQuiz());
     }//GEN-LAST:event_voltarBtnActionPerformed
-
-    private void opcaoBtn83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn83ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn83ActionPerformed
-
-    private void opcaoBtn73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn73ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn73ActionPerformed
-
-    private void opcaoBtn93ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn93ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn93ActionPerformed
-
-    private void opcaoBtn13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn13ActionPerformed
 
     private void cadastrarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtn1ActionPerformed
 ////////////////////////////////////////////////////////////////////////////////////
@@ -825,9 +528,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
 
         analise.calculaResultado(pergunta1Group.getSelection(), pergunta2Group.getSelection(),
                 pergunta3Group.getSelection(), pergunta4Group.getSelection(),
-                pergunta5Group.getSelection(), pergunta6Group.getSelection(),
-                pergunta7Group.getSelection(), pergunta8Group.getSelection(),
-                pergunta9Group.getSelection(), pergunta10Group.getSelection(), todosRadioBtn, this.escolha);
+                pergunta5Group.getSelection(), todosRadioBtn, this.escolha);
         clearRadioBtn();
 
         //FramePrincipal.trocaPainel("resultado", new TelaResultado());
@@ -836,10 +537,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
 //        }
 
     }//GEN-LAST:event_enviarbtnActionPerformed
-
-    private void opcaoBtn63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn63ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn63ActionPerformed
 
     private void opcaoBtn53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn53ActionPerformed
         // TODO add your handling code here:
@@ -865,10 +562,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_opcaoBtn22ActionPerformed
 
-    private void opcaoBtn92ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn92ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn92ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -878,19 +571,11 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JRadioButton opcaoBtn1;
-    private javax.swing.JRadioButton opcaoBtn11;
-    private javax.swing.JRadioButton opcaoBtn12;
-    private javax.swing.JRadioButton opcaoBtn13;
     private javax.swing.JRadioButton opcaoBtn2;
     private javax.swing.JRadioButton opcaoBtn21;
     private javax.swing.JRadioButton opcaoBtn22;
@@ -905,29 +590,12 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private javax.swing.JRadioButton opcaoBtn51;
     private javax.swing.JRadioButton opcaoBtn52;
     private javax.swing.JRadioButton opcaoBtn53;
-    private javax.swing.JRadioButton opcaoBtn61;
-    private javax.swing.JRadioButton opcaoBtn62;
-    private javax.swing.JRadioButton opcaoBtn63;
-    private javax.swing.JRadioButton opcaoBtn71;
-    private javax.swing.JRadioButton opcaoBtn72;
-    private javax.swing.JRadioButton opcaoBtn73;
-    private javax.swing.JRadioButton opcaoBtn81;
-    private javax.swing.JRadioButton opcaoBtn82;
-    private javax.swing.JRadioButton opcaoBtn83;
-    private javax.swing.JRadioButton opcaoBtn91;
-    private javax.swing.JRadioButton opcaoBtn92;
-    private javax.swing.JRadioButton opcaoBtn93;
     private javax.swing.JLabel perfilLabel;
     private javax.swing.JTextArea ptxt1;
-    private javax.swing.JTextArea ptxt10;
     private javax.swing.JTextArea ptxt2;
     private javax.swing.JTextArea ptxt3;
     private javax.swing.JTextArea ptxt4;
     private javax.swing.JTextArea ptxt5;
-    private javax.swing.JTextArea ptxt6;
-    private javax.swing.JTextArea ptxt7;
-    private javax.swing.JTextArea ptxt8;
-    private javax.swing.JTextArea ptxt9;
     private javax.swing.JButton voltarBtn;
     // End of variables declaration//GEN-END:variables
 }
