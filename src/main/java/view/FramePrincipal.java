@@ -2,9 +2,17 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Hashtable;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingWorker;
+import javax.swing.Timer;
 
 public class FramePrincipal extends javax.swing.JFrame {
 
@@ -16,7 +24,42 @@ public class FramePrincipal extends javax.swing.JFrame {
     public FramePrincipal() {
         initComponents();
         configuraTrocaPaineis();
-        trocaPainel("escolha", new TelaEscolha());
+        trocaPainel("tela timer", new TelaTimer());
+        telaComTimer();
+        //novaFonte();
+        //trocaPainel("escolha", new TelaEscolha());
+    }
+
+    public void novaFonte() {
+        Font maquinaEscrever = null;
+        try {
+            maquinaEscrever = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("Fontes/RobotoRegular.ttf"));
+        } catch (IOException | FontFormatException e) {
+            System.out.println("Merda " + e);
+        }
+        maquinaEscrever = maquinaEscrever.deriveFont(Font.PLAIN, 20);
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(maquinaEscrever);
+        this.setFont(maquinaEscrever);
+    }
+
+    private void telaComTimer() {
+
+        SwingWorker trocar = new SwingWorker() {
+            @Override
+            protected Object doInBackground() throws Exception {
+                try {
+                    Thread.sleep(1000);
+                    trocaPainel("tela escolha", new TelaEscolha());
+                } catch (InterruptedException ex) {
+                    System.err.println("não há o que fazer...");
+                }
+                return null;
+            }
+        };
+
+        trocar.execute();
+
     }
 
     private void configuraTrocaPaineis() {
@@ -57,6 +100,11 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,6 +119,9 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

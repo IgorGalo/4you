@@ -34,6 +34,7 @@ public class TelaEscolha extends javax.swing.JPanel {
         bemVindoLabel = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(83, 41, 71));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190), 2));
 
         srplabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
         srplabel.setForeground(new java.awt.Color(233, 68, 190));
@@ -80,12 +81,12 @@ public class TelaEscolha extends javax.swing.JPanel {
                         .addComponent(entrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(srplabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(bemVindoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(bemVindoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(92, Short.MAX_VALUE)
                 .addComponent(bemVindoLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(srplabel)
