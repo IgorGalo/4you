@@ -5,6 +5,7 @@
 package view;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  *
@@ -15,8 +16,18 @@ public class TelaResultado extends javax.swing.JPanel {
     /**
      * Creates new form TelaResultado
      */
-    public TelaResultado(ArrayList<String> resultado) {
+    public TelaResultado(Vector<String> resultado) {
         initComponents();
+        mudaNome(resultado);
+    }
+    
+    private void mudaNome(Vector<String> nomes){
+        nomeLbl1.setText(nomes.get(0));
+        nomeLbl2.setText(nomes.get(1));
+        nomeLbl3.setText(nomes.get(2));
+        nomeLbl4.setText(nomes.get(3));
+        nomeLbl5.setText(nomes.get(4));
+        nomeLbl6.setText(nomes.get(5));
     }
 
     /**
@@ -32,6 +43,19 @@ public class TelaResultado extends javax.swing.JPanel {
         perfilLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         voltarBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        imageLbl1 = new javax.swing.JLabel();
+        imageLbl2 = new javax.swing.JLabel();
+        imageLbl3 = new javax.swing.JLabel();
+        imageLbl4 = new javax.swing.JLabel();
+        imageLbl5 = new javax.swing.JLabel();
+        imageLbl6 = new javax.swing.JLabel();
+        nomeLbl1 = new javax.swing.JLabel();
+        nomeLbl2 = new javax.swing.JLabel();
+        nomeLbl3 = new javax.swing.JLabel();
+        nomeLbl4 = new javax.swing.JLabel();
+        nomeLbl5 = new javax.swing.JLabel();
+        nomeLbl6 = new javax.swing.JLabel();
 
         jPanel4.setBackground(new java.awt.Color(83, 41, 71));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
@@ -53,19 +77,84 @@ public class TelaResultado extends javax.swing.JPanel {
             }
         });
 
+        imageLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
+
+        imageLbl2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
+
+        imageLbl3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
+
+        imageLbl4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
+
+        imageLbl5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
+
+        imageLbl6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
+
+        nomeLbl1.setBackground(new java.awt.Color(233, 68, 190));
+        nomeLbl1.setForeground(new java.awt.Color(233, 68, 190));
+        nomeLbl1.setText("jLabel3");
+
+        nomeLbl2.setForeground(new java.awt.Color(233, 68, 190));
+        nomeLbl2.setText("jLabel3");
+
+        nomeLbl3.setForeground(new java.awt.Color(233, 68, 190));
+        nomeLbl3.setText("jLabel3");
+
+        nomeLbl4.setForeground(new java.awt.Color(233, 68, 190));
+        nomeLbl4.setText("jLabel3");
+
+        nomeLbl5.setForeground(new java.awt.Color(233, 68, 190));
+        nomeLbl5.setText("jLabel3");
+
+        nomeLbl6.setForeground(new java.awt.Color(233, 68, 190));
+        nomeLbl6.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(voltarBtn)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 64, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(imageLbl4)
+                        .addGap(38, 38, 38)
+                        .addComponent(imageLbl5)
+                        .addGap(32, 32, 32)
+                        .addComponent(imageLbl6))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(imageLbl1)
+                        .addGap(38, 38, 38)
+                        .addComponent(imageLbl2)
+                        .addGap(32, 32, 32)
+                        .addComponent(imageLbl3)))
+                .addGap(62, 62, 62))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeLbl1)
+                        .addGap(106, 106, 106)
+                        .addComponent(nomeLbl2)
+                        .addGap(97, 97, 97)
+                        .addComponent(nomeLbl3))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(nomeLbl4)
+                        .addGap(100, 100, 100)
+                        .addComponent(nomeLbl5)
+                        .addGap(98, 98, 98)
+                        .addComponent(nomeLbl6)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,8 +166,35 @@ public class TelaResultado extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 335, Short.MAX_VALUE)
-                .addComponent(voltarBtn))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLbl1)
+                    .addComponent(imageLbl2)
+                    .addComponent(imageLbl3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeLbl2)
+                            .addComponent(nomeLbl3)
+                            .addComponent(nomeLbl1))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imageLbl4)
+                            .addComponent(imageLbl5)
+                            .addComponent(imageLbl6))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeLbl5)
+                            .addComponent(nomeLbl6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(voltarBtn))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(nomeLbl4)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -105,8 +221,21 @@ public class TelaResultado extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imageLbl1;
+    private javax.swing.JLabel imageLbl2;
+    private javax.swing.JLabel imageLbl3;
+    private javax.swing.JLabel imageLbl4;
+    private javax.swing.JLabel imageLbl5;
+    private javax.swing.JLabel imageLbl6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel nomeLbl1;
+    private javax.swing.JLabel nomeLbl2;
+    private javax.swing.JLabel nomeLbl3;
+    private javax.swing.JLabel nomeLbl4;
+    private javax.swing.JLabel nomeLbl5;
+    private javax.swing.JLabel nomeLbl6;
     private javax.swing.JLabel perfilLabel;
     private javax.swing.JButton voltarBtn;
     // End of variables declaration//GEN-END:variables

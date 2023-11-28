@@ -229,11 +229,11 @@ public class Analise {
 //        }
         System.out.println(opcoes + " " + pesquisa);
 
-        ArrayList<String> resultado = new ArrayList<>();
+        Vector<String> resultado = new Vector<>();
 
         switch (escolha) {
             case 1:
-                fazPesquisaFilme(pesquisa);
+                resultado = fazPesquisaFilme(pesquisa);
                 break;
             default:
                 throw new AssertionError();
@@ -243,26 +243,27 @@ public class Analise {
 
     }
 
-    private void fazPesquisaFilme(String pesquisa) {
+    private Vector<String> fazPesquisaFilme(String pesquisa) {
+        Vector<String> resultado = new Vector<>();
         try {
 
             Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+" + pesquisa + "&sourceid=chrome&ie=UTF-8").get();
-            int ÍndiceTítulos = 2, LimitePesquisas = 10;
+            int ÍndiceTítulos = 2, LimitePesquisas = 12;
 
             //<editor-fold defaultstate="collapsed" desc="Cálculos do Padrão e Limite">
             for (int i = 1; i < 10; i = i + 2) {
                 try {
-
                     String y = doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1];
                 } catch (Exception ERRO) {
                     ÍndiceTítulos = 1;
-                    LimitePesquisas = 5;
+                    LimitePesquisas = 6;
                 }
                 // </editor-fold>
 
             }
             for (int i = 1; i <= LimitePesquisas; i = i + ÍndiceTítulos) {
                 System.out.println(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
+                resultado.add(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
             }
             // </editor-fold>
         } catch (Exception ex /*Caso a pesquisa com 3 filmes de Erro*/) {
@@ -270,19 +271,15 @@ public class Analise {
 
             int indices = 0, NumeroRepet = 0;
             if (pesquisa.split("\\W").length == 3) {
-                System.out.println("NRep=2");
                 NumeroRepet = 5;
             } else {
                 if (pesquisa.split("\\W").length == 4) {
-                    System.out.println("NRep=1");
                     NumeroRepet = 3;
                 } else {
-                    System.out.println("Alargou o balaio");
+                    System.err.println("merda");
                 }
             }
             for (int i = 1; i <= 6; i++) {
-                System.out.println("R");
-
                 //          terror+musical+aventura+ficcaocientifica
                 try {
                     switch (i) {
@@ -291,8 +288,8 @@ public class Analise {
                                     + pesquisa.split("\\W")[0] + pesquisa.split("\\W")[1]
                                     + "&sourceid=chrome&ie=UTF-8").get();
                             for (int j = 1; j < NumeroRepet; j = j + 2) {
-
                                 System.out.println(doc1.getElementsByAttribute("data-ttl").html().split("data-original-name")[j].split("\"")[1]);
+                                resultado.add(doc1.getElementsByAttribute("data-ttl").html().split("data-original-name")[j].split("\"")[1]);
                             }
                             break;
 
@@ -301,9 +298,8 @@ public class Analise {
                                     + pesquisa.split("\\W")[0] + pesquisa.split("\\W")[2]
                                     + "&sourceid=chrome&ie=UTF-8").get();
                             for (int j = 1; j < NumeroRepet; j = j + 2) {
-
                                 System.out.println(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[j].split("\"")[1]);
-
+                                resultado.add(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[j].split("\"")[1]);
                             }
                             break;
 
@@ -312,14 +308,13 @@ public class Analise {
                                     + pesquisa.split("\\W")[1] + pesquisa.split("\\W")[2]
                                     + "&sourceid=chrome&ie=UTF-8").get();
                             for (int j = 1; j < NumeroRepet; j = j + 2) {
-
                                 System.out.println(doc3.getElementsByAttribute("data-ttl").html().split("data-original-name")[j].split("\"")[1]);
+                                resultado.add(doc3.getElementsByAttribute("data-ttl").html().split("data-original-name")[j].split("\"")[1]);
                             }
                             break;
 
                     }
                     if (pesquisa.split("\\W").length == 4) {
-                        System.out.println(";;");
                         switch (i) {
 
                             case 4:
@@ -327,30 +322,35 @@ public class Analise {
                                         + pesquisa.split("\\W")[3] + pesquisa.split("\\W")[0]
                                         + "&sourceid=chrome&ie=UTF-8").get();
                                 System.out.println(doc4.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
+                                resultado.add(doc4.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                                 break;
                             case 5:
                                 Document doc5 = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+"
                                         + pesquisa.split("\\W")[3] + pesquisa.split("\\W")[1]
                                         + "&sourceid=chrome&ie=UTF-8").get();
                                 System.out.println(doc5.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
+                                resultado.add(doc5.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                                 break;
                             case 6:
                                 Document doc6 = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+"
                                         + pesquisa.split("\\W")[3] + pesquisa.split("\\W")[2]
                                         + "&sourceid=chrome&ie=UTF-8").get();
                                 System.out.println(doc6.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
+                                resultado.add(doc6.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                                 break;
                         }
                     }
 
                 } catch (Exception Erro) {
-                    //               java.util.logging.Logger.getLogger(Teste.class.getName()).log(java.util.logging.Level.SEVERE, null, Erro);
+                    java.util.logging.Logger.getLogger(Analise.class.getName()).log(java.util.logging.Level.SEVERE, null, Erro);
                     System.out.println("ok");
                 }
 
             }
 
         }
+        
+        return resultado;
     }
 
 }

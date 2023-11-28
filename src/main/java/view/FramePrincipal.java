@@ -49,7 +49,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             @Override
             protected Object doInBackground() throws Exception {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                     trocaPainel("tela escolha", new TelaEscolha());
                 } catch (InterruptedException ex) {
                     System.err.println("não há o que fazer...");
@@ -118,6 +118,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
