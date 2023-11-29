@@ -222,7 +222,7 @@ public class Analise {
             Collections.shuffle(opcoes);
 
         }
-        String pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2) + "+" + opcoes.get(3);
+        String pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
 
 //        } else {
 //            String pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
@@ -268,6 +268,7 @@ public class Analise {
             // </editor-fold>
         } catch (Exception ex /*Caso a pesquisa com 3 filmes de Erro*/) {
 //um for dentro do outro c pá
+//            java.util.logging.Logger.getLogger(Analise.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
             int indices = 0, NumeroRepet = 0;
             if (pesquisa.split("\\W").length == 3) {
@@ -349,7 +350,7 @@ public class Analise {
             }
 
         }
-        
+
         return resultado;
     }
 

@@ -34,11 +34,11 @@ public class TelaEntrar extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         entrarBtn = new javax.swing.JButton();
-        Nometxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         senhaTxt = new javax.swing.JPasswordField();
+        Nometxt = new javax.swing.JTextField();
         voltarBtn = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(83, 41, 71));
@@ -59,17 +59,6 @@ public class TelaEntrar extends javax.swing.JPanel {
             }
         });
 
-        Nometxt.setBackground(new java.awt.Color(83, 41, 71));
-        Nometxt.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        Nometxt.setForeground(new java.awt.Color(204, 204, 204));
-        Nometxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Nometxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
-        Nometxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NometxtActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(233, 68, 190));
         jLabel1.setText("ENTRAR");
@@ -86,6 +75,11 @@ public class TelaEntrar extends javax.swing.JPanel {
         senhaTxt.setForeground(new java.awt.Color(255, 255, 255));
         senhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         senhaTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+
+        Nometxt.setBackground(new java.awt.Color(83, 41, 71));
+        Nometxt.setForeground(new java.awt.Color(255, 255, 255));
+        Nometxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Nometxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -179,10 +173,6 @@ public class TelaEntrar extends javax.swing.JPanel {
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
         FramePrincipal.trocaPainel("escolha", new TelaEscolha());
     }//GEN-LAST:event_voltarBtnActionPerformed
-
-    private void NometxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NometxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NometxtActionPerformed
 
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
         Usuario filtro = new Usuario();

@@ -22,6 +22,13 @@ public class TelaResultado extends javax.swing.JPanel {
     }
     
     private void mudaNome(Vector<String> nomes){
+//        String split[];
+//        for(int i = 0; i < nomes.size(); i++){
+//            if(nomes.get(i).length() > 10){
+//               split = nomes.get(i).split(" ");
+//               nomes.set(i, split[0]+ "\n" + split[1]);
+//            }
+//        }
         nomeLbl1.setText(nomes.get(0));
         nomeLbl2.setText(nomes.get(1));
         nomeLbl3.setText(nomes.get(2));
