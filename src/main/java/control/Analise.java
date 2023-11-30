@@ -217,19 +217,23 @@ public class Analise {
                 break;
         }
 
-        if (opcoes.size() > 4) {
-
-            Collections.shuffle(opcoes);
-
-        }
-        String pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
-
-//        } else {
-//            String pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
-//        }
-        System.out.println(opcoes + " " + pesquisa);
-
         Vector<String> resultado = new Vector<>();
+        String pesquisa;
+
+        if (opcoes.isEmpty()) {
+            pesquisa = "novos";
+            System.out.println(pesquisa);
+        } else {
+
+            if (opcoes.size() > 5) {
+
+                Collections.shuffle(opcoes);
+
+            }
+            pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
+
+            System.out.println(opcoes + " " + pesquisa);
+        }
 
         switch (escolha) {
             case 1:
@@ -239,7 +243,8 @@ public class Analise {
                 throw new AssertionError();
         }
 
-        FramePrincipal.trocaPainel("resultado", new TelaResultado(resultado));
+        FramePrincipal.trocaPainel(
+                "resultado", new TelaResultado(resultado));
 
     }
 
@@ -339,11 +344,13 @@ public class Analise {
                                 System.out.println(doc6.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                                 resultado.add(doc6.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                                 break;
+
                         }
                     }
 
                 } catch (Exception Erro) {
-                    java.util.logging.Logger.getLogger(Analise.class.getName()).log(java.util.logging.Level.SEVERE, null, Erro);
+                    java.util.logging.Logger.getLogger(Analise.class
+                            .getName()).log(java.util.logging.Level.SEVERE, null, Erro);
                     System.out.println("ok");
                 }
 

@@ -8,12 +8,12 @@ package view;
  *
  * @author 0068948
  */
-public class FLM extends javax.swing.JPanel {
+public class TelaEscolhaFML extends javax.swing.JPanel {
 
     /**
      * Creates new form FLM
      */
-    public FLM() {
+    public TelaEscolhaFML() {
         initComponents();
     }
 

@@ -175,7 +175,7 @@ public class TelaQuiz extends javax.swing.JPanel {
     }//GEN-LAST:event_perfilBtnActionPerformed
 
     private void novoTesteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoTesteBtnActionPerformed
-        FramePrincipal.trocaPainel("painel escolha", new FLM());
+        FramePrincipal.trocaPainel("painel escolha", new TelaEscolhaFML());
     }//GEN-LAST:event_novoTesteBtnActionPerformed
 
     private void testeAntigoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testeAntigoBtnActionPerformed

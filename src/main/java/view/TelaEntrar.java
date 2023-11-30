@@ -4,6 +4,8 @@
  */
 package view;
 
+import control.Retornos;
+import control.UsuarioControl;
 import dao.UsuarioDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -175,26 +177,15 @@ public class TelaEntrar extends javax.swing.JPanel {
     }//GEN-LAST:event_voltarBtnActionPerformed
 
     private void entrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBtnActionPerformed
-        Usuario filtro = new Usuario();
-        if (Nometxt.getText().contains("@")) {
-            filtro.setEmail(Nometxt.getText());
-        } else {
-            filtro.setNomeUsuario(Nometxt.getText().trim());
-            filtro.getNomeUsuario();
-            this.nomeuser = Nometxt.getText().trim();
-            System.out.println(nomeuser);
-        }
-        filtro.setSenha(senhaTxt.getText());
+        UsuarioControl usuarioC = new UsuarioControl();
 
-        UsuarioDAO servicos = new UsuarioDAO();
-        Usuario resultado = servicos.consultarPorFiltro(filtro);
+        Retornos resultado = usuarioC.entrar(Nometxt.getText(), senhaTxt.getText(), this.nomeuser);
 
-        if (resultado != null) {
+        if (resultado.isRetorno() == false) {
+            JOptionPane.showMessageDialog(this, resultado.getMensagem(), "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+        }else{
             FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-        } else {
-            JOptionPane.showMessageDialog(this, "USUÁRIO OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
     public String getNomeuser() {
