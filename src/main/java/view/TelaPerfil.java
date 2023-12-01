@@ -206,6 +206,7 @@ public class TelaPerfil extends javax.swing.JPanel {
 
         if (operacao == JFileChooser.APPROVE_OPTION) {
             usuarioC.editarPerfil(janelaArquivo);
+            adicionarImagemDoBancoParaMudarIcon();
         }
     }//GEN-LAST:event_editarPerfilBtnActionPerformed
 

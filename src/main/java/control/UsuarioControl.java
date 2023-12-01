@@ -14,12 +14,8 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import model.Imagem;
 import model.Usuario;
-import view.FramePrincipal;
-import view.TelaEntrar;
-import view.TelaInicio;
 import view.TelaPerfil;
 
 public class UsuarioControl {
@@ -144,4 +140,5 @@ public class UsuarioControl {
             Logger.getLogger(TelaPerfil.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 }

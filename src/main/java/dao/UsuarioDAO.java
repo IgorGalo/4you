@@ -12,20 +12,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.stream.FileImageInputStream;
 import model.Imagem;
-import view.TelaEntrar;
 
 public class UsuarioDAO {
 
     static String user;
+    Connection c = Conexao.obterConexao();
 
     public boolean cadastrarUsuario(Usuario dados) {
-
-        Connection c = Conexao.obterConexao();
 
         String sql = "INSERT INTO fiyyou.USUARIO (NomeCompleto, NomeUsuario, Email, Senha)"
                 + " VALUES (?, ?, ? , ?)";
@@ -50,8 +46,6 @@ public class UsuarioDAO {
 
         FileInputStream fis = null;
         try {
-            Connection c = Conexao.obterConexao();
-
 
             String sql = "INSERT INTO fiyyou.IMAGENS (nomeusuario, imagem)"
                     + " VALUES (?, ?)";
@@ -89,7 +83,6 @@ public class UsuarioDAO {
     public Usuario consultarPorFiltro(Usuario filtro) {
         try {
             Usuario retorno = null;
-            Connection c = Conexao.obterConexao();
 
             String sql = "SELECT * FROM fiyyou.usuario ";
             if ((filtro.getNomeUsuario() != null && !filtro.getNomeUsuario().equalsIgnoreCase(""))
@@ -136,8 +129,6 @@ public class UsuarioDAO {
         try {
             Imagem retorno = null;
 
-            Connection c = Conexao.obterConexao();
-
             String sql = "SELECT * FROM fiyyou.imagens WHERE ";
 
             if (user != null && !user.equalsIgnoreCase("")) {
@@ -162,7 +153,6 @@ public class UsuarioDAO {
 
     public boolean deletaImagem() {
         boolean retorno = false;
-        Connection c = Conexao.obterConexao();
 
         String sql = "DELETE FROM fiyyou.imagens WHERE nomeusuario = ?";
         try (PreparedStatement delete = c.prepareCall(sql)) {
@@ -170,9 +160,35 @@ public class UsuarioDAO {
             delete.execute();
             retorno = true;
         } catch (SQLException ex) {
-            System.out.println("Erro ao apagar imagem do banco;"+ ex.getMessage());
+            System.out.println("Erro ao apagar imagem do banco;" + ex.getMessage());
             retorno = false;
         }
         return retorno;
+    }
+    
+    public ArrayList<Usuario> buscaUsuarios(String texto) {
+        String sql = "SELECT * FROM fiyyou.usuario WHERE nomeusuario LIKE '" + texto + "%'";
+        
+        ArrayList<Usuario> todosUsuarios = new ArrayList<>();
+        try (PreparedStatement trans = this.c.prepareStatement(sql)) {
+            //vamos ao banco buscar os dados resultado da sql definida
+            ResultSet resultadoBanco = trans.executeQuery();
+
+            //transformr as tuplas(linhas) em objetos do tipo statustime
+            while (resultadoBanco.next()) {
+                Usuario usuario = new Usuario(resultadoBanco.getInt("idusuario"),
+                        resultadoBanco.getString("nomecompleto"),
+                        resultadoBanco.getString("nomeusuario"),
+                        resultadoBanco.getString("email"),
+                        resultadoBanco.getString("senha"));
+                todosUsuarios.add(usuario);
+            }
+
+        } catch (SQLException ex) {
+
+            System.out.println("erro na execucao do select");
+        }
+        return todosUsuarios;
+
     }
 }
