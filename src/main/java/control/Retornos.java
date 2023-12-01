@@ -11,6 +11,7 @@ package control;
 public enum Retornos {
     ERRODEPREENCHIMENTO("É necessário preencher todos os campos", false),
     ERRODECADASTRO("Não foi possível cadastrar", false),
+    ERROIMAGEMCONVERTIDA("Imagem não convertida", false),
     ERROLOGIN("USUÁRIO OU SENHA INCORRETOS", false),
     OK("", true);
     
