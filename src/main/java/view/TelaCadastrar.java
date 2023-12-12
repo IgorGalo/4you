@@ -62,6 +62,11 @@ public class TelaCadastrar extends javax.swing.JPanel {
         NomeCompletoTxt.setForeground(new java.awt.Color(204, 204, 204));
         NomeCompletoTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NomeCompletoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
+        NomeCompletoTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomeCompletoTxtActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,6 +226,10 @@ public class TelaCadastrar extends javax.swing.JPanel {
               FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
           }
     }//GEN-LAST:event_cadastrarBtnActionPerformed
+
+    private void NomeCompletoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeCompletoTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomeCompletoTxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

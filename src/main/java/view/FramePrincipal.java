@@ -26,22 +26,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         configuraTrocaPaineis();
         trocaPainel("tela timer", new TelaTimer());
         telaComTimer();
-        //novaFonte();
-        //trocaPainel("escolha", new TelaEscolha());
     }
-
-    public void novaFonte() {
-        Font maquinaEscrever = null;
-        try {
-            maquinaEscrever = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("Fontes/RobotoRegular.ttf"));
-        } catch (IOException | FontFormatException e) {
-            System.out.println("Merda " + e);
-        }
-        maquinaEscrever = maquinaEscrever.deriveFont(Font.PLAIN, 20);
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        ge.registerFont(maquinaEscrever);
-        this.setFont(maquinaEscrever);
-    }
+   
 
     private void telaComTimer() {
 
@@ -50,7 +36,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             protected Object doInBackground() throws Exception {
                 try {
                     Thread.sleep(2000);
-                    trocaPainel("tela escolha", new TelaEscolha());
+                    trocaPainel("tela entrar", new TelaEntrar());
                 } catch (InterruptedException ex) {
                     System.err.println("não há o que fazer...");
                 }
@@ -110,11 +96,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 1372, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGap(0, 775, Short.MAX_VALUE)
         );
 
         pack();

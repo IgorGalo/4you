@@ -184,7 +184,7 @@ public class TelaPerfil extends javax.swing.JPanel {
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
         FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtn1ActionPerformed
-    private void adicionarImagemDoBancoParaMudarIcon() {
+    public void adicionarImagemDoBancoParaMudarIcon() {
 
         UsuarioControl usuarioC = new UsuarioControl();
 
