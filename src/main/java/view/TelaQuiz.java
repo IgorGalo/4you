@@ -1,197 +1,117 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
 package view;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+/**
+ *
+ * @author 0068948
+ */
 public class TelaQuiz extends javax.swing.JPanel {
 
+    /**
+     * Creates new form FLM
+     */
     public TelaQuiz() {
         initComponents();
     }
 
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaOpcao.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        perfilLabel = new javax.swing.JLabel();
-        inicioBtn1 = new javax.swing.JButton();
-        quizBtn = new javax.swing.JButton();
-        pesqBtn = new javax.swing.JButton();
-        perfilBtn = new javax.swing.JButton();
-        srplabel = new javax.swing.JLabel();
-        novoTesteBtn = new javax.swing.JToggleButton();
-        testeAntigoBtn = new javax.swing.JToggleButton();
+        testeAntigoBtn = new javax.swing.JLabel();
+        perfilBtn = new javax.swing.JLabel();
+        inicioBtn = new javax.swing.JLabel();
+        pesquisarBtn = new javax.swing.JLabel();
+        novoTesteBtn = new javax.swing.JLabel();
 
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
-        inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        inicioBtn1.setText("🏠");
-        inicioBtn1.setBorderPainted(false);
-        inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inicioBtn1ActionPerformed(evt);
+        testeAntigoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                testeAntigoBtnMouseClicked(evt);
             }
         });
+        add(testeAntigoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 310, 60));
 
-        quizBtn.setBackground(new java.awt.Color(83, 41, 71));
-        quizBtn.setForeground(new java.awt.Color(233, 68, 190));
-        quizBtn.setText("❔");
-        quizBtn.setBorderPainted(false);
-        quizBtn.setEnabled(false);
-        quizBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizBtnActionPerformed(evt);
+        perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                perfilBtnMouseClicked(evt);
             }
         });
+        add(perfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 60, 60));
 
-        pesqBtn.setBackground(new java.awt.Color(83, 41, 71));
-        pesqBtn.setForeground(new java.awt.Color(233, 68, 190));
-        pesqBtn.setText("🔎");
-        pesqBtn.setBorderPainted(false);
-        pesqBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesqBtnActionPerformed(evt);
+        inicioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inicioBtnMouseClicked(evt);
             }
         });
+        add(inicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 690, 70, 60));
 
-        perfilBtn.setBackground(new java.awt.Color(83, 41, 71));
-        perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
-        perfilBtn.setText("👤");
-        perfilBtn.setBorderPainted(false);
-        perfilBtn.setMaximumSize(new java.awt.Dimension(31, 23));
-        perfilBtn.setMinimumSize(new java.awt.Dimension(31, 23));
-        perfilBtn.setPreferredSize(new java.awt.Dimension(31, 23));
-        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilBtnActionPerformed(evt);
+        pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pesquisarBtnMouseClicked(evt);
             }
         });
+        add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
 
-        srplabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-        srplabel.setForeground(new java.awt.Color(233, 68, 190));
-        srplabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        srplabel.setText("O que deseja fazer?");
-
-        novoTesteBtn.setBackground(new java.awt.Color(233, 68, 190));
-        novoTesteBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
-        novoTesteBtn.setForeground(new java.awt.Color(255, 255, 255));
-        novoTesteBtn.setText("INICIAR UM NOVO TESTE");
-        novoTesteBtn.setBorderPainted(false);
-        novoTesteBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                novoTesteBtnActionPerformed(evt);
+        novoTesteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                novoTesteBtnMouseClicked(evt);
             }
         });
-
-        testeAntigoBtn.setBackground(new java.awt.Color(233, 68, 190));
-        testeAntigoBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
-        testeAntigoBtn.setForeground(new java.awt.Color(255, 255, 255));
-        testeAntigoBtn.setText("ACESSAR TESTE ANTIGO");
-        testeAntigoBtn.setBorderPainted(false);
-        testeAntigoBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testeAntigoBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(srplabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(inicioBtn1)
-                        .addGap(88, 88, 88)
-                        .addComponent(pesqBtn)
-                        .addGap(94, 94, 94)
-                        .addComponent(quizBtn)
-                        .addGap(88, 88, 88)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(novoTesteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(testeAntigoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(perfilLabel)
-                .addGap(84, 84, 84)
-                .addComponent(srplabel)
-                .addGap(39, 39, 39)
-                .addComponent(novoTesteBtn)
-                .addGap(29, 29, 29)
-                .addComponent(testeAntigoBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pesqBtn)
-                        .addComponent(quizBtn)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inicioBtn1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(novoTesteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 310, 60));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-    }//GEN-LAST:event_inicioBtn1ActionPerformed
+    private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
+        FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtnMouseClicked
 
-    private void quizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtnActionPerformed
-        
-    }//GEN-LAST:event_quizBtnActionPerformed
+    private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked
+        FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
+    }//GEN-LAST:event_inicioBtnMouseClicked
 
-    private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
-    }//GEN-LAST:event_pesqBtnActionPerformed
+    private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesquisarBtnMouseClicked
 
-    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
-    }//GEN-LAST:event_perfilBtnActionPerformed
+    private void testeAntigoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testeAntigoBtnMouseClicked
+        FramePrincipal.trocaPainel("tela testeAntigo", new TelaTesteAntigo());
+    }//GEN-LAST:event_testeAntigoBtnMouseClicked
 
-    private void novoTesteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoTesteBtnActionPerformed
-        FramePrincipal.trocaPainel("painel escolha", new TelaEscolhaFML());
-    }//GEN-LAST:event_novoTesteBtnActionPerformed
-
-    private void testeAntigoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testeAntigoBtnActionPerformed
-        FramePrincipal.trocaPainel("painel teste antigo", new TelaTesteAntigo());
-    }//GEN-LAST:event_testeAntigoBtnActionPerformed
+    private void novoTesteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_novoTesteBtnMouseClicked
+        FramePrincipal.trocaPainel("tela novoTeste", new TelaEscolhaFML());
+    }//GEN-LAST:event_novoTesteBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton inicioBtn1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JToggleButton novoTesteBtn;
-    private javax.swing.JButton perfilBtn;
-    private javax.swing.JLabel perfilLabel;
-    private javax.swing.JButton pesqBtn;
-    private javax.swing.JButton quizBtn;
-    private javax.swing.JLabel srplabel;
-    private javax.swing.JToggleButton testeAntigoBtn;
+    private javax.swing.JLabel inicioBtn;
+    private javax.swing.JLabel novoTesteBtn;
+    private javax.swing.JLabel perfilBtn;
+    private javax.swing.JLabel pesquisarBtn;
+    private javax.swing.JLabel testeAntigoBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,79 +17,8 @@ import javax.swing.plaf.basic.BasicBorders;
  */
 public class TelaPerguntas extends javax.swing.JPanel {
 
-    private ButtonGroup pergunta1Group;
-    private ButtonGroup pergunta2Group;
-    private ButtonGroup pergunta3Group;
-    private ButtonGroup pergunta4Group;
-    private ButtonGroup pergunta5Group;
-    private ArrayList<JRadioButton> todosRadioBtn;
-    private ArrayList<ArrayList<JRadioButton>> arrayBtn;
-    private int escolha;
-
     public TelaPerguntas(int escolha) {
         initComponents();
-        addBtnVet();
-        //arraybtn = new ArrayList<JRadioButton>();
-        BttonGroup();
-        this.escolha = escolha;
-        tiraScrool();
-        setText();
-    }
-
-    private void addBtnVet() {
-
-        todosRadioBtn = new ArrayList<>();
-        arrayBtn = new ArrayList<>();
-        todosRadioBtn.add(opcaoBtn1);
-        todosRadioBtn.add(opcaoBtn2);
-        todosRadioBtn.add(opcaoBtn3);
-        todosRadioBtn.add(opcaoBtn21);
-        todosRadioBtn.add(opcaoBtn22);
-        todosRadioBtn.add(opcaoBtn23);
-        todosRadioBtn.add(opcaoBtn31);
-        todosRadioBtn.add(opcaoBtn32);
-        todosRadioBtn.add(opcaoBtn33);
-        todosRadioBtn.add(opcaoBtn41);
-        todosRadioBtn.add(opcaoBtn42);
-        todosRadioBtn.add(opcaoBtn43);
-        todosRadioBtn.add(opcaoBtn51);
-        todosRadioBtn.add(opcaoBtn52);
-        todosRadioBtn.add(opcaoBtn53);
-
-        int cont = 0;
-        for (int i = 0; i < arrayBtn.size(); i++) {
-            for (int ii = cont; ii < 3; ii++) {
-                arrayBtn.get(i).add(todosRadioBtn.get(ii));
-                cont = ii;
-            }
-        }
-    }
-
-    private void BttonGroup() {
-        pergunta1Group = new ButtonGroup();
-        pergunta1Group.add(opcaoBtn1);
-        pergunta1Group.add(opcaoBtn2);
-        pergunta1Group.add(opcaoBtn3);
-
-        pergunta2Group = new ButtonGroup();
-        pergunta2Group.add(opcaoBtn21);
-        pergunta2Group.add(opcaoBtn22);
-        pergunta2Group.add(opcaoBtn23);
-
-        pergunta3Group = new ButtonGroup();
-        pergunta3Group.add(opcaoBtn31);
-        pergunta3Group.add(opcaoBtn32);
-        pergunta3Group.add(opcaoBtn33);
-
-        pergunta4Group = new ButtonGroup();
-        pergunta4Group.add(opcaoBtn41);
-        pergunta4Group.add(opcaoBtn42);
-        pergunta4Group.add(opcaoBtn43);
-
-        pergunta5Group = new ButtonGroup();
-        pergunta5Group.add(opcaoBtn51);
-        pergunta5Group.add(opcaoBtn52);
-        pergunta5Group.add(opcaoBtn53);
     }
 
     private void jop() {
@@ -108,36 +37,14 @@ public class TelaPerguntas extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         cadastrarBtn = new javax.swing.JButton();
         cadastrarBtn1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        perfilLabel = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        opcaoBtn1 = new javax.swing.JRadioButton();
-        opcaoBtn2 = new javax.swing.JRadioButton();
-        opcaoBtn3 = new javax.swing.JRadioButton();
-        opcaoBtn21 = new javax.swing.JRadioButton();
-        opcaoBtn22 = new javax.swing.JRadioButton();
-        opcaoBtn23 = new javax.swing.JRadioButton();
-        opcaoBtn41 = new javax.swing.JRadioButton();
-        opcaoBtn42 = new javax.swing.JRadioButton();
-        opcaoBtn43 = new javax.swing.JRadioButton();
-        opcaoBtn31 = new javax.swing.JRadioButton();
-        opcaoBtn32 = new javax.swing.JRadioButton();
-        opcaoBtn33 = new javax.swing.JRadioButton();
-        opcaoBtn51 = new javax.swing.JRadioButton();
-        opcaoBtn52 = new javax.swing.JRadioButton();
-        opcaoBtn53 = new javax.swing.JRadioButton();
-        enviarbtn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ptxt1 = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ptxt2 = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ptxt3 = new javax.swing.JTextArea();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        ptxt4 = new javax.swing.JTextArea();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        ptxt5 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        nenhumaBtn = new javax.swing.JRadioButton();
+        opcao1Btn = new javax.swing.JRadioButton();
+        opcao2Btn = new javax.swing.JRadioButton();
+        nextBtn = new javax.swing.JLabel();
+        voltarBtn = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         cadastrarBtn.setBackground(new java.awt.Color(233, 68, 190));
         cadastrarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -158,444 +65,53 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        voltarBtn.setBackground(new java.awt.Color(83, 41, 71));
-        voltarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        voltarBtn.setForeground(new java.awt.Color(233, 68, 190));
-        voltarBtn.setText("<<VOLTAR");
-        voltarBtn.setBorder(null);
-        voltarBtn.setBorderPainted(false);
-        voltarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                voltarBtnActionPerformed(evt);
+        jScrollPane4.setBackground(new java.awt.Color(253, 40, 141));
+        jScrollPane4.setForeground(new java.awt.Color(43, 24, 33));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane4.setViewportView(jTextArea1);
+
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 810, 200));
+        add(nenhumaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, 310, 80));
+        add(opcao1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 461, 300, 80));
+        add(opcao2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 310, 80));
+        add(nextBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 670, 300, 40));
+
+        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                voltarBtnMouseClicked(evt);
             }
         });
+        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 20, 80, 60));
 
-        jPanel1.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190), 2));
-
-        opcaoBtn1.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn1.setText("1° opção");
-
-        opcaoBtn2.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn2.setText("2° opção");
-
-        opcaoBtn3.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn3.setText("Nenhuma");
-        opcaoBtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn3ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn21.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn21.setText("1° opção");
-
-        opcaoBtn22.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn22.setText("2° opção");
-        opcaoBtn22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn22ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn23.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn23.setText("Nenhuma");
-        opcaoBtn23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn23ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn41.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn41.setText("1° opção");
-
-        opcaoBtn42.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn42.setText("2° opção");
-
-        opcaoBtn43.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn43.setText("Nenhuma");
-        opcaoBtn43.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn43ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn31.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn31.setText("1° opção");
-
-        opcaoBtn32.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn32.setText("2° opção");
-
-        opcaoBtn33.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn33.setText("Nenhuma");
-        opcaoBtn33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn33ActionPerformed(evt);
-            }
-        });
-
-        opcaoBtn51.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn51.setText("1° opção");
-
-        opcaoBtn52.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn52.setText("2° opção");
-
-        opcaoBtn53.setForeground(new java.awt.Color(255, 255, 255));
-        opcaoBtn53.setText("Nenhuma");
-        opcaoBtn53.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcaoBtn53ActionPerformed(evt);
-            }
-        });
-
-        enviarbtn.setBackground(new java.awt.Color(233, 68, 190));
-        enviarbtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        enviarbtn.setForeground(new java.awt.Color(255, 255, 255));
-        enviarbtn.setText("ENVIAR");
-        enviarbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(233, 68, 190)));
-        enviarbtn.setBorderPainted(false);
-        enviarbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enviarbtnActionPerformed(evt);
-            }
-        });
-
-        jScrollPane1.setBorder(null);
-
-        ptxt1.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt1.setColumns(20);
-        ptxt1.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt1.setLineWrap(true);
-        ptxt1.setRows(5);
-        jScrollPane1.setViewportView(ptxt1);
-
-        jScrollPane2.setBorder(null);
-
-        ptxt2.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt2.setColumns(20);
-        ptxt2.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt2.setRows(5);
-        ptxt2.setBorder(null);
-        jScrollPane2.setViewportView(ptxt2);
-
-        jScrollPane3.setBorder(null);
-
-        ptxt3.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt3.setColumns(20);
-        ptxt3.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt3.setRows(5);
-        ptxt3.setBorder(null);
-        jScrollPane3.setViewportView(ptxt3);
-
-        jScrollPane5.setBorder(null);
-
-        ptxt4.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt4.setColumns(20);
-        ptxt4.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt4.setRows(5);
-        jScrollPane5.setViewportView(ptxt4);
-
-        jScrollPane7.setBorder(null);
-
-        ptxt5.setBackground(new java.awt.Color(83, 41, 71));
-        ptxt5.setColumns(20);
-        ptxt5.setForeground(new java.awt.Color(233, 68, 190));
-        ptxt5.setRows(5);
-        jScrollPane7.setViewportView(ptxt5);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane1)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcaoBtn31)
-                                .addGap(38, 38, 38)
-                                .addComponent(opcaoBtn32)
-                                .addGap(31, 31, 31)
-                                .addComponent(opcaoBtn33))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(opcaoBtn21)
-                                    .addGap(39, 39, 39)
-                                    .addComponent(opcaoBtn22)
-                                    .addGap(33, 33, 33)
-                                    .addComponent(opcaoBtn23))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(opcaoBtn1)
-                                    .addGap(42, 42, 42)
-                                    .addComponent(opcaoBtn2)
-                                    .addGap(27, 27, 27)
-                                    .addComponent(opcaoBtn3)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(opcaoBtn51)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(opcaoBtn52)
-                                    .addGap(34, 34, 34)
-                                    .addComponent(opcaoBtn53))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(opcaoBtn41)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(opcaoBtn42)
-                                    .addGap(34, 34, 34)
-                                    .addComponent(opcaoBtn43))))
-                        .addGap(0, 88, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(enviarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn1)
-                    .addComponent(opcaoBtn2)
-                    .addComponent(opcaoBtn3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn21)
-                    .addComponent(opcaoBtn22)
-                    .addComponent(opcaoBtn23))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn31)
-                    .addComponent(opcaoBtn32)
-                    .addComponent(opcaoBtn33))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcaoBtn41)
-                    .addComponent(opcaoBtn42)
-                    .addComponent(opcaoBtn43))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(opcaoBtn51)
-                        .addComponent(opcaoBtn52))
-                    .addComponent(opcaoBtn53, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(42, 42, 42)
-                .addComponent(enviarbtn)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(voltarBtn)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(voltarBtn)
-                    .addComponent(perfilLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaQuizCmc.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void clearRadioBtn() {
-        pergunta1Group.clearSelection();
-        pergunta2Group.clearSelection();
-        pergunta3Group.clearSelection();
-        pergunta4Group.clearSelection();
-        pergunta5Group.clearSelection();
-    }
-
-    private void tiraScrool() {
-        ptxt1.setLineWrap(true);
-        ptxt2.setLineWrap(true);
-        ptxt3.setLineWrap(true);
-        ptxt4.setLineWrap(true);
-        ptxt5.setLineWrap(true);
-    }
-
-    private void setText() {
-        switch (this.escolha) {
-            case 1:
-                ptxt1.setText("Você prefere filmeds que porporcionem momentos leves e divertidos, \n"
-                        + "capazes de arrancar um sorriso mesmo nas situações mais inusitadas, ou \n"
-                        + "prefere filmes que retratam momentos intensos e emocionais que fazem você\n"
-                        + "refletir sobre a complexidade da vida?");
-                ptxt2.setText("Você se interessa por narrativas cinematográficas que exploram a realidade, \n"
-                        + "oferecendo uma perspectiva mais profunda sobre diferentes assuntos e \n"
-                        + "experiêciaas de vida, ou prefere tramas que se afastam mais da realidade em \n"
-                        + "busca de entretenimento ficcional, explorando mundos imaginários?");
-                ptxt3.setText("Você se empolga com tramas cheias de adrenalina e reviravoltas, ou presta atenção,\n"
-                        + "especialmente, na trilha sonora e nas performances musicais integradas à história?");
-                ptxt4.setText("Você gosta de se explorar em narrativas que despertam uma sensação de medo e suspense ou \n"
-                        + "se envolver mais nas histórias que exloram os nuances das relações humanas?");
-                ptxt5.setText("Você se sente mais atraído por narrativas que desafiem sua capacidade de dedução e mantêm\n"
-                        + "você intrigado do início ao fim, ou as que exploram terras desconhecidas, desafios \n"
-                        + "emocionantes e jornadas inesperadas?");
-                break;
-            case 2:
-                ptxt1.setText("");
-                ptxt2.setText("");
-                ptxt3.setText("");
-                ptxt4.setText("");
-                ptxt5.setText("");
-                break;
-            case 3:
-                ptxt1.setText("");
-                ptxt2.setText("");
-                ptxt3.setText("");
-                ptxt4.setText("");
-                ptxt5.setText("");
-                break;
-        }
-    }
-
-    private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
-        clearRadioBtn();
-        FramePrincipal.trocaPainel("quiz", new TelaQuiz());
-    }//GEN-LAST:event_voltarBtnActionPerformed
 
     private void cadastrarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtn1ActionPerformed
 ////////////////////////////////////////////////////////////////////////////////////
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
 
-    private void enviarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarbtnActionPerformed
-//        if ((opcaoBtn1.isSelected() || opcaoBtn2.isSelected() || opcaoBtn3.isSelected())
-//                && (opcaoBtn21.isSelected() || opcaoBtn22.isSelected() || opcaoBtn23.isSelected())
-//                && (opcaoBtn31.isSelected() || opcaoBtn32.isSelected() || opcaoBtn33.isSelected())
-//                && (opcaoBtn41.isSelected() || opcaoBtn42.isSelected() || opcaoBtn43.isSelected())
-//                && (opcaoBtn51.isSelected() || opcaoBtn52.isSelected() || opcaoBtn53.isSelected())
-//                && (opcaoBtn61.isSelected() || opcaoBtn62.isSelected() || opcaoBtn63.isSelected())
-//                && (opcaoBtn71.isSelected() || opcaoBtn72.isSelected() || opcaoBtn73.isSelected())
-//                && (opcaoBtn81.isSelected() || opcaoBtn82.isSelected() || opcaoBtn83.isSelected())
-//                && (opcaoBtn91.isSelected() || opcaoBtn92.isSelected() || opcaoBtn93.isSelected())
-//                && (opcaoBtn11.isSelected() || opcaoBtn12.isSelected() || opcaoBtn13.isSelected())) {
-        Analise analise = new Analise();
-
-        analise.calculaResultado(pergunta1Group.getSelection(), pergunta2Group.getSelection(),
-                pergunta3Group.getSelection(), pergunta4Group.getSelection(),
-                pergunta5Group.getSelection(), todosRadioBtn, this.escolha);
-        clearRadioBtn();
-
-        //FramePrincipal.trocaPainel("resultado", new TelaResultado());
-//        } else {
-//            JOptionPane.showMessageDialog(this, "É necessário preencher todos os campos");
-//        }
-
-    }//GEN-LAST:event_enviarbtnActionPerformed
-
-    private void opcaoBtn53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn53ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn53ActionPerformed
-
-    private void opcaoBtn43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn43ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn43ActionPerformed
-
-    private void opcaoBtn33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn33ActionPerformed
-
-    private void opcaoBtn23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn23ActionPerformed
-
-    private void opcaoBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn3ActionPerformed
-
-    private void opcaoBtn22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoBtn22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcaoBtn22ActionPerformed
+    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
+    }//GEN-LAST:event_voltarBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cadastrarBtn;
     private javax.swing.JButton cadastrarBtn1;
-    private javax.swing.JButton enviarbtn;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JRadioButton opcaoBtn1;
-    private javax.swing.JRadioButton opcaoBtn2;
-    private javax.swing.JRadioButton opcaoBtn21;
-    private javax.swing.JRadioButton opcaoBtn22;
-    private javax.swing.JRadioButton opcaoBtn23;
-    private javax.swing.JRadioButton opcaoBtn3;
-    private javax.swing.JRadioButton opcaoBtn31;
-    private javax.swing.JRadioButton opcaoBtn32;
-    private javax.swing.JRadioButton opcaoBtn33;
-    private javax.swing.JRadioButton opcaoBtn41;
-    private javax.swing.JRadioButton opcaoBtn42;
-    private javax.swing.JRadioButton opcaoBtn43;
-    private javax.swing.JRadioButton opcaoBtn51;
-    private javax.swing.JRadioButton opcaoBtn52;
-    private javax.swing.JRadioButton opcaoBtn53;
-    private javax.swing.JLabel perfilLabel;
-    private javax.swing.JTextArea ptxt1;
-    private javax.swing.JTextArea ptxt2;
-    private javax.swing.JTextArea ptxt3;
-    private javax.swing.JTextArea ptxt4;
-    private javax.swing.JTextArea ptxt5;
-    private javax.swing.JButton voltarBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JRadioButton nenhumaBtn;
+    private javax.swing.JLabel nextBtn;
+    private javax.swing.JRadioButton opcao1Btn;
+    private javax.swing.JRadioButton opcao2Btn;
+    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

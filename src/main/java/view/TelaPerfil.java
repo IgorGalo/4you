@@ -178,7 +178,7 @@ public class TelaPerfil extends javax.swing.JPanel {
     }//GEN-LAST:event_pesqBtnActionPerformed
 
     private void quizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtnActionPerformed
-        FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
+        FramePrincipal.trocaPainel("painel quiz", new TelaEscolhaFML());
     }//GEN-LAST:event_quizBtnActionPerformed
 
     private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed

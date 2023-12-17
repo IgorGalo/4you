@@ -370,7 +370,7 @@ public class TelaResultado extends javax.swing.JPanel {
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
         // TODO add your handling code here:
 
-        FramePrincipal.trocaPainel("quiz", new TelaQuiz());
+        FramePrincipal.trocaPainel("quiz", new TelaEscolhaFML());
     }//GEN-LAST:event_voltarBtnActionPerformed
 
 

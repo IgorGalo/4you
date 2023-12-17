@@ -137,7 +137,7 @@ public class TelaCadastrar extends javax.swing.JPanel {
         if (resultado.isRetorno() == false) {
             JOptionPane.showMessageDialog(this, resultado.getMensagem());
         } else {
-            FramePrincipal.trocaPainel("tela escolha foto", new TelaEscolherFoto());
+            FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
         }
 
     }//GEN-LAST:event_nextBtnMouseClicked

@@ -4,6 +4,12 @@
  */
 package view;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author 0068948
@@ -15,6 +21,21 @@ public class TelaInicio extends javax.swing.JPanel {
      */
     public TelaInicio() {
         initComponents();
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaInicio.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
     }
 
     /**
@@ -44,6 +65,9 @@ public class TelaInicio extends javax.swing.JPanel {
         jMenuBar6 = new javax.swing.JMenuBar();
         jMenu11 = new javax.swing.JMenu();
         jMenu12 = new javax.swing.JMenu();
+        perfilBtn = new javax.swing.JLabel();
+        quizBtn = new javax.swing.JLabel();
+        pesquisarBtn = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -81,17 +105,41 @@ public class TelaInicio extends javax.swing.JPanel {
         jMenu12.setText("Edit");
         jMenuBar6.add(jMenu12);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
-        );
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                perfilBtnMouseClicked(evt);
+            }
+        });
+        add(perfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 60, 60));
+
+        quizBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quizBtnMouseClicked(evt);
+            }
+        });
+        add(quizBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 690, 70, 60));
+
+        pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pesquisarBtnMouseClicked(evt);
+            }
+        });
+        add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesquisarBtnMouseClicked
+
+    private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
+        FramePrincipal.trocaPainel("tela quiz", new TelaEscolhaFML());
+    }//GEN-LAST:event_quizBtnMouseClicked
+
+    private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
+       FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -113,5 +161,8 @@ public class TelaInicio extends javax.swing.JPanel {
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuBar jMenuBar6;
+    private javax.swing.JLabel perfilBtn;
+    private javax.swing.JLabel pesquisarBtn;
+    private javax.swing.JLabel quizBtn;
     // End of variables declaration//GEN-END:variables
 }

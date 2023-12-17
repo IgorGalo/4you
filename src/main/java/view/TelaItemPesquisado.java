@@ -173,7 +173,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     }//GEN-LAST:event_inicioBtn3ActionPerformed
 
     private void quizBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn3ActionPerformed
-        FramePrincipal.trocaPainel("painel quiz", new TelaQuiz());
+        FramePrincipal.trocaPainel("painel quiz", new TelaEscolhaFML());
     }//GEN-LAST:event_quizBtn3ActionPerformed
 
     private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
