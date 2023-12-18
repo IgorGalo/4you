@@ -56,8 +56,6 @@ public class UsuarioDAO {
 
                 insercao.setString(1, user);
                 insercao.setBinaryStream(2, fis, (int) arquivo.length());
-                //insercao.setBytes(2, dados.getImg());
-                //insercao.setBytes(2, dados.getImg());
                 insercao.execute();
                 c.close();
                 return true;

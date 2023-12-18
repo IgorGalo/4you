@@ -37,10 +37,19 @@ public class TelaCadastrar extends javax.swing.JPanel {
 
         emailTxt.setBackground(new java.awt.Color(43, 24, 33));
         emailTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        emailTxt.setForeground(new java.awt.Color(255, 255, 255));
+        emailTxt.setForeground(new java.awt.Color(204, 204, 204));
         emailTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        emailTxt.setText("E-MAIL");
         emailTxt.setBorder(null);
         emailTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        emailTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailTxtFocusLost(evt);
+            }
+        });
         emailTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTxtActionPerformed(evt);
@@ -50,10 +59,19 @@ public class TelaCadastrar extends javax.swing.JPanel {
 
         usuarioTxt.setBackground(new java.awt.Color(43, 24, 33));
         usuarioTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        usuarioTxt.setForeground(new java.awt.Color(255, 255, 255));
+        usuarioTxt.setForeground(new java.awt.Color(204, 204, 204));
         usuarioTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usuarioTxt.setText("NOME DE USUÁRIO");
         usuarioTxt.setBorder(null);
         usuarioTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        usuarioTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usuarioTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usuarioTxtFocusLost(evt);
+            }
+        });
         usuarioTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioTxtActionPerformed(evt);
@@ -63,10 +81,19 @@ public class TelaCadastrar extends javax.swing.JPanel {
 
         senhaTxt.setBackground(new java.awt.Color(43, 24, 33));
         senhaTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        senhaTxt.setForeground(new java.awt.Color(255, 255, 255));
+        senhaTxt.setForeground(new java.awt.Color(204, 204, 204));
         senhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        senhaTxt.setText("SENHA");
         senhaTxt.setBorder(null);
         senhaTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        senhaTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                senhaTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                senhaTxtFocusLost(evt);
+            }
+        });
         senhaTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senhaTxtActionPerformed(evt);
@@ -76,10 +103,19 @@ public class TelaCadastrar extends javax.swing.JPanel {
 
         nomeTxt.setBackground(new java.awt.Color(43, 24, 33));
         nomeTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nomeTxt.setForeground(new java.awt.Color(255, 255, 255));
+        nomeTxt.setForeground(new java.awt.Color(204, 204, 204));
         nomeTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nomeTxt.setText("NOME COMPLETO");
         nomeTxt.setBorder(null);
         nomeTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nomeTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nomeTxtFocusLost(evt);
+            }
+        });
         nomeTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeTxtActionPerformed(evt);
@@ -138,6 +174,7 @@ public class TelaCadastrar extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, resultado.getMensagem());
         } else {
             FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
+            //usuarioC.cadastrarImagem(imgembyte, TOOL_TIP_TEXT_KEY, arquivo)
         }
 
     }//GEN-LAST:event_nextBtnMouseClicked
@@ -149,6 +186,54 @@ public class TelaCadastrar extends javax.swing.JPanel {
     private void nomeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeTxtActionPerformed
+
+    private void nomeTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeTxtFocusGained
+        if (nomeTxt.getText().equalsIgnoreCase("NOME COMPLETO")) {
+            nomeTxt.setText("");
+        }
+    }//GEN-LAST:event_nomeTxtFocusGained
+
+    private void nomeTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeTxtFocusLost
+        if (nomeTxt.getText().equalsIgnoreCase("")) {
+            nomeTxt.setText("NOME COMPLETO");
+        }
+    }//GEN-LAST:event_nomeTxtFocusLost
+
+    private void emailTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTxtFocusGained
+        if (emailTxt.getText().equalsIgnoreCase("E-MAIL")) {
+            emailTxt.setText("");
+        }
+    }//GEN-LAST:event_emailTxtFocusGained
+
+    private void emailTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTxtFocusLost
+        if (emailTxt.getText().equalsIgnoreCase("")) {
+            emailTxt.setText("E-MAIL");
+        }
+    }//GEN-LAST:event_emailTxtFocusLost
+
+    private void usuarioTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioTxtFocusGained
+        if (usuarioTxt.getText().equalsIgnoreCase("NOME DE USUÁRIO")) {
+            usuarioTxt.setText("");
+        }
+    }//GEN-LAST:event_usuarioTxtFocusGained
+
+    private void usuarioTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioTxtFocusLost
+        if (usuarioTxt.getText().equalsIgnoreCase("")) {
+            usuarioTxt.setText("NOME DE USUÁRIO");
+        }
+    }//GEN-LAST:event_usuarioTxtFocusLost
+
+    private void senhaTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_senhaTxtFocusGained
+        if (senhaTxt.getText().equalsIgnoreCase("SENHA")) {
+            senhaTxt.setText("");
+        }
+    }//GEN-LAST:event_senhaTxtFocusGained
+
+    private void senhaTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_senhaTxtFocusLost
+        if (senhaTxt.getText().equalsIgnoreCase("")) {
+            senhaTxt.setText("SENHA");
+        }
+    }//GEN-LAST:event_senhaTxtFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -13,13 +13,12 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         musicaBtn = new javax.swing.JLabel();
         filmeBtn = new javax.swing.JLabel();
         livroBtn = new javax.swing.JLabel();
-        perfilBtn = new javax.swing.JLabel();
-        inicioBtn = new javax.swing.JLabel();
-        pesquisarBtn = new javax.swing.JLabel();
+        voltarBtn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        musicaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         musicaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 musicaBtnMouseClicked(evt);
@@ -27,6 +26,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         });
         add(musicaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 540, 200, 80));
 
+        filmeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         filmeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 filmeBtnMouseClicked(evt);
@@ -34,6 +34,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         });
         add(filmeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 210, 80));
 
+        livroBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         livroBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 livroBtnMouseClicked(evt);
@@ -41,42 +42,16 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         });
         add(livroBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 200, 80));
 
-        perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                perfilBtnMouseClicked(evt);
+                voltarBtnMouseClicked(evt);
             }
         });
-        add(perfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 60, 60));
-
-        inicioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                inicioBtnMouseClicked(evt);
-            }
-        });
-        add(inicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 690, 70, 60));
-
-        pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pesquisarBtnMouseClicked(evt);
-            }
-        });
-        add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
+        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaFML.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
-    }//GEN-LAST:event_perfilBtnMouseClicked
-
-    private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked
-        FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
-    }//GEN-LAST:event_inicioBtnMouseClicked
-
-    private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
-        FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
-    }//GEN-LAST:event_pesquisarBtnMouseClicked
 
     private void musicaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musicaBtnMouseClicked
         FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(2));
@@ -90,14 +65,16 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela perguntas Livro", new TelaPerguntas(3));
     }//GEN-LAST:event_livroBtnMouseClicked
 
+    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
+    }//GEN-LAST:event_voltarBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel filmeBtn;
-    private javax.swing.JLabel inicioBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel livroBtn;
     private javax.swing.JLabel musicaBtn;
-    private javax.swing.JLabel perfilBtn;
-    private javax.swing.JLabel pesquisarBtn;
+    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

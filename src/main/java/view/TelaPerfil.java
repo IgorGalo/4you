@@ -6,6 +6,7 @@ package view;
 
 import control.UsuarioControl;
 import dao.UsuarioDAO;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -31,159 +32,110 @@ public class TelaPerfil extends javax.swing.JPanel {
 
     public TelaPerfil() {
         initComponents();
-        Icon imagemPerfilInicio = new ImageIcon("src\\main\\resources\\perfil.png");
+        Icon imagemPerfilInicio = new ImageIcon("src\\main\\resources\\labelperfil.png");
         labelperfil.setIcon(imagemPerfilInicio);
         adicionarImagemDoBancoParaMudarIcon();
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaPerfil.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        perfilLabel = new javax.swing.JLabel();
-        editarPerfilBtn = new javax.swing.JButton();
+        alteraBtn = new javax.swing.JLabel();
+        quizBtn = new javax.swing.JLabel();
+        inicioBtn = new javax.swing.JLabel();
+        pesquisarBtn = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        itemUser = new javax.swing.JList<>();
         labelperfil = new javax.swing.JLabel();
-        inicioBtn1 = new javax.swing.JButton();
-        quizBtn = new javax.swing.JButton();
-        pesqBtn = new javax.swing.JButton();
-        perfilBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        editarPerfilBtn.setBackground(new java.awt.Color(83, 41, 71));
-        editarPerfilBtn.setForeground(new java.awt.Color(233, 68, 190));
-        editarPerfilBtn.setText("Editar Perfil");
-        editarPerfilBtn.setBorderPainted(false);
-        editarPerfilBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarPerfilBtnActionPerformed(evt);
+        alteraBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        alteraBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                alteraBtnMouseClicked(evt);
             }
         });
+        add(alteraBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 216, 190, 40));
 
-        inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
-        inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        inicioBtn1.setText("🏠");
-        inicioBtn1.setBorderPainted(false);
-        inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inicioBtn1ActionPerformed(evt);
+        quizBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        quizBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quizBtnMouseClicked(evt);
             }
         });
+        add(quizBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 690, 70, 60));
 
-        quizBtn.setBackground(new java.awt.Color(83, 41, 71));
-        quizBtn.setForeground(new java.awt.Color(233, 68, 190));
-        quizBtn.setText("❔");
-        quizBtn.setBorderPainted(false);
-        quizBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizBtnActionPerformed(evt);
+        inicioBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inicioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inicioBtnMouseClicked(evt);
             }
         });
+        add(inicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 690, 50, 60));
 
-        pesqBtn.setBackground(new java.awt.Color(83, 41, 71));
-        pesqBtn.setForeground(new java.awt.Color(233, 68, 190));
-        pesqBtn.setText("🔎");
-        pesqBtn.setBorderPainted(false);
-        pesqBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesqBtnActionPerformed(evt);
+        pesquisarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pesquisarBtnMouseClicked(evt);
             }
         });
+        add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
 
-        perfilBtn.setBackground(new java.awt.Color(83, 41, 71));
-        perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
-        perfilBtn.setText("👤");
-        perfilBtn.setBorderPainted(false);
-        perfilBtn.setEnabled(false);
-        perfilBtn.setMaximumSize(new java.awt.Dimension(31, 23));
-        perfilBtn.setMinimumSize(new java.awt.Dimension(31, 23));
-        perfilBtn.setPreferredSize(new java.awt.Dimension(31, 23));
-        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilBtnActionPerformed(evt);
-            }
-        });
+        itemUser.setBackground(new java.awt.Color(43, 24, 33));
+        itemUser.setBorder(null);
+        jScrollPane1.setViewportView(itemUser);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(inicioBtn1)
-                        .addGap(88, 88, 88)
-                        .addComponent(pesqBtn)
-                        .addGap(94, 94, 94)
-                        .addComponent(quizBtn)
-                        .addGap(88, 88, 88)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarPerfilBtn)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(labelperfil, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(76, 80, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(perfilLabel)
-                .addGap(13, 13, 13)
-                .addComponent(labelperfil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(editarPerfilBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pesqBtn)
-                        .addComponent(quizBtn)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inicioBtn1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 910, 380));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        labelperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
+        add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 200));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPerfil.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
+    private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
+        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
+    }//GEN-LAST:event_quizBtnMouseClicked
 
-    }//GEN-LAST:event_perfilBtnActionPerformed
+    private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked
+        FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
+    }//GEN-LAST:event_inicioBtnMouseClicked
 
-    private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
-        FramePrincipal.trocaPainel("painel pesquisar", new TelaPesquisar());
-    }//GEN-LAST:event_pesqBtnActionPerformed
+    private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesquisarBtnMouseClicked
 
-    private void quizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtnActionPerformed
-        FramePrincipal.trocaPainel("painel quiz", new TelaEscolhaFML());
-    }//GEN-LAST:event_quizBtnActionPerformed
+    private void alteraBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alteraBtnMouseClicked
+        JFileChooser janelaArquivo = new JFileChooser();
+        janelaArquivo.setFileFilter(new FileNameExtensionFilter("tipos de imagem", "PNG", "png", "JPEG", "jpeg", "JPG", "jpg"));
+        TelaEntrar user = new TelaEntrar();
 
-    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-    }//GEN-LAST:event_inicioBtn1ActionPerformed
+        int operacao = janelaArquivo.showSaveDialog(janelaArquivo);
+
+        if (operacao == JFileChooser.APPROVE_OPTION) {
+            usuarioC.editarPerfil(janelaArquivo);
+            adicionarImagemDoBancoParaMudarIcon();
+        }
+    }//GEN-LAST:event_alteraBtnMouseClicked
     public void adicionarImagemDoBancoParaMudarIcon() {
 
         UsuarioControl usuarioC = new UsuarioControl();
@@ -197,28 +149,15 @@ public class TelaPerfil extends javax.swing.JPanel {
         }
     }
 
-    private void editarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPerfilBtnActionPerformed
-        JFileChooser janelaArquivo = new JFileChooser();
-        janelaArquivo.setFileFilter(new FileNameExtensionFilter("tipos de imagem", "PNG", "png", "JPEG", "jpeg", "JPG", "jpg"));
-        TelaEntrar user = new TelaEntrar();
-
-        int operacao = janelaArquivo.showSaveDialog(janelaArquivo);
-
-        if (operacao == JFileChooser.APPROVE_OPTION) {
-            usuarioC.editarPerfil(janelaArquivo);
-            adicionarImagemDoBancoParaMudarIcon();
-        }
-    }//GEN-LAST:event_editarPerfilBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton editarPerfilBtn;
-    private javax.swing.JButton inicioBtn1;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel alteraBtn;
+    private javax.swing.JLabel inicioBtn;
+    private javax.swing.JList<String> itemUser;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelperfil;
-    private javax.swing.JButton perfilBtn;
-    private javax.swing.JLabel perfilLabel;
-    private javax.swing.JButton pesqBtn;
-    private javax.swing.JButton quizBtn;
+    private javax.swing.JLabel pesquisarBtn;
+    private javax.swing.JLabel quizBtn;
     // End of variables declaration//GEN-END:variables
 }

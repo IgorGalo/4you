@@ -107,6 +107,7 @@ public class TelaInicio extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        perfilBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 perfilBtnMouseClicked(evt);
@@ -114,6 +115,7 @@ public class TelaInicio extends javax.swing.JPanel {
         });
         add(perfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 60, 60));
 
+        quizBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         quizBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 quizBtnMouseClicked(evt);
@@ -121,6 +123,7 @@ public class TelaInicio extends javax.swing.JPanel {
         });
         add(quizBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 690, 70, 60));
 
+        pesquisarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pesquisarBtnMouseClicked(evt);
@@ -134,7 +137,7 @@ public class TelaInicio extends javax.swing.JPanel {
     }//GEN-LAST:event_pesquisarBtnMouseClicked
 
     private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
-        FramePrincipal.trocaPainel("tela quiz", new TelaEscolhaFML());
+        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
     }//GEN-LAST:event_quizBtnMouseClicked
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked

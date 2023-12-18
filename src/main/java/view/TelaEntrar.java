@@ -62,10 +62,19 @@ public class TelaEntrar extends javax.swing.JPanel {
 
         SenhaTxt.setBackground(new java.awt.Color(43, 24, 33));
         SenhaTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        SenhaTxt.setForeground(new java.awt.Color(255, 255, 255));
+        SenhaTxt.setForeground(new java.awt.Color(204, 204, 204));
         SenhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SenhaTxt.setText("SENHA");
         SenhaTxt.setBorder(null);
         SenhaTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SenhaTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                SenhaTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                SenhaTxtFocusLost(evt);
+            }
+        });
         SenhaTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SenhaTxtActionPerformed(evt);
@@ -75,10 +84,19 @@ public class TelaEntrar extends javax.swing.JPanel {
 
         NomeTxt.setBackground(new java.awt.Color(43, 24, 33));
         NomeTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        NomeTxt.setForeground(new java.awt.Color(255, 255, 255));
+        NomeTxt.setForeground(new java.awt.Color(204, 204, 204));
         NomeTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NomeTxt.setText("NOME DE USUÁRIO/E-MAIL");
         NomeTxt.setBorder(null);
         NomeTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NomeTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                NomeTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                NomeTxtFocusLost(evt);
+            }
+        });
         NomeTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomeTxtActionPerformed(evt);
@@ -140,6 +158,7 @@ public class TelaEntrar extends javax.swing.JPanel {
 
         }
     }
+
     public String getNomeuser() {
         return nomeuser;
     }//GEN-LAST:event_jLabel2MouseClicked
@@ -147,6 +166,30 @@ public class TelaEntrar extends javax.swing.JPanel {
     private void cadastrarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarBtnMouseClicked
         FramePrincipal.trocaPainel("tela cadastrar", new TelaCadastrar());
     }//GEN-LAST:event_cadastrarBtnMouseClicked
+
+    private void NomeTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NomeTxtFocusGained
+        if (NomeTxt.getText().equalsIgnoreCase("NOME DE USUÁRIO/E-MAIL")) {
+            NomeTxt.setText("");
+        }
+    }//GEN-LAST:event_NomeTxtFocusGained
+
+    private void NomeTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NomeTxtFocusLost
+        if(NomeTxt.getText().equalsIgnoreCase("")){
+            NomeTxt.setText("NOME DE USUÁRIO/E-MAIL");
+        }
+    }//GEN-LAST:event_NomeTxtFocusLost
+
+    private void SenhaTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SenhaTxtFocusGained
+        if (SenhaTxt.getText().equalsIgnoreCase("SENHA")) {
+            SenhaTxt.setText("");
+        }
+    }//GEN-LAST:event_SenhaTxtFocusGained
+
+    private void SenhaTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SenhaTxtFocusLost
+        if(SenhaTxt.getText().equalsIgnoreCase("")){
+            SenhaTxt.setText("SENHA");
+        }
+    }//GEN-LAST:event_SenhaTxtFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

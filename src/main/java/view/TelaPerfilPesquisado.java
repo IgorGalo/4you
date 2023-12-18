@@ -1,8 +1,12 @@
 package view;
 
 import control.UsuarioControl;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 
 public class TelaPerfilPesquisado extends javax.swing.JPanel {
 
@@ -13,6 +17,21 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
         this.nomePesquisado = nomePesquisado;
         trocaNome();
         adicionarImagemDoBanco();
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaOutroPerfil.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
     }
 
     private void trocaNome() {
@@ -36,175 +55,91 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        perfilLabel = new javax.swing.JLabel();
-        labelperfil = new javax.swing.JLabel();
-        inicioBtn1 = new javax.swing.JButton();
-        quizBtn = new javax.swing.JButton();
-        pesqBtn = new javax.swing.JButton();
-        perfilBtn = new javax.swing.JButton();
         nomeLbl = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JButton();
+        labelperfil = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        itemUser = new javax.swing.JList<>();
+        perfilBtn = new javax.swing.JLabel();
+        quizBtn = new javax.swing.JLabel();
+        inicioBtn = new javax.swing.JLabel();
+        pesquisarBtn = new javax.swing.JLabel();
 
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        inicioBtn1.setBackground(new java.awt.Color(83, 41, 71));
-        inicioBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        inicioBtn1.setText("🏠");
-        inicioBtn1.setBorderPainted(false);
-        inicioBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inicioBtn1ActionPerformed(evt);
+        nomeLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nomeLbl.setForeground(new java.awt.Color(255, 255, 255));
+        nomeLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nomeLbl.setText("NOME DE USUÁRIO");
+        add(nomeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 230, 40));
+
+        labelperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
+        add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
+
+        itemUser.setBackground(new java.awt.Color(43, 24, 33));
+        itemUser.setBorder(null);
+        jScrollPane1.setViewportView(itemUser);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 910, 380));
+
+        perfilBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                perfilBtnMouseClicked(evt);
             }
         });
+        add(perfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 60, 60));
 
-        quizBtn.setBackground(new java.awt.Color(83, 41, 71));
-        quizBtn.setForeground(new java.awt.Color(233, 68, 190));
-        quizBtn.setText("❔");
-        quizBtn.setBorderPainted(false);
-        quizBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizBtnActionPerformed(evt);
+        quizBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        quizBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quizBtnMouseClicked(evt);
             }
         });
+        add(quizBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 690, 70, 60));
 
-        pesqBtn.setBackground(new java.awt.Color(83, 41, 71));
-        pesqBtn.setForeground(new java.awt.Color(233, 68, 190));
-        pesqBtn.setText("🔎");
-        pesqBtn.setBorderPainted(false);
-        pesqBtn.setEnabled(false);
-        pesqBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesqBtnActionPerformed(evt);
+        inicioBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inicioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inicioBtnMouseClicked(evt);
             }
         });
+        add(inicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 690, 50, 60));
 
-        perfilBtn.setBackground(new java.awt.Color(83, 41, 71));
-        perfilBtn.setForeground(new java.awt.Color(233, 68, 190));
-        perfilBtn.setText("👤");
-        perfilBtn.setBorderPainted(false);
-        perfilBtn.setMaximumSize(new java.awt.Dimension(31, 23));
-        perfilBtn.setMinimumSize(new java.awt.Dimension(31, 23));
-        perfilBtn.setPreferredSize(new java.awt.Dimension(31, 23));
-        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilBtnActionPerformed(evt);
+        pesquisarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pesquisarBtnMouseClicked(evt);
             }
         });
-
-        nomeLbl.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl.setText("nome do perfil");
-
-        voltarBtn.setBackground(new java.awt.Color(83, 41, 71));
-        voltarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        voltarBtn.setForeground(new java.awt.Color(233, 68, 190));
-        voltarBtn.setText("<<VOLTAR");
-        voltarBtn.setBorder(null);
-        voltarBtn.setBorderPainted(false);
-        voltarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                voltarBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(inicioBtn1)
-                        .addGap(88, 88, 88)
-                        .addComponent(pesqBtn)
-                        .addGap(94, 94, 94)
-                        .addComponent(quizBtn)
-                        .addGap(88, 88, 88)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(nomeLbl))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(labelperfil, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(voltarBtn)))
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addComponent(voltarBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(perfilLabel)
-                .addGap(13, 13, 13)
-                .addComponent(labelperfil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomeLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pesqBtn)
-                        .addComponent(quizBtn)
-                        .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inicioBtn1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inicioBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-    }//GEN-LAST:event_inicioBtn1ActionPerformed
+    private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
+        FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtnMouseClicked
 
-    private void quizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtnActionPerformed
-        FramePrincipal.trocaPainel("painel quiz", new TelaEscolhaFML());
-    }//GEN-LAST:event_quizBtnActionPerformed
+    private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
+        FramePrincipal.trocaPainel("tela quiz", new TelaEscolhaFML());
+    }//GEN-LAST:event_quizBtnMouseClicked
 
-    private void pesqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtnActionPerformed
-    }//GEN-LAST:event_pesqBtnActionPerformed
+    private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked
+        FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
+    }//GEN-LAST:event_inicioBtnMouseClicked
 
-    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
-    }//GEN-LAST:event_perfilBtnActionPerformed
-
-    private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
-        FramePrincipal.trocaPainel("tela pesquisa", new TelaPesquisar());
-    }//GEN-LAST:event_voltarBtnActionPerformed
+    private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesquisarBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton inicioBtn1;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel inicioBtn;
+    private javax.swing.JList<String> itemUser;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelperfil;
     private javax.swing.JLabel nomeLbl;
-    private javax.swing.JButton perfilBtn;
-    private javax.swing.JLabel perfilLabel;
-    private javax.swing.JButton pesqBtn;
-    private javax.swing.JButton quizBtn;
-    private javax.swing.JButton voltarBtn;
+    private javax.swing.JLabel perfilBtn;
+    private javax.swing.JLabel pesquisarBtn;
+    private javax.swing.JLabel quizBtn;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -70,8 +70,12 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jScrollPane4.setBackground(new java.awt.Color(253, 40, 141));
         jScrollPane4.setForeground(new java.awt.Color(43, 24, 33));
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(253, 40, 141));
         jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
         jScrollPane4.setViewportView(jTextArea1);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 810, 200));

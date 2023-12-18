@@ -72,7 +72,7 @@ public class UsuarioControl {
             ByteArrayInputStream bais = new ByteArrayInputStream(imagemBanco.getImg());
             try {
                 BufferedImage img = ImageIO.read(bais);
-                ImageIcon imgConvertida = new ImageIcon(img.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+                ImageIcon imgConvertida = new ImageIcon(img.getScaledInstance(189, 206, Image.SCALE_SMOOTH));
                 return imgConvertida;
             } catch (IOException e) {
                 throw new RuntimeException(e);

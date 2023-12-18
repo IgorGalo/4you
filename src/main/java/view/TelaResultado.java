@@ -18,8 +18,8 @@ public class TelaResultado extends javax.swing.JPanel {
      */
     public TelaResultado(Vector<String> resultado) {
         initComponents();
-        mudaNome(resultado);
-        panel();
+//        mudaNome(resultado);
+//        panel();
     }
     
     private void mudaNome(Vector<String> nomes){
@@ -30,21 +30,21 @@ public class TelaResultado extends javax.swing.JPanel {
 //               nomes.set(i, split[0]+ "\n" + split[1]);
 //            }
 //        }
-        nomeLbl1.setText(nomes.get(0));
-        nomeLbl2.setText(nomes.get(1));
-        nomeLbl3.setText(nomes.get(2));
-        nomeLbl4.setText(nomes.get(3));
-        nomeLbl5.setText(nomes.get(4));
-        nomeLbl6.setText(nomes.get(5));
+//        nomeLbl1.setText(nomes.get(0));
+//        nomeLbl2.setText(nomes.get(1));
+//        nomeLbl3.setText(nomes.get(2));
+//        nomeLbl4.setText(nomes.get(3));
+//        nomeLbl5.setText(nomes.get(4));
+//        nomeLbl6.setText(nomes.get(5));
     }
     
     private void panel(){
-        panel1.setSize(124, 147);
-        panel2.setSize(124, 147);
-        panel3.setSize(124, 147);
-        panel4.setSize(124, 147);
-        panel5.setSize(124, 147);
-        panel6.setSize(124, 147);
+//        panel1.setSize(124, 147);
+//        panel2.setSize(124, 147);
+//        panel3.setSize(124, 147);
+//        panel4.setSize(124, 147);
+//        panel5.setSize(124, 147);
+//        panel6.setSize(124, 147);
     }
 
     /**
@@ -56,347 +56,29 @@ public class TelaResultado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        perfilLabel = new javax.swing.JLabel();
+        voltarBtn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        panel4 = new javax.swing.JPanel();
-        nomeLbl4 = new javax.swing.JLabel();
-        imageLbl4 = new javax.swing.JLabel();
-        panel5 = new javax.swing.JPanel();
-        nomeLbl5 = new javax.swing.JLabel();
-        imageLbl5 = new javax.swing.JLabel();
-        panel6 = new javax.swing.JPanel();
-        nomeLbl6 = new javax.swing.JLabel();
-        imageLbl6 = new javax.swing.JLabel();
-        panel1 = new javax.swing.JPanel();
-        nomeLbl1 = new javax.swing.JLabel();
-        imageLbl1 = new javax.swing.JLabel();
-        panel2 = new javax.swing.JPanel();
-        nomeLbl2 = new javax.swing.JLabel();
-        imageLbl2 = new javax.swing.JLabel();
-        panel3 = new javax.swing.JPanel();
-        nomeLbl3 = new javax.swing.JLabel();
-        imageLbl3 = new javax.swing.JLabel();
 
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(233, 68, 190));
-        jLabel1.setText("RESULTADO");
-
-        voltarBtn.setBackground(new java.awt.Color(83, 41, 71));
-        voltarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        voltarBtn.setForeground(new java.awt.Color(233, 68, 190));
-        voltarBtn.setText("<<VOLTAR");
-        voltarBtn.setBorder(null);
-        voltarBtn.setBorderPainted(false);
-        voltarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                voltarBtnActionPerformed(evt);
+        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                voltarBtnMouseClicked(evt);
             }
         });
+        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
 
-        panel4.setBackground(new java.awt.Color(83, 41, 71));
-        panel4.setMaximumSize(new java.awt.Dimension(124, 147));
-
-        nomeLbl4.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl4.setText("jLabel3");
-
-        imageLbl4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
-        panel4.setLayout(panel4Layout);
-        panel4Layout.setHorizontalGroup(
-            panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(imageLbl4)
-                .addContainerGap())
-            .addGroup(panel4Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(nomeLbl4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel4Layout.setVerticalGroup(
-            panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(imageLbl4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomeLbl4)
-                .addGap(15, 15, 15))
-        );
-
-        panel5.setBackground(new java.awt.Color(83, 41, 71));
-        panel5.setMaximumSize(new java.awt.Dimension(124, 147));
-        panel5.setPreferredSize(new java.awt.Dimension(112, 144));
-
-        nomeLbl5.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl5.setText("jLabel3");
-
-        imageLbl5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout panel5Layout = new javax.swing.GroupLayout(panel5);
-        panel5.setLayout(panel5Layout);
-        panel5Layout.setHorizontalGroup(
-            panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(imageLbl5))
-            .addGroup(panel5Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(nomeLbl5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel5Layout.setVerticalGroup(
-            panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel5Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(imageLbl5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomeLbl5)
-                .addGap(15, 15, 15))
-        );
-
-        panel6.setBackground(new java.awt.Color(83, 41, 71));
-        panel6.setMaximumSize(new java.awt.Dimension(124, 147));
-        panel6.setPreferredSize(new java.awt.Dimension(112, 144));
-
-        nomeLbl6.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl6.setText("jLabel3");
-
-        imageLbl6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout panel6Layout = new javax.swing.GroupLayout(panel6);
-        panel6.setLayout(panel6Layout);
-        panel6Layout.setHorizontalGroup(
-            panel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel6Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(nomeLbl6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel6Layout.createSequentialGroup()
-                    .addGap(0, 12, Short.MAX_VALUE)
-                    .addComponent(imageLbl6)))
-        );
-        panel6Layout.setVerticalGroup(
-            panel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nomeLbl6)
-                .addGap(19, 19, 19))
-            .addGroup(panel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panel6Layout.createSequentialGroup()
-                    .addGap(17, 17, 17)
-                    .addComponent(imageLbl6)
-                    .addContainerGap(45, Short.MAX_VALUE)))
-        );
-
-        panel1.setBackground(new java.awt.Color(83, 41, 71));
-        panel1.setMaximumSize(new java.awt.Dimension(124, 147));
-
-        nomeLbl1.setBackground(new java.awt.Color(233, 68, 190));
-        nomeLbl1.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl1.setText("jLabel3");
-
-        imageLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(imageLbl1)
-                .addContainerGap())
-            .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(nomeLbl1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addComponent(imageLbl1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomeLbl1)
-                .addGap(21, 21, 21))
-        );
-
-        panel2.setBackground(new java.awt.Color(83, 41, 71));
-        panel2.setMaximumSize(new java.awt.Dimension(124, 147));
-
-        nomeLbl2.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl2.setText("jLabel3");
-
-        imageLbl2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
-        panel2.setLayout(panel2Layout);
-        panel2Layout.setHorizontalGroup(
-            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel2Layout.createSequentialGroup()
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(imageLbl2))
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(nomeLbl2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel2Layout.setVerticalGroup(
-            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(imageLbl2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomeLbl2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panel3.setBackground(new java.awt.Color(83, 41, 71));
-        panel3.setMaximumSize(new java.awt.Dimension(124, 147));
-
-        nomeLbl3.setForeground(new java.awt.Color(233, 68, 190));
-        nomeLbl3.setText("jLabel3");
-
-        imageLbl3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/faltaArquivo-removebg-preview (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
-        panel3.setLayout(panel3Layout);
-        panel3Layout.setHorizontalGroup(
-            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel3Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(nomeLbl3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imageLbl3, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
-        );
-        panel3Layout.setVerticalGroup(
-            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(imageLbl3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomeLbl3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(voltarBtn)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel2)))
-                .addContainerGap(941, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(perfilLabel))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
-                .addComponent(voltarBtn))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaResultado.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
-        // TODO add your handling code here:
-
-        FramePrincipal.trocaPainel("quiz", new TelaEscolhaFML());
-    }//GEN-LAST:event_voltarBtnActionPerformed
+    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
+    }//GEN-LAST:event_voltarBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imageLbl1;
-    private javax.swing.JLabel imageLbl2;
-    private javax.swing.JLabel imageLbl3;
-    private javax.swing.JLabel imageLbl4;
-    private javax.swing.JLabel imageLbl5;
-    private javax.swing.JLabel imageLbl6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel nomeLbl1;
-    private javax.swing.JLabel nomeLbl2;
-    private javax.swing.JLabel nomeLbl3;
-    private javax.swing.JLabel nomeLbl4;
-    private javax.swing.JLabel nomeLbl5;
-    private javax.swing.JLabel nomeLbl6;
-    private javax.swing.JPanel panel1;
-    private javax.swing.JPanel panel2;
-    private javax.swing.JPanel panel3;
-    private javax.swing.JPanel panel4;
-    private javax.swing.JPanel panel5;
-    private javax.swing.JPanel panel6;
-    private javax.swing.JLabel perfilLabel;
-    private javax.swing.JButton voltarBtn;
+    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }
