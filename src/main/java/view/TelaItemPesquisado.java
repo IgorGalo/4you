@@ -12,6 +12,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import model.Item;
 
 /**
  *
@@ -25,6 +27,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private ImageIcon estrelaAvaliada;
     private ImageIcon estrelaNaoAvaliada;
     private UsuarioControl usuarioC = new UsuarioControl();
+    private int nota;
 
     public TelaItemPesquisado(String itemPesquisado) {
         initComponents();
@@ -76,7 +79,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        comentario = new javax.swing.JTextArea();
+        comentarioTxt = new javax.swing.JTextArea();
         nomeItem = new javax.swing.JLabel();
         nota5 = new javax.swing.JLabel();
         nota4 = new javax.swing.JLabel();
@@ -88,20 +91,32 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         quizBtn = new javax.swing.JLabel();
         inicioBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
+        enviarBtn = new javax.swing.JLabel();
+        star5 = new javax.swing.JLabel();
+        star4 = new javax.swing.JLabel();
+        star3 = new javax.swing.JLabel();
+        star1 = new javax.swing.JLabel();
+        star2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        comentario.setBackground(new java.awt.Color(43, 24, 33));
-        comentario.setColumns(20);
-        comentario.setForeground(new java.awt.Color(255, 255, 255));
-        comentario.setRows(5);
-        jScrollPane1.setViewportView(comentario);
+        jScrollPane1.setBorder(null);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 600, 330));
+        comentarioTxt.setBackground(new java.awt.Color(43, 24, 33));
+        comentarioTxt.setColumns(20);
+        comentarioTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        comentarioTxt.setForeground(new java.awt.Color(255, 255, 255));
+        comentarioTxt.setRows(5);
+        comentarioTxt.setDisabledTextColor(new java.awt.Color(43, 24, 33));
+        jScrollPane1.setViewportView(comentarioTxt);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 600, 280));
 
         nomeItem.setBackground(new java.awt.Color(255, 255, 255));
+        nomeItem.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         nomeItem.setForeground(new java.awt.Color(255, 255, 255));
-        add(nomeItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 140, 30));
+        nomeItem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(nomeItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 400, 30));
 
         nota5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estrela_nao_avaliada.png"))); // NOI18N
         nota5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -177,6 +192,28 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             }
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
+
+        enviarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                enviarBtnMouseClicked(evt);
+            }
+        });
+        add(enviarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 140, 40));
+
+        star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
+        add(star5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 70, 60));
+
+        star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
+        add(star4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 70, 60));
+
+        star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
+        add(star3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 70, 60));
+
+        star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
+        add(star1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 70, 60));
+
+        star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
+        add(star2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 70, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
@@ -184,7 +221,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     }//GEN-LAST:event_perfilBtnMouseClicked
 
     private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
-        FramePrincipal.trocaPainel("tela quiz", new TelaEscolhaFML());
+        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
     }//GEN-LAST:event_quizBtnMouseClicked
 
     private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked
@@ -202,8 +239,10 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             nota3.setIcon(this.estrelaNaoAvaliada);
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
+            this.nota = 0;
         } else {
             nota1.setIcon(this.estrelaAvaliada);
+            this.nota = 1;
         }
     }//GEN-LAST:event_nota1MouseClicked
 
@@ -213,9 +252,11 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             nota3.setIcon(this.estrelaNaoAvaliada);
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
+            this.nota = 1;
         } else {
             nota1.setIcon(this.estrelaAvaliada);
             nota2.setIcon(this.estrelaAvaliada);
+            this.nota = 2;
         }
     }//GEN-LAST:event_nota2MouseClicked
 
@@ -224,10 +265,12 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             nota3.setIcon(this.estrelaNaoAvaliada);
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
+            this.nota = 2;
         } else {
             nota1.setIcon(this.estrelaAvaliada);
             nota2.setIcon(this.estrelaAvaliada);
             nota3.setIcon(this.estrelaAvaliada);
+            this.nota = 3;
         }
     }//GEN-LAST:event_nota3MouseClicked
 
@@ -235,11 +278,13 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         if (nota4.getIcon() == this.estrelaAvaliada) {
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
+            this.nota = 3;
         } else {
             nota1.setIcon(this.estrelaAvaliada);
             nota2.setIcon(this.estrelaAvaliada);
             nota3.setIcon(this.estrelaAvaliada);
             nota4.setIcon(this.estrelaAvaliada);
+            this.nota = 4;
         }
 
     }//GEN-LAST:event_nota4MouseClicked
@@ -247,18 +292,35 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private void nota5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota5MouseClicked
         if (nota5.getIcon() == this.estrelaAvaliada) {
             nota5.setIcon(this.estrelaNaoAvaliada);
+            this.nota = 4;
         } else {
             nota1.setIcon(this.estrelaAvaliada);
             nota2.setIcon(this.estrelaAvaliada);
             nota3.setIcon(this.estrelaAvaliada);
             nota4.setIcon(this.estrelaAvaliada);
             nota5.setIcon(this.estrelaAvaliada);
+            this.nota = 5;
         }
     }//GEN-LAST:event_nota5MouseClicked
 
+    private void enviarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarBtnMouseClicked
+        if (comentarioTxt.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Informe seu comentário!");
+        } else {
+            comentarioTxt.setText("");
+            nota1.setIcon(this.estrelaNaoAvaliada);
+            nota2.setIcon(this.estrelaNaoAvaliada);
+            nota3.setIcon(this.estrelaNaoAvaliada);
+            nota4.setIcon(this.estrelaNaoAvaliada);
+            nota5.setIcon(this.estrelaNaoAvaliada);
+            JOptionPane.showMessageDialog(this, "AVALIAÇÃO ENVIADA COM SUCESSO");
+        }
+    }//GEN-LAST:event_enviarBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea comentario;
+    private javax.swing.JTextArea comentarioTxt;
+    private javax.swing.JLabel enviarBtn;
     private javax.swing.JLabel inicioBtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -271,5 +333,10 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;
+    private javax.swing.JLabel star1;
+    private javax.swing.JLabel star2;
+    private javax.swing.JLabel star3;
+    private javax.swing.JLabel star4;
+    private javax.swing.JLabel star5;
     // End of variables declaration//GEN-END:variables
 }

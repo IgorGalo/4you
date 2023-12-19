@@ -99,6 +99,8 @@ public class TelaPerfil extends javax.swing.JPanel {
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
 
+        jScrollPane1.setBorder(null);
+
         itemUser.setBackground(new java.awt.Color(43, 24, 33));
         itemUser.setBorder(null);
         jScrollPane1.setViewportView(itemUser);

@@ -102,6 +102,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
         });
         add(pesqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1167, 50, 50, 50));
 
+        resultadoList.setBorder(null);
         resultadoList.setFont(new java.awt.Font("Swis721 Ex BT", 0, 14)); // NOI18N
 
         resultList.setBackground(new java.awt.Color(43, 24, 33));
