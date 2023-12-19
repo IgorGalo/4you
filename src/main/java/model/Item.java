@@ -5,16 +5,14 @@ public class Item {
     private int IDitem;
     private String tipoItem;
     private String nomeItem;
-    private String descricao;
-    private String categoria;
+    private String comentario;
     private int avaliacao;
 
-    public Item(int IDitem, String tipoItem, String nomeItem, String descricao, String categoria, int avaliacao) {
+    public Item(int IDitem, int avaliacao, String tipoItem, String nomedoItem, String comentario) {
         this.IDitem = IDitem;
         this.tipoItem = tipoItem;
-        this.nomeItem = nomeItem;
-        this.descricao = descricao;
-        this.categoria = categoria;
+        this.nomeItem = nomedoItem;
+        this.comentario = comentario;
         this.avaliacao = avaliacao;
     }
 
@@ -26,20 +24,12 @@ public class Item {
         this.nomeItem = nomeItem;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     public int getAvaliacao() {

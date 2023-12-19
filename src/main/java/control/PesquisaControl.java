@@ -12,6 +12,7 @@ public class PesquisaControl {
 
     public PesquisaControl() {
         this.sa = new UsuarioDAO();
+        this.iDAO = new ItemDAO();
     }
     
     public ArrayList<Usuario> pesquisaUsuarios(String texto) {

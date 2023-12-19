@@ -145,14 +145,12 @@ public class TelaPesquisar extends javax.swing.JPanel {
             this.todosUsuarios = this.pesquisa.pesquisaUsuarios(pesqTxt.getText());
             DefaultListModel<Usuario> user = new DefaultListModel<>();
             user.addAll(todosUsuarios);
-
             resultList.setModel(user);
 
         } else if (itensBtn.isSelected()) {
             this.todosItens = this.pesquisa.pesquisaItens(pesqTxt.getText());
             DefaultListModel<Item> item = new DefaultListModel<>();
             item.addAll(todosItens);
-
             resultList.setModel(item);
         } else {
             JOptionPane.showMessageDialog(this, "É preciso informar a categoria da pesquisa!");

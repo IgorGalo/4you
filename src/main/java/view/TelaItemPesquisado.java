@@ -4,6 +4,15 @@
  */
 package view;
 
+import control.UsuarioControl;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author 0068948
@@ -11,15 +20,50 @@ package view;
 public class TelaItemPesquisado extends javax.swing.JPanel {
 
     private String itemPesquisado;
-    
+    private File estrelaNova;
+    private File estrelaVelha;
+    private ImageIcon estrelaAvaliada;
+    private ImageIcon estrelaNaoAvaliada;
+    private UsuarioControl usuarioC = new UsuarioControl();
+
     public TelaItemPesquisado(String itemPesquisado) {
         initComponents();
         this.itemPesquisado = itemPesquisado;
+        this.estrelaNova = new File(getClass().getResource("/estrela_avaliada.png").getPath());
+        this.estrelaVelha = new File(getClass().getResource("/estrela_nao_avaliada.png").getPath());
+        this.estrelaAvaliada = transformaFileIcon(this.estrelaNova);
+        this.estrelaNaoAvaliada = transformaFileIcon(this.estrelaVelha);
         trocaNome();
     }
-    
-    private void trocaNome(){
-        nomeItemLbl.setText(this.itemPesquisado);
+
+    private ImageIcon transformaFileIcon(File estrela) {
+        if (estrela != null && estrela.exists()) {
+            // Cria um ImageIcon a partir do caminho do arquivo
+            return new ImageIcon(estrela.getAbsolutePath());
+        } else {
+            // Lida com o caso em que o arquivo não existe
+            System.err.println("Arquivo não encontrado: " + estrela);
+            return null;
+        }
+    }
+
+    private void trocaNome() {
+        nomeItem.setText(this.itemPesquisado);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaAvaliacao.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
     }
 
     /**
@@ -31,168 +75,201 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        perfilLabel = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JButton();
-        nomeItemLbl = new javax.swing.JLabel();
-        inicioBtn3 = new javax.swing.JButton();
-        quizBtn3 = new javax.swing.JButton();
-        pesqBtn1 = new javax.swing.JButton();
-        perfilBtn1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        comentario = new javax.swing.JTextArea();
+        nomeItem = new javax.swing.JLabel();
+        nota5 = new javax.swing.JLabel();
+        nota4 = new javax.swing.JLabel();
+        nota3 = new javax.swing.JLabel();
+        nota2 = new javax.swing.JLabel();
+        nota1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        perfilBtn = new javax.swing.JLabel();
+        quizBtn = new javax.swing.JLabel();
+        inicioBtn = new javax.swing.JLabel();
+        pesquisarBtn = new javax.swing.JLabel();
 
-        jPanel4.setBackground(new java.awt.Color(83, 41, 71));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(233, 68, 190)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        voltarBtn.setBackground(new java.awt.Color(83, 41, 71));
-        voltarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
-        voltarBtn.setForeground(new java.awt.Color(233, 68, 190));
-        voltarBtn.setText("<<VOLTAR");
-        voltarBtn.setBorder(null);
-        voltarBtn.setBorderPainted(false);
-        voltarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                voltarBtnActionPerformed(evt);
+        comentario.setBackground(new java.awt.Color(43, 24, 33));
+        comentario.setColumns(20);
+        comentario.setForeground(new java.awt.Color(255, 255, 255));
+        comentario.setRows(5);
+        jScrollPane1.setViewportView(comentario);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 600, 330));
+
+        nomeItem.setBackground(new java.awt.Color(255, 255, 255));
+        nomeItem.setForeground(new java.awt.Color(255, 255, 255));
+        add(nomeItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 140, 30));
+
+        nota5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estrela_nao_avaliada.png"))); // NOI18N
+        nota5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nota5MouseClicked(evt);
             }
         });
+        add(nota5, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 120, -1, 80));
 
-        nomeItemLbl.setText("jLabel1");
-
-        inicioBtn3.setBackground(new java.awt.Color(83, 41, 71));
-        inicioBtn3.setForeground(new java.awt.Color(233, 68, 190));
-        inicioBtn3.setText("🏠");
-        inicioBtn3.setBorderPainted(false);
-        inicioBtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inicioBtn3ActionPerformed(evt);
+        nota4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estrela_nao_avaliada.png"))); // NOI18N
+        nota4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nota4MouseClicked(evt);
             }
         });
+        add(nota4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 120, -1, 80));
 
-        quizBtn3.setBackground(new java.awt.Color(83, 41, 71));
-        quizBtn3.setForeground(new java.awt.Color(233, 68, 190));
-        quizBtn3.setText("❔");
-        quizBtn3.setBorderPainted(false);
-        quizBtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizBtn3ActionPerformed(evt);
+        nota3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estrela_nao_avaliada.png"))); // NOI18N
+        nota3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nota3MouseClicked(evt);
             }
         });
+        add(nota3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, -1, 80));
 
-        pesqBtn1.setBackground(new java.awt.Color(83, 41, 71));
-        pesqBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        pesqBtn1.setText("🔎");
-        pesqBtn1.setBorderPainted(false);
-        pesqBtn1.setEnabled(false);
-        pesqBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesqBtn1ActionPerformed(evt);
+        nota2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estrela_nao_avaliada.png"))); // NOI18N
+        nota2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nota2MouseClicked(evt);
             }
         });
+        add(nota2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, -1, 80));
 
-        perfilBtn1.setBackground(new java.awt.Color(83, 41, 71));
-        perfilBtn1.setForeground(new java.awt.Color(233, 68, 190));
-        perfilBtn1.setText("👤");
-        perfilBtn1.setBorderPainted(false);
-        perfilBtn1.setMaximumSize(new java.awt.Dimension(31, 23));
-        perfilBtn1.setMinimumSize(new java.awt.Dimension(31, 23));
-        perfilBtn1.setPreferredSize(new java.awt.Dimension(31, 23));
-        perfilBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilBtn1ActionPerformed(evt);
+        nota1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estrela_nao_avaliada.png"))); // NOI18N
+        nota1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nota1MouseClicked(evt);
             }
         });
+        add(nota1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 122, -1, 80));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(voltarBtn)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nomeItemLbl)
-                .addGap(228, 228, 228))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(perfilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(inicioBtn3)
-                        .addGap(88, 88, 88)
-                        .addComponent(pesqBtn1)
-                        .addGap(94, 94, 94)
-                        .addComponent(quizBtn3)
-                        .addGap(88, 88, 88)
-                        .addComponent(perfilBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(voltarBtn)
-                    .addComponent(perfilLabel))
-                .addGap(54, 54, 54)
-                .addComponent(nomeItemLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pesqBtn1)
-                        .addComponent(quizBtn3)
-                        .addComponent(perfilBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inicioBtn3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/falta a.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        perfilBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                perfilBtnMouseClicked(evt);
+            }
+        });
+        add(perfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 60, 60));
+
+        quizBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        quizBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quizBtnMouseClicked(evt);
+            }
+        });
+        add(quizBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 690, 70, 60));
+
+        inicioBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inicioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inicioBtnMouseClicked(evt);
+            }
+        });
+        add(inicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 690, 50, 60));
+
+        pesquisarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pesquisarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pesquisarBtnMouseClicked(evt);
+            }
+        });
+        add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
-        FramePrincipal.trocaPainel("tela pesquisa", new TelaPesquisar());
-    }//GEN-LAST:event_voltarBtnActionPerformed
+    private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
+        FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
+    }//GEN-LAST:event_perfilBtnMouseClicked
 
-    private void inicioBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioBtn3ActionPerformed
-        FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-    }//GEN-LAST:event_inicioBtn3ActionPerformed
+    private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
+        FramePrincipal.trocaPainel("tela quiz", new TelaEscolhaFML());
+    }//GEN-LAST:event_quizBtnMouseClicked
 
-    private void quizBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBtn3ActionPerformed
-        FramePrincipal.trocaPainel("painel quiz", new TelaEscolhaFML());
-    }//GEN-LAST:event_quizBtn3ActionPerformed
+    private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked
+        FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
+    }//GEN-LAST:event_inicioBtnMouseClicked
 
-    private void pesqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesqBtn1ActionPerformed
+    private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
+    }//GEN-LAST:event_pesquisarBtnMouseClicked
 
-    }//GEN-LAST:event_pesqBtn1ActionPerformed
+    private void nota1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota1MouseClicked
+        if (nota1.getIcon() == this.estrelaAvaliada) {
+            nota1.setIcon(this.estrelaNaoAvaliada);
+            nota2.setIcon(this.estrelaNaoAvaliada);
+            nota3.setIcon(this.estrelaNaoAvaliada);
+            nota4.setIcon(this.estrelaNaoAvaliada);
+            nota5.setIcon(this.estrelaNaoAvaliada);
+        } else {
+            nota1.setIcon(this.estrelaAvaliada);
+        }
+    }//GEN-LAST:event_nota1MouseClicked
 
-    private void perfilBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtn1ActionPerformed
-        FramePrincipal.trocaPainel("painel perfil", new TelaPerfil());
-    }//GEN-LAST:event_perfilBtn1ActionPerformed
+    private void nota2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota2MouseClicked
+        if (nota2.getIcon() == this.estrelaAvaliada) {
+            nota2.setIcon(this.estrelaNaoAvaliada);
+            nota3.setIcon(this.estrelaNaoAvaliada);
+            nota4.setIcon(this.estrelaNaoAvaliada);
+            nota5.setIcon(this.estrelaNaoAvaliada);
+        } else {
+            nota1.setIcon(this.estrelaAvaliada);
+            nota2.setIcon(this.estrelaAvaliada);
+        }
+    }//GEN-LAST:event_nota2MouseClicked
+
+    private void nota3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota3MouseClicked
+        if (nota3.getIcon() == this.estrelaAvaliada) {
+            nota3.setIcon(this.estrelaNaoAvaliada);
+            nota4.setIcon(this.estrelaNaoAvaliada);
+            nota5.setIcon(this.estrelaNaoAvaliada);
+        } else {
+            nota1.setIcon(this.estrelaAvaliada);
+            nota2.setIcon(this.estrelaAvaliada);
+            nota3.setIcon(this.estrelaAvaliada);
+        }
+    }//GEN-LAST:event_nota3MouseClicked
+
+    private void nota4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota4MouseClicked
+        if (nota4.getIcon() == this.estrelaAvaliada) {
+            nota4.setIcon(this.estrelaNaoAvaliada);
+            nota5.setIcon(this.estrelaNaoAvaliada);
+        } else {
+            nota1.setIcon(this.estrelaAvaliada);
+            nota2.setIcon(this.estrelaAvaliada);
+            nota3.setIcon(this.estrelaAvaliada);
+            nota4.setIcon(this.estrelaAvaliada);
+        }
+
+    }//GEN-LAST:event_nota4MouseClicked
+
+    private void nota5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota5MouseClicked
+        if (nota5.getIcon() == this.estrelaAvaliada) {
+            nota5.setIcon(this.estrelaNaoAvaliada);
+        } else {
+            nota1.setIcon(this.estrelaAvaliada);
+            nota2.setIcon(this.estrelaAvaliada);
+            nota3.setIcon(this.estrelaAvaliada);
+            nota4.setIcon(this.estrelaAvaliada);
+            nota5.setIcon(this.estrelaAvaliada);
+        }
+    }//GEN-LAST:event_nota5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton inicioBtn3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel nomeItemLbl;
-    private javax.swing.JButton perfilBtn1;
-    private javax.swing.JLabel perfilLabel;
-    private javax.swing.JButton pesqBtn1;
-    private javax.swing.JButton quizBtn3;
-    private javax.swing.JButton voltarBtn;
+    private javax.swing.JTextArea comentario;
+    private javax.swing.JLabel inicioBtn;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nomeItem;
+    private javax.swing.JLabel nota1;
+    private javax.swing.JLabel nota2;
+    private javax.swing.JLabel nota3;
+    private javax.swing.JLabel nota4;
+    private javax.swing.JLabel nota5;
+    private javax.swing.JLabel perfilBtn;
+    private javax.swing.JLabel pesquisarBtn;
+    private javax.swing.JLabel quizBtn;
     // End of variables declaration//GEN-END:variables
 }
