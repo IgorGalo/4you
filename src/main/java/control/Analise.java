@@ -16,39 +16,49 @@ import view.TelaResultado;
 
 public class Analise {
 
-    public void calculaResultado(ButtonModel p1, ButtonModel p2, ButtonModel p3, ButtonModel p4,
-            ButtonModel p5, ArrayList<JRadioButton> todosRadioBtn, int escolha) {
+    public void calculaResultado(Vector<JRadioButton> vetorBtn, int escolha, JRadioButton opcao1Btn, JRadioButton opcao2Btn, JRadioButton nenhumaBtn) {
 
-        int perg1 = 0, perg2 = 0, perg3 = 0, perg4 = 0, perg5 = 0, perg6 = 0, perg7 = 0, perg8 = 0, perg9 = 0, perg10 = 0;
+        int perg1 = 0, perg2 = 0, perg3 = 0, perg4 = 0, perg5 = 0;
 
-        Vector<String> opcoes = new Vector<>();
+        Vector<Integer> opcoes = new Vector<>();
 
-        for (int i = 0; i < todosRadioBtn.size(); i++) {
-            if (todosRadioBtn.get(i).getModel() == p1) {
-                System.out.println(i);
-                perg1 = i;
-            }
-
-            if (todosRadioBtn.get(i).getModel() == p2) {
-                System.out.println(i);
-                perg2 = i;
-            }
-
-            if (todosRadioBtn.get(i).getModel() == p3) {
-                System.out.println(i);
-                perg3 = i;
-            }
-
-            if (todosRadioBtn.get(i).getModel() == p4) {
-                System.out.println(i);
-                perg4 = i;
-            }
-
-            if (todosRadioBtn.get(i).getModel() == p5) {
-                System.out.println(i);
-                perg5 = i;
+        for(int i = 0; i < vetorBtn.size(); i++){
+            if(vetorBtn.get(i).getModel() == opcao1Btn){
+                opcoes.add(1);
+            }else if(vetorBtn.get(i).getModel() == opcao2Btn){
+                opcoes.add(2);
+            }else if(vetorBtn.get(i).getModel() == nenhumaBtn){
+                opcoes.add(3);
             }
         }
+        
+        System.out.println(opcoes);
+//        for (int i = 0; i < todosRadioBtn.size(); i++) {
+//            if (todosRadioBtn.get(i).getModel() == p1) {
+//                System.out.println(i);
+//                perg1 = i;
+//            }
+//
+//            if (todosRadioBtn.get(i).getModel() == p2) {
+//                System.out.println(i);
+//                perg2 = i;
+//            }
+//
+//            if (todosRadioBtn.get(i).getModel() == p3) {
+//                System.out.println(i);
+//                perg3 = i;
+//            }
+//
+//            if (todosRadioBtn.get(i).getModel() == p4) {
+//                System.out.println(i);
+//                perg4 = i;
+//            }
+//
+//            if (todosRadioBtn.get(i).getModel() == p5) {
+//                System.out.println(i);
+//                perg5 = i;
+//            }
+    }
 //        for (int i = 0; i < opcoes.size(); i++) {
 //            switch (opcoes.get(i)) {
 //                case 1:
@@ -60,197 +70,196 @@ public class Analise {
 //            }
 //        }
 
-        switch (perg1) {
-            case 0://1° opção
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("comedia"); // filme
-                        break;
-                    case 2:
-                        //livro opcoes.add("");
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 1://2° opção
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("drama"); //filme
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-
-                        break;
-                }
-
-                break;
-            case 2:
-
-                break;
-        }
-
-        switch (perg2) {
-            case 3:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("documentario"); // filme
-                        break;
-                    case 2:
-                        //opcoes.add("ficção+científica");
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 4:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("ficcaocientifica"); // filme
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-
-                        break;
-                }
-
-                break;
-            case 5:
-
-                break;
-        }
-
-        switch (perg3) {
-            case 6:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("acao");
-                        break;
-                    case 2:
-                        //  opcoes.add("musical");
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 7:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("musical");
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 8:
-
-                break;
-        }
-
-        switch (perg4) {
-            case 9:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("terror");
-                        break;
-                    case 2:
-                        //opcoes.add("romance");
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 10:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("romance");
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 11:
-
-                break;
-        }
-
-        switch (perg5) {
-            case 12:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("misterio");
-                        break;
-                    case 2:
-                        //opcoes.add("aventura");
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 13:
-                switch (escolha) {
-                    case 1:
-                        opcoes.add("aventura");
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-
-                        break;
-                }
-                break;
-            case 14:
-
-                break;
-        }
-
-        Vector<String> resultado = new Vector<>();
-        String pesquisa;
-
-        if (opcoes.isEmpty()) {
-            pesquisa = "novos";
-            System.out.println(pesquisa);
-        } else {
-
-            if (opcoes.size() > 5) {
-
-                Collections.shuffle(opcoes);
-
-            }
-            pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
-
-            System.out.println(opcoes + " " + pesquisa);
-        }
-        
-        ItemControl itemC = new ItemControl();
-        
-        switch (escolha) {
-            case 1:
-                resultado = fazPesquisaFilme(pesquisa);
-                itemC.addItem(resultado, "Filme");
-                break;
-            default:
-                throw new AssertionError();
-        }
-
-        FramePrincipal.trocaPainel(
-                "resultado", new TelaResultado(resultado));
-
-    }
-
+//        switch (perg1) {
+//            case 0://1° opção
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("comedia"); // filme
+//                        break;
+//                    case 2:
+//                        //livro opcoes.add("");
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 1://2° opção
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("drama"); //filme
+//                        break;
+//                    case 2:
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//
+//                break;
+//            case 2:
+//
+//                break;
+//        }
+//
+//        switch (perg2) {
+//            case 3:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("documentario"); // filme
+//                        break;
+//                    case 2:
+//                        //opcoes.add("ficção+científica");
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 4:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("ficcaocientifica"); // filme
+//                        break;
+//                    case 2:
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//
+//                break;
+//            case 5:
+//
+//                break;
+//        }
+//
+//        switch (perg3) {
+//            case 6:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("acao");
+//                        break;
+//                    case 2:
+//                        //  opcoes.add("musical");
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 7:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("musical");
+//                        break;
+//                    case 2:
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 8:
+//
+//                break;
+//        }
+//
+//        switch (perg4) {
+//            case 9:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("terror");
+//                        break;
+//                    case 2:
+//                        //opcoes.add("romance");
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 10:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("romance");
+//                        break;
+//                    case 2:
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 11:
+//
+//                break;
+//        }
+//
+//        switch (perg5) {
+//            case 12:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("misterio");
+//                        break;
+//                    case 2:
+//                        //opcoes.add("aventura");
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 13:
+//                switch (escolha) {
+//                    case 1:
+//                        opcoes.add("aventura");
+//                        break;
+//                    case 2:
+//                        break;
+//                    case 3:
+//
+//                        break;
+//                }
+//                break;
+//            case 14:
+//
+//                break;
+//        }
+//
+//        Vector<String> resultado = new Vector<>();
+//        String pesquisa;
+//
+//        if (opcoes.isEmpty()) {
+//            pesquisa = "novos";
+//            System.out.println(pesquisa);
+//        } else {
+//
+//            if (opcoes.size() > 5) {
+//
+//                Collections.shuffle(opcoes);
+//
+//            }
+//            pesquisa = opcoes.get(0) + "+" + opcoes.get(1) + "+" + opcoes.get(2);
+//
+//            System.out.println(opcoes + " " + pesquisa);
+//        }
+//        
+//        ItemControl itemC = new ItemControl();
+//        
+//        switch (escolha) {
+//            case 1:
+//                resultado = fazPesquisaFilme(pesquisa);
+//                itemC.addItem(resultado, "Filme");
+//                break;
+//            default:
+//                throw new AssertionError();
+//        }
+//
+//        FramePrincipal.trocaPainel(
+//                "resultado", new TelaResultado(resultado));
+//
+//    }
     private Vector<String> fazPesquisaFilme(String pesquisa) {
         Vector<String> resultado = new Vector<>();
         try {

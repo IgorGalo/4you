@@ -4,6 +4,7 @@
  */
 package view;
 
+import control.Analise;
 import java.util.Vector;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
@@ -28,6 +29,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         perguntaGroup.add(nenhumaBtn);
         perguntaTxt.setLineWrap(true);
         this.escolha = escolha;
+        this.botaoSelecionado = new Vector<JRadioButton>();
         this.vez = vez;
         adicionaPergunta();
     }
@@ -173,23 +175,17 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 FramePrincipal.trocaPainel("tela perguntas", new TelaPerguntas(this.escolha, this.vez + 1));
                 if (nenhumaBtn.isSelected()) {
                     botaoSelecionado.add(nenhumaBtn);
-                } else {
-                    if (nenhumaBtn.isSelected()) {
-                        botaoSelecionado.add(nenhumaBtn);
-                    } else {
-
-                    }
-                    if (nenhumaBtn.isSelected()) {
-                        botaoSelecionado.add(nenhumaBtn);
-                    } else {
-
-                    }
+                } else if (nenhumaBtn.isSelected()) {
+                    botaoSelecionado.add(nenhumaBtn);
+                } else if (nenhumaBtn.isSelected()) {
+                    botaoSelecionado.add(nenhumaBtn);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Selecione uma opção");
             }
         } else {
-
+            Analise analise = new Analise();
+            analise.calculaResultado(this.botaoSelecionado, escolha, opcao1Btn, opcao2Btn, nenhumaBtn);
         }
     }//GEN-LAST:event_nextBtnMouseClicked
 
