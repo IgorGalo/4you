@@ -234,10 +234,13 @@ public class Analise {
 
             System.out.println(opcoes + " " + pesquisa);
         }
-
+        
+        ItemControl itemC = new ItemControl();
+        
         switch (escolha) {
             case 1:
                 resultado = fazPesquisaFilme(pesquisa);
+                itemC.addItem(resultado, "Filme");
                 break;
             default:
                 throw new AssertionError();

@@ -107,7 +107,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         comentarioTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         comentarioTxt.setForeground(new java.awt.Color(255, 255, 255));
         comentarioTxt.setRows(5);
-        comentarioTxt.setDisabledTextColor(new java.awt.Color(43, 24, 33));
         jScrollPane1.setViewportView(comentarioTxt);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 600, 280));
@@ -307,13 +306,15 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         if (comentarioTxt.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Informe seu comentário!");
         } else {
-            comentarioTxt.setText("");
+            //comentarioTxt.setText("");
             nota1.setIcon(this.estrelaNaoAvaliada);
             nota2.setIcon(this.estrelaNaoAvaliada);
             nota3.setIcon(this.estrelaNaoAvaliada);
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
             JOptionPane.showMessageDialog(this, "AVALIAÇÃO ENVIADA COM SUCESSO");
+            comentarioTxt.setEditable(false);
+            //comentarioTxt.setC
         }
     }//GEN-LAST:event_enviarBtnMouseClicked
 

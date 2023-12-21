@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SwingWorker;
 import javax.swing.Timer;
 
 /**
@@ -22,24 +23,24 @@ import javax.swing.Timer;
 public class TelaTimer extends javax.swing.JPanel {
 
     private Timer timer;
-    private int progresso = 0;
-    
+
     public TelaTimer() {
         initComponents();
-        
-        jProgressBar1.setValue(500);
-        
-        timer = new Timer(1000, new ActionListener() {
+        Swing();
+    }
+
+    private void Swing() {
+        SwingWorker progresso = new SwingWorker() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                if (progresso < 100) {
-                    progresso += 10;
-                    jProgressBar1.setValue(progresso);
-                } else {
-                    timer.stop();
+            protected Object doInBackground() throws Exception {
+                while (barra.getValue() < 100) {
+                    barra.setValue(barra.getValue() + 25);
+                    Thread.sleep(500);
                 }
+                return null;
             }
-        });
+        };
+        progresso.execute();
     }
 
     @Override
@@ -47,11 +48,11 @@ public class TelaTimer extends javax.swing.JPanel {
         super.paintComponent(g);
 
         BufferedImage imagem;
-        
+
         try {
             imagem = ImageIO.read(new File(getClass().getResource("/telaTimer.png").getPath()));
             g.drawImage(imagem, 0, 0, this);
-            
+
         } catch (IOException ex) {
             System.out.println("Arquivo não existente");
         }
@@ -66,10 +67,10 @@ public class TelaTimer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jProgressBar1 = new javax.swing.JProgressBar();
+        barra = new javax.swing.JProgressBar();
 
-        jProgressBar1.setBackground(new java.awt.Color(43, 24, 33));
-        jProgressBar1.setForeground(new java.awt.Color(253, 40, 141));
+        barra.setBackground(new java.awt.Color(43, 24, 33));
+        barra.setForeground(new java.awt.Color(253, 40, 141));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -77,20 +78,20 @@ public class TelaTimer extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(512, 512, 512)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(531, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(576, Short.MAX_VALUE)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(179, 179, 179))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar barra;
     // End of variables declaration//GEN-END:variables
 }

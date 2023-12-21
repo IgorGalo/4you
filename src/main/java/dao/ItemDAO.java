@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Item;
@@ -36,6 +37,34 @@ public class ItemDAO {
             Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return todosItens;
+    }
+
+    public boolean addItem(Vector<String> itens, String tipoItem) {
+        String sql = "INSERT INTO public.itens (nomedoitem, tipoitem, avaliacao, comentario)"
+                + " VALUES (?, ?, ?, ?)";
+
+        try {
+            PreparedStatement insercao = c.prepareStatement(sql);
+            for (int i = 0; i < itens.size(); i++) {
+                insercao.setString(1, itens.get(i));
+                insercao.setString(2, tipoItem);
+                insercao.setInt(3, 0);
+                insercao.setString(4, "");
+
+                insercao.execute();
+            }
+            c.close();
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+
+    public boolean addAvaliacao(String nomeItem, int novaAvaliacao) {
+        ArrayList<Item> item = buscaItens(nomeItem);
+
+        String sql = " ";
+        return true;
     }
 
 }

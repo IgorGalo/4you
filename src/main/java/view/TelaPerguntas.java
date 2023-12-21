@@ -4,12 +4,10 @@
  */
 package view;
 
-import control.Analise;
-import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
-import javax.swing.plaf.basic.BasicBorders;
 
 /**
  *
@@ -17,12 +15,59 @@ import javax.swing.plaf.basic.BasicBorders;
  */
 public class TelaPerguntas extends javax.swing.JPanel {
 
-    public TelaPerguntas(int escolha) {
+    private int escolha;
+    private int vez;
+    private ButtonGroup perguntaGroup;
+    private Vector<JRadioButton> botaoSelecionado;
+
+    public TelaPerguntas(int escolha, int vez) {
         initComponents();
+        perguntaGroup = new ButtonGroup();
+        perguntaGroup.add(opcao1Btn);
+        perguntaGroup.add(opcao2Btn);
+        perguntaGroup.add(nenhumaBtn);
+        perguntaTxt.setLineWrap(true);
+        this.escolha = escolha;
+        this.vez = vez;
+        adicionaPergunta();
     }
 
-    private void jop() {
-        //JOptionPane.showOptionDialog(cadastrarBtn, "", TOOL_TIP_TEXT_KEY, WIDTH, HEIGHT, icon, options, enviarbtn);
+    private void adicionaPergunta() {
+        switch (this.escolha) {
+            case 1:
+                switch (this.vez) {
+                    case 1:
+                        perguntaTxt.setText(
+                                "Você prefere explorar narrativas que despertam uma sensação de medo e suspense "
+                                + "ou aquelas que proporcionam uma atmosfera mais leve e descontraída?");
+                        break;
+                    case 2:
+                        perguntaTxt.setText("Você prefere se envolver mais nas histórias das relações "
+                                + "nhumanas, com personagens enfrentando os desafios emocionais, "
+                                + "ou você prefere tramas que se concentram em outras inâmicas e aspectos da vida?");
+                        break;
+                    case 3:
+                        perguntaTxt.setText("Você prefere: refletir sobre a complexicidade da vida "
+                                + "ou experiências cinematográficas mais leves e descontraídas?");
+                        break;
+                    case 4:
+                        perguntaTxt.setText("Costuma prestar atenção especialmente na trilha sonora e nas perfomances musicais integradas à história, "
+                                + "ou tende a focar mais nos diálogo e na trama em si?");
+                        break;
+                    case 5:
+                        perguntaTxt.setText("Você prefere narrativas que exploram mundos imaginários e conceitos futuristas, "
+                                + "desafiando os limites da realidade");
+                        break;
+                }
+                break;
+
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+        }
     }
 
     /**
@@ -38,7 +83,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         cadastrarBtn = new javax.swing.JButton();
         cadastrarBtn1 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        perguntaTxt = new javax.swing.JTextArea();
         nenhumaBtn = new javax.swing.JRadioButton();
         opcao1Btn = new javax.swing.JRadioButton();
         opcao2Btn = new javax.swing.JRadioButton();
@@ -71,21 +116,37 @@ public class TelaPerguntas extends javax.swing.JPanel {
         jScrollPane4.setBorder(null);
         jScrollPane4.setForeground(new java.awt.Color(43, 24, 33));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(253, 40, 141));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(253, 40, 141), 0));
-        jTextArea1.setSelectedTextColor(new java.awt.Color(253, 40, 141));
-        jScrollPane4.setViewportView(jTextArea1);
+        perguntaTxt.setEditable(false);
+        perguntaTxt.setBackground(new java.awt.Color(253, 40, 141));
+        perguntaTxt.setColumns(20);
+        perguntaTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        perguntaTxt.setForeground(new java.awt.Color(255, 255, 255));
+        perguntaTxt.setRows(5);
+        perguntaTxt.setWrapStyleWord(true);
+        perguntaTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(253, 40, 141), 0));
+        perguntaTxt.setSelectedTextColor(new java.awt.Color(253, 40, 141));
+        jScrollPane4.setViewportView(perguntaTxt);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 810, 200));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 810, 160));
+
+        nenhumaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(nenhumaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, 310, 80));
+
+        opcao1Btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(opcao1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 461, 300, 80));
+
+        opcao2Btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(opcao2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 310, 80));
+
+        nextBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nextBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nextBtnMouseClicked(evt);
+            }
+        });
         add(nextBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 670, 300, 40));
 
+        voltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 voltarBtnMouseClicked(evt);
@@ -99,12 +160,38 @@ public class TelaPerguntas extends javax.swing.JPanel {
 
 
     private void cadastrarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtn1ActionPerformed
-////////////////////////////////////////////////////////////////////////////////////
+
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
 
     private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
         FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
     }//GEN-LAST:event_voltarBtnMouseClicked
+
+    private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
+        if (this.vez < 6) {
+            if (nenhumaBtn.isSelected() || opcao1Btn.isSelected() || opcao2Btn.isSelected()) {
+                FramePrincipal.trocaPainel("tela perguntas", new TelaPerguntas(this.escolha, this.vez + 1));
+                if (nenhumaBtn.isSelected()) {
+                    botaoSelecionado.add(nenhumaBtn);
+                } else {
+                    if (nenhumaBtn.isSelected()) {
+                        botaoSelecionado.add(nenhumaBtn);
+                    } else {
+
+                    }
+                    if (nenhumaBtn.isSelected()) {
+                        botaoSelecionado.add(nenhumaBtn);
+                    } else {
+
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Selecione uma opção");
+            }
+        } else {
+
+        }
+    }//GEN-LAST:event_nextBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -113,11 +200,11 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private javax.swing.JButton cadastrarBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JRadioButton nenhumaBtn;
     private javax.swing.JLabel nextBtn;
     private javax.swing.JRadioButton opcao1Btn;
     private javax.swing.JRadioButton opcao2Btn;
+    private javax.swing.JTextArea perguntaTxt;
     private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

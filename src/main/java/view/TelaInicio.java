@@ -68,6 +68,7 @@ public class TelaInicio extends javax.swing.JPanel {
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
+        painelItens = new javax.swing.JPanel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -130,6 +131,7 @@ public class TelaInicio extends javax.swing.JPanel {
             }
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
+        add(painelItens, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 1250, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
@@ -164,6 +166,7 @@ public class TelaInicio extends javax.swing.JPanel {
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuBar jMenuBar6;
+    private javax.swing.JPanel painelItens;
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;

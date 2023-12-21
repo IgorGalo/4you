@@ -8,7 +8,9 @@ import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingWorker;
@@ -20,6 +22,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private static JPanel painelTroca;
     private static CardLayout baralhoPaineis;
     private static Hashtable<String, JPanel> historicoPaineis;
+    private static List<String> telasReaproveitadas = Arrays.asList("tela cadastrar", "tela entrar", "tela escolhaFML", "tela inicio", "tela quiz");
 
     public FramePrincipal() {
         initComponents();
@@ -27,7 +30,25 @@ public class FramePrincipal extends javax.swing.JFrame {
         trocaPainel("tela timer", new TelaTimer());
         telaComTimer();
     }
-   
+
+    public static void trocaPainel(String nome, JPanel novoPainel) {
+
+        //se o novo painel não estive no histórico
+        if (!historicoPaineis.containsKey(nome) || !telasReaproveitadas.contains(nome)) {
+
+            painelTroca.add(novoPainel, nome);
+            baralhoPaineis.show(painelTroca, nome);
+
+            //estamos ajustando o tamanho do painelTroca ao tamanho do novoPainel
+            painelTroca.setPreferredSize(novoPainel.getPreferredSize());
+
+            historicoPaineis.put(nome, novoPainel);
+        } else {
+            //a chave esta dentro do historico
+            baralhoPaineis.show(painelTroca, nome);
+            painelTroca.setPreferredSize(historicoPaineis.get(nome).getPreferredSize());
+        }
+    }
 
     private void telaComTimer() {
 
@@ -60,25 +81,6 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         this.add(painelRolagem);
         painelRolagem.setViewportView(painelTroca);
-    }
-
-    public static void trocaPainel(String nome, JPanel novoPainel) {
-
-        //se o novo painel não estive no histórico
-        if (!historicoPaineis.containsKey(nome)) {
-
-            painelTroca.add(novoPainel, nome);
-            baralhoPaineis.show(painelTroca, nome);
-
-            //estamos ajustando o tamanho do painelTroca ao tamanho do novoPainel
-            painelTroca.setPreferredSize(novoPainel.getPreferredSize());
-
-            historicoPaineis.put(nome, novoPainel);
-        } else {
-            //a chave esta dentro do historico
-            baralhoPaineis.show(painelTroca, nome);
-            painelTroca.setPreferredSize(historicoPaineis.get(nome).getPreferredSize());
-        }
     }
 
     @SuppressWarnings("unchecked")

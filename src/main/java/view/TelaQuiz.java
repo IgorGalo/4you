@@ -50,6 +50,7 @@ public class TelaQuiz extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        testeAntigoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         testeAntigoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 testeAntigoBtnMouseClicked(evt);
@@ -78,6 +79,7 @@ public class TelaQuiz extends javax.swing.JPanel {
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
 
+        novoTesteBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         novoTesteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 novoTesteBtnMouseClicked(evt);
