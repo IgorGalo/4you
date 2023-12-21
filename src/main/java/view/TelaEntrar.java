@@ -130,33 +130,33 @@ public class TelaEntrar extends javax.swing.JPanel {
     }//GEN-LAST:event_SenhaTxtActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Usuario filtro = new Usuario();
-
-        if (NomeTxt.getText().isBlank() || SenhaTxt.getText().isBlank()) {
-            JOptionPane.showMessageDialog(this, "USUÁRIO E/OU SENHA NÃO INFORMADOS", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
-        } else {
-            if (NomeTxt.getText().contains("@")) {
-                filtro.setEmail(NomeTxt.getText());
-            } else {
-                filtro.setNomeUsuario(NomeTxt.getText().trim());
-                filtro.getNomeUsuario();
-                this.nomeuser = NomeTxt.getText().trim();
-                System.out.println(nomeuser);
-            }
-            filtro.setSenha(SenhaTxt.getText());
-
-            UsuarioDAO servicos = new UsuarioDAO();
-            Usuario resultado = servicos.consultarPorFiltro(filtro);
-
-            if (resultado != null) {
+//        Usuario filtro = new Usuario();
+//
+//        if (NomeTxt.getText().isBlank() || SenhaTxt.getText().isBlank()) {
+//            JOptionPane.showMessageDialog(this, "USUÁRIO E/OU SENHA NÃO INFORMADOS", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+//        } else {
+//            if (NomeTxt.getText().contains("@")) {
+//                filtro.setEmail(NomeTxt.getText());
+//            } else {
+//                filtro.setNomeUsuario(NomeTxt.getText().trim());
+//                filtro.getNomeUsuario();
+//                this.nomeuser = NomeTxt.getText().trim();
+//                System.out.println(nomeuser);
+//            }
+//            filtro.setSenha(SenhaTxt.getText());
+//
+//            UsuarioDAO servicos = new UsuarioDAO();
+//            Usuario resultado = servicos.consultarPorFiltro(filtro);
+//
+//            if (resultado != null) {
                 FramePrincipal.trocaPainel("painel inicio", new TelaInicio());
-            } else {
-                JOptionPane.showMessageDialog(this, "USUÁRIO E/OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
-            }
-            TelaPerfil perf = new TelaPerfil();
-            perf.adicionarImagemDoBancoParaMudarIcon();
-
-        }
+//            } else {
+//                JOptionPane.showMessageDialog(this, "USUÁRIO E/OU SENHA INCORRETO", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+//            }
+//            TelaPerfil perf = new TelaPerfil();
+//            perf.adicionarImagemDoBancoParaMudarIcon();
+//
+//        }
     }
 
     public String getNomeuser() {

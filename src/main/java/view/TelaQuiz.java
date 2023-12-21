@@ -47,6 +47,7 @@ public class TelaQuiz extends javax.swing.JPanel {
         inicioBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
         novoTesteBtn = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -86,6 +87,9 @@ public class TelaQuiz extends javax.swing.JPanel {
             }
         });
         add(novoTesteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 310, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaOpcao.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
@@ -111,6 +115,7 @@ public class TelaQuiz extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel inicioBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel novoTesteBtn;
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
