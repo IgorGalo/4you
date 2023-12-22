@@ -222,8 +222,6 @@ public class Analise {
             System.out.println(opcoes + " " + pesquisa);
         }
 
-        ItemControl itemC = new ItemControl();
-        
         System.out.println(generos);
         System.out.println(pesquisa);
 
@@ -231,7 +229,6 @@ public class Analise {
             case 1:
 //                resultado = fazPesquisaFilme(pesquisa);
                 fazPesquisaFilme(pesquisa);
-                itemC.addItem(resultado, "Filme");
                 break;
             default:
                 throw new AssertionError();
@@ -310,8 +307,9 @@ public class Analise {
             }
 
         }
-
-               FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
+        ItemControl itemC = new ItemControl();
+        itemC.addItem(resultado, "Filme");
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
     }
 
     private Icon PesquisaImagens(Document doc, int numFilme) {
@@ -330,7 +328,7 @@ public class Analise {
             Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-        
+
     }
 
 }

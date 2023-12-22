@@ -4,6 +4,7 @@
  */
 package view;
 
+import control.ItemControl;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -56,6 +57,8 @@ public class TelaResultado extends javax.swing.JPanel {
         result2.setIcon(vetIcon.get(1));
         result3.setIcon(vetIcon.get(2));
         
+        ItemControl itemC = new ItemControl();
+        
     }
     
     private void panel(){
@@ -92,32 +95,98 @@ public class TelaResultado extends javax.swing.JPanel {
             }
         });
         add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
-        add(result3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 290, 220, 190));
-        add(result2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 220, 190));
-        add(result1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 220, 190));
+
+        result3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        result3.setPreferredSize(new java.awt.Dimension(122, 162));
+        result3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                result3MouseClicked(evt);
+            }
+        });
+        add(result3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 290, 150, 190));
+
+        result2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        result2.setPreferredSize(new java.awt.Dimension(122, 162));
+        result2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                result2MouseClicked(evt);
+            }
+        });
+        add(result2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 150, 190));
+
+        result1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        result1.setPreferredSize(new java.awt.Dimension(122, 162));
+        result1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                result1MouseClicked(evt);
+            }
+        });
+        add(result1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 150, 190));
 
         nome1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         nome1.setForeground(new java.awt.Color(255, 255, 255));
         nome1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nome1.setText("nome");
+        nome1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nome1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nome1MouseClicked(evt);
+            }
+        });
         add(nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 330, 30));
 
         nome2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         nome2.setForeground(new java.awt.Color(255, 255, 255));
         nome2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nome2.setText("nome");
+        nome2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nome2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nome2MouseClicked(evt);
+            }
+        });
         add(nome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 330, 30));
 
         nome3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         nome3.setForeground(new java.awt.Color(255, 255, 255));
         nome3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nome3.setText("nome");
+        nome3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nome3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nome3MouseClicked(evt);
+            }
+        });
         add(nome3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 480, 330, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
         FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
     }//GEN-LAST:event_voltarBtnMouseClicked
+
+    private void nome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome1MouseClicked
+        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome1.getText()));
+    }//GEN-LAST:event_nome1MouseClicked
+
+    private void nome2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome2MouseClicked
+        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome2.getText()));
+    }//GEN-LAST:event_nome2MouseClicked
+
+    private void nome3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome3MouseClicked
+        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome3.getText()));
+    }//GEN-LAST:event_nome3MouseClicked
+
+    private void result1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_result1MouseClicked
+        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome1.getText()));
+    }//GEN-LAST:event_result1MouseClicked
+
+    private void result2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_result2MouseClicked
+        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome2.getText()));
+    }//GEN-LAST:event_result2MouseClicked
+
+    private void result3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_result3MouseClicked
+        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome3.getText()));
+    }//GEN-LAST:event_result3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

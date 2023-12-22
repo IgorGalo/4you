@@ -306,15 +306,13 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         if (comentarioTxt.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Informe seu comentário!");
         } else {
-            //comentarioTxt.setText("");
+            comentarioTxt.setText("");
             nota1.setIcon(this.estrelaNaoAvaliada);
             nota2.setIcon(this.estrelaNaoAvaliada);
             nota3.setIcon(this.estrelaNaoAvaliada);
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
             JOptionPane.showMessageDialog(this, "AVALIAÇÃO ENVIADA COM SUCESSO");
-            comentarioTxt.setEditable(false);
-            //comentarioTxt.setC
         }
     }//GEN-LAST:event_enviarBtnMouseClicked
 

@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
 import model.Item;
+import model.Usuario;
 import tool.Conexao;
 
 public class ItemDAO {
@@ -42,7 +44,7 @@ public class ItemDAO {
     public boolean addItem(Vector<String> itens, String tipoItem) {
         String sql = "INSERT INTO fiyyou.itens (nomedoitem, tipoitem, avaliacao, comentario)"
                 + " VALUES (?, ?, ?, ?)";
-
+        System.out.println("passou");
         try {
             PreparedStatement insercao = c.prepareStatement(sql);
             for (int i = 0; i < itens.size(); i++) {
