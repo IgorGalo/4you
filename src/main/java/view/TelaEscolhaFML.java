@@ -4,10 +4,12 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Vector;
 import javax.imageio.ImageIO;
 
 public class TelaEscolhaFML extends javax.swing.JPanel {
-
+    private Vector<Integer> botaoSel = new Vector<>();
+    
     public TelaEscolhaFML() {
         initComponents();
     }
@@ -75,15 +77,15 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void musicaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musicaBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(2, 1));
+        FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(2, 1, botaoSel));
     }//GEN-LAST:event_musicaBtnMouseClicked
 
     private void filmeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filmeBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perguntas Filme", new TelaPerguntas(1, 1));
+        FramePrincipal.trocaPainel("tela perguntas Filme", new TelaPerguntas(1, 1, botaoSel));
     }//GEN-LAST:event_filmeBtnMouseClicked
 
     private void livroBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_livroBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perguntas Livro", new TelaPerguntas(3, 1));
+        FramePrincipal.trocaPainel("tela perguntas Livro", new TelaPerguntas(3, 1, botaoSel));
     }//GEN-LAST:event_livroBtnMouseClicked
 
     private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked

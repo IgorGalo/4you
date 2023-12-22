@@ -27,6 +27,12 @@ public class UsuarioControl {
         if (nomeCompleto.equalsIgnoreCase("") || nomeUsuario.equalsIgnoreCase("")
                 || senha.equalsIgnoreCase("") || email.equalsIgnoreCase("")) {
             return Retornos.ERRODEPREENCHIMENTO;
+        } else if (!email.contains("@")) {
+            return Retornos.ERROEMAIL;
+        } else if (senha.length() < 6) {
+            return Retornos.ERROSENHA;
+        } else if (nomeUsuario.length() < 3) {
+            return Retornos.ERRONOMEUSER;
         } else {
 
             dados.setNomeCompleto(nomeCompleto);

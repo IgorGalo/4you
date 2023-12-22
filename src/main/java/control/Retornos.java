@@ -12,7 +12,10 @@ public enum Retornos {
     ERRODEPREENCHIMENTO("É necessário preencher todos os campos", false),
     ERRODECADASTRO("Não foi possível cadastrar", false),
     ERROIMAGEMCONVERTIDA("Imagem não convertida", false),
-    ERROLOGIN("USUÁRIO OU SENHA INCORRETOS", false),
+    ERROLOGIN("Usuário e/ou senha incorreto(s)", false),
+    ERROEMAIL("E-mail inexisteste", false),
+    ERROSENHA("Sua senha deve conter nomínimo 6 caracteres", false),
+    ERRONOMEUSER("Seu nome de usuário deve conter no mínimo 2 caracteres", false),
     OK("", true);
     
     private String mensagem;

@@ -5,7 +5,12 @@
 package view;
 
 import control.Analise;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Vector;
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -19,9 +24,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private int escolha;
     private int vez;
     private ButtonGroup perguntaGroup;
-    private Vector<JRadioButton> botaoSelecionado;
+    private Vector<Integer> botaoSelecionado;
 
-    public TelaPerguntas(int escolha, int vez) {
+    public TelaPerguntas(int escolha, int vez, Vector<Integer> vet) {
         initComponents();
         perguntaGroup = new ButtonGroup();
         perguntaGroup.add(opcao1Btn);
@@ -29,11 +34,28 @@ public class TelaPerguntas extends javax.swing.JPanel {
         perguntaGroup.add(nenhumaBtn);
         perguntaTxt.setLineWrap(true);
         this.escolha = escolha;
-        this.botaoSelecionado = new Vector<JRadioButton>();
+        this.botaoSelecionado = vet;
         this.vez = vez;
         adicionaPergunta();
     }
 
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaQuizCmc.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
+    }
+    
+    
+    
     private void adicionaPergunta() {
         switch (this.escolha) {
             case 1:
@@ -45,7 +67,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         break;
                     case 2:
                         perguntaTxt.setText("Você prefere se envolver mais nas histórias das relações "
-                                + "nhumanas, com personagens enfrentando os desafios emocionais, "
+                                + "humanas, com personagens enfrentando os desafios emocionais, "
                                 + "ou você prefere tramas que se concentram em outras inâmicas e aspectos da vida?");
                         break;
                     case 3:
@@ -91,7 +113,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
         opcao2Btn = new javax.swing.JRadioButton();
         nextBtn = new javax.swing.JLabel();
         voltarBtn = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         cadastrarBtn.setBackground(new java.awt.Color(233, 68, 190));
         cadastrarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -155,9 +176,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
         add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 20, 80, 60));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaQuizCmc.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -172,19 +190,28 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
         if (this.vez < 6) {
             if (nenhumaBtn.isSelected() || opcao1Btn.isSelected() || opcao2Btn.isSelected()) {
-                FramePrincipal.trocaPainel("tela perguntas", new TelaPerguntas(this.escolha, this.vez + 1));
-                if (nenhumaBtn.isSelected()) {
-                    botaoSelecionado.add(nenhumaBtn);
-                } else if (nenhumaBtn.isSelected()) {
-                    botaoSelecionado.add(nenhumaBtn);
-                } else if (nenhumaBtn.isSelected()) {
-                    botaoSelecionado.add(nenhumaBtn);
+                if (opcao1Btn.isSelected()) {
+                    this.botaoSelecionado.add(1);
+                    System.out.println(this.botaoSelecionado);
+                    System.out.println("1");
                 }
+                if (opcao2Btn.isSelected()) {
+                    this.botaoSelecionado.add(2);
+                    System.out.println(this.botaoSelecionado);
+                    System.out.println("2");
+                }
+                if (nenhumaBtn.isSelected()) {
+                    this.botaoSelecionado.add(3);
+                    System.out.println(this.botaoSelecionado);
+                    System.out.println("n");
+                }
+                FramePrincipal.trocaPainel("tela perguntas", new TelaPerguntas(this.escolha, this.vez + 1, this.botaoSelecionado));
             } else {
                 JOptionPane.showMessageDialog(this, "Selecione uma opção");
             }
         } else {
             Analise analise = new Analise();
+            System.out.println(this.botaoSelecionado);
             analise.calculaResultado(this.botaoSelecionado, escolha, opcao1Btn, opcao2Btn, nenhumaBtn);
         }
     }//GEN-LAST:event_nextBtnMouseClicked
@@ -194,7 +221,6 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cadastrarBtn;
     private javax.swing.JButton cadastrarBtn1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JRadioButton nenhumaBtn;
     private javax.swing.JLabel nextBtn;

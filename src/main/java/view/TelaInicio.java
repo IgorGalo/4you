@@ -21,6 +21,11 @@ public class TelaInicio extends javax.swing.JPanel {
      */
     public TelaInicio() {
         initComponents();
+        adicionaItem();
+    }
+    
+    private void adicionaItem(){
+        
     }
     
     @Override
@@ -68,8 +73,33 @@ public class TelaInicio extends javax.swing.JPanel {
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
-        painelItens = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        imagem1 = new javax.swing.JLabel();
+        imagem2 = new javax.swing.JLabel();
+        imagem3 = new javax.swing.JLabel();
+        imagem4 = new javax.swing.JLabel();
+        imagem5 = new javax.swing.JLabel();
+        imagem6 = new javax.swing.JLabel();
+        imagem7 = new javax.swing.JLabel();
+        imagem8 = new javax.swing.JLabel();
+        imagem10 = new javax.swing.JLabel();
+        imagem9 = new javax.swing.JLabel();
+        imagem11 = new javax.swing.JLabel();
+        imagem12 = new javax.swing.JLabel();
+        imagem13 = new javax.swing.JLabel();
+        imagem14 = new javax.swing.JLabel();
+        imagem15 = new javax.swing.JLabel();
+        imagem16 = new javax.swing.JLabel();
+        imagem17 = new javax.swing.JLabel();
+        imagem18 = new javax.swing.JLabel();
+        imagem19 = new javax.swing.JLabel();
+        imagem20 = new javax.swing.JLabel();
+        imagem21 = new javax.swing.JLabel();
+        imagem22 = new javax.swing.JLabel();
+        imagem23 = new javax.swing.JLabel();
+        imagem24 = new javax.swing.JLabel();
+        imagem25 = new javax.swing.JLabel();
+        imagem26 = new javax.swing.JLabel();
+        imagem27 = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -132,10 +162,33 @@ public class TelaInicio extends javax.swing.JPanel {
             }
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
-        add(painelItens, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 1250, 590));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaInicio_1.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(imagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, 150));
+        add(imagem2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, 150));
+        add(imagem3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 100, 150));
+        add(imagem4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 100, 150));
+        add(imagem5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 100, 150));
+        add(imagem6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 70, 100, 150));
+        add(imagem7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 100, 150));
+        add(imagem8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 100, 150));
+        add(imagem10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 70, 100, 150));
+        add(imagem9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 100, 150));
+        add(imagem11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 100, 150));
+        add(imagem12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 100, 150));
+        add(imagem13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 100, 150));
+        add(imagem14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 100, 150));
+        add(imagem15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, 100, 150));
+        add(imagem16, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 280, 100, 150));
+        add(imagem17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 280, 100, 150));
+        add(imagem18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 280, 100, 150));
+        add(imagem19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, 100, 150));
+        add(imagem20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 100, 150));
+        add(imagem21, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 100, 150));
+        add(imagem22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 100, 150));
+        add(imagem23, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 100, 150));
+        add(imagem24, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 100, 150));
+        add(imagem25, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 490, 100, 150));
+        add(imagem26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 100, 150));
+        add(imagem27, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 490, 100, 150));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
@@ -152,7 +205,33 @@ public class TelaInicio extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel imagem1;
+    private javax.swing.JLabel imagem10;
+    private javax.swing.JLabel imagem11;
+    private javax.swing.JLabel imagem12;
+    private javax.swing.JLabel imagem13;
+    private javax.swing.JLabel imagem14;
+    private javax.swing.JLabel imagem15;
+    private javax.swing.JLabel imagem16;
+    private javax.swing.JLabel imagem17;
+    private javax.swing.JLabel imagem18;
+    private javax.swing.JLabel imagem19;
+    private javax.swing.JLabel imagem2;
+    private javax.swing.JLabel imagem20;
+    private javax.swing.JLabel imagem21;
+    private javax.swing.JLabel imagem22;
+    private javax.swing.JLabel imagem23;
+    private javax.swing.JLabel imagem24;
+    private javax.swing.JLabel imagem25;
+    private javax.swing.JLabel imagem26;
+    private javax.swing.JLabel imagem27;
+    private javax.swing.JLabel imagem3;
+    private javax.swing.JLabel imagem4;
+    private javax.swing.JLabel imagem5;
+    private javax.swing.JLabel imagem6;
+    private javax.swing.JLabel imagem7;
+    private javax.swing.JLabel imagem8;
+    private javax.swing.JLabel imagem9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
@@ -171,7 +250,6 @@ public class TelaInicio extends javax.swing.JPanel {
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuBar jMenuBar6;
-    private javax.swing.JPanel painelItens;
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;

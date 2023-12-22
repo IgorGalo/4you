@@ -4,8 +4,15 @@
  */
 package view;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,26 +23,39 @@ public class TelaResultado extends javax.swing.JPanel {
     /**
      * Creates new form TelaResultado
      */
-    public TelaResultado(Vector<String> resultado) {
+    public TelaResultado(Vector<String> resultado, Vector<Icon> vetIcon) {
         initComponents();
-//        mudaNome(resultado);
+        mudaNome(resultado, vetIcon);
 //        panel();
     }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        BufferedImage imagem;
+
+        try {
+            imagem = ImageIO.read(new File(getClass().getResource("/telaResultado.png").getPath()));
+            g.drawImage(imagem, 0, 0, this);
+
+        } catch (IOException ex) {
+            System.out.println("Arquivo não existente");
+        }
+    }
     
-    private void mudaNome(Vector<String> nomes){
-//        String split[];
-//        for(int i = 0; i < nomes.size(); i++){
-//            if(nomes.get(i).length() > 10){
-//               split = nomes.get(i).split(" ");
-//               nomes.set(i, split[0]+ "\n" + split[1]);
-//            }
-//        }
-//        nomeLbl1.setText(nomes.get(0));
-//        nomeLbl2.setText(nomes.get(1));
-//        nomeLbl3.setText(nomes.get(2));
-//        nomeLbl4.setText(nomes.get(3));
-//        nomeLbl5.setText(nomes.get(4));
-//        nomeLbl6.setText(nomes.get(5));
+    
+    
+    private void mudaNome(Vector<String> nomes, Vector<Icon> vetIcon){
+        String split[];
+        
+        nome1.setText(nomes.get(0));
+        nome2.setText(nomes.get(1));
+        nome3.setText(nomes.get(2));
+        result1.setIcon(vetIcon.get(0));
+        result2.setIcon(vetIcon.get(1));
+        result3.setIcon(vetIcon.get(2));
+        
     }
     
     private void panel(){
@@ -57,7 +77,12 @@ public class TelaResultado extends javax.swing.JPanel {
     private void initComponents() {
 
         voltarBtn = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        result3 = new javax.swing.JLabel();
+        result2 = new javax.swing.JLabel();
+        result1 = new javax.swing.JLabel();
+        nome1 = new javax.swing.JLabel();
+        nome2 = new javax.swing.JLabel();
+        nome3 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -67,9 +92,27 @@ public class TelaResultado extends javax.swing.JPanel {
             }
         });
         add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
+        add(result3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 290, 220, 190));
+        add(result2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 220, 190));
+        add(result1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 220, 190));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaResultado.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        nome1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nome1.setForeground(new java.awt.Color(255, 255, 255));
+        nome1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nome1.setText("nome");
+        add(nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 330, 30));
+
+        nome2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nome2.setForeground(new java.awt.Color(255, 255, 255));
+        nome2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nome2.setText("nome");
+        add(nome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 330, 30));
+
+        nome3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nome3.setForeground(new java.awt.Color(255, 255, 255));
+        nome3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nome3.setText("nome");
+        add(nome3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 480, 330, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
@@ -78,7 +121,12 @@ public class TelaResultado extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel nome1;
+    private javax.swing.JLabel nome2;
+    private javax.swing.JLabel nome3;
+    private javax.swing.JLabel result1;
+    private javax.swing.JLabel result2;
+    private javax.swing.JLabel result3;
     private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

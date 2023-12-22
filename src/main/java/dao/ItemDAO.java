@@ -16,7 +16,7 @@ public class ItemDAO {
     Connection c = Conexao.obterConexao();
 
     public ArrayList<Item> buscaItens(String texto) {
-        String sql = "SELECT * FROM public.itens WHERE nomedoitem ILIKE '" + texto + "%'";
+        String sql = "SELECT * FROM fiyyou.itens WHERE nomedoitem ILIKE '" + texto + "%'";
         ArrayList<Item> todosItens = new ArrayList<>();
 
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
@@ -40,7 +40,7 @@ public class ItemDAO {
     }
 
     public boolean addItem(Vector<String> itens, String tipoItem) {
-        String sql = "INSERT INTO public.itens (nomedoitem, tipoitem, avaliacao, comentario)"
+        String sql = "INSERT INTO fiyyou.itens (nomedoitem, tipoitem, avaliacao, comentario)"
                 + " VALUES (?, ?, ?, ?)";
 
         try {

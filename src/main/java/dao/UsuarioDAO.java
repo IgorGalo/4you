@@ -23,7 +23,7 @@ public class UsuarioDAO {
 
     public boolean cadastrarUsuario(Usuario dados) {
 
-        String sql = "INSERT INTO public.USUARIO (NomeCompleto, NomeUsuario, Email, Senha)"
+        String sql = "INSERT INTO fiyyou.USUARIO (NomeCompleto, NomeUsuario, Email, Senha)"
                 + " VALUES (?, ?, ? , ?)";
 
         try {
@@ -47,7 +47,7 @@ public class UsuarioDAO {
         FileInputStream fis = null;
         try {
 
-            String sql = "INSERT INTO public.IMAGENS (nomeusuario, imagem)"
+            String sql = "INSERT INTO fiyyou.IMAGENS (nomeusuario, imagem)"
                     + " VALUES (?, ?)";
             File arquivo = new File(arq);
             fis = new FileInputStream(arquivo);
@@ -82,7 +82,7 @@ public class UsuarioDAO {
         try {
             Usuario retorno = null;
 
-            String sql = "SELECT * FROM public.usuario ";
+            String sql = "SELECT * FROM fiyyou.usuario ";
             if ((filtro.getNomeUsuario() != null && !filtro.getNomeUsuario().equalsIgnoreCase(""))
                     || (filtro.getEmail() != null && !filtro.getEmail().equalsIgnoreCase(""))
                     && (filtro.getSenha() != null && !filtro.getSenha().equalsIgnoreCase(""))) {
@@ -127,7 +127,7 @@ public class UsuarioDAO {
         try {
             Imagem retorno = null;
 
-            String sql = "SELECT * FROM public.imagens WHERE ";
+            String sql = "SELECT * FROM fiyyou.imagens WHERE ";
 
             if (user != null && !user.equalsIgnoreCase("")) {
                 sql += "nomeusuario = '" + user.trim() + "'";
@@ -152,7 +152,7 @@ public class UsuarioDAO {
     public boolean deletaImagem() {
         boolean retorno = false;
 
-        String sql = "DELETE FROM public.imagens WHERE nomeusuario = ?";
+        String sql = "DELETE FROM fiyyou.imagens WHERE nomeusuario = ?";
         try (PreparedStatement delete = c.prepareCall(sql)) {
             delete.setString(1, user.trim());
             delete.execute();
@@ -165,7 +165,7 @@ public class UsuarioDAO {
     }
     
     public ArrayList<Usuario> buscaUsuarios(String texto) {
-        String sql = "SELECT * FROM public.usuario WHERE nomeusuario LIKE '" + texto + "%'";
+        String sql = "SELECT * FROM fiyyou.usuario WHERE nomeusuario LIKE '" + texto + "%'";
         
         ArrayList<Usuario> todosUsuarios = new ArrayList<>();
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
