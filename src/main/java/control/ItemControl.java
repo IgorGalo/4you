@@ -13,4 +13,7 @@ public class ItemControl {
     public void addItem(Vector<String> itens, String tipoItem) {
         itemdao.addItem(itens, tipoItem);
     }
+    public void cadastraImagemItem(byte[] bytes, String nomeItem){
+        itemdao.cadastrarImagemItem(bytes, nomeItem);
+    }
 }

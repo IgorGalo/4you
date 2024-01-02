@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.ByteArrayInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -67,6 +68,31 @@ public class ItemDAO {
 
         String sql = " ";
         return true;
+    }
+    
+    public boolean cadastrarImagemItem(byte[] bytes, String nomeItem) {
+
+        ByteArrayInputStream byteinput = new ByteArrayInputStream(bytes);
+
+        String sql = "INSERT INTO fiyyou.itens (nomeusuario, imagem)"
+                + " VALUES (?, ?)";
+        //File arquivo = new File(arq);
+
+        //fis = new FileInputStream(arquivo);
+        try {
+            PreparedStatement insercao = c.prepareStatement(sql);
+
+            insercao.setString(1, nomeItem);
+            insercao.setBinaryStream(2, byteinput, (int) bytes.length);
+            insercao.execute();
+            c.close();
+            return true;
+
+        } catch (SQLException ex) {
+            System.out.println("" + ex.getMessage());
+            return false;
+        }
+
     }
 
 }

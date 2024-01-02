@@ -60,27 +60,29 @@ public class TelaPerguntas extends javax.swing.JPanel {
         switch (this.escolha) {
             case 1:
                 switch (this.vez) {
-                    case 1:
+                    case 1: // terror e romance
                         perguntaTxt.setText(
                                 "Você prefere explorar narrativas que despertam uma sensação de medo e suspense "
-                                + "ou aquelas que proporcionam uma atmosfera mais leve e descontraída?");
+                                + "ou prefere se envolver mais nas histórias das relações "
+                                + "humanas, com personagens enfrentando os desafios emocionais?");
                         break;
-                    case 2:
-                        perguntaTxt.setText("Você prefere se envolver mais nas histórias das relações "
-                                + "humanas, com personagens enfrentando os desafios emocionais, "
-                                + "ou você prefere tramas que se concentram em outras inâmicas e aspectos da vida?");
+                    case 2: // misterio e aventura
+                        perguntaTxt.setText("Você se sente mais atraído por narrativas que desafiem sua capacidade de dedução e "
+                                + "mantêm você intrigado do início ao fim ou as que exploram terras desconhecidas, desafios emocionantes e jornadas inesperadas?");
                         break;
-                    case 3:
-                        perguntaTxt.setText("Você prefere: refletir sobre a complexicidade da vida "
-                                + "ou experiências cinematográficas mais leves e descontraídas?");
+                    case 3: // drama comédia 
+                        perguntaTxt.setText("Você prefere filmes que retratam momentos intensos e emocionais que fazem você "
+                                + "refletir sobre a complexidade da vida, ou prefere filmes que proporcionem momentos leves e "
+                                + "divertidos, capazes de arrancar um sorriso mesmo nas situações mais inusitadas?");
                         break;
-                    case 4:
-                        perguntaTxt.setText("Costuma prestar atenção especialmente na trilha sonora e nas perfomances musicais integradas à história, "
-                                + "ou tende a focar mais nos diálogo e na trama em si?");
+                    case 4: //musical e acao
+                        perguntaTxt.setText("Você presta atenção, especialmente, na trilha sonora e nas performances musicais integradas à história,"
+                                + "ou se empolga com tramas cheias de adrenalina e reviravolta?");
                         break;
-                    case 5:
+                    case 5: //ficcao e doc
                         perguntaTxt.setText("Você prefere narrativas que exploram mundos imaginários e conceitos futuristas, "
-                                + "desafiando os limites da realidade");
+                                + "desafiando os limites da realidade, ou prefere tramas que exploram a realidade, oerecendo uma perspectiva "
+                                + "mais profunda sovre diferentes assuntos e experiências de vida?");
                         break;
                 }
                 break;
