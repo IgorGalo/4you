@@ -37,7 +37,6 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         filmeBtn = new javax.swing.JLabel();
         livroBtn = new javax.swing.JLabel();
         voltarBtn = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -71,9 +70,6 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
             }
         });
         add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaFML.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void musicaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musicaBtnMouseClicked
@@ -95,7 +91,6 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel filmeBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel livroBtn;
     private javax.swing.JLabel musicaBtn;
     private javax.swing.JLabel voltarBtn;

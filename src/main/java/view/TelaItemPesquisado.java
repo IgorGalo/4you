@@ -4,6 +4,7 @@
  */
 package view;
 
+import control.ItemControl;
 import control.UsuarioControl;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -26,16 +27,28 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private File estrelaVelha;
     private ImageIcon estrelaAvaliada;
     private ImageIcon estrelaNaoAvaliada;
+    private File starMiniCheia;
+    private File starMiniVazia;
+    private ImageIcon starCheia;
+    private ImageIcon starVazia;
     private UsuarioControl usuarioC = new UsuarioControl();
     private int nota;
+    
+    private ItemControl ic = new ItemControl();
 
     public TelaItemPesquisado(String itemPesquisado) {
         initComponents();
+        itemLbl.setIcon(ic.consultaImagem(itemPesquisado));
         this.itemPesquisado = itemPesquisado;
         this.estrelaNova = new File(getClass().getResource("/estrela_avaliada.png").getPath());
         this.estrelaVelha = new File(getClass().getResource("/estrela_nao_avaliada.png").getPath());
         this.estrelaAvaliada = transformaFileIcon(this.estrelaNova);
         this.estrelaNaoAvaliada = transformaFileIcon(this.estrelaVelha);
+
+        this.starMiniCheia = new File(getClass().getResource("/starMiniCheia.png").getPath());
+        this.starMiniVazia = new File(getClass().getResource("/starMiniVazia.png").getPath());
+        this.starCheia = transformaFileIcon(this.estrelaNova);
+        this.starVazia = transformaFileIcon(this.estrelaVelha);
         trocaNome();
     }
 
@@ -86,7 +99,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         nota3 = new javax.swing.JLabel();
         nota2 = new javax.swing.JLabel();
         nota1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        itemLbl = new javax.swing.JLabel();
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         inicioBtn = new javax.swing.JLabel();
@@ -157,8 +170,8 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         });
         add(nota1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 122, -1, 80));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/falta a.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+        itemLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/falta a.png"))); // NOI18N
+        add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
 
         perfilBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -302,6 +315,55 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_nota5MouseClicked
 
+    private void mudaAvaliacao(int nota) {
+        switch (nota) {
+            case 0:
+                star1.setIcon(this.starVazia);
+                star2.setIcon(this.starVazia);
+                star3.setIcon(this.starVazia);
+                star4.setIcon(this.starVazia);
+                star5.setIcon(this.starVazia);
+                break;
+            case 1:
+                star1.setIcon(this.starCheia);
+                star2.setIcon(this.starVazia);
+                star3.setIcon(this.starVazia);
+                star4.setIcon(this.starVazia);
+                star5.setIcon(this.starVazia);
+                break;
+            case 2:
+                star1.setIcon(this.starCheia);
+                star2.setIcon(this.starCheia);
+                star3.setIcon(this.starVazia);
+                star4.setIcon(this.starVazia);
+                star5.setIcon(this.starVazia);
+                break;
+            case 3:
+                star1.setIcon(this.starCheia);
+                star2.setIcon(this.starCheia);
+                star3.setIcon(this.starCheia);
+                star4.setIcon(this.starVazia);
+                star5.setIcon(this.starVazia);
+                break;
+            case 4:
+                star1.setIcon(this.starCheia);
+                star2.setIcon(this.starCheia);
+                star3.setIcon(this.starCheia);
+                star4.setIcon(this.starCheia);
+                star5.setIcon(this.starVazia);
+                break;
+            case 5:
+                star1.setIcon(this.starCheia);
+                star2.setIcon(this.starCheia);
+                star3.setIcon(this.starCheia);
+                star4.setIcon(this.starCheia);
+                star5.setIcon(this.starCheia);
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
     private void enviarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarBtnMouseClicked
         if (comentarioTxt.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Informe seu comentário!");
@@ -312,6 +374,8 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             nota3.setIcon(this.estrelaNaoAvaliada);
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
+            int nota = ic.atualizaAvaliacao(this.nota, this.itemPesquisado);
+            mudaAvaliacao(nota);
             JOptionPane.showMessageDialog(this, "AVALIAÇÃO ENVIADA COM SUCESSO");
         }
     }//GEN-LAST:event_enviarBtnMouseClicked
@@ -321,7 +385,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private javax.swing.JTextArea comentarioTxt;
     private javax.swing.JLabel enviarBtn;
     private javax.swing.JLabel inicioBtn;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel itemLbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nomeItem;
     private javax.swing.JLabel nota1;

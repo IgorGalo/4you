@@ -5,11 +5,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
+import model.Imagem;
 import model.Item;
 import model.Usuario;
 import tool.Conexao;
@@ -64,17 +66,66 @@ public class ItemDAO {
     }
 
     public boolean addAvaliacao(String nomeItem, int novaAvaliacao) {
-        ArrayList<Item> item = buscaItens(nomeItem);
-
-        String sql = " ";
-        return true;
+        String sql = "UPDATE fiyyou.itens SET avaliacao = ? WHERE nomedoItem = ?;";
+        try (PreparedStatement insercao = c.prepareStatement(sql);) {
+            insercao.setInt(1, novaAvaliacao);
+            insercao.setString(2, nomeItem);
+            insercao.execute();
+            c.close();
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
     }
     
+    public Imagem consultarImagem(String nomeItem) {
+        try {
+            Imagem retorno = null;
+
+            String sql = "SELECT * FROM fiyyou.imagens WHERE ";
+
+            if (nomeItem != null && !nomeItem.equalsIgnoreCase("")) {
+                sql += "nomeusuario = '" + nomeItem.trim() + "'";
+
+            }
+
+            Statement consulta = c.createStatement();
+            ResultSet resultado = consulta.executeQuery(sql);
+
+            c.close();
+            if (resultado.next()) {
+                retorno = new Imagem(resultado.getBytes("imagem"));
+            }
+            return retorno;
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage() + "Erro: ");
+            return null;
+        }
+    }
+
+    public int consultaAvaliacao(String nomeItem) {
+
+        String sql = "SELECT avaliacao FROM fiyyou.itens WHERE nomedoitem = '" + nomeItem + "'";
+
+        try (PreparedStatement trans = this.c.prepareStatement(sql)) {
+            //vamos ao banco buscar os dados resultado da sql definida
+            ResultSet resultadoBanco = trans.executeQuery();
+            if (resultadoBanco.next()) {
+                return resultadoBanco.getInt("avaliacao");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return 0;
+    }
+
     public boolean cadastrarImagemItem(byte[] bytes, String nomeItem) {
 
         ByteArrayInputStream byteinput = new ByteArrayInputStream(bytes);
 
-        String sql = "INSERT INTO fiyyou.itens (nomeusuario, imagem)"
+        String sql = "INSERT INTO fiyyou.imageitem (nomeitem, imagem)"
                 + " VALUES (?, ?)";
         //File arquivo = new File(arq);
 

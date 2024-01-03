@@ -15,9 +15,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-import org.jsoup.Jsoup;
-import org.jsoup.select.Elements;
-import org.jsoup.nodes.Document;
+//import org.jsoup.Jsoup;
+//import org.jsoup.select.Elements;
+//import org.jsoup.nodes.Document;
 import view.FramePrincipal;
 import view.TelaResultado;
 
