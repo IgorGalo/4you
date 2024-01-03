@@ -39,6 +39,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     public TelaItemPesquisado(String itemPesquisado) {
         initComponents();
         itemLbl.setIcon(ic.consultaImagem(itemPesquisado));
+        
         this.itemPesquisado = itemPesquisado;
         this.estrelaNova = new File(getClass().getResource("/estrela_avaliada.png").getPath());
         this.estrelaVelha = new File(getClass().getResource("/estrela_nao_avaliada.png").getPath());

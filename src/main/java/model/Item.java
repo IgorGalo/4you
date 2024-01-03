@@ -2,14 +2,12 @@ package model;
 
 public class Item {
     
-    private int IDitem;
     private String tipoItem;
     private String nomeItem;
     private String comentario;
     private int avaliacao;
 
-    public Item(int IDitem, int avaliacao, String tipoItem, String nomedoItem, String comentario) {
-        this.IDitem = IDitem;
+    public Item(int avaliacao, String tipoItem, String nomedoItem, String comentario) {
         this.tipoItem = tipoItem;
         this.nomeItem = nomedoItem;
         this.comentario = comentario;

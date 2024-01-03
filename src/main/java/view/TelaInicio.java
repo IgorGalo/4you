@@ -4,11 +4,14 @@
  */
 package view;
 
+import control.ItemControl;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Vector;
 import javax.imageio.ImageIO;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,16 +19,58 @@ import javax.imageio.ImageIO;
  */
 public class TelaInicio extends javax.swing.JPanel {
 
-    /**
-     * Creates new form TelaInicio
-     */
+    private Vector<JLabel> vetLabel = new Vector<>();
+    private Vector<String> nomesItem = new Vector<>();
+    private ItemControl ic = new ItemControl();
+    
     public TelaInicio() {
         initComponents();
-        adicionaItem();
+        //adicionaLabel();
     }
     
-    private void adicionaItem(){
-        
+    private void adicionaLabel(){
+        this.vetLabel.add(imagem1);
+        this.vetLabel.add(imagem2);
+        this.vetLabel.add(imagem3);
+        this.vetLabel.add(imagem4);
+        this.vetLabel.add(imagem5);
+        this.vetLabel.add(imagem6);
+        this.vetLabel.add(imagem7);
+        this.vetLabel.add(imagem8);
+        this.vetLabel.add(imagem9);
+        this.vetLabel.add(imagem10);
+        this.vetLabel.add(imagem11);
+        this.vetLabel.add(imagem12);
+        this.vetLabel.add(imagem13);
+        this.vetLabel.add(imagem14);
+        this.vetLabel.add(imagem15);
+        this.vetLabel.add(imagem16);
+        this.vetLabel.add(imagem17);
+        this.vetLabel.add(imagem18);
+        this.vetLabel.add(imagem19);
+        this.vetLabel.add(imagem20);
+        this.vetLabel.add(imagem21);
+        this.vetLabel.add(imagem22);
+        this.vetLabel.add(imagem23);
+        this.vetLabel.add(imagem24);
+        this.vetLabel.add(imagem25);
+        this.vetLabel.add(imagem26);
+        this.vetLabel.add(imagem27);
+        addImagemItem();
+    }
+    
+    private void addImagemItem(){
+        this.nomesItem = ic.consultaNomesItens();
+        //imagem1.setIcon(ic.consultaImagem(this.nomesItem.get(0)));
+        if(this.nomesItem.size() > 27){
+            for(int i = 0; i < 27; i++){
+                this.vetLabel.get(i).setIcon(ic.consultaImagem(this.nomesItem.get(i)));
+            }
+        }else{
+            for(int i = 0; i < nomesItem.size(); i++){
+                this.vetLabel.get(i).setIcon(ic.consultaImagem(this.nomesItem.get(i)));
+            }
+        }
     }
     
     @Override
@@ -73,8 +118,8 @@ public class TelaInicio extends javax.swing.JPanel {
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
-        imagem1 = new javax.swing.JLabel();
         imagem2 = new javax.swing.JLabel();
+        imagem1 = new javax.swing.JLabel();
         imagem3 = new javax.swing.JLabel();
         imagem4 = new javax.swing.JLabel();
         imagem5 = new javax.swing.JLabel();
@@ -162,8 +207,8 @@ public class TelaInicio extends javax.swing.JPanel {
             }
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
-        add(imagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, 150));
-        add(imagem2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, 150));
+        add(imagem2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, 150));
+        add(imagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, 150));
         add(imagem3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 100, 150));
         add(imagem4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 100, 150));
         add(imagem5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 100, 150));

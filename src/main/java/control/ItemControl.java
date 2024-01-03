@@ -18,8 +18,15 @@ public class ItemControl {
     private ItemDAO itemdao = new ItemDAO();
 
     public void addItem(Vector<String> itens, String tipoItem) {
-        itemdao.addItem(itens, tipoItem);
+        itemdao.addItemDAO(itens, tipoItem);
     }
+    
+    public Vector<String> consultaNomesItens(){
+        Vector<String> vetNome = itemdao.consultaItens();
+        
+        return vetNome;
+    }
+    
     public void cadastraImagemItem(byte[] bytes, String nomeItem){
         itemdao.cadastrarImagemItem(bytes, nomeItem);
     }
@@ -43,8 +50,11 @@ public class ItemControl {
     }
     
     public int atualizaAvaliacao(int nota, String nomeItem){
+        
         int notaConsultada = itemdao.consultaAvaliacao(nomeItem);
+        System.out.println("notacONSULTADA" + nota);
         int novaNota = (notaConsultada + nota)/2;
+        System.out.println("nova" + novaNota);
         
         itemdao.addAvaliacao(nomeItem, novaNota);
         

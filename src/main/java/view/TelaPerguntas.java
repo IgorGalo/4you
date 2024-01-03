@@ -190,7 +190,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
     }//GEN-LAST:event_voltarBtnMouseClicked
 
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
-        if (this.vez < 6) {
+        if (this.vez < 5) {
             if (nenhumaBtn.isSelected() || opcao1Btn.isSelected() || opcao2Btn.isSelected()) {
                 if (opcao1Btn.isSelected()) {
                     this.botaoSelecionado.add(1);

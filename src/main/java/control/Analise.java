@@ -1,8 +1,10 @@
 package control;
 
 import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
@@ -15,13 +17,16 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-//import org.jsoup.Jsoup;
-//import org.jsoup.select.Elements;
-//import org.jsoup.nodes.Document;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import view.FramePrincipal;
 import view.TelaResultado;
 
 public class Analise {
+
+    private ItemControl itemC = new ItemControl();
 
     public void calculaResultado(Vector<Integer> opcoes, int escolha, JRadioButton opcao1Btn, JRadioButton opcao2Btn, JRadioButton nenhumaBtn) {
 
@@ -235,6 +240,88 @@ public class Analise {
         }
     }
 
+    private void fazPesquisaLivro(String pesquisa) {
+        Vector<Icon> iconVet = new Vector<>();
+        Vector<String> resultado = new Vector<>();
+        Vector<String> resultadoAutores = new Vector<>();
+
+        try {
+
+            Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+" + pesquisa + "&sourceid=chrome&ie=UTF-8"
+                    + "").get();
+
+            Elements htmlElements = doc.getAllElements();
+
+            for (Element e : htmlElements) {
+                conexaoLivros(e, doc, resultado, resultadoAutores);
+            }
+            for (int i = 0, numLivro = 1; i < 3; i++, numLivro = numLivro + 2) {
+                System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
+                iconVet.add(PesquisaImagens(doc, numLivro, resultado));
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+            for (int i = 1; i <= 3; i++) {
+                try {
+                    switch (i) {
+                        case 1:
+                            System.out.println("1");
+                            System.out.println(pesquisa.split("\\W")[0] + pesquisa.split("\\W")[1]);
+                            Document doc1 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
+                                    + pesquisa.split("\\W")[0] + "+" + pesquisa.split("\\W")[1]
+                                    + "&sourceid=chrome&ie=UTF-8").get();
+                            Elements htmlElements1 = doc1.getAllElements();
+
+                            for (Element e : htmlElements1) {
+                                conexaoLivros(e, doc1, resultado, resultadoAutores);
+                                iconVet.add(PesquisaImagens(doc1, 1, resultado));
+
+                                break;
+                            }
+                            break;
+                        case 2:
+                            System.out.println("2");
+                            Document doc2 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
+                                    + pesquisa.split("\\W")[0] + "+" + pesquisa.split("\\W")[2]
+                                    + "&sourceid=chrome&ie=UTF-8").get();
+                            Elements htmlElements2 = doc2.getAllElements();
+
+                            for (Element e : htmlElements2) {
+                                conexaoLivros(e, doc2, resultado, resultadoAutores);
+                                iconVet.add(PesquisaImagens(doc2, 1, resultado));
+
+                                break;
+                            }
+                            break;
+
+                        case 3:
+                            System.out.println("3");
+                            Document doc3 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
+                                    + pesquisa.split("\\W")[1] + "+" + pesquisa.split("\\W")[2]
+                                    + "&sourceid=chrome&ie=UTF-8").get();
+                            Elements htmlElements3 = doc3.getAllElements();
+
+                            for (Element e : htmlElements3) {
+                                conexaoLivros(e, doc3, resultado, resultadoAutores);
+                                iconVet.add(PesquisaImagens(doc3, 1, resultado));
+
+                                break;
+                            }
+                            break;
+                    }
+
+                } catch (Exception ERRO) {
+                    Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ERRO);
+
+                }
+            }
+            for (int i = 0; i < 3; i++) {
+                System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
+            }
+        }
+
+    }
+
     private void fazPesquisaFilme(String pesquisa) {
         Vector<Icon> iconVet = new Vector<>();
         Vector<String> resultado = new Vector<>();
@@ -282,7 +369,7 @@ public class Analise {
                                     + "&sourceid=chrome&ie=UTF-8").get();
                             System.out.println(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
-                            
+
                             iconVet.add(PesquisaImagens(doc2, 1, resultado));
 
                             break;
@@ -308,9 +395,120 @@ public class Analise {
             }
 
         }
-        ItemControl itemC = new ItemControl();
         itemC.addItem(resultado, "Filme");
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
+    }
+
+    private void fazPesquisaMusica(String pesquisa) {
+        Vector<Icon> iconVet = new Vector<>();
+        Vector<String> resultado = new Vector<>();
+        Vector<String> resultadoAutores = new Vector<>();
+
+        BufferedInputStream ArqMusicas;
+        try {
+            ArqMusicas = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa + "&entity=musicTrack&limit=10").openStream());
+
+            String Music = new String(ArqMusicas.readAllBytes());
+
+            String[] VetMus = new String[Music.split("\n").length];
+
+            for (int i = 0; i < Music.split("\n").length; i++) {
+
+                VetMus[i] = Music.split("\n")[i];
+            }
+            int limiteMusicas = 10;
+            for (int i = 6; i <= limiteMusicas; i = i + 2) {
+                if (i > 6) {
+                    for (int j = 6; j < i; j = j + 2) {
+                        if (VetMus[i].split(":")[8].split("\"")[1].equalsIgnoreCase(VetMus[j].split(":")[8].split("\"")[1]) /* && VetMus[i].split(":")[6].split("\"")[1].equalsIgnoreCase(VetMus[j].split(":")[6].split("\"")[1])*/) {
+
+                            System.out.println("Repetido");
+                            limiteMusicas = limiteMusicas + 2;
+
+                        } else {
+                            resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
+                            resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
+                            iconVet.add(PesquisaImagensMusicas(VetMus[i]));
+                            break;
+
+                        }
+                    }
+                } else {
+                    resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
+                    resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
+                    iconVet.add(PesquisaImagensMusicas(VetMus[i]));
+
+                }
+
+                //<editor-fold defaultstate="collapsed" desc="Testes audio">
+//
+//                System.out.println(VetMus[i + 1].split("\"")[3]);
+//                URL oUrl = new URL(VetMus[i + 1].split(VetMus[i + 1].split("\"")[3]).toString());
+//                
+//                
+//                
+//                Clip oClip = AudioSystem.getClip();
+//                AudioInputStream oStream = AudioSystem.getAudioInputStream(oUrl);
+//                oClip.open(oStream);
+//                oClip.loop(0);
+            }
+
+//            JSONObject objtjson = new JSONObject(new String(ArqMusicas.readAllBytes()));
+//            
+//                BufferedReader in = new BufferedReader(marcaLeitura);
+//                System.out.println(in.readLine());
+            // </editor-fold>
+        } catch (Exception ERRO) {
+            //Caso erro na pesquisa, fazer pesquisa por categorias separadamente
+            BufferedInputStream ArqMusicas1, ArqMusicas2, ArqMusicas3;
+
+            try {
+                for (int i = 1; i <= 3; i++) {
+                    switch (i) {
+                        case 1:
+                            ArqMusicas1 = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa.split("\\W")[0] + "&entity=musicTrack&limit=10").openStream());
+
+                            String Music1 = new String(ArqMusicas1.readAllBytes());
+
+                            String[] VetMus1 = new String[Music1.split("\n").length];
+
+                            resultado.add(VetMus1[i].split(":")[8].split("\"")[1]);
+                            resultadoAutores.add(VetMus1[i].split(":")[6].split("\"")[1]);
+                            iconVet.add(PesquisaImagensMusicas(VetMus1[i]));
+
+                            break;
+                        case 2:
+                            ArqMusicas2 = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa.split("\\W")[1] + "&entity=musicTrack&limit=10").openStream());
+
+                            String Music2 = new String(ArqMusicas2.readAllBytes());
+
+                            String[] VetMus2 = new String[Music2.split("\n").length];
+
+                            resultado.add(VetMus2[i].split(":")[8].split("\"")[1]);
+                            resultadoAutores.add(VetMus2[i].split(":")[6].split("\"")[1]);
+                            iconVet.add(PesquisaImagensMusicas(VetMus2[i]));
+                            break;
+                        case 3:
+                            ArqMusicas3 = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa.split("\\W")[2] + "&entity=musicTrack&limit=10").openStream());
+
+                            String Music3 = new String(ArqMusicas3.readAllBytes());
+
+                            String[] VetMus3 = new String[Music3.split("\n").length];
+
+                            resultado.add(VetMus3[i].split(":")[8].split("\"")[1]);
+                            resultadoAutores.add(VetMus3[i].split(":")[6].split("\"")[1]);
+                            iconVet.add(PesquisaImagensMusicas(VetMus3[i]));
+                            break;
+                    }
+                }
+            } catch (Exception Erro) {
+
+            }
+        }
+        for (int i = 0; i < resultado.size(); i++) {
+            System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
+        }
+
     }
 
     private Icon PesquisaImagens(Document doc, int numFilme, Vector<String> resultado) {
@@ -321,14 +519,50 @@ public class Analise {
             byte[] decode = Base64.getDecoder().decode(base64Image);
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(decode));
 
-            ItemControl ic = new ItemControl();
-            ic.cadastraImagemItem(decode, resultado.get(numFilme));
+            itemC.cadastraImagemItem(decode, resultado.get(numFilme));
 
             ImageIcon icon = new ImageIcon(img);
 
             return icon;
         } catch (IOException ex) {
             System.err.println("ERRO img");
+            Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+
+    }
+
+    private void conexaoLivros(Element e, Document doc, Vector<String> resultado, Vector<String> resultadoAutores) {
+
+        //System.out.println(e.classNames());
+        if (e.classNames().contains("dAassd")) {
+            Elements nomeFilme = e.getElementsByClass("FozYP");
+            String nomeStr = "";
+            String autor = "";
+            if (!nomeFilme.isEmpty()) {
+                autor += (nomeFilme.last() + "").split(">")[1].split("<")[0].split(",")[0].trim();
+                nomeFilme.remove(nomeFilme.size() - 1); //autor
+                for (Element eSub : nomeFilme) {
+
+                    //System.out.print(eSub.html());
+                    nomeStr += eSub.html() + " ";
+                }
+            }
+            resultado.add(nomeStr);
+            resultadoAutores.add(autor);
+        }
+    }
+
+    private Icon PesquisaImagensMusicas(String InfoMus) {
+        try {
+
+            Document doc = (Document) Jsoup.connect(InfoMus.split(":")[13].split("\"")[1] + ":" + InfoMus.split(":")[14].split("\"")[0]).get();
+            String UrlImg = doc.getAllElements().toString().split("property=\"og:image\" content=\"")[1].split("\"")[0];
+            BufferedImage img = ImageIO.read(new URL(UrlImg));
+            ImageIcon icon = new ImageIcon(img);
+            return icon;
+
+        } catch (Exception ex) {
             Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }

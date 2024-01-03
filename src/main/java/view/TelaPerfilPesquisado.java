@@ -75,6 +75,8 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
         labelperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
         add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
+        jScrollPane1.setBorder(null);
+
         itemUser.setBackground(new java.awt.Color(43, 24, 33));
         itemUser.setBorder(null);
         jScrollPane1.setViewportView(itemUser);

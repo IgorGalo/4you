@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class Conexao {
     
-    private static String url = "jdbc:postgresql://10.90.24.56/aula";
+    private static String url = "jdbc:postgresql://200.18.128.56/aula";
     private static String usuario = "aula";
     private static String senha = "aula";
 

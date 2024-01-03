@@ -29,8 +29,7 @@ public class ItemDAO {
             ResultSet resultadoBanco = trans.executeQuery();
             //transformr as tuplas(linhas) em objetos do tipo statustime
             while (resultadoBanco.next()) {
-                Item item = new Item(resultadoBanco.getInt("iditem"),
-                        resultadoBanco.getInt("avaliacao"),
+                Item item = new Item(resultadoBanco.getInt("avaliacao"),
                         resultadoBanco.getString("tipoItem"),
                         resultadoBanco.getString("nomedoitem"),
                         resultadoBanco.getString("comentario"));
@@ -44,7 +43,7 @@ public class ItemDAO {
         return todosItens;
     }
 
-    public boolean addItem(Vector<String> itens, String tipoItem) {
+    public boolean addItemDAO(Vector<String> itens, String tipoItem) {
         String sql = "INSERT INTO fiyyou.itens (nomedoitem, tipoitem, avaliacao, comentario)"
                 + " VALUES (?, ?, ?, ?)";
         System.out.println("passou");
@@ -77,7 +76,7 @@ public class ItemDAO {
             return false;
         }
     }
-    
+
     public Imagem consultarImagem(String nomeItem) {
         try {
             Imagem retorno = null;
@@ -120,7 +119,26 @@ public class ItemDAO {
 
         return 0;
     }
+    
+    public Vector<String> consultaItens() {
+        
+        Vector<String> nomeItens = new Vector<>();
+        
+        String sql = "SELECT * FROM fiyyou.itens";
 
+        try (PreparedStatement trans = this.c.prepareStatement(sql)) {
+            ResultSet resultadoBanco = trans.executeQuery();
+            while (resultadoBanco.next()) {
+                Item item = new Item(resultadoBanco.getInt("avaliacao"), resultadoBanco.getString("tipoitem"),
+                        resultadoBanco.getString("nomedoitem"), resultadoBanco.getString("comentario"));
+                nomeItens.add(resultadoBanco.getString("nomedoitem"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nomeItens;
+    }
+    
     public boolean cadastrarImagemItem(byte[] bytes, String nomeItem) {
 
         ByteArrayInputStream byteinput = new ByteArrayInputStream(bytes);
