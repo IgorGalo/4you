@@ -31,6 +31,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         telaComTimer();
     }
 
+    
     public static void trocaPainel(String nome, JPanel novoPainel) {
 
         //se o novo painel não estive no histórico
@@ -50,6 +51,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
     }
 
+//Serve para chamar a primeira tela e ela fica por alguns segundos, como se fosse uma introdução     
     private void telaComTimer() {
 
         SwingWorker trocar = new SwingWorker() {
@@ -69,6 +71,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     }
 
+//Configuração da função de trocar painéis    
     private void configuraTrocaPaineis() {
 
         this.setLayout(new BorderLayout());

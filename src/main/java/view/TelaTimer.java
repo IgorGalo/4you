@@ -27,6 +27,7 @@ public class TelaTimer extends javax.swing.JPanel {
         Swing();
     }
 
+//Para fazer a ProgressBarr progredir    
     private void Swing() {
         SwingWorker progresso = new SwingWorker() {
             @Override

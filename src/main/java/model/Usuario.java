@@ -1,5 +1,7 @@
 package model;
 
+//Parâmetros para o funcionamento de um Usuário
+
 public class Usuario {
     
     private int IDusuario;

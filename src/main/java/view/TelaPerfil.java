@@ -30,6 +30,7 @@ public class TelaPerfil extends javax.swing.JPanel {
     private UsuarioControl usuarioC = new UsuarioControl();
     private UsuarioDAO sa = new UsuarioDAO();
 
+//Construtor    
     public TelaPerfil() {
         initComponents();
         Icon imagemPerfilInicio = new ImageIcon("src\\main\\resources\\labelperfil.png");
@@ -112,6 +113,7 @@ public class TelaPerfil extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesquisarBtnMouseClicked
 
+//Para editar a foto de perfil do usuario    
     private void alteraBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alteraBtnMouseClicked
         JFileChooser janelaArquivo = new JFileChooser();
         janelaArquivo.setFileFilter(new FileNameExtensionFilter("tipos de imagem", "PNG", "png", "JPEG", "jpeg", "JPG", "jpg"));
@@ -124,6 +126,8 @@ public class TelaPerfil extends javax.swing.JPanel {
             adicionarImagemDoBancoParaMudarIcon();
         }
     }//GEN-LAST:event_alteraBtnMouseClicked
+    
+//Adicionar imagem do banco para depois mudar icone do perfil   
     public void adicionarImagemDoBancoParaMudarIcon() {
 
         UsuarioControl usuarioC = new UsuarioControl();

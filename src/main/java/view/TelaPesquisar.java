@@ -21,16 +21,19 @@ public class TelaPesquisar extends javax.swing.JPanel {
     ArrayList<Item> todosItens = new ArrayList<>();
     public String nome;
 
+//Construtor    
     public TelaPesquisar() {
         initComponents();
         config();
     }
 
+//ButtonGroup para verificar qual tipo de pesquisa sera feita
     private void config() {
         escolhaPesquisa = new ButtonGroup();
         escolhaPesquisa.add(usuarioBtn);
         escolhaPesquisa.add(itensBtn);
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -45,7 +48,6 @@ public class TelaPesquisar extends javax.swing.JPanel {
             System.out.println("Arquivo não existente");
         }
     }
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -139,6 +141,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
     }//GEN-LAST:event_inicioBtnMouseClicked
 
+//Populando a lista de acordo com o tipo de pesquisa selecionado    
     private void pesqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesqBtnMouseClicked
         this.pesquisa = new PesquisaControl();
 
@@ -158,6 +161,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_pesqBtnMouseClicked
 
+//Direcionando o usuario para o perfil ou item selecionado na lista    
     private void resultListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultListMouseClicked
         if (usuarioBtn.isSelected()) {
             int indice = resultList.getSelectedIndex();

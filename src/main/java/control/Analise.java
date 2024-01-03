@@ -27,7 +27,8 @@ import view.TelaResultado;
 public class Analise {
 
     private ItemControl itemC = new ItemControl();
-
+    
+//Analisa as respostas e gera combinações dos gêneros 
     public void calculaResultado(Vector<Integer> opcoes, int escolha, JRadioButton opcao1Btn, JRadioButton opcao2Btn, JRadioButton nenhumaBtn) {
 
         System.out.println(opcoes);

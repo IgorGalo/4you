@@ -9,6 +9,8 @@ package control;
  * @author 0068948
  */
 public enum Retornos {
+    //Usado para facilitar as mensagens de retorno e as condições deles (false, true)
+    
     ERRODEPREENCHIMENTO("É necessário preencher todos os campos", false),
     ERRODECADASTRO("Não foi possível cadastrar", false),
     ERROIMAGEMCONVERTIDA("Imagem não convertida", false),

@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//Serve para conectar o software com o banco de dados
+
 public class Conexao {
     
     private static String url = "jdbc:postgresql://200.18.128.56/aula";

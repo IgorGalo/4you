@@ -165,6 +165,7 @@ public class TelaCadastrar extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_senhaTxtActionPerformed
 
+//Verifica e pegar as informações do usuário para cadastrá-lo posteriormente no banco de dados     
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
         UsuarioControl usuarioC = new UsuarioControl();
 

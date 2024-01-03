@@ -34,10 +34,12 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
         }
     }
 
+//Para mostrar nome do perfil pesquisado    
     private void trocaNome() {
         nomeLbl.setText(this.nomePesquisado);
     }
 
+//Adicionar imagem do banco no Label do perfil   
     private void adicionarImagemDoBanco() {
                 
         UsuarioControl usuarioC = new UsuarioControl();

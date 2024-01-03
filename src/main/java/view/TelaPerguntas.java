@@ -26,6 +26,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private ButtonGroup perguntaGroup;
     private Vector<Integer> botaoSelecionado;
 
+//Construtor, inicializacao de objeto e insercao de ButtonGroup    
     public TelaPerguntas(int escolha, int vez, Vector<Integer> vet) {
         initComponents();
         perguntaGroup = new ButtonGroup();
@@ -54,6 +55,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         }
     }
 
+//Dependendo da escolha do usuario as perguntas serao diferentes    
     private void adicionaPergunta() {
         switch (this.escolha) {
             case 1:
@@ -240,6 +242,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
     }//GEN-LAST:event_voltarBtnMouseClicked
 
+//Verifica se algum botao esta selecionado para posteriormente passar para a analise do resultado    
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
         if (this.vez < 6) {
             if (nenhumaBtn.isSelected() || opcao1Btn.isSelected() || opcao2Btn.isSelected()) {

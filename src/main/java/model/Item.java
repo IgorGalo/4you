@@ -1,5 +1,7 @@
 package model;
 
+//Parâmetros para o funcionamento de um Item 
+
 public class Item {
     
     private String tipoItem;

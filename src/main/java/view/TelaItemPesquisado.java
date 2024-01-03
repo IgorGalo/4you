@@ -36,6 +36,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     
     private ItemControl ic = new ItemControl();
 
+//Construtor, inicializacao de objetos    
     public TelaItemPesquisado(String itemPesquisado) {
         initComponents();
         itemLbl.setIcon(ic.consultaImagem(itemPesquisado));
@@ -220,6 +221,8 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesquisarBtnMouseClicked
 
+   //Usado para facilitar a interacao do usuario com a avaliacao
+    
     private void nota1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota1MouseClicked
         if (nota1.getIcon() == this.estrelaAvaliada) {
             nota1.setIcon(this.estrelaNaoAvaliada);
@@ -291,6 +294,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_nota5MouseClicked
 
+//Para enviar a avaliacao     
     private void enviarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarBtnMouseClicked
         if (comentarioTxt.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Informe seu comentário!");

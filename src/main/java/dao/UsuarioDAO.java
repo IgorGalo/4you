@@ -16,6 +16,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Imagem;
 
+//SQLs de inserção, consulta, delete e update no banco
+
 public class UsuarioDAO {
 
     static String user;

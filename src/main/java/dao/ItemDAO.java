@@ -18,6 +18,8 @@ import model.Item;
 import model.Usuario;
 import tool.Conexao;
 
+//SQLs de inserção, consulta e update no banco
+
 public class ItemDAO {
 
     Connection c = Conexao.obterConexao();

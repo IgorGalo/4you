@@ -44,30 +44,20 @@ public class TelaResultado extends javax.swing.JPanel {
             System.out.println("Arquivo não existente");
         }
     }
-    
-    
-    
-    private void mudaNome(Vector<String> nomes, Vector<Icon> vetIcon){
+
+//Muda o nome do Label de nome do item e o Icon    
+    private void mudaNome(Vector<String> nomes, Vector<Icon> vetIcon) {
         String split[];
-        
+
         nome1.setText(nomes.get(0));
         nome2.setText(nomes.get(1));
         nome3.setText(nomes.get(2));
         result1.setIcon(vetIcon.get(0));
         result2.setIcon(vetIcon.get(1));
         result3.setIcon(vetIcon.get(2));
-        
+
         ItemControl itemC = new ItemControl();
-        
-    }
-    
-    private void panel(){
-//        panel1.setSize(124, 147);
-//        panel2.setSize(124, 147);
-//        panel3.setSize(124, 147);
-//        panel4.setSize(124, 147);
-//        panel5.setSize(124, 147);
-//        panel6.setSize(124, 147);
+
     }
 
     /**

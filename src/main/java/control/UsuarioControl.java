@@ -23,6 +23,7 @@ public class UsuarioControl {
     private Usuario dados = new Usuario();
     private UsuarioDAO sa = new UsuarioDAO();
 
+//Relaciona a interface com o banco de dados para cadastrar usuário no banco 
     public Retornos cadastraUsuario(String nomeCompleto, String nomeUsuario, String senha, String email) {
         if (nomeCompleto.equalsIgnoreCase("") || nomeUsuario.equalsIgnoreCase("")
                 || senha.equalsIgnoreCase("") || email.equalsIgnoreCase("")) {
@@ -50,6 +51,7 @@ public class UsuarioControl {
         }
     }
 
+//Para verificar login do usuário    
     public Retornos entrar(String nome, String senha, String nomeuser) {
         if (nome.contains("@")) {
             dados.setEmail(nome);
@@ -70,6 +72,8 @@ public class UsuarioControl {
         }
     }
 
+    
+//Para adicionar imagem que está no banco ao Label do perfil    
     public ImageIcon adicionarImagemDoBanco() {
         UsuarioDAO servicos = new UsuarioDAO();
         Imagem imagemBanco = servicos.consultarImagem();
@@ -89,6 +93,7 @@ public class UsuarioControl {
         }
     }
 
+//Função usada para converter imagem em byte    
     public byte[] converterImagemParaByte(File file) throws FileNotFoundException {
         FileInputStream fis = new FileInputStream(file);
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -105,6 +110,7 @@ public class UsuarioControl {
         return bytes;
     }
 
+//Função usada para cadastrar uma imagem no banco      
     public Image cadastrarImagem(Imagem imgembyte, String endereco, File arquivo) {
 
         sa.cadastrarImagem(imgembyte, endereco);
@@ -121,6 +127,7 @@ public class UsuarioControl {
         }
     }
 
+//Função usada para editar a foto de perfil do usuário    
     public void editarPerfil(JFileChooser janelaArquivo) {
 
         try {

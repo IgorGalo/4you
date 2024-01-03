@@ -1,5 +1,7 @@
 package model;
 
+//Parâmetros para o funcionamento de uma imagem 
+
 public class Imagem {
 
     private byte[] img;

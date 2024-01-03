@@ -17,20 +17,24 @@ public class ItemControl {
     private Item ITEM;
     private ItemDAO itemdao = new ItemDAO();
 
+//Relaciona a interface com o banco de dados para adicionar um item nele
     public void addItem(Vector<String> itens, String tipoItem) {
         itemdao.addItemDAO(itens, tipoItem);
     }
 
+//Relaciona a interface com o banco de dados para consultar um item dele
     public Vector<Item> consultaNomesItens() {
         Vector<Item> vetNome = itemdao.consultaItens();
 
         return vetNome;
     }
 
+//Relaciona a interface com o banco de dados para cadastrar a imagem de um item no banco
     public void cadastraImagemItem(byte[] bytes, String nomeItem) {
         itemdao.cadastrarImagemItem(bytes, nomeItem);
     }
 
+//Relaciona a interface com o banco de dados para consultar a imagem de um item do banco
     public Icon consultaImagem(String nomeItem) {
         Imagem imagemBanco = itemdao.consultarImagem(nomeItem);
 
@@ -50,6 +54,7 @@ public class ItemControl {
         }
     }
 
+//Relaciona a interface com o banco de dados para atualizar a avaliação de um item no banco
     public int atualizaAvaliacao(int nota, String nomeItem) {
 
         int notaConsultada = itemdao.consultaAvaliacao(nomeItem);

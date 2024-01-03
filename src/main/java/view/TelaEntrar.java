@@ -129,6 +129,7 @@ public class TelaEntrar extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_SenhaTxtActionPerformed
 
+//Usado para verificar se o usuário existe, assim permitindo a entrada dele no programa    
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         Usuario filtro = new Usuario();
 
@@ -174,7 +175,7 @@ public class TelaEntrar extends javax.swing.JPanel {
     }//GEN-LAST:event_NomeTxtFocusGained
 
     private void NomeTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NomeTxtFocusLost
-        if(NomeTxt.getText().equalsIgnoreCase("")){
+        if (NomeTxt.getText().equalsIgnoreCase("")) {
             NomeTxt.setText("NOME DE USUÁRIO/E-MAIL");
         }
     }//GEN-LAST:event_NomeTxtFocusLost
@@ -186,7 +187,7 @@ public class TelaEntrar extends javax.swing.JPanel {
     }//GEN-LAST:event_SenhaTxtFocusGained
 
     private void SenhaTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SenhaTxtFocusLost
-        if(SenhaTxt.getText().equalsIgnoreCase("")){
+        if (SenhaTxt.getText().equalsIgnoreCase("")) {
             SenhaTxt.setText("SENHA");
         }
     }//GEN-LAST:event_SenhaTxtFocusLost
