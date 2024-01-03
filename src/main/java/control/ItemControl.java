@@ -18,9 +18,7 @@ public class ItemControl {
     private ItemDAO itemdao = new ItemDAO();
 
     public void addItem(Vector<String> itens, String tipoItem) {
-        System.out.println("1pp");
         itemdao.addItemDAO(itens, tipoItem);
-        System.out.println("ta");
     }
 
     public Vector<Item> consultaNomesItens() {

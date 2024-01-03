@@ -246,80 +246,40 @@ public class Analise {
 
         try {
 
-            Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+" + pesquisa + "&sourceid=chrome&ie=UTF-8"
+            Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=livros+" + pesquisa + "&sourceid=chrome&ie=UTF-8"
                     + "").get();
 
             Elements htmlElements = doc.getAllElements();
 
             for (Element e : htmlElements) {
-                conexaoLivros(e, doc, resultado, resultadoAutores);
+                conexaoLivros(e, resultado, resultadoAutores, 0);
             }
             for (int i = 0, numLivro = 1; i < 3; i++, numLivro = numLivro + 2) {
-                System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
                 iconVet.add(PesquisaImagens(doc, numLivro, resultado, i));
             }
         } catch (Exception ex) {
-            Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
-            for (int i = 1; i <= 3; i++) {
-                try {
-                    switch (i) {
-                        case 1:
-                            System.out.println("1");
-                            System.out.println(pesquisa.split("\\W")[0] + pesquisa.split("\\W")[1]);
-                            Document doc1 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
-                                    + pesquisa.split("\\W")[0] + "+" + pesquisa.split("\\W")[1]
-                                    + "&sourceid=chrome&ie=UTF-8").get();
-                            Elements htmlElements1 = doc1.getAllElements();
 
-                            for (Element e : htmlElements1) {
-                                conexaoLivros(e, doc1, resultado, resultadoAutores);
-                                iconVet.add(PesquisaImagens(doc1, 1, resultado, 0));
+            try {
+                Document doc = (Document) Jsoup.connect("https://www.google.com/search?q=livros+"
+                        + pesquisa.split("\\W")[0] + "&sourceid=chrome&ie=UTF-8").get();
+                Elements htmlElements = doc.getAllElements();
 
-                                break;
-                            }
-                            break;
-                        case 2:
-                            System.out.println("2");
-                            Document doc2 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
-                                    + pesquisa.split("\\W")[0] + "+" + pesquisa.split("\\W")[2]
-                                    + "&sourceid=chrome&ie=UTF-8").get();
-                            Elements htmlElements2 = doc2.getAllElements();
-
-                            for (Element e : htmlElements2) {
-                                conexaoLivros(e, doc2, resultado, resultadoAutores);
-                                iconVet.add(PesquisaImagens(doc2, 1, resultado, 1));
-
-                                break;
-                            }
-                            break;
-
-                        case 3:
-                            System.out.println("3");
-                            Document doc3 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
-                                    + pesquisa.split("\\W")[1] + "+" + pesquisa.split("\\W")[2]
-                                    + "&sourceid=chrome&ie=UTF-8").get();
-                            Elements htmlElements3 = doc3.getAllElements();
-
-                            for (Element e : htmlElements3) {
-                                conexaoLivros(e, doc3, resultado, resultadoAutores);
-                                iconVet.add(PesquisaImagens(doc3, 1, resultado, 2));
-
-                                break;
-                            }
-                            break;
-                    }
-
-                } catch (Exception ERRO) {
-                    Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ERRO);
-
+                for (Element e : htmlElements) {
+                    conexaoLivros(e, resultado, resultadoAutores, 0);
                 }
-            }
-            for (int i = 0; i < 3; i++) {
-                System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
+                for (int i = 0, numLivro = 1; i < 3; i++, numLivro = numLivro + 2) {
+                    iconVet.add(PesquisaImagens(doc, numLivro, resultado, i));
+                }
+            } catch (IOException ex1) {
+                Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex1);
             }
         }
-        itemC.addItem(resultado, "Filme");
+        for (int i = 0; i < 3; i++) {
+            System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
+        }
+        itemC.addItem(resultado, "Livro");
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
+
     }
 
     private void fazPesquisaFilme(String pesquisa) {
@@ -508,6 +468,8 @@ public class Analise {
         for (int i = 0; i < resultado.size(); i++) {
             System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
         }
+        itemC.addItem(resultado, "Musica");
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
 
     }
 
@@ -526,13 +488,15 @@ public class Analise {
             return icon;
         } catch (IOException ex) {
             System.err.println("ERRO img");
-            Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+            Logger
+                    .getLogger(Analise.class
+                            .getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 
     }
 
-    private void conexaoLivros(Element e, Document doc, Vector<String> resultado, Vector<String> resultadoAutores) {
+    private void conexaoLivros(Element e, Vector<String> resultado, Vector<String> resultadoAutores, int verificação) {
 
         //System.out.println(e.classNames());
         if (e.classNames().contains("dAassd")) {
@@ -550,7 +514,9 @@ public class Analise {
             }
             resultado.add(nomeStr);
             resultadoAutores.add(autor);
+
         }
+
     }
 
     private Icon PesquisaImagensMusicas(String InfoMus) {
@@ -563,7 +529,8 @@ public class Analise {
             return icon;
 
         } catch (Exception ex) {
-            Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Analise.class
+                    .getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 

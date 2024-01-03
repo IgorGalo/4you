@@ -65,8 +65,8 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         break;
                     case 2: // misterio e aventura
                         perguntaTxt.setText("O que você prefere:\n"
-                                +"1- narrativas que desafiem sua capacidade de dedução e mantêm você intrigado do início ao fim;\n"
-                                +"2- narrativas exploram terras desconhecidas, desafios emocionantes e jornadas inesperadas?");
+                                + "1- narrativas que desafiem sua capacidade de dedução e mantêm você intrigado do início ao fim;\n"
+                                + "2- narrativas exploram terras desconhecidas, desafios emocionantes e jornadas inesperadas?");
                         break;
                     case 3: // drama comédia 
                         perguntaTxt.setText("O que você prefere:\n"
@@ -75,12 +75,12 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         break;
                     case 4: //musical e acao
                         perguntaTxt.setText("O que você prefere:\n"
-                                +"1- prestar atenção na trilha sonora e nas performances musicais integradas à história;\n"
-                                +"2- se empolgar com tramas cheias de adrenalina e reviravolta?");
+                                + "1- prestar atenção na trilha sonora e nas performances musicais integradas à história;\n"
+                                + "2- se empolgar com tramas cheias de adrenalina e reviravolta?");
                         break;
                     case 5: //ficcao e doc
                         perguntaTxt.setText("O que você prefere:\n"
-                                +"1- narrativas que exploram mundos imaginários e conceitos futuristas, desafiando os limites da realidade;\n"
+                                + "1- narrativas que exploram mundos imaginários e conceitos futuristas, desafiando os limites da realidade;\n"
                                 + "2- tramas que exploram a realidade, oferecendo uma perspectiva mais profunda sobre diferentes assuntos e experiências de vida?");
                         break;
                 }
@@ -116,7 +116,33 @@ public class TelaPerguntas extends javax.swing.JPanel {
                 }
                 break;
             case 3:
-
+                switch (this.vez) {
+                    case 1: // terror e romance
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- ser atraído pelas batidas eletrizantes das guitarras;\n"
+                                + "2- mergulhar na sofisticação harmônica e improvisação envolvente?");
+                        break;
+                    case 2: // misterio e aventura
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- atmosferas sombrias e melancólicas do gótico;\n"
+                                + "2- se perder na energia contagiante e em ritmos dançantes?");
+                        break;
+                    case 3: // drama comédia 
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- a grandiosidade e tradição das peças clássicas;\n"
+                                + "2- se deixar envolver pela energia contagiante e as melodias pop coreanas?");
+                        break;
+                    case 4: //musical e acao
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- se entregar mais às batidas animadas e letras vibrantes;\n"
+                                + "2- encontrar uma conexão especial com os ritmos relaxantes e mensagens positivas?");
+                        break;
+                    case 5: //ficcao e doc
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- refrãos cativantes e batidas populares;\n"
+                                + "2- histórias envolventes e o som característico do interior?");
+                        break;
+                }
                 break;
         }
     }
@@ -233,6 +259,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                     System.out.println("n");
                 }
                 FramePrincipal.trocaPainel("tela perguntas", new TelaPerguntas(this.escolha, this.vez + 1, this.botaoSelecionado));
+
             } else {
                 JOptionPane.showMessageDialog(this, "Selecione uma opção");
             }
