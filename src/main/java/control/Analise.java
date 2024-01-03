@@ -41,10 +41,10 @@ public class Analise {
                         generos.add("terror"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("romance");
                         break;
                     case 3:
-
+                        
                         break;
                 }
                 break;
@@ -55,7 +55,7 @@ public class Analise {
                         generos.add("romance"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("realismo");
                         break;
                     case 3:
 
@@ -76,7 +76,7 @@ public class Analise {
                         generos.add("misterio"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("misterio");
                         break;
                     case 3:
 
@@ -90,7 +90,7 @@ public class Analise {
                         generos.add("aventura"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("aventura");
                         break;
                     case 3:
 
@@ -111,7 +111,7 @@ public class Analise {
                         generos.add("drama"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("biografia");
                         break;
                     case 3:
 
@@ -125,7 +125,7 @@ public class Analise {
                         generos.add("comedia"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("fantasia");
                         break;
                     case 3:
 
@@ -146,7 +146,7 @@ public class Analise {
                         generos.add("musical"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("classico");
                         break;
                     case 3:
 
@@ -160,7 +160,7 @@ public class Analise {
                         generos.add("acao"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("cronica");
                         break;
                     case 3:
 
@@ -181,7 +181,7 @@ public class Analise {
                         generos.add("ficcaocientifica"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("drama");
                         break;
                     case 3:
 
@@ -195,7 +195,7 @@ public class Analise {
                         generos.add("documentario"); // filme
                         break;
                     case 2:
-                        //livro opcoes.add("");
+                        generos.add("comedia");
                         break;
                     case 3:
 
@@ -232,8 +232,10 @@ public class Analise {
 
         switch (escolha) {
             case 1:
-//                resultado = fazPesquisaFilme(pesquisa);
                 fazPesquisaFilme(pesquisa);
+                break;
+            case 2:
+                fazPesquisaLivro(pesquisa);
                 break;
             default:
                 throw new AssertionError();
@@ -347,6 +349,7 @@ public class Analise {
                 iconVet.add(PesquisaImagens(doc, numFilme, resultado));
 
             }
+            System.out.println("qlqr coisa");
         } catch (Exception ex /*Caso a pesquisa com 3 filmes de Erro*/) {
 
             for (int i = 1; i <= 3; i++) {

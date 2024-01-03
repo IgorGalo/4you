@@ -20,17 +20,19 @@ public class ItemControl {
     public void addItem(Vector<String> itens, String tipoItem) {
         itemdao.addItemDAO(itens, tipoItem);
     }
-    
-    public Vector<String> consultaNomesItens(){
+
+    public Vector<String> consultaNomesItens() {
         Vector<String> vetNome = itemdao.consultaItens();
-        
+
         return vetNome;
     }
-    
-    public void cadastraImagemItem(byte[] bytes, String nomeItem){
-        itemdao.cadastrarImagemItem(bytes, nomeItem);
+
+    public void cadastraImagemItem(byte[] bytes, String nomeItem) {
+        if (!itemdao.consultaItens().contains(nomeItem)) {
+            itemdao.cadastrarImagemItem(bytes, nomeItem);
+        }
     }
-    
+
     public ImageIcon consultaImagem(String nomeItem) {
         Imagem imagemBanco = itemdao.consultarImagem(nomeItem);
 
@@ -48,16 +50,16 @@ public class ItemControl {
             return null;
         }
     }
-    
-    public int atualizaAvaliacao(int nota, String nomeItem){
-        
+
+    public int atualizaAvaliacao(int nota, String nomeItem) {
+
         int notaConsultada = itemdao.consultaAvaliacao(nomeItem);
         System.out.println("notacONSULTADA" + nota);
-        int novaNota = (notaConsultada + nota)/2;
+        int novaNota = (notaConsultada + nota) / 2;
         System.out.println("nova" + novaNota);
-        
+
         itemdao.addAvaliacao(nomeItem, novaNota);
-        
+
         return novaNota;
     }
 }

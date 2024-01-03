@@ -63,7 +63,6 @@ public class TelaPerfil extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         itemUser = new javax.swing.JList<>();
         labelperfil = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -109,9 +108,6 @@ public class TelaPerfil extends javax.swing.JPanel {
 
         labelperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
         add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 200));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPerfil.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
@@ -156,7 +152,6 @@ public class TelaPerfil extends javax.swing.JPanel {
     private javax.swing.JLabel alteraBtn;
     private javax.swing.JLabel inicioBtn;
     private javax.swing.JList<String> itemUser;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelperfil;
     private javax.swing.JLabel pesquisarBtn;

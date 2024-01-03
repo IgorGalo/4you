@@ -73,7 +73,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void musicaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musicaBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(2, 1, botaoSel));
+        FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(3, 1, botaoSel));
     }//GEN-LAST:event_musicaBtnMouseClicked
 
     private void filmeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filmeBtnMouseClicked
@@ -81,7 +81,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
     }//GEN-LAST:event_filmeBtnMouseClicked
 
     private void livroBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_livroBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perguntas Livro", new TelaPerguntas(3, 1, botaoSel));
+        FramePrincipal.trocaPainel("tela perguntas Livro", new TelaPerguntas(2, 1, botaoSel));
     }//GEN-LAST:event_livroBtnMouseClicked
 
     private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked

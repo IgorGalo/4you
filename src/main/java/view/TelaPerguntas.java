@@ -53,42 +53,67 @@ public class TelaPerguntas extends javax.swing.JPanel {
             System.out.println("Arquivo não existente");
         }
     }
-    
-    
-    
+
     private void adicionaPergunta() {
         switch (this.escolha) {
             case 1:
                 switch (this.vez) {
                     case 1: // terror e romance
-                        perguntaTxt.setText(
-                                "Você prefere explorar narrativas que despertam uma sensação de medo e suspense "
-                                + "ou prefere se envolver mais nas histórias das relações "
-                                + "humanas, com personagens enfrentando os desafios emocionais?");
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- explorar narrativas que despertam uma sensação de medo e suspense;\n"
+                                + "2- prefere se envolver mais nas histórias das relações humanas, com personagens enfrentando os desafios emocionais?");
                         break;
                     case 2: // misterio e aventura
-                        perguntaTxt.setText("Você se sente mais atraído por narrativas que desafiem sua capacidade de dedução e "
-                                + "mantêm você intrigado do início ao fim ou as que exploram terras desconhecidas, desafios emocionantes e jornadas inesperadas?");
+                        perguntaTxt.setText("O que você prefere:\n"
+                                +"1- narrativas que desafiem sua capacidade de dedução e mantêm você intrigado do início ao fim;\n"
+                                +"2- narrativas exploram terras desconhecidas, desafios emocionantes e jornadas inesperadas?");
                         break;
                     case 3: // drama comédia 
-                        perguntaTxt.setText("Você prefere filmes que retratam momentos intensos e emocionais que fazem você "
-                                + "refletir sobre a complexidade da vida, ou prefere filmes que proporcionem momentos leves e "
-                                + "divertidos, capazes de arrancar um sorriso mesmo nas situações mais inusitadas?");
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- filmes que retratam momentos intensos e emocionais que fazem você refletir sobre a complexidade da vida;\n"
+                                + "2- filmes que proporcionem momentos leves e divertidos, capazes de arrancar um sorriso mesmo nas situações mais inusitadas?");
                         break;
                     case 4: //musical e acao
-                        perguntaTxt.setText("Você presta atenção, especialmente, na trilha sonora e nas performances musicais integradas à história,"
-                                + "ou se empolga com tramas cheias de adrenalina e reviravolta?");
+                        perguntaTxt.setText("O que você prefere:\n"
+                                +"1- prestar atenção na trilha sonora e nas performances musicais integradas à história;\n"
+                                +"2- se empolgar com tramas cheias de adrenalina e reviravolta?");
                         break;
                     case 5: //ficcao e doc
-                        perguntaTxt.setText("Você prefere narrativas que exploram mundos imaginários e conceitos futuristas, "
-                                + "desafiando os limites da realidade, ou prefere tramas que exploram a realidade, oerecendo uma perspectiva "
-                                + "mais profunda sovre diferentes assuntos e experiências de vida?");
+                        perguntaTxt.setText("O que você prefere:\n"
+                                +"1- narrativas que exploram mundos imaginários e conceitos futuristas, desafiando os limites da realidade;\n"
+                                + "2- tramas que exploram a realidade, oferecendo uma perspectiva mais profunda sobre diferentes assuntos e experiências de vida?");
                         break;
                 }
                 break;
 
             case 2:
-
+                switch (this.vez) {
+                    case 1: // terror e romance
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- se perder em histórias românticas que despertam emoções profundas;\n"
+                                + "2- mergulhar em narrativas que oferecem uma visão mais fiel e detalhada da vida cotidiana?");
+                        break;
+                    case 2: // misterio e aventura
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- cativar por tramas que envolvem desvendar segredos e resolver enigmas;\n"
+                                + "2- buscar a adrenalina das aventuras cheias de reviravoltas e desafios emocionantes?");
+                        break;
+                    case 3: // drama comédia 
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- explorar a vida real e as experiências de pessoas reais por meio de biografias;\n"
+                                + "2- escapar para mundos imaginários repletos de fantasia e criatividade?");
+                        break;
+                    case 4: //musical e acao
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- se encantar mais com a profundidade e atemporalidade das obras clássicas;\n"
+                                + "2- a leveza e proximidade do cotidiano encontradas nas crônicas ao escolher seus livros?");
+                        break;
+                    case 5: //ficcao e doc
+                        perguntaTxt.setText("O que você prefere:\n"
+                                + "1- se inclinar mais para tramas que exploram as complexidades emocionais e os desafios da vida;\n"
+                                + "2- obras que proporcionam momentos leves e sorrisos com sua abordagem mais cômica?");
+                        break;
+                }
                 break;
             case 3:
 
@@ -152,7 +177,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         perguntaTxt.setSelectedTextColor(new java.awt.Color(253, 40, 141));
         jScrollPane4.setViewportView(perguntaTxt);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 810, 160));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 810, 160));
 
         nenhumaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(nenhumaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, 310, 80));
@@ -190,7 +215,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
     }//GEN-LAST:event_voltarBtnMouseClicked
 
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
-        if (this.vez < 5) {
+        if (this.vez < 6) {
             if (nenhumaBtn.isSelected() || opcao1Btn.isSelected() || opcao2Btn.isSelected()) {
                 if (opcao1Btn.isSelected()) {
                     this.botaoSelecionado.add(1);
