@@ -89,6 +89,7 @@ public class TelaResultado extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        voltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 voltarBtnMouseClicked(evt);
@@ -161,7 +162,7 @@ public class TelaResultado extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
-        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
+        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
     }//GEN-LAST:event_voltarBtnMouseClicked
 
     private void nome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome1MouseClicked

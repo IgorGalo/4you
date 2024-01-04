@@ -19,58 +19,9 @@ import javax.swing.JLabel;
  */
 public class TelaInicio extends javax.swing.JPanel {
 
-    private Vector<JLabel> vetLabel = new Vector<>();
-    private Vector<String> nomesItem = new Vector<>();
-    private ItemControl ic = new ItemControl();
-    
+
     public TelaInicio() {
         initComponents();
-        //adicionaLabel();
-    }
-    
-    private void adicionaLabel(){
-        this.vetLabel.add(imagem1);
-        this.vetLabel.add(imagem2);
-        this.vetLabel.add(imagem3);
-        this.vetLabel.add(imagem4);
-        this.vetLabel.add(imagem5);
-        this.vetLabel.add(imagem6);
-        this.vetLabel.add(imagem7);
-        this.vetLabel.add(imagem8);
-        this.vetLabel.add(imagem9);
-        this.vetLabel.add(imagem10);
-        this.vetLabel.add(imagem11);
-        this.vetLabel.add(imagem12);
-        this.vetLabel.add(imagem13);
-        this.vetLabel.add(imagem14);
-        this.vetLabel.add(imagem15);
-        this.vetLabel.add(imagem16);
-        this.vetLabel.add(imagem17);
-        this.vetLabel.add(imagem18);
-        this.vetLabel.add(imagem19);
-        this.vetLabel.add(imagem20);
-        this.vetLabel.add(imagem21);
-        this.vetLabel.add(imagem22);
-        this.vetLabel.add(imagem23);
-        this.vetLabel.add(imagem24);
-        this.vetLabel.add(imagem25);
-        this.vetLabel.add(imagem26);
-        this.vetLabel.add(imagem27);
-        addImagemItem();
-    }
-    
-    private void addImagemItem(){
-        this.nomesItem = ic.consultaNomesItens();
-        //imagem1.setIcon(ic.consultaImagem(this.nomesItem.get(0)));
-        if(this.nomesItem.size() > 27){
-            for(int i = 0; i < 27; i++){
-                this.vetLabel.get(i).setIcon(ic.consultaImagem(this.nomesItem.get(i)));
-            }
-        }else{
-            for(int i = 0; i < nomesItem.size(); i++){
-                this.vetLabel.get(i).setIcon(ic.consultaImagem(this.nomesItem.get(i)));
-            }
-        }
     }
     
     @Override
@@ -118,33 +69,6 @@ public class TelaInicio extends javax.swing.JPanel {
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
-        imagem2 = new javax.swing.JLabel();
-        imagem1 = new javax.swing.JLabel();
-        imagem3 = new javax.swing.JLabel();
-        imagem4 = new javax.swing.JLabel();
-        imagem5 = new javax.swing.JLabel();
-        imagem6 = new javax.swing.JLabel();
-        imagem7 = new javax.swing.JLabel();
-        imagem8 = new javax.swing.JLabel();
-        imagem10 = new javax.swing.JLabel();
-        imagem9 = new javax.swing.JLabel();
-        imagem11 = new javax.swing.JLabel();
-        imagem12 = new javax.swing.JLabel();
-        imagem13 = new javax.swing.JLabel();
-        imagem14 = new javax.swing.JLabel();
-        imagem15 = new javax.swing.JLabel();
-        imagem16 = new javax.swing.JLabel();
-        imagem17 = new javax.swing.JLabel();
-        imagem18 = new javax.swing.JLabel();
-        imagem19 = new javax.swing.JLabel();
-        imagem20 = new javax.swing.JLabel();
-        imagem21 = new javax.swing.JLabel();
-        imagem22 = new javax.swing.JLabel();
-        imagem23 = new javax.swing.JLabel();
-        imagem24 = new javax.swing.JLabel();
-        imagem25 = new javax.swing.JLabel();
-        imagem26 = new javax.swing.JLabel();
-        imagem27 = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -207,33 +131,6 @@ public class TelaInicio extends javax.swing.JPanel {
             }
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
-        add(imagem2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, 150));
-        add(imagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, 150));
-        add(imagem3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 100, 150));
-        add(imagem4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 100, 150));
-        add(imagem5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 100, 150));
-        add(imagem6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 70, 100, 150));
-        add(imagem7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 100, 150));
-        add(imagem8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 100, 150));
-        add(imagem10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 70, 100, 150));
-        add(imagem9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 100, 150));
-        add(imagem11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 100, 150));
-        add(imagem12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 100, 150));
-        add(imagem13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 100, 150));
-        add(imagem14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 100, 150));
-        add(imagem15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, 100, 150));
-        add(imagem16, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 280, 100, 150));
-        add(imagem17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 280, 100, 150));
-        add(imagem18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 280, 100, 150));
-        add(imagem19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, 100, 150));
-        add(imagem20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 100, 150));
-        add(imagem21, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 100, 150));
-        add(imagem22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 100, 150));
-        add(imagem23, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 100, 150));
-        add(imagem24, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 100, 150));
-        add(imagem25, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 490, 100, 150));
-        add(imagem26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 100, 150));
-        add(imagem27, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 490, 100, 150));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pesquisarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesquisarBtnMouseClicked
@@ -241,42 +138,15 @@ public class TelaInicio extends javax.swing.JPanel {
     }//GEN-LAST:event_pesquisarBtnMouseClicked
 
     private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
-        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
+        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
     }//GEN-LAST:event_quizBtnMouseClicked
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
-       FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
+        FramePrincipal.trocaPainel("tela perfil", new TelaPerfil());
     }//GEN-LAST:event_perfilBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imagem1;
-    private javax.swing.JLabel imagem10;
-    private javax.swing.JLabel imagem11;
-    private javax.swing.JLabel imagem12;
-    private javax.swing.JLabel imagem13;
-    private javax.swing.JLabel imagem14;
-    private javax.swing.JLabel imagem15;
-    private javax.swing.JLabel imagem16;
-    private javax.swing.JLabel imagem17;
-    private javax.swing.JLabel imagem18;
-    private javax.swing.JLabel imagem19;
-    private javax.swing.JLabel imagem2;
-    private javax.swing.JLabel imagem20;
-    private javax.swing.JLabel imagem21;
-    private javax.swing.JLabel imagem22;
-    private javax.swing.JLabel imagem23;
-    private javax.swing.JLabel imagem24;
-    private javax.swing.JLabel imagem25;
-    private javax.swing.JLabel imagem26;
-    private javax.swing.JLabel imagem27;
-    private javax.swing.JLabel imagem3;
-    private javax.swing.JLabel imagem4;
-    private javax.swing.JLabel imagem5;
-    private javax.swing.JLabel imagem6;
-    private javax.swing.JLabel imagem7;
-    private javax.swing.JLabel imagem8;
-    private javax.swing.JLabel imagem9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;

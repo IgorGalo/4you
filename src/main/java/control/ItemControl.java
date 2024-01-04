@@ -33,15 +33,16 @@ public class ItemControl {
         }
     }
 
-    public ImageIcon consultaImagem(String nomeItem) {
+    public Icon consultaImagem(String nomeItem) {
         Imagem imagemBanco = itemdao.consultarImagem(nomeItem);
 
         if (imagemBanco != null) {
             ByteArrayInputStream bayts = new ByteArrayInputStream(imagemBanco.getImg());
             try {
                 BufferedImage img = ImageIO.read(bayts);
-                ImageIcon imgConvertida = new ImageIcon(img.getScaledInstance(189, 206, Image.SCALE_SMOOTH));
-                return imgConvertida;
+                ImageIcon imgIcon = new ImageIcon(img.getScaledInstance(189, 206, Image.SCALE_SMOOTH));
+                Icon icon = imgIcon;
+                return icon;
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

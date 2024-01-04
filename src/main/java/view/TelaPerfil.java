@@ -111,7 +111,7 @@ public class TelaPerfil extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
-        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
+        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
     }//GEN-LAST:event_quizBtnMouseClicked
 
     private void inicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioBtnMouseClicked

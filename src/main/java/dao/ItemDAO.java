@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import model.Imagem;
 import model.Item;
 import model.Usuario;
@@ -81,10 +83,10 @@ public class ItemDAO {
         try {
             Imagem retorno = null;
 
-            String sql = "SELECT * FROM fiyyou.imagens WHERE ";
+            String sql = "SELECT * FROM fiyyou.imageitem WHERE ";
 
             if (nomeItem != null && !nomeItem.equalsIgnoreCase("")) {
-                sql += "nomeusuario = '" + nomeItem.trim() + "'";
+                sql += "nomeitem = '" + nomeItem.trim() + "'";
 
             }
 

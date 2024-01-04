@@ -21,7 +21,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         BufferedImage imagem;
 
         try {
-            imagem = ImageIO.read(new File(getClass().getResource("/telaFML.png").getPath()));
+            imagem = ImageIO.read(new File(getClass().getResource("/telaEscolhaFML.png").getPath()));
             g.drawImage(imagem, 0, 0, this);
 
         } catch (IOException ex) {
@@ -36,7 +36,6 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         musicaBtn = new javax.swing.JLabel();
         filmeBtn = new javax.swing.JLabel();
         livroBtn = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -63,13 +62,6 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
             }
         });
         add(livroBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 200, 80));
-
-        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                voltarBtnMouseClicked(evt);
-            }
-        });
-        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void musicaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musicaBtnMouseClicked
@@ -84,15 +76,10 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela perguntas Livro", new TelaPerguntas(2, 1, botaoSel));
     }//GEN-LAST:event_livroBtnMouseClicked
 
-    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
-        FramePrincipal.trocaPainel("tela quiz", new TelaQuiz());
-    }//GEN-LAST:event_voltarBtnMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel filmeBtn;
     private javax.swing.JLabel livroBtn;
     private javax.swing.JLabel musicaBtn;
-    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,7 @@ public class Analise {
                         generos.add("romance");
                         break;
                     case 3:
-                        
+                        generos.add("rock");
                         break;
                 }
                 break;
@@ -58,7 +58,7 @@ public class Analise {
                         generos.add("realismo");
                         break;
                     case 3:
-
+                        generos.add("jazz");
                         break;
                 }
                 break;
@@ -79,7 +79,7 @@ public class Analise {
                         generos.add("misterio");
                         break;
                     case 3:
-
+                        generos.add("gotico");
                         break;
                 }
                 break;
@@ -92,8 +92,8 @@ public class Analise {
                     case 2:
                         generos.add("aventura");
                         break;
-                    case 3:
-
+                    case 3: 
+                        generos.add("samba");
                         break;
                 }
                 break;
@@ -114,7 +114,7 @@ public class Analise {
                         generos.add("biografia");
                         break;
                     case 3:
-
+                        generos.add("classico");
                         break;
                 }
                 break;
@@ -128,7 +128,7 @@ public class Analise {
                         generos.add("fantasia");
                         break;
                     case 3:
-
+                        generos.add("K-pop");
                         break;
                 }
                 break;
@@ -149,7 +149,7 @@ public class Analise {
                         generos.add("classico");
                         break;
                     case 3:
-
+                        generos.add("funk");
                         break;
                 }
                 break;
@@ -163,7 +163,7 @@ public class Analise {
                         generos.add("cronica");
                         break;
                     case 3:
-
+                        generos.add("reggae");
                         break;
                 }
                 break;
@@ -184,7 +184,7 @@ public class Analise {
                         generos.add("drama");
                         break;
                     case 3:
-
+                        generos.add("pop");
                         break;
                 }
                 break;
@@ -198,7 +198,7 @@ public class Analise {
                         generos.add("comedia");
                         break;
                     case 3:
-
+                        generos.add("sertanejo");
                         break;
                 }
                 break;
@@ -237,6 +237,9 @@ public class Analise {
             case 2:
                 fazPesquisaLivro(pesquisa);
                 break;
+            case 3:
+                fazPesquisaMusica(pesquisa);
+                break;
             default:
                 throw new AssertionError();
         }
@@ -259,7 +262,7 @@ public class Analise {
             }
             for (int i = 0, numLivro = 1; i < 3; i++, numLivro = numLivro + 2) {
                 System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
-                iconVet.add(PesquisaImagens(doc, numLivro, resultado));
+                iconVet.add(PesquisaImagens(doc, numLivro, resultado, i));
             }
         } catch (Exception ex) {
             Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
@@ -276,7 +279,7 @@ public class Analise {
 
                             for (Element e : htmlElements1) {
                                 conexaoLivros(e, doc1, resultado, resultadoAutores);
-                                iconVet.add(PesquisaImagens(doc1, 1, resultado));
+                                iconVet.add(PesquisaImagens(doc1, 1, resultado, 0));
 
                                 break;
                             }
@@ -290,7 +293,7 @@ public class Analise {
 
                             for (Element e : htmlElements2) {
                                 conexaoLivros(e, doc2, resultado, resultadoAutores);
-                                iconVet.add(PesquisaImagens(doc2, 1, resultado));
+                                iconVet.add(PesquisaImagens(doc2, 1, resultado, 1));
 
                                 break;
                             }
@@ -305,7 +308,7 @@ public class Analise {
 
                             for (Element e : htmlElements3) {
                                 conexaoLivros(e, doc3, resultado, resultadoAutores);
-                                iconVet.add(PesquisaImagens(doc3, 1, resultado));
+                                iconVet.add(PesquisaImagens(doc3, 1, resultado, 2));
 
                                 break;
                             }
@@ -346,9 +349,9 @@ public class Analise {
             for (int i = 1, IndiceImg = 0, numFilme = 1; i <= LimitePesquisas; IndiceImg++, numFilme = numFilme + 2, i = i + ÍndiceTítulos) {
                 System.out.println(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
                 resultado.add(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
-                iconVet.add(PesquisaImagens(doc, numFilme, resultado));
-
+                iconVet.add(PesquisaImagens(doc, numFilme, resultado, IndiceImg));
             }
+            
             System.out.println("qlqr coisa");
         } catch (Exception ex /*Caso a pesquisa com 3 filmes de Erro*/) {
 
@@ -362,7 +365,7 @@ public class Analise {
                                     + "&sourceid=chrome&ie=UTF-8").get();
                             System.out.println(doc1.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc1.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
-                            iconVet.add(PesquisaImagens(doc1, 1, resultado));
+                            iconVet.add(PesquisaImagens(doc1, 1, resultado, 0));
 
                             break;
 
@@ -373,7 +376,7 @@ public class Analise {
                             System.out.println(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
 
-                            iconVet.add(PesquisaImagens(doc2, 1, resultado));
+                            iconVet.add(PesquisaImagens(doc2, 1, resultado, 1));
 
                             break;
 
@@ -383,7 +386,7 @@ public class Analise {
                                     + "&sourceid=chrome&ie=UTF-8").get();
                             System.out.println(doc3.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc3.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
-                            iconVet.add(PesquisaImagens(doc3, 1, resultado));
+                            iconVet.add(PesquisaImagens(doc3, 1, resultado, 2));
 
                             break;
 
@@ -514,7 +517,7 @@ public class Analise {
 
     }
 
-    private Icon PesquisaImagens(Document doc, int numFilme, Vector<String> resultado) {
+    private Icon PesquisaImagens(Document doc, int numFilme, Vector<String> resultado, int indice) {
         try {
             String base64Image =/* "data:image/jpeg;base64," + */ doc.getAllElements().toString().split("data:image/jpeg;base64,")[numFilme].split("'")[0];
             base64Image = base64Image.replace("\\" + "x" + "3" + "d", "=");
@@ -522,7 +525,7 @@ public class Analise {
             byte[] decode = Base64.getDecoder().decode(base64Image);
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(decode));
 
-            itemC.cadastraImagemItem(decode, resultado.get(numFilme));
+            itemC.cadastraImagemItem(decode, resultado.get(indice));
 
             ImageIcon icon = new ImageIcon(img);
 
