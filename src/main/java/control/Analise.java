@@ -26,6 +26,9 @@ import view.FramePrincipal;
 import view.TelaResultado;
 
 public class Analise {
+    
+    private Vector<String> resultado = new Vector<>();
+    private Vector<String> resultadoAutores = new Vector<>();
 
     private ItemControl itemC = new ItemControl();
 
@@ -242,8 +245,7 @@ public class Analise {
     private void fazPesquisaLivro(String pesquisa) {
 
         Vector<Icon> iconVet = new Vector<>();
-        Vector<String> resultado = new Vector<>();
-        Vector<String> resultadoAutores = new Vector<>();
+        Vector<String> novoResult = new Vector<>();
 
         try {
 
@@ -253,19 +255,23 @@ public class Analise {
             Elements htmlElements = doc.getAllElements();
 
             for (Element e : htmlElements) {
-                conexaoLivros(e, resultado, resultadoAutores);
+                conexaoLivros(e);
             }
+            System.out.println();
+                System.out.println();
             for (int i = 1, numLivro = 1; i <= 3; i++, numLivro = numLivro + 2) {
-                iconVet.add(PesquisaImagens(doc, i, resultado, i));
+                iconVet.add(PesquisaImagens(doc, i, this.resultado, i));
             }
         } catch (Exception ex) {
             for (int i = 0; i < 3; i++) {
                 fazPesquisaLivro(pesquisa.split("\\W")[i]);
             }
         }
-
-        itemC.addItem(resultado, "Livro");
-        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 2));
+        for(int i = 0; i < 3; i++){
+            novoResult.add(this.resultado.get(i));
+        }
+        itemC.addItem(this.resultado, "Livro");
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(this.resultado, iconVet, 2));
 
     }
 
@@ -444,7 +450,7 @@ public class Analise {
 
     }
 
-    private void conexaoLivros(Element e, Vector<String> resultado, Vector<String> resultadoAutores) {
+    private void conexaoLivros(Element e) {
 
         if (e.classNames().contains("dAassd")) {
             Elements nomeFilme = e.getElementsByClass("FozYP");
@@ -459,8 +465,8 @@ public class Analise {
                     nomeStr += eSub.html() + " ";
                 }
             }
-            resultado.add(nomeStr);
-            resultadoAutores.add(autor);
+            this.resultado.add(nomeStr);
+            this.resultadoAutores.add(autor);
         }
 
     }

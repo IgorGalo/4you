@@ -29,6 +29,9 @@ public class TelaPerguntas extends javax.swing.JPanel {
 //Construtor, inicializacao de objeto e insercao de ButtonGroup    
     public TelaPerguntas(int escolha, int vez, Vector<Integer> vet) {
         initComponents();
+        jLabel1.setVisible(false);
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
         this.botaoSelecionado = vet;
         removeBtn();
         perguntaGroup = new ButtonGroup();
@@ -42,7 +45,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
     }
 
     private void removeBtn() {
-        if (this.botaoSelecionado.size() == 5) {
+        if (this.botaoSelecionado.size() == 6) {
             int escolhaBtn = this.botaoSelecionado.get(5);
             this.botaoSelecionado.clear();
             this.botaoSelecionado.add(escolhaBtn);
@@ -102,7 +105,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         this.opcao1Btn.setVisible(false);
                         this.opcao2Btn.setVisible(false);
                         this.nenhumaBtn.setVisible(false);
-                        finalizarLbl.setText("CLIQUE PARA OBTER RESULTADO");
+                        jLabel1.setVisible(true);
+                        jLabel2.setVisible(true);
+                        jLabel3.setVisible(true);
+                        finalizarLbl.setText("CLIQUE NO BOTÃO PARA OBTER RESULTADO");
                         break;
 
                 }
@@ -142,7 +148,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         this.opcao1Btn.setVisible(false);
                         this.opcao2Btn.setVisible(false);
                         this.nenhumaBtn.setVisible(false);
-                        finalizarLbl.setText("CLIQUE PARA OBTER RESULTADO");
+                        jLabel1.setVisible(true);
+                        jLabel2.setVisible(true);
+                        jLabel3.setVisible(true);
+                        finalizarLbl.setText("CLIQUE NO BOTÃO PARA OBTER RESULTADO");
                         break;
 
                 }
@@ -181,7 +190,10 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         this.opcao1Btn.setVisible(false);
                         this.opcao2Btn.setVisible(false);
                         this.nenhumaBtn.setVisible(false);
-                        finalizarLbl.setText("CLIQUE PARA OBTER RESULTADO");
+                        jLabel1.setVisible(true);
+                        jLabel2.setVisible(true);
+                        jLabel3.setVisible(true);
+                        finalizarLbl.setText("CLIQUE NO BOTÃO PARA OBTER RESULTADO");
                         break;
 
                 }
@@ -204,11 +216,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         finalizarLbl = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         perguntaTxt = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         nenhumaBtn = new javax.swing.JRadioButton();
         opcao1Btn = new javax.swing.JRadioButton();
         opcao2Btn = new javax.swing.JRadioButton();
         nextBtn = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JLabel();
 
         cadastrarBtn.setBackground(new java.awt.Color(233, 68, 190));
         cadastrarBtn.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 14)); // NOI18N
@@ -254,6 +268,33 @@ public class TelaPerguntas extends javax.swing.JPanel {
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 810, 160));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estetica.png"))); // NOI18N
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 140, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estetica.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 200, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estetica.png"))); // NOI18N
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 480, 200, 40));
+
         nenhumaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(nenhumaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, 310, 80));
 
@@ -270,24 +311,12 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         });
         add(nextBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 670, 300, 40));
-
-        voltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                voltarBtnMouseClicked(evt);
-            }
-        });
-        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 20, 80, 60));
     }// </editor-fold>//GEN-END:initComponents
 
 
     private void cadastrarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtn1ActionPerformed
 
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
-
-    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
-        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
-    }//GEN-LAST:event_voltarBtnMouseClicked
 
 //Verifica se algum botao esta selecionado para posteriormente passar para a analise do resultado    
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
@@ -316,9 +345,20 @@ public class TelaPerguntas extends javax.swing.JPanel {
         } else {
             Analise analise = new Analise();
             analise.calculaResultado(this.botaoSelecionado, this.escolha);
-            System.out.println("volta?");
         }
     }//GEN-LAST:event_nextBtnMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        opcao2Btn.isSelected();
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        nenhumaBtn.isSelected();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        opcao1Btn.isSelected();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -326,12 +366,14 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private javax.swing.JButton cadastrarBtn;
     private javax.swing.JButton cadastrarBtn1;
     private javax.swing.JLabel finalizarLbl;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JRadioButton nenhumaBtn;
     private javax.swing.JLabel nextBtn;
     private javax.swing.JRadioButton opcao1Btn;
     private javax.swing.JRadioButton opcao2Btn;
     private javax.swing.JTextArea perguntaTxt;
-    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }
