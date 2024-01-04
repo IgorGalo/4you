@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -27,11 +28,9 @@ import view.TelaResultado;
 public class Analise {
 
     private ItemControl itemC = new ItemControl();
-    
+
 //Analisa as respostas e gera combinações dos gêneros 
     public void calculaResultado(Vector<Integer> opcoes, int escolha, JRadioButton opcao1Btn, JRadioButton opcao2Btn, JRadioButton nenhumaBtn) {
-
-        System.out.println(opcoes);
 
         Vector<String> generos = new Vector<>();
 
@@ -233,7 +232,7 @@ public class Analise {
                 fazPesquisaLivro(pesquisa);
                 break;
             case 3:
-                fazPesquisaMusica(pesquisa);
+                fazPesquisaMusica(pesquisa, 10);
                 break;
             default:
                 throw new AssertionError();
@@ -241,6 +240,7 @@ public class Analise {
     }
 
     private void fazPesquisaLivro(String pesquisa) {
+
         Vector<Icon> iconVet = new Vector<>();
         Vector<String> resultado = new Vector<>();
         Vector<String> resultadoAutores = new Vector<>();
@@ -276,7 +276,6 @@ public class Analise {
             }
         }
         for (int i = 0; i < 3; i++) {
-            System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
         }
         itemC.addItem(resultado, "Livro");
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
@@ -303,7 +302,6 @@ public class Analise {
             // </editor-fold>
 
             for (int i = 1, IndiceImg = 0, numFilme = 1; i <= LimitePesquisas; IndiceImg++, numFilme = numFilme + 2, i = i + ÍndiceTítulos) {
-                System.out.println(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
                 resultado.add(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
                 iconVet.add(PesquisaImagens(doc, numFilme, resultado, IndiceImg));
             }
@@ -318,7 +316,6 @@ public class Analise {
                             Document doc1 = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+"
                                     + pesquisa.split("\\W")[0] + pesquisa.split("\\W")[1]
                                     + "&sourceid=chrome&ie=UTF-8").get();
-                            System.out.println(doc1.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc1.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             iconVet.add(PesquisaImagens(doc1, 1, resultado, 0));
 
@@ -328,7 +325,6 @@ public class Analise {
                             Document doc2 = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+"
                                     + pesquisa.split("\\W")[0] + pesquisa.split("\\W")[2]
                                     + "&sourceid=chrome&ie=UTF-8").get();
-                            System.out.println(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc2.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
 
                             iconVet.add(PesquisaImagens(doc2, 1, resultado, 1));
@@ -339,7 +335,6 @@ public class Analise {
                             Document doc3 = (Document) Jsoup.connect("https://www.google.com/search?q=filmes+"
                                     + pesquisa.split("\\W")[1] + pesquisa.split("\\W")[2]
                                     + "&sourceid=chrome&ie=UTF-8").get();
-                            System.out.println(doc3.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             resultado.add(doc3.getElementsByAttribute("data-ttl").html().split("data-original-name")[1].split("\"")[1]);
                             iconVet.add(PesquisaImagens(doc3, 1, resultado, 2));
 
@@ -348,9 +343,9 @@ public class Analise {
                     }
 
                 } catch (Exception Erro) {
-//                    java.util.logging.Logger.getLogger(Analise.class
-//                            .getName()).log(java.util.logging.Level.SEVERE, null, Erro);
-//                    System.out.println("ok");
+                    java.util.logging.Logger.getLogger(Analise.class
+                            .getName()).log(java.util.logging.Level.SEVERE, null, Erro);
+                    System.err.println("ok");
                 }
 
             }
@@ -360,7 +355,7 @@ public class Analise {
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
     }
 
-    private void fazPesquisaMusica(String pesquisa) {
+    private void fazPesquisaMusica(String pesquisa, int limiteMusicas/*10*/) {
         Vector<Icon> iconVet = new Vector<>();
         Vector<String> resultado = new Vector<>();
         Vector<String> resultadoAutores = new Vector<>();
@@ -372,102 +367,51 @@ public class Analise {
             String Music = new String(ArqMusicas.readAllBytes());
 
             String[] VetMus = new String[Music.split("\n").length];
+            if (VetMus.length > 20) {
+                for (int i = 0; i < Music.split("\n").length; i++) {
 
-            for (int i = 0; i < Music.split("\n").length; i++) {
-
-                VetMus[i] = Music.split("\n")[i];
-            }
-            int limiteMusicas = 10;
-            for (int i = 6; i <= limiteMusicas; i = i + 2) {
-                if (i > 6) {
-                    for (int j = 6; j < i; j = j + 2) {
-                        if (VetMus[i].split(":")[8].split("\"")[1].equalsIgnoreCase(VetMus[j].split(":")[8].split("\"")[1]) /* && VetMus[i].split(":")[6].split("\"")[1].equalsIgnoreCase(VetMus[j].split(":")[6].split("\"")[1])*/) {
-
-                            System.out.println("Repetido");
-                            limiteMusicas = limiteMusicas + 2;
-
-                        } else {
-                            resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
-                            resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
-                            iconVet.add(PesquisaImagensMusicas(VetMus[i]));
-                            break;
-
-                        }
-                    }
-                } else {
-                    resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
-                    resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
-                    iconVet.add(PesquisaImagensMusicas(VetMus[i]));
-
+                    VetMus[i] = Music.split("\n")[i];
                 }
 
-                //<editor-fold defaultstate="collapsed" desc="Testes audio">
-//
-//                System.out.println(VetMus[i + 1].split("\"")[3]);
-//                URL oUrl = new URL(VetMus[i + 1].split(VetMus[i + 1].split("\"")[3]).toString());
-//                
-//                
-//                
-//                Clip oClip = AudioSystem.getClip();
-//                AudioInputStream oStream = AudioSystem.getAudioInputStream(oUrl);
-//                oClip.open(oStream);
-//                oClip.loop(0);
-            }
+                for (int i = 6; i <= limiteMusicas; i = i + 2) {
+                    if (i > 6) {
+                        for (int j = 6; j < i; j = j + 2) {
+                            if (VetMus[i].split(":")[8].split("\"")[1].equalsIgnoreCase(VetMus[j].split(":")[8].split("\"")[1]) /* && VetMus[i].split(":")[6].split("\"")[1].equalsIgnoreCase(VetMus[j].split(":")[6].split("\"")[1])*/) {
 
-//            JSONObject objtjson = new JSONObject(new String(ArqMusicas.readAllBytes()));
-//            
-//                BufferedReader in = new BufferedReader(marcaLeitura);
-//                System.out.println(in.readLine());
-            // </editor-fold>
+                                limiteMusicas = limiteMusicas + 2;
+
+                            } else {
+                                resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
+                                resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
+                                iconVet.add(PesquisaImagensMusicas(VetMus[i]));
+                                break;
+
+                            }
+                        }
+                    } else {
+                        resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
+                        resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
+                        iconVet.add(PesquisaImagensMusicas(VetMus[i]));
+
+                    }
+
+                }
+            } else {
+                resultado.clear();
+                resultado.set(25, "O");
+            }
         } catch (Exception ERRO) {
             //Caso erro na pesquisa, fazer pesquisa por categorias separadamente
-            BufferedInputStream ArqMusicas1, ArqMusicas2, ArqMusicas3;
+            BufferedInputStream ArqMusicas2;
 
             try {
-                for (int i = 1; i <= 3; i++) {
-                    switch (i) {
-                        case 1:
-                            ArqMusicas1 = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa.split("\\W")[0] + "&entity=musicTrack&limit=10").openStream());
+                for (int i = 0; i < 3; i++) {
 
-                            String Music1 = new String(ArqMusicas1.readAllBytes());
+                    fazPesquisaMusica(pesquisa.split("\\W")[i], 6);
 
-                            String[] VetMus1 = new String[Music1.split("\n").length];
-
-                            resultado.add(VetMus1[i].split(":")[8].split("\"")[1]);
-                            resultadoAutores.add(VetMus1[i].split(":")[6].split("\"")[1]);
-                            iconVet.add(PesquisaImagensMusicas(VetMus1[i]));
-
-                            break;
-                        case 2:
-                            ArqMusicas2 = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa.split("\\W")[1] + "&entity=musicTrack&limit=10").openStream());
-
-                            String Music2 = new String(ArqMusicas2.readAllBytes());
-
-                            String[] VetMus2 = new String[Music2.split("\n").length];
-
-                            resultado.add(VetMus2[i].split(":")[8].split("\"")[1]);
-                            resultadoAutores.add(VetMus2[i].split(":")[6].split("\"")[1]);
-                            iconVet.add(PesquisaImagensMusicas(VetMus2[i]));
-                            break;
-                        case 3:
-                            ArqMusicas3 = new BufferedInputStream(new URL("https://itunes.apple.com/search?term=" + pesquisa.split("\\W")[2] + "&entity=musicTrack&limit=10").openStream());
-
-                            String Music3 = new String(ArqMusicas3.readAllBytes());
-
-                            String[] VetMus3 = new String[Music3.split("\n").length];
-
-                            resultado.add(VetMus3[i].split(":")[8].split("\"")[1]);
-                            resultadoAutores.add(VetMus3[i].split(":")[6].split("\"")[1]);
-                            iconVet.add(PesquisaImagensMusicas(VetMus3[i]));
-                            break;
-                    }
                 }
             } catch (Exception Erro) {
-
             }
-        }
-        for (int i = 0; i < resultado.size(); i++) {
-            System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
         }
         itemC.addItem(resultado, "Musica");
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
@@ -499,7 +443,6 @@ public class Analise {
 
     private void conexaoLivros(Element e, Vector<String> resultado, Vector<String> resultadoAutores, int verificação) {
 
-        //System.out.println(e.classNames());
         if (e.classNames().contains("dAassd")) {
             Elements nomeFilme = e.getElementsByClass("FozYP");
             String nomeStr = "";
