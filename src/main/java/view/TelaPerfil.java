@@ -60,8 +60,6 @@ public class TelaPerfil extends javax.swing.JPanel {
         quizBtn = new javax.swing.JLabel();
         inicioBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        itemUser = new javax.swing.JList<>();
         labelperfil = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,7 +70,7 @@ public class TelaPerfil extends javax.swing.JPanel {
                 alteraBtnMouseClicked(evt);
             }
         });
-        add(alteraBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 216, 190, 40));
+        add(alteraBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, 250, 50));
 
         quizBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         quizBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,16 +96,8 @@ public class TelaPerfil extends javax.swing.JPanel {
         });
         add(pesquisarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 60, 60));
 
-        jScrollPane1.setBorder(null);
-
-        itemUser.setBackground(new java.awt.Color(43, 24, 33));
-        itemUser.setBorder(null);
-        jScrollPane1.setViewportView(itemUser);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 910, 380));
-
         labelperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
-        add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 200));
+        add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void quizBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizBtnMouseClicked
@@ -151,8 +141,6 @@ public class TelaPerfil extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alteraBtn;
     private javax.swing.JLabel inicioBtn;
-    private javax.swing.JList<String> itemUser;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelperfil;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;

@@ -57,8 +57,6 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
 
         nomeLbl = new javax.swing.JLabel();
         labelperfil = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        itemUser = new javax.swing.JList<>();
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         inicioBtn = new javax.swing.JLabel();
@@ -70,18 +68,11 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
         nomeLbl.setForeground(new java.awt.Color(255, 255, 255));
         nomeLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomeLbl.setText("NOME DE USUÁRIO");
-        add(nomeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 230, 40));
+        nomeLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(nomeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 230, 50));
 
         labelperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
-        add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
-
-        jScrollPane1.setBorder(null);
-
-        itemUser.setBackground(new java.awt.Color(43, 24, 33));
-        itemUser.setBorder(null);
-        jScrollPane1.setViewportView(itemUser);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 910, 380));
+        add(labelperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
 
         perfilBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,8 +126,6 @@ public class TelaPerfilPesquisado extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel inicioBtn;
-    private javax.swing.JList<String> itemUser;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelperfil;
     private javax.swing.JLabel nomeLbl;
     private javax.swing.JLabel perfilBtn;

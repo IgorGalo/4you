@@ -31,7 +31,7 @@ public class TelaInicio extends javax.swing.JPanel {
         BufferedImage imagem;
 
         try {
-            imagem = ImageIO.read(new File(getClass().getResource("/telaInicio.png").getPath()));
+            imagem = ImageIO.read(new File(getClass().getResource("/telaInicio_1.png").getPath()));
             g.drawImage(imagem, 0, 0, this);
 
         } catch (IOException ex) {

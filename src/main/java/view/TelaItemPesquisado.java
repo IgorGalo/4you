@@ -45,11 +45,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         this.estrelaVelha = new File(getClass().getResource("/estrela_nao_avaliada.png").getPath());
         this.estrelaAvaliada = transformaFileIcon(this.estrelaNova);
         this.estrelaNaoAvaliada = transformaFileIcon(this.estrelaVelha);
-
-        this.starMiniCheia = new File(getClass().getResource("/starMiniCheia.png").getPath());
-        this.starMiniVazia = new File(getClass().getResource("/starMiniVazia.png").getPath());
-        this.starCheia = transformaFileIcon(this.estrelaNova);
-        this.starVazia = transformaFileIcon(this.estrelaVelha);
         trocaNome();
     }
 
@@ -106,11 +101,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         inicioBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
         enviarBtn = new javax.swing.JLabel();
-        star5 = new javax.swing.JLabel();
-        star4 = new javax.swing.JLabel();
-        star3 = new javax.swing.JLabel();
-        star1 = new javax.swing.JLabel();
-        star2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -212,21 +202,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             }
         });
         add(enviarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 140, 40));
-
-        star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
-        add(star5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 70, 60));
-
-        star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
-        add(star4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 70, 60));
-
-        star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
-        add(star3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 70, 60));
-
-        star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
-        add(star1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 70, 60));
-
-        star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starMiniVazia.png"))); // NOI18N
-        add(star2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 70, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
@@ -316,55 +291,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_nota5MouseClicked
 
-    private void mudaAvaliacao(int nota) {
-        switch (nota) {
-            case 0:
-                star1.setIcon(this.starVazia);
-                star2.setIcon(this.starVazia);
-                star3.setIcon(this.starVazia);
-                star4.setIcon(this.starVazia);
-                star5.setIcon(this.starVazia);
-                break;
-            case 1:
-                star1.setIcon(this.starCheia);
-                star2.setIcon(this.starVazia);
-                star3.setIcon(this.starVazia);
-                star4.setIcon(this.starVazia);
-                star5.setIcon(this.starVazia);
-                break;
-            case 2:
-                star1.setIcon(this.starCheia);
-                star2.setIcon(this.starCheia);
-                star3.setIcon(this.starVazia);
-                star4.setIcon(this.starVazia);
-                star5.setIcon(this.starVazia);
-                break;
-            case 3:
-                star1.setIcon(this.starCheia);
-                star2.setIcon(this.starCheia);
-                star3.setIcon(this.starCheia);
-                star4.setIcon(this.starVazia);
-                star5.setIcon(this.starVazia);
-                break;
-            case 4:
-                star1.setIcon(this.starCheia);
-                star2.setIcon(this.starCheia);
-                star3.setIcon(this.starCheia);
-                star4.setIcon(this.starCheia);
-                star5.setIcon(this.starVazia);
-                break;
-            case 5:
-                star1.setIcon(this.starCheia);
-                star2.setIcon(this.starCheia);
-                star3.setIcon(this.starCheia);
-                star4.setIcon(this.starCheia);
-                star5.setIcon(this.starCheia);
-                break;
-            default:
-                throw new AssertionError();
-        }
-    }
-
     private void enviarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarBtnMouseClicked
         if (comentarioTxt.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Informe seu comentário!");
@@ -376,7 +302,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             nota4.setIcon(this.estrelaNaoAvaliada);
             nota5.setIcon(this.estrelaNaoAvaliada);
             int nota = ic.atualizaAvaliacao(this.nota, this.itemPesquisado);
-            mudaAvaliacao(nota);
             JOptionPane.showMessageDialog(this, "AVALIAÇÃO ENVIADA COM SUCESSO");
         }
     }//GEN-LAST:event_enviarBtnMouseClicked
@@ -397,10 +322,5 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;
-    private javax.swing.JLabel star1;
-    private javax.swing.JLabel star2;
-    private javax.swing.JLabel star3;
-    private javax.swing.JLabel star4;
-    private javax.swing.JLabel star5;
     // End of variables declaration//GEN-END:variables
 }

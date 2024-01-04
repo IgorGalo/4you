@@ -27,9 +27,7 @@ public class ItemDAO {
         ArrayList<Item> todosItens = new ArrayList<>();
 
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
-            //vamos ao banco buscar os dados resultado da sql definida
             ResultSet resultadoBanco = trans.executeQuery();
-            //transformr as tuplas(linhas) em objetos do tipo statustime
             while (resultadoBanco.next()) {
                 Item item = new Item(resultadoBanco.getInt("avaliacao"),
                         resultadoBanco.getString("tipoItem"),
@@ -46,17 +44,14 @@ public class ItemDAO {
     }
 
     public boolean addItemDAO(Vector<String> itens, String tipoItem) {
-        String sql = "INSERT INTO fiyyou.itens (nomedoitem, tipoitem, avaliacao, comentario)"
-                + " VALUES (?, ?, ?, ?)";
-        System.out.println("passou");
+        String sql = "INSERT INTO fiyyou.itens(nomedoitem, avaliacao, tipoitem, comentario) VALUES (?, ?, ?, ?);";
         try {
             PreparedStatement insercao = c.prepareStatement(sql);
             for (int i = 0; i < itens.size(); i++) {
-                insercao.setString(1, itens.get(i));
+                insercao.setString(1, itens.get(0));
                 insercao.setString(2, tipoItem);
                 insercao.setInt(3, 0);
                 insercao.setString(4, "");
-
                 insercao.execute();
             }
             c.close();
@@ -110,7 +105,6 @@ public class ItemDAO {
         String sql = "SELECT avaliacao FROM fiyyou.itens WHERE nomedoitem = '" + nomeItem + "'";
 
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
-            //vamos ao banco buscar os dados resultado da sql definida
             ResultSet resultadoBanco = trans.executeQuery();
             if (resultadoBanco.next()) {
                 return resultadoBanco.getInt("avaliacao");
@@ -121,11 +115,11 @@ public class ItemDAO {
 
         return 0;
     }
-    
-    public Vector<String> consultaItens() {
-        
-        Vector<String> nomeItens = new Vector<>();
-        
+
+    public Vector<Item> consultaItens() {
+
+        Vector<Item> nomeItens = new Vector<>();
+
         String sql = "SELECT * FROM fiyyou.itens";
 
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
@@ -133,23 +127,20 @@ public class ItemDAO {
             while (resultadoBanco.next()) {
                 Item item = new Item(resultadoBanco.getInt("avaliacao"), resultadoBanco.getString("tipoitem"),
                         resultadoBanco.getString("nomedoitem"), resultadoBanco.getString("comentario"));
-                nomeItens.add(resultadoBanco.getString("nomedoitem"));
+                nomeItens.add(item);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return nomeItens;
     }
-    
+
     public boolean cadastrarImagemItem(byte[] bytes, String nomeItem) {
 
         ByteArrayInputStream byteinput = new ByteArrayInputStream(bytes);
 
         String sql = "INSERT INTO fiyyou.imageitem (nomeitem, imagem)"
                 + " VALUES (?, ?)";
-        //File arquivo = new File(arq);
-
-        //fis = new FileInputStream(arquivo);
         try {
             PreparedStatement insercao = c.prepareStatement(sql);
 

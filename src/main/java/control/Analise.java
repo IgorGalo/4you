@@ -92,7 +92,7 @@ public class Analise {
                     case 2:
                         generos.add("aventura");
                         break;
-                    case 3: 
+                    case 3:
                         generos.add("samba");
                         break;
                 }
@@ -214,7 +214,6 @@ public class Analise {
 
         if (generos.isEmpty()) {
             pesquisa = "novos";
-            System.out.println(pesquisa);
         } else {
 
             if (opcoes.size() > 5) {
@@ -223,12 +222,7 @@ public class Analise {
 
             }
             pesquisa = generos.get(0) + "+" + generos.get(1) + "+" + generos.get(2);
-
-            System.out.println(opcoes + " " + pesquisa);
         }
-
-        System.out.println(generos);
-        System.out.println(pesquisa);
 
         switch (escolha) {
             case 1:
@@ -324,7 +318,8 @@ public class Analise {
                 System.out.println(resultado.get(i) + " de " + resultadoAutores.get(i));
             }
         }
-
+        itemC.addItem(resultado, "Filme");
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
     }
 
     private void fazPesquisaFilme(String pesquisa) {
@@ -351,8 +346,7 @@ public class Analise {
                 resultado.add(doc.getElementsByAttribute("data-ttl").html().split("data-original-name")[i].split("\"")[1]);
                 iconVet.add(PesquisaImagens(doc, numFilme, resultado, IndiceImg));
             }
-            
-            System.out.println("qlqr coisa");
+
         } catch (Exception ex /*Caso a pesquisa com 3 filmes de Erro*/) {
 
             for (int i = 1; i <= 3; i++) {
