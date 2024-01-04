@@ -200,9 +200,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             }
         });
         add(enviarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 140, 40));
-
-        itemLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
-        add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 180, 220));
+        add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 80, 190, 230));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked

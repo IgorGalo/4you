@@ -19,32 +19,34 @@ public class ItemControl {
 
 //Relaciona a interface com o banco de dados para adicionar um item nele
     public void addItem(Vector<String> itens, String tipoItem) {
-        boolean veri;
-        Vector<Integer> indice = new Vector<>();
-        for (int i = 0; i < itens.size(); i++) {
-            veri = itemdao.consultaNomeItem(itens.get(i));
-            indice.add(i);
+        Vector<String> novos = verificaRepeticoes(consultaNomesItens(), itens);
+
+        for (String it : novos) {
+            itemdao.addItemDAO(it, tipoItem);
         }
-        
-        for(int i = 0; i < indice.size(); i++){
-            itens.remove(indice.get(i));
-        }
-        itemdao.addItemDAO(itens, tipoItem);
     }
 
 //Relaciona a interface com o banco de dados para consultar um item dele
-    public Vector<Item> consultaNomesItens() {
-        Vector<Item> vetNome = itemdao.consultaItens();
+    public Vector<String> consultaNomesItens() {
+        Vector<String> vetNome = itemdao.consultaItens();
 
         return vetNome;
     }
 
+    public Vector<String> verificaRepeticoes(Vector<String> vetorBanco, Vector<String> vetorAdd) {
+        Vector<String> novo = new Vector<>();
+        for (String item : vetorAdd) {
+            if (!vetorBanco.contains(item)) {
+                novo.add(item);
+            }
+        }
+        return novo;
+    }
+
 //Relaciona a interface com o banco de dados para cadastrar a imagem de um item no banco
     public void cadastraImagemItem(byte[] bytes, String nomeItem) {
-        for (int i = 0; i < 3; i++) {
-            if (!itemdao.consultaNomeItem(nomeItem)) {
-                itemdao.cadastrarImagemItem(bytes, nomeItem);
-            }
+        if (itemdao.consultarImagem(nomeItem) == null) {
+            itemdao.cadastrarImagemItem(bytes, nomeItem);
         }
     }
 

@@ -29,6 +29,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
 //Construtor, inicializacao de objeto e insercao de ButtonGroup    
     public TelaPerguntas(int escolha, int vez, Vector<Integer> vet) {
         initComponents();
+        removeBtn();
         perguntaGroup = new ButtonGroup();
         perguntaGroup.add(opcao1Btn);
         perguntaGroup.add(opcao2Btn);
@@ -40,6 +41,13 @@ public class TelaPerguntas extends javax.swing.JPanel {
         adicionaPergunta();
     }
 
+    private void removeBtn() {
+        if (this.botaoSelecionado.size() == 5) {
+            this.botaoSelecionado.clear();
+
+        }
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -47,7 +55,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         BufferedImage imagem;
 
         try {
-            imagem = ImageIO.read(new File(getClass().getResource("/telaQuizCmc.png").getPath()));
+            imagem = ImageIO.read(new File(getClass().getResource("/telaPerguntas.png").getPath()));
             g.drawImage(imagem, 0, 0, this);
 
         } catch (IOException ex) {
@@ -85,6 +93,16 @@ public class TelaPerguntas extends javax.swing.JPanel {
                                 + "1- narrativas que exploram mundos imaginários e conceitos futuristas, desafiando os limites da realidade;\n"
                                 + "2- tramas que exploram a realidade, oferecendo uma perspectiva mais profunda sobre diferentes assuntos e experiências de vida?");
                         break;
+                    case 6:
+                        this.opcao1Btn.setEnabled(false);
+                        this.opcao2Btn.setEnabled(false);
+                        this.nenhumaBtn.setEnabled(false);
+                        this.opcao1Btn.setVisible(false);
+                        this.opcao2Btn.setVisible(false);
+                        this.nenhumaBtn.setVisible(false);
+                        finalizarLbl.setText("CLIQUE PARA OBTER RESULTADO");
+                        break;
+
                 }
                 break;
 
@@ -115,6 +133,16 @@ public class TelaPerguntas extends javax.swing.JPanel {
                                 + "1- se inclinar mais para tramas que exploram as complexidades emocionais e os desafios da vida;\n"
                                 + "2- obras que proporcionam momentos leves e sorrisos com sua abordagem mais cômica?");
                         break;
+                    case 6:
+                        this.opcao1Btn.setEnabled(false);
+                        this.opcao2Btn.setEnabled(false);
+                        this.nenhumaBtn.setEnabled(false);
+                        this.opcao1Btn.setVisible(false);
+                        this.opcao2Btn.setVisible(false);
+                        this.nenhumaBtn.setVisible(false);
+                        finalizarLbl.setText("CLIQUE PARA OBTER RESULTADO");
+                        break;
+
                 }
                 break;
             case 3:
@@ -144,6 +172,16 @@ public class TelaPerguntas extends javax.swing.JPanel {
                                 + "1- refrãos cativantes e batidas populares;\n"
                                 + "2- histórias envolventes e o som característico do interior?");
                         break;
+                    case 6:
+                        this.opcao1Btn.setEnabled(false);
+                        this.opcao2Btn.setEnabled(false);
+                        this.nenhumaBtn.setEnabled(false);
+                        this.opcao1Btn.setVisible(false);
+                        this.opcao2Btn.setVisible(false);
+                        this.nenhumaBtn.setVisible(false);
+                        finalizarLbl.setText("CLIQUE PARA OBTER RESULTADO");
+                        break;
+
                 }
                 break;
         }
@@ -161,6 +199,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         cadastrarBtn = new javax.swing.JButton();
         cadastrarBtn1 = new javax.swing.JButton();
+        finalizarLbl = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         perguntaTxt = new javax.swing.JTextArea();
         nenhumaBtn = new javax.swing.JRadioButton();
@@ -190,6 +229,11 @@ public class TelaPerguntas extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        finalizarLbl.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        finalizarLbl.setForeground(new java.awt.Color(255, 255, 255));
+        finalizarLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(finalizarLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 810, -1));
+
         jScrollPane4.setBackground(new java.awt.Color(253, 40, 141));
         jScrollPane4.setBorder(null);
         jScrollPane4.setForeground(new java.awt.Color(43, 24, 33));
@@ -202,6 +246,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
         perguntaTxt.setRows(5);
         perguntaTxt.setWrapStyleWord(true);
         perguntaTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(253, 40, 141), 0));
+        perguntaTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         perguntaTxt.setSelectedTextColor(new java.awt.Color(253, 40, 141));
         jScrollPane4.setViewportView(perguntaTxt);
 
@@ -268,8 +313,8 @@ public class TelaPerguntas extends javax.swing.JPanel {
             }
         } else {
             Analise analise = new Analise();
-            System.out.println(this.botaoSelecionado);
-            analise.calculaResultado(this.botaoSelecionado, escolha, opcao1Btn, opcao2Btn, nenhumaBtn);
+            analise.calculaResultado(this.botaoSelecionado, this.escolha);
+            System.out.println("volta?");
         }
     }//GEN-LAST:event_nextBtnMouseClicked
 
@@ -278,6 +323,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cadastrarBtn;
     private javax.swing.JButton cadastrarBtn1;
+    private javax.swing.JLabel finalizarLbl;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JRadioButton nenhumaBtn;
     private javax.swing.JLabel nextBtn;

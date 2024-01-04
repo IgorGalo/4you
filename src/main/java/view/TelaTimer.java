@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.SwingWorker;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 
 /**
@@ -19,10 +20,11 @@ import javax.swing.plaf.basic.BasicProgressBarUI;
  * @author 0068948
  */
 public class TelaTimer extends javax.swing.JPanel {
-
+    
     private Timer timer;
-
+    
     public TelaTimer() {
+        UIManager.put("nimbusOrange", new Color(253, 40, 141));
         initComponents();
         Swing();
     }
@@ -41,17 +43,17 @@ public class TelaTimer extends javax.swing.JPanel {
         };
         progresso.execute();
     }
-
+    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
+        
         BufferedImage imagem;
-
+        
         try {
             imagem = ImageIO.read(new File(getClass().getResource("/telaTimer.png").getPath()));
             g.drawImage(imagem, 0, 0, this);
-
+            
         } catch (IOException ex) {
             System.out.println("Arquivo não existente");
         }

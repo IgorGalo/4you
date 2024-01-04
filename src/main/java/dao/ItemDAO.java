@@ -44,22 +44,17 @@ public class ItemDAO {
         return todosItens;
     }
 
-    public void addItemDAO(Vector<String> itens, String tipoItem) {
-        int qtd = itens.size();
+    public void addItemDAO(String itens, String tipoItem) {
 
         String sql = "INSERT INTO fiyyou.itens (nomedoitem, avaliacao, tipoitem, comentario) "
                 + "VALUES (?, ?, ?, ?)";
         try (PreparedStatement insercao = this.c.prepareStatement(sql)) {
 
-            for (int i = 0; i < qtd; i++) {
-                insercao.setString(1, itens.get(i));
-                insercao.setInt(2, 0);
-                insercao.setString(3, tipoItem);
-                insercao.setString(4, "");
-                insercao.execute();
-                System.out.println("teste");
-            }
-            c.close();
+            insercao.setString(1, itens);
+            insercao.setInt(2, 0);
+            insercao.setString(3, tipoItem);
+            insercao.setString(4, "");
+            insercao.execute();
 
         } catch (SQLException ex) {
             System.out.println("" + ex.getMessage() + " ");
@@ -72,7 +67,6 @@ public class ItemDAO {
             insercao.setInt(1, novaAvaliacao);
             insercao.setString(2, nomeItem);
             insercao.execute();
-            c.close();
             return true;
         } catch (SQLException ex) {
             return false;
@@ -87,13 +81,11 @@ public class ItemDAO {
 
             if (nomeItem != null && !nomeItem.equalsIgnoreCase("")) {
                 sql += "nomeitem = '" + nomeItem.trim() + "'";
-
             }
 
             Statement consulta = this.c.createStatement();
             ResultSet resultado = consulta.executeQuery(sql);
 
-            c.close();
             if (resultado.next()) {
                 retorno = new Imagem(resultado.getBytes("imagem"));
             }
@@ -103,43 +95,6 @@ public class ItemDAO {
             System.out.println(ex.getMessage() + "Erro: ");
             return null;
         }
-    }
-
-    public Vector<Imagem> consultarTodasImagensItens() {
-        try {
-            Vector<Imagem> retorno = null;
-
-            String sql = "SELECT * FROM fiyyou.imageitem";
-
-            Statement consulta = this.c.createStatement();
-            ResultSet resultado = consulta.executeQuery(sql);
-
-            c.close();
-            while (resultado.next()) {
-                retorno.add(new Imagem(resultado.getBytes("imagem")));
-            }
-            return retorno;
-        } catch (SQLException ex) {
-            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage() + "Erro: ");
-            return null;
-        }
-    }
-
-    public boolean consultaNomeItem(String nomeItem) {
-
-        String sql = "SELECT * FROM fiyyou.itens WHERE nomedoitem = '" + nomeItem + "'";
-
-        try (PreparedStatement trans = this.c.prepareStatement(sql)) {
-            ResultSet resultadoBanco = trans.executeQuery();
-            if (resultadoBanco.next()) {
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return false;
     }
 
     public int consultaAvaliacao(String nomeItem) {
@@ -158,18 +113,16 @@ public class ItemDAO {
         return 0;
     }
 
-    public Vector<Item> consultaItens() {
+    public Vector<String> consultaItens() {
 
-        Vector<Item> nomeItens = new Vector<>();
+        Vector<String> nomeItens = new Vector<>();
 
-        String sql = "SELECT * FROM fiyyou.itens";
+        String sql = "SELECT nomedoitem FROM fiyyou.itens";
 
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
             ResultSet resultadoBanco = trans.executeQuery();
             while (resultadoBanco.next()) {
-                Item item = new Item(resultadoBanco.getInt("avaliacao"), resultadoBanco.getString("tipoitem"),
-                        resultadoBanco.getString("nomedoitem"), resultadoBanco.getString("comentario"));
-                nomeItens.add(item);
+                nomeItens.add(resultadoBanco.getString("nomedoitem"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -188,7 +141,6 @@ public class ItemDAO {
             insercao.setString(1, nomeItem);
             insercao.setBinaryStream(2, byteinput, (int) bytes.length);
             insercao.execute();
-            c.close();
 
         } catch (SQLException ex) {
             System.out.println("" + ex.getMessage());
