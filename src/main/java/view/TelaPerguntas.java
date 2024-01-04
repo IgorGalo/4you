@@ -29,6 +29,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
 //Construtor, inicializacao de objeto e insercao de ButtonGroup    
     public TelaPerguntas(int escolha, int vez, Vector<Integer> vet) {
         initComponents();
+        this.botaoSelecionado = vet;
         removeBtn();
         perguntaGroup = new ButtonGroup();
         perguntaGroup.add(opcao1Btn);
@@ -36,14 +37,15 @@ public class TelaPerguntas extends javax.swing.JPanel {
         perguntaGroup.add(nenhumaBtn);
         perguntaTxt.setLineWrap(true);
         this.escolha = escolha;
-        this.botaoSelecionado = vet;
         this.vez = vez;
         adicionaPergunta();
     }
 
     private void removeBtn() {
         if (this.botaoSelecionado.size() == 5) {
+            int escolhaBtn = this.botaoSelecionado.get(5);
             this.botaoSelecionado.clear();
+            this.botaoSelecionado.add(escolhaBtn);
 
         }
     }
