@@ -20,9 +20,14 @@ public class ItemControl {
 //Relaciona a interface com o banco de dados para adicionar um item nele
     public void addItem(Vector<String> itens, String tipoItem) {
         boolean veri;
-        for (int i = 0; i < 3; i++) {
+        Vector<Integer> indice = new Vector<>();
+        for (int i = 0; i < itens.size(); i++) {
             veri = itemdao.consultaNomeItem(itens.get(i));
-            itens.remove(i);
+            indice.add(i);
+        }
+        
+        for(int i = 0; i < indice.size(); i++){
+            itens.remove(indice.get(i));
         }
         itemdao.addItemDAO(itens, tipoItem);
     }
@@ -36,7 +41,6 @@ public class ItemControl {
 
 //Relaciona a interface com o banco de dados para cadastrar a imagem de um item no banco
     public void cadastraImagemItem(byte[] bytes, String nomeItem) {
-        boolean veri;
         for (int i = 0; i < 3; i++) {
             if (!itemdao.consultaNomeItem(nomeItem)) {
                 itemdao.cadastrarImagemItem(bytes, nomeItem);
