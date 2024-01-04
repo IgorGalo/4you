@@ -351,6 +351,7 @@ public class Analise {
             }
 
         }
+        System.out.println(resultado);
         itemC.addItem(resultado, "Filme");
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 1));
     }

@@ -44,33 +44,14 @@ public class ItemDAO {
         return todosItens;
     }
 
-    public boolean addItemDAO(Vector<String> itens, String tipoItem) {
-        String item1 = itens.get(0);
-        String item2 = itens.get(1);
-        String item3 = itens.get(2);
-//        String sql = "INSERT INTO fiyyou.itens(nomedoitem, avaliacao, tipoitem, comentario) VALUES (?, ?, ?, ?)";
-//        try {
-//            System.out.println("sers");
-//            PreparedStatement insercao = c.prepareStatement(sql);
-//            System.out.println("teste");
-//            for (int i = 0; i < itens.size(); i++) {
-//                insercao.setString(1, itens.get(0));
-//                insercao.setString(2, tipoItem);
-//                insercao.setInt(3, 0);
-//                insercao.setString(4, "");
-//                insercao.execute();
-//            }
-//            c.close();
-//            return true;
-//        } catch (SQLException ex) {
-//            return false;
-//        }
-        String sql = "INSERT INTO fiyyou.imageitem (nomedoitem, avaliacao, tipoitem, comentario) "
-                + "VALUES (?, ?, ?, ?)";
-        try {
-            PreparedStatement insercao = c.prepareStatement(sql);
+    public void addItemDAO(Vector<String> itens, String tipoItem) {
+        int qtd = itens.size();
 
-            for (int i = 0; i < 3; i++) {
+        String sql = "INSERT INTO fiyyou.itens (nomedoitem, avaliacao, tipoitem, comentario) "
+                + "VALUES (?, ?, ?, ?)";
+        try (PreparedStatement insercao = this.c.prepareStatement(sql)) {
+
+            for (int i = 0; i < qtd; i++) {
                 insercao.setString(1, itens.get(i));
                 insercao.setInt(2, 0);
                 insercao.setString(3, tipoItem);
@@ -79,17 +60,15 @@ public class ItemDAO {
                 System.out.println("teste");
             }
             c.close();
-            return true;
 
         } catch (SQLException ex) {
-            System.out.println("" + ex.getMessage());
-            return false;
+            System.out.println("" + ex.getMessage() + " ");
         }
     }
 
     public boolean addAvaliacao(String nomeItem, int novaAvaliacao) {
         String sql = "UPDATE fiyyou.itens SET avaliacao = ? WHERE nomedoItem = ?;";
-        try (PreparedStatement insercao = c.prepareStatement(sql);) {
+        try (PreparedStatement insercao = this.c.prepareStatement(sql)) {
             insercao.setInt(1, novaAvaliacao);
             insercao.setString(2, nomeItem);
             insercao.execute();
@@ -111,7 +90,7 @@ public class ItemDAO {
 
             }
 
-            Statement consulta = c.createStatement();
+            Statement consulta = this.c.createStatement();
             ResultSet resultado = consulta.executeQuery(sql);
 
             c.close();
@@ -124,6 +103,43 @@ public class ItemDAO {
             System.out.println(ex.getMessage() + "Erro: ");
             return null;
         }
+    }
+
+    public Vector<Imagem> consultarTodasImagensItens() {
+        try {
+            Vector<Imagem> retorno = null;
+
+            String sql = "SELECT * FROM fiyyou.imageitem";
+
+            Statement consulta = this.c.createStatement();
+            ResultSet resultado = consulta.executeQuery(sql);
+
+            c.close();
+            while (resultado.next()) {
+                retorno.add(new Imagem(resultado.getBytes("imagem")));
+            }
+            return retorno;
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage() + "Erro: ");
+            return null;
+        }
+    }
+
+    public boolean consultaNomeItem(String nomeItem) {
+
+        String sql = "SELECT * FROM fiyyou.itens WHERE nomedoitem = '" + nomeItem + "'";
+
+        try (PreparedStatement trans = this.c.prepareStatement(sql)) {
+            ResultSet resultadoBanco = trans.executeQuery();
+            if (resultadoBanco.next()) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
     }
 
     public int consultaAvaliacao(String nomeItem) {
@@ -161,24 +177,21 @@ public class ItemDAO {
         return nomeItens;
     }
 
-    public boolean cadastrarImagemItem(byte[] bytes, String nomeItem) {
+    public void cadastrarImagemItem(byte[] bytes, String nomeItem) {
 
         ByteArrayInputStream byteinput = new ByteArrayInputStream(bytes);
 
         String sql = "INSERT INTO fiyyou.imageitem (nomeitem, imagem)"
                 + " VALUES (?, ?)";
         try {
-            PreparedStatement insercao = c.prepareStatement(sql);
-
+            PreparedStatement insercao = this.c.prepareStatement(sql);
             insercao.setString(1, nomeItem);
             insercao.setBinaryStream(2, byteinput, (int) bytes.length);
             insercao.execute();
             c.close();
-            return true;
 
         } catch (SQLException ex) {
             System.out.println("" + ex.getMessage());
-            return false;
         }
 
     }

@@ -27,7 +27,6 @@ public class TelaResultado extends javax.swing.JPanel {
     public TelaResultado(Vector<String> resultado, Vector<Icon> vetIcon, int escolha) {
         initComponents();
         mudaNome(resultado, vetIcon, escolha);
-//        panel();
     }
 
     @Override
@@ -89,31 +88,16 @@ public class TelaResultado extends javax.swing.JPanel {
         });
         add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
 
-        result3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        result3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         result3.setPreferredSize(new java.awt.Dimension(122, 162));
-        result3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                result3MouseClicked(evt);
-            }
-        });
         add(result3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 290, 150, 190));
 
-        result2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        result2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         result2.setPreferredSize(new java.awt.Dimension(122, 162));
-        result2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                result2MouseClicked(evt);
-            }
-        });
         add(result2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 150, 190));
 
-        result1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        result1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         result1.setPreferredSize(new java.awt.Dimension(122, 162));
-        result1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                result1MouseClicked(evt);
-            }
-        });
         add(result1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 150, 190));
 
         nome1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -168,18 +152,6 @@ public class TelaResultado extends javax.swing.JPanel {
     private void nome3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome3MouseClicked
         FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome3.getText()));
     }//GEN-LAST:event_nome3MouseClicked
-
-    private void result1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_result1MouseClicked
-        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome1.getText()));
-    }//GEN-LAST:event_result1MouseClicked
-
-    private void result2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_result2MouseClicked
-        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome2.getText()));
-    }//GEN-LAST:event_result2MouseClicked
-
-    private void result3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_result3MouseClicked
-        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome3.getText()));
-    }//GEN-LAST:event_result3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

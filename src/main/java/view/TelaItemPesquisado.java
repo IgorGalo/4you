@@ -96,12 +96,12 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         nota3 = new javax.swing.JLabel();
         nota2 = new javax.swing.JLabel();
         nota1 = new javax.swing.JLabel();
-        itemLbl = new javax.swing.JLabel();
         perfilBtn = new javax.swing.JLabel();
         quizBtn = new javax.swing.JLabel();
         inicioBtn = new javax.swing.JLabel();
         pesquisarBtn = new javax.swing.JLabel();
         enviarBtn = new javax.swing.JLabel();
+        itemLbl = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -162,9 +162,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         });
         add(nota1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 122, -1, 80));
 
-        itemLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/falta a.png"))); // NOI18N
-        add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
-
         perfilBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         perfilBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -203,6 +200,9 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
             }
         });
         add(enviarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 140, 40));
+
+        itemLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labelPerfil.png"))); // NOI18N
+        add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 180, 220));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
