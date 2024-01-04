@@ -24,9 +24,9 @@ public class TelaResultado extends javax.swing.JPanel {
     /**
      * Creates new form TelaResultado
      */
-    public TelaResultado(Vector<String> resultado, Vector<Icon> vetIcon) {
+    public TelaResultado(Vector<String> resultado, Vector<Icon> vetIcon, int escolha) {
         initComponents();
-        mudaNome(resultado, vetIcon);
+        mudaNome(resultado, vetIcon, escolha);
 //        panel();
     }
 
@@ -46,15 +46,17 @@ public class TelaResultado extends javax.swing.JPanel {
     }
 
 //Muda o nome do Label de nome do item e o Icon    
-    private void mudaNome(Vector<String> nomes, Vector<Icon> vetIcon) {
+    private void mudaNome(Vector<String> nomes, Vector<Icon> vetIcon, int escolha) {
         String split[];
 
         nome1.setText(nomes.get(0));
         nome2.setText(nomes.get(1));
         nome3.setText(nomes.get(2));
-        result1.setIcon(vetIcon.get(0));
-        result2.setIcon(vetIcon.get(1));
-        result3.setIcon(vetIcon.get(2));
+        if (escolha != 3) {
+            result1.setIcon(vetIcon.get(0));
+            result2.setIcon(vetIcon.get(1));
+            result3.setIcon(vetIcon.get(2));
+        }
 
         ItemControl itemC = new ItemControl();
 

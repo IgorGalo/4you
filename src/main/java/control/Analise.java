@@ -278,7 +278,7 @@ public class Analise {
         for (int i = 0; i < 3; i++) {
         }
         itemC.addItem(resultado, "Livro");
-        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 2));
 
     }
 
@@ -352,7 +352,7 @@ public class Analise {
 
         }
         itemC.addItem(resultado, "Filme");
-        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 1));
     }
 
     private void fazPesquisaMusica(String pesquisa, int limiteMusicas/*10*/) {
@@ -383,7 +383,7 @@ public class Analise {
                             } else {
                                 resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
                                 resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
-                                iconVet.add(PesquisaImagensMusicas(VetMus[i]));
+                                //iconVet.add(PesquisaImagensMusicas(VetMus[i]));
                                 break;
 
                             }
@@ -391,7 +391,7 @@ public class Analise {
                     } else {
                         resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
                         resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
-                        iconVet.add(PesquisaImagensMusicas(VetMus[i]));
+                        //iconVet.add(PesquisaImagensMusicas(VetMus[i]));
 
                     }
 
@@ -413,8 +413,9 @@ public class Analise {
             } catch (Exception Erro) {
             }
         }
+        iconVet.add(null);
         itemC.addItem(resultado, "Musica");
-        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet));
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 3));
 
     }
 

@@ -43,7 +43,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        musicaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        musicaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         musicaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 musicaBtnMouseClicked(evt);
@@ -96,7 +96,7 @@ public class TelaEscolhaFML extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void musicaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musicaBtnMouseClicked
-        FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(3, 1, botaoSel));
+        //FramePrincipal.trocaPainel("tela perguntas Musica", new TelaPerguntas(3, 1, botaoSel));
     }//GEN-LAST:event_musicaBtnMouseClicked
 
     private void filmeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filmeBtnMouseClicked

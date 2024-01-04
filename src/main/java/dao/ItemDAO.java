@@ -19,7 +19,6 @@ import model.Usuario;
 import tool.Conexao;
 
 //SQLs de inserção, consulta e update no banco
-
 public class ItemDAO {
 
     Connection c = Conexao.obterConexao();
@@ -46,19 +45,44 @@ public class ItemDAO {
     }
 
     public boolean addItemDAO(Vector<String> itens, String tipoItem) {
-        String sql = "INSERT INTO fiyyou.itens(nomedoitem, avaliacao, tipoitem, comentario) VALUES (?, ?, ?, ?);";
+        String item1 = itens.get(0);
+        String item2 = itens.get(1);
+        String item3 = itens.get(2);
+//        String sql = "INSERT INTO fiyyou.itens(nomedoitem, avaliacao, tipoitem, comentario) VALUES (?, ?, ?, ?)";
+//        try {
+//            System.out.println("sers");
+//            PreparedStatement insercao = c.prepareStatement(sql);
+//            System.out.println("teste");
+//            for (int i = 0; i < itens.size(); i++) {
+//                insercao.setString(1, itens.get(0));
+//                insercao.setString(2, tipoItem);
+//                insercao.setInt(3, 0);
+//                insercao.setString(4, "");
+//                insercao.execute();
+//            }
+//            c.close();
+//            return true;
+//        } catch (SQLException ex) {
+//            return false;
+//        }
+        String sql = "INSERT INTO fiyyou.imageitem (nomedoitem, avaliacao, tipoitem, comentario) "
+                + "VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement insercao = c.prepareStatement(sql);
-            for (int i = 0; i < itens.size(); i++) {
-                insercao.setString(1, itens.get(0));
-                insercao.setString(2, tipoItem);
-                insercao.setInt(3, 0);
+
+            for (int i = 0; i < 3; i++) {
+                insercao.setString(1, itens.get(i));
+                insercao.setInt(2, 0);
+                insercao.setString(3, tipoItem);
                 insercao.setString(4, "");
                 insercao.execute();
+                System.out.println("teste");
             }
             c.close();
             return true;
+
         } catch (SQLException ex) {
+            System.out.println("" + ex.getMessage());
             return false;
         }
     }
