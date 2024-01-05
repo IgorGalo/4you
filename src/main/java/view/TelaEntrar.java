@@ -134,14 +134,6 @@ public class TelaEntrar extends javax.swing.JPanel {
         SenhaTxt.setForeground(new java.awt.Color(204, 204, 204));
         SenhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         SenhaTxt.setBorder(null);
-        SenhaTxt.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                SenhaTxtFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                SenhaTxtFocusLost(evt);
-            }
-        });
         add(SenhaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 290, 60));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -212,18 +204,6 @@ public class TelaEntrar extends javax.swing.JPanel {
             SenhaTxt.setEchoChar('*');
         }
     }//GEN-LAST:event_verSenhaMouseClicked
-
-    private void SenhaTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SenhaTxtFocusGained
-        if (SenhaTxt.getText().equalsIgnoreCase("SENHA")) {
-            SenhaTxt.setText("");
-        }
-    }//GEN-LAST:event_SenhaTxtFocusGained
-
-    private void SenhaTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SenhaTxtFocusLost
-        if (SenhaTxt.getText().equalsIgnoreCase("")) {
-            SenhaTxt.setText("SENHA");
-        }
-    }//GEN-LAST:event_SenhaTxtFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

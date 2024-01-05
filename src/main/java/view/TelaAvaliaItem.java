@@ -102,7 +102,6 @@ public class TelaAvaliaItem extends javax.swing.JPanel {
         pesquisarBtn = new javax.swing.JLabel();
         enviarBtn = new javax.swing.JLabel();
         itemLbl = new javax.swing.JLabel();
-        voltarBtn = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -202,13 +201,6 @@ public class TelaAvaliaItem extends javax.swing.JPanel {
         });
         add(enviarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 140, 40));
         add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 80, 190, 230));
-
-        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                voltarBtnMouseClicked(evt);
-            }
-        });
-        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
@@ -316,10 +308,6 @@ public class TelaAvaliaItem extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_enviarBtnMouseClicked
 
-    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
-        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
-    }//GEN-LAST:event_voltarBtnMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea comentarioTxt;
@@ -336,6 +324,5 @@ public class TelaAvaliaItem extends javax.swing.JPanel {
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;
-    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }
