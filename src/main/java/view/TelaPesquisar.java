@@ -174,7 +174,7 @@ public class TelaPesquisar extends javax.swing.JPanel {
             Item nomeitem = todosItens.get(indice);
             nome = nomeitem.getNomeItem();
             System.out.println(nome);
-            FramePrincipal.trocaPainel("Painel avaliar item pesquisado", new TelaItemPesquisado(nome));
+            FramePrincipal.trocaPainel("Painel avaliar item pesquisado", new TelaAvaliaItem(nome));
         } else {
 
         }

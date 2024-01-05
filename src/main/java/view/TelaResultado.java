@@ -90,7 +90,7 @@ public class TelaResultado extends javax.swing.JPanel {
                 voltarBtnMouseClicked(evt);
             }
         });
-        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 70));
+        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 50));
 
         result3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/musica.png"))); // NOI18N
         result3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -181,15 +181,15 @@ public class TelaResultado extends javax.swing.JPanel {
     }//GEN-LAST:event_voltarBtnMouseClicked
 
     private void nome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome1MouseClicked
-        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome1.getText()));
+        FramePrincipal.trocaPainel("tela avalia", new TelaAvaliaItem(nome1.getText()));
     }//GEN-LAST:event_nome1MouseClicked
 
     private void nome2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome2MouseClicked
-        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome2.getText()));
+        FramePrincipal.trocaPainel("tela avalia", new TelaAvaliaItem(nome2.getText()));
     }//GEN-LAST:event_nome2MouseClicked
 
     private void nome3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome3MouseClicked
-        FramePrincipal.trocaPainel("tela avalia", new TelaItemPesquisado(nome3.getText()));
+        FramePrincipal.trocaPainel("tela avalia", new TelaAvaliaItem(nome3.getText()));
     }//GEN-LAST:event_nome3MouseClicked
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked

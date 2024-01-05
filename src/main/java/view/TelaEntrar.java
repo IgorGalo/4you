@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.Usuario;
 
@@ -23,10 +24,30 @@ import model.Usuario;
 public class TelaEntrar extends javax.swing.JPanel {
 
     String nomeuser;
+    private File olhoAberto;
+    private File olhoFechado;
+    private ImageIcon olhoIconAberto;
+    private ImageIcon olhoIconFechado;
 
     public TelaEntrar() {
+
+        this.olhoAberto = new File(getClass().getResource("/olhoAberto.png").getPath());
+        this.olhoIconAberto = transformaFileIcon(this.olhoAberto);
+        this.olhoFechado = new File(getClass().getResource("/olhoFechado.png").getPath());
+        this.olhoIconFechado = transformaFileIcon(this.olhoFechado);
         initComponents();
 
+    }
+
+    private ImageIcon transformaFileIcon(File estrela) {
+        if (estrela != null && estrela.exists()) {
+            // Cria um ImageIcon a partir do caminho do arquivo
+            return new ImageIcon(estrela.getAbsolutePath());
+        } else {
+            // Lida com o caso em que o arquivo não existe
+            System.err.println("Arquivo não encontrado: " + estrela);
+            return null;
+        }
     }
 
     @Override
@@ -53,34 +74,13 @@ public class TelaEntrar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SenhaTxt = new javax.swing.JTextField();
         NomeTxt = new javax.swing.JTextField();
         cadastrarBtn = new javax.swing.JLabel();
+        verSenha = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        SenhaTxt = new javax.swing.JPasswordField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        SenhaTxt.setBackground(new java.awt.Color(43, 24, 33));
-        SenhaTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        SenhaTxt.setForeground(new java.awt.Color(204, 204, 204));
-        SenhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        SenhaTxt.setText("SENHA");
-        SenhaTxt.setBorder(null);
-        SenhaTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SenhaTxt.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                SenhaTxtFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                SenhaTxtFocusLost(evt);
-            }
-        });
-        SenhaTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SenhaTxtActionPerformed(evt);
-            }
-        });
-        add(SenhaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 290, 60));
 
         NomeTxt.setBackground(new java.awt.Color(43, 24, 33));
         NomeTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -112,6 +112,15 @@ public class TelaEntrar extends javax.swing.JPanel {
         });
         add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 630, 100, 20));
 
+        verSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/olhoFechado.png"))); // NOI18N
+        verSenha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        verSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                verSenhaMouseClicked(evt);
+            }
+        });
+        add(verSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 80, 50));
+
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,15 +128,26 @@ public class TelaEntrar extends javax.swing.JPanel {
             }
         });
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 566, 290, 40));
+
+        SenhaTxt.setBackground(new java.awt.Color(43, 24, 33));
+        SenhaTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SenhaTxt.setForeground(new java.awt.Color(204, 204, 204));
+        SenhaTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SenhaTxt.setBorder(null);
+        SenhaTxt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                SenhaTxtFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                SenhaTxtFocusLost(evt);
+            }
+        });
+        add(SenhaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 290, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void NomeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeTxtActionPerformed
-
-    private void SenhaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SenhaTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SenhaTxtActionPerformed
 
 //Usado para verificar se o usuário existe, assim permitindo a entrada dele no programa    
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -180,6 +200,19 @@ public class TelaEntrar extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_NomeTxtFocusLost
 
+    private void verSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verSenhaMouseClicked
+        if(verSenha.getIcon().equals(this.olhoIconAberto)){
+            verSenha.setIcon(this.olhoIconFechado);
+        }else{
+            verSenha.setIcon(this.olhoIconAberto);
+        }
+        if (SenhaTxt.getEchoChar() == '*') {
+            SenhaTxt.setEchoChar((char) 0);
+        } else {
+            SenhaTxt.setEchoChar('*');
+        }
+    }//GEN-LAST:event_verSenhaMouseClicked
+
     private void SenhaTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SenhaTxtFocusGained
         if (SenhaTxt.getText().equalsIgnoreCase("SENHA")) {
             SenhaTxt.setText("");
@@ -195,8 +228,9 @@ public class TelaEntrar extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NomeTxt;
-    private javax.swing.JTextField SenhaTxt;
+    private javax.swing.JPasswordField SenhaTxt;
     private javax.swing.JLabel cadastrarBtn;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel verSenha;
     // End of variables declaration//GEN-END:variables
 }

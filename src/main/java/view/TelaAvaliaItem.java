@@ -20,7 +20,7 @@ import model.Item;
  *
  * @author 0068948
  */
-public class TelaItemPesquisado extends javax.swing.JPanel {
+public class TelaAvaliaItem extends javax.swing.JPanel {
 
     private String itemPesquisado;
     private File estrelaNova;
@@ -33,14 +33,14 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private ImageIcon starVazia;
     private UsuarioControl usuarioC = new UsuarioControl();
     private int nota;
-    
+
     private ItemControl ic = new ItemControl();
 
 //Construtor, inicializacao de objetos    
-    public TelaItemPesquisado(String itemPesquisado) {
+    public TelaAvaliaItem(String itemPesquisado) {
         initComponents();
         itemLbl.setIcon(ic.consultaImagem(itemPesquisado));
-        
+
         this.itemPesquisado = itemPesquisado;
         this.estrelaNova = new File(getClass().getResource("/estrela_avaliada.png").getPath());
         this.estrelaVelha = new File(getClass().getResource("/estrela_nao_avaliada.png").getPath());
@@ -102,6 +102,7 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         pesquisarBtn = new javax.swing.JLabel();
         enviarBtn = new javax.swing.JLabel();
         itemLbl = new javax.swing.JLabel();
+        voltarBtn = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -201,6 +202,13 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         });
         add(enviarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 140, 40));
         add(itemLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 80, 190, 230));
+
+        voltarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                voltarBtnMouseClicked(evt);
+            }
+        });
+        add(voltarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perfilBtnMouseClicked
@@ -219,8 +227,8 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         FramePrincipal.trocaPainel("tela pesquisar", new TelaPesquisar());
     }//GEN-LAST:event_pesquisarBtnMouseClicked
 
-   //Usado para facilitar a interacao do usuario com a avaliacao
-    
+    //Usado para facilitar a interacao do usuario com a avaliacao
+
     private void nota1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nota1MouseClicked
         if (nota1.getIcon() == this.estrelaAvaliada) {
             nota1.setIcon(this.estrelaNaoAvaliada);
@@ -308,6 +316,10 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_enviarBtnMouseClicked
 
+    private void voltarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarBtnMouseClicked
+        FramePrincipal.trocaPainel("tela escolhaFML", new TelaEscolhaFML());
+    }//GEN-LAST:event_voltarBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea comentarioTxt;
@@ -324,5 +336,6 @@ public class TelaItemPesquisado extends javax.swing.JPanel {
     private javax.swing.JLabel perfilBtn;
     private javax.swing.JLabel pesquisarBtn;
     private javax.swing.JLabel quizBtn;
+    private javax.swing.JLabel voltarBtn;
     // End of variables declaration//GEN-END:variables
 }
