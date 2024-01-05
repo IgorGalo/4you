@@ -225,7 +225,6 @@ public class Analise {
             }
             pesquisa = generos.get(0) + "+" + generos.get(1) + "+" + generos.get(2);
         }
-        System.out.println(pesquisa);
         switch (escolha) {
 
             case 1:
@@ -262,12 +261,10 @@ public class Analise {
             //<editor-fold defaultstate="collapsed" desc="Cálculos do Padrão e Limite">
             // </editor-fold>
             for (int i = 1, IndiceImg = 0, numLivro = 1; i <= LimitePesquisas; IndiceImg++, numLivro++, i = i + ÍndiceTítulos) {
-                System.out.println(doc.getAllElements().html().split("FozYP\">")[i].split("<")[0].trim());
                 resultado.add(doc.getAllElements().html().split("FozYP\">")[i].split("<")[0].trim());
 
                 if (doc.getAllElements().html().split("FozYP\">")[i + 1].split("<")[0].contains(",")) {
                     resultadoAutores.add(doc.getAllElements().html().split("FozYP\">")[i + 1].split("<")[0]);
-                    System.out.println("autor");
                 } else {
                     resultado.set(resultado.size() - 1, resultado.get(resultado.size() - 1) + " " + doc.getAllElements().html().split("FozYP\">")[i + 1].split("<")[0].trim());
                     i++;
@@ -288,7 +285,6 @@ public class Analise {
                     resultado.add(doc1.getAllElements().html().split("FozYP\">")[1].split("<")[0].trim());
 
                     if (doc1.getAllElements().html().split("FozYP\">")[2].split("<")[0].contains(",")) {
-                        System.out.println("autor");
                         resultadoAutores.add(doc1.getAllElements().html().split("FozYP\">")[2].split("<")[0]);
 
                     } else {
@@ -297,18 +293,14 @@ public class Analise {
 
                     }
                     try {
-                        System.out.println("L");
                         iconVet.add(PesquisaImagensLivros(doc1, 1, resultado, i));
-                        System.out.println("L1");
                     } catch (Exception erro) {
-                        System.out.println("F");
                         iconVet.add(PesquisaImagensFilmes(doc1, 1, resultado, i));
 
                     }
                 }
 
             } catch (Exception Erro) {
-                System.out.println("R");
                 pesquisa = "novos";
                 fazPesquisaLivro(pesquisa);
             }
@@ -321,7 +313,6 @@ public class Analise {
                 resultado.set(i, resultado.get(i) + " - " + resultadoAutores.get(i));
             }
         } catch (Exception erro) {
-            System.out.println("P");
         }
         itemC.addItem(resultado,
                 "Livro");
@@ -398,7 +389,6 @@ public class Analise {
             }
 
         }
-        System.out.println(resultado);
         itemC.addItem(resultado, "Filme");
         FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 1));
     }
@@ -414,7 +404,6 @@ public class Analise {
             String Music = new String(ArqMusicas.readAllBytes());
 
             String[] VetMus = new String[Music.split("\n").length];
-            System.out.println(VetMus.length);
             if (VetMus.length > 20) {
                 for (int i = 0; i < Music.split("\n").length; i++) {
                     VetMus[i] = Music.split("\n")[i];
@@ -430,7 +419,6 @@ public class Analise {
                                 limiteMusicas = limiteMusicas + 2;
 
                             } else {
-                                System.out.println("W");
                                 resultado.add(VetMus[i].split(":")[8].split("\"")[1]);
                                 resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
                                 //iconVet.add(PesquisaImagensMusicas(VetMus[i]));
@@ -491,7 +479,6 @@ public class Analise {
 
             base64Image = base64Image.replace("p" + "n" + "g" + ";" + "b" + "a" + "s" + "e" + "6" + "4" + ",", "");
             base64Image = base64Image.replace("j" + "p" + "e" + "g" + ";" + "b" + "a" + "s" + "e" + "6" + "4" + ",", "");
-            System.out.println(base64Image);
             base64Image = base64Image.replace("\\" + "x" + "3" + "d", "=");
             byte[] decode = Base64.getDecoder().decode(base64Image);
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(decode));

@@ -324,18 +324,12 @@ public class TelaPerguntas extends javax.swing.JPanel {
             if (nenhumaBtn.isSelected() || opcao1Btn.isSelected() || opcao2Btn.isSelected()) {
                 if (opcao1Btn.isSelected()) {
                     this.botaoSelecionado.add(1);
-                    System.out.println(this.botaoSelecionado);
-                    System.out.println("1");
                 }
                 if (opcao2Btn.isSelected()) {
                     this.botaoSelecionado.add(2);
-                    System.out.println(this.botaoSelecionado);
-                    System.out.println("2");
                 }
                 if (nenhumaBtn.isSelected()) {
                     this.botaoSelecionado.add(3);
-                    System.out.println(this.botaoSelecionado);
-                    System.out.println("n");
                 }
                 FramePrincipal.trocaPainel("tela perguntas", new TelaPerguntas(this.escolha, this.vez + 1, this.botaoSelecionado));
 

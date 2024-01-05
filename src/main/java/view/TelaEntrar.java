@@ -154,7 +154,6 @@ public class TelaEntrar extends javax.swing.JPanel {
                 filtro.setNomeUsuario(NomeTxt.getText().trim());
                 filtro.getNomeUsuario();
                 this.nomeuser = NomeTxt.getText().trim();
-                System.out.println(nomeuser);
             }
             filtro.setSenha(SenhaTxt.getText());
 
