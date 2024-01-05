@@ -76,7 +76,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                     case 1: // terror e romance
                         perguntaTxt.setText("O que você prefere:\n"
                                 + "1- explorar narrativas que despertam uma sensação de medo e suspense;\n"
-                                + "2- prefere se envolver mais nas histórias das relações humanas, com personagens enfrentando os desafios emocionais?");
+                                + "2- se envolver mais nas histórias das relações humanas, com personagens enfrentando os desafios emocionais?");
                         break;
                     case 2: // misterio e aventura
                         perguntaTxt.setText("O que você prefere:\n"
@@ -123,7 +123,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         break;
                     case 2: // misterio e aventura
                         perguntaTxt.setText("O que você prefere:\n"
-                                + "1- cativar por tramas que envolvem desvendar segredos e resolver enigmas;\n"
+                                + "1- tramas que envolvem desvendar segredos e resolver enigmas;\n"
                                 + "2- buscar a adrenalina das aventuras cheias de reviravoltas e desafios emocionantes?");
                         break;
                     case 3: // drama comédia 
@@ -138,7 +138,7 @@ public class TelaPerguntas extends javax.swing.JPanel {
                         break;
                     case 5: //ficcao e doc
                         perguntaTxt.setText("O que você prefere:\n"
-                                + "1- se inclinar mais para tramas que exploram as complexidades emocionais e os desafios da vida;\n"
+                                + "1- tramas que exploram as complexidades emocionais e os desafios da vida;\n"
                                 + "2- obras que proporcionam momentos leves e sorrisos com sua abordagem mais cômica?");
                         break;
                     case 6:
