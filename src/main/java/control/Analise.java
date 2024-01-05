@@ -28,7 +28,6 @@ import view.TelaResultado;
 public class Analise {
 
     private Vector<String> resultado = new Vector<>();
-    private Vector<String> resultadoAutores = new Vector<>();
 
     private ItemControl itemC = new ItemControl();
 
@@ -246,6 +245,8 @@ public class Analise {
     private void fazPesquisaLivro(String pesquisa) {
         Vector<Icon> iconVet = new Vector<>();
         Vector<String> resultado = new Vector<>();
+        Vector<String> resultadoAutores = new Vector<>();
+
         try {
             Document doc;
             if (pesquisa.equalsIgnoreCase("novos")) {
@@ -308,9 +309,17 @@ public class Analise {
             }
 
         }
+////        for (int i = 0;
+////                i < 3; i++) {
+////            resultado.set(i, resultado.get(i) + " - " + resultadoAutores.get(i));
+////        }
+
         System.out.println(resultado);
-        itemC.addItem(resultado, "Livro");
-        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 2));
+
+        itemC.addItem(resultado,
+                "Livro");
+        FramePrincipal.trocaPainel(
+                "tela resultado", new TelaResultado(resultado, iconVet, 2));
     }
 
     private void fazPesquisaFilme(String pesquisa) {
@@ -419,7 +428,6 @@ public class Analise {
                                 resultadoAutores.add(VetMus[i].split(":")[6].split("\"")[1]);
                                 //iconVet.add(PesquisaImagensMusicas(VetMus[i]));
                                 break;
-
                             }
                         }
                     } else {
@@ -450,21 +458,24 @@ public class Analise {
                     resultado.add(VetMus[6].split(":")[8].split("\"")[1]);
                     resultadoAutores.add(VetMus[6].split(":")[6].split("\"")[1]);
                     //iconVet.add(PesquisaImagensMusicas(VetMus[6]));
+
                 }
 
             } catch (MalformedURLException ex) {
-                Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Analise.class
+                        .getName()).log(Level.SEVERE, null, ex);
+
             } catch (IOException ex) {
-                Logger.getLogger(Analise.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Analise.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
 
-            for (int i = 0; i < 3; i++) {
-                resultado.set(i, resultado.get(i) + " - " + resultadoAutores.get(i));
-            }
-            itemC.addItem(resultado, "Musica");
-            FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 3));
         }
-
+        for (int i = 0; i < 3; i++) {
+            resultado.set(i, resultado.get(i) + " - " + resultadoAutores.get(i));
+        }
+        itemC.addItem(resultado, "Musica");
+        FramePrincipal.trocaPainel("tela resultado", new TelaResultado(resultado, iconVet, 3));
     }
 
     private Icon PesquisaImagensLivros(Document doc, int NumItem, Vector<String> resultado, int indice) {
