@@ -266,31 +266,35 @@ public class Analise {
                 resultado.add(doc.getAllElements().html().split("FozYP\">")[i].split("<")[0].trim());
 
                 if (doc.getAllElements().html().split("FozYP\">")[i + 1].split("<")[0].contains(",")) {
+                    resultadoAutores.add(doc.getAllElements().html().split("FozYP\">")[i + 1].split("<")[0]);
                     System.out.println("autor");
                 } else {
                     resultado.set(resultado.size() - 1, resultado.get(resultado.size() - 1) + " " + doc.getAllElements().html().split("FozYP\">")[i + 1].split("<")[0].trim());
                     i++;
                     LimitePesquisas++;
-
+                    resultadoAutores.add(doc.getAllElements().html().split("FozYP\">")[i + 2].split("<")[0]);
                 }
                 iconVet.add(PesquisaImagensLivros(doc, numLivro, resultado, IndiceImg));
             }
 
         } catch (Exception ex /*Caso a pesquisa com 3 filmes de */) {
-            System.err.println("erro");
 
             //          terror+musical+aventura
             try {
                 for (int i = 0; i < 3; i++) {
 
-                    Document doc1 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+"
+                    Document doc1 = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+"
                             + pesquisa.split("\\W")[i] + "&sourceid=chrome&ie=UTF-8").get();
                     resultado.add(doc1.getAllElements().html().split("FozYP\">")[1].split("<")[0].trim());
 
                     if (doc1.getAllElements().html().split("FozYP\">")[2].split("<")[0].contains(",")) {
                         System.out.println("autor");
+                        resultadoAutores.add(doc1.getAllElements().html().split("FozYP\">")[2].split("<")[0]);
+
                     } else {
                         resultado.set(resultado.size() - 1, resultado.get(resultado.size() - 1) + " " + doc1.getAllElements().html().split("FozYP\">")[2].split("<")[0].trim());
+                        resultadoAutores.add(doc1.getAllElements().html().split("FozYP\">")[3].split("<")[0]);
+
                     }
                     try {
                         System.out.println("L");
@@ -304,18 +308,21 @@ public class Analise {
                 }
 
             } catch (Exception Erro) {
-
-                System.out.println("ERRO");
+                System.out.println("R");
+                pesquisa = "novos";
+                fazPesquisaLivro(pesquisa);
             }
 
         }
-////        for (int i = 0;
-////                i < 3; i++) {
-////            resultado.set(i, resultado.get(i) + " - " + resultadoAutores.get(i));
-////        }
-
-        System.out.println(resultado);
-
+        try {
+            for (int i = 0;
+                    i < 3; i++) {
+                resultadoAutores.set(i, resultadoAutores.get(i).trim());
+                resultado.set(i, resultado.get(i) + " - " + resultadoAutores.get(i));
+            }
+        } catch (Exception erro) {
+            System.out.println("P");
+        }
         itemC.addItem(resultado,
                 "Livro");
         FramePrincipal.trocaPainel(
