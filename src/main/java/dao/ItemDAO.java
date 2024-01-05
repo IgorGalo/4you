@@ -62,10 +62,9 @@ public class ItemDAO {
     }
 
     public boolean addAvaliacao(String nomeItem, int novaAvaliacao) {
-        String sql = "UPDATE fiyyou.itens SET avaliacao = ? WHERE nomedoItem = ?;";
+        String sql = "UPDATE fiyyou.itens SET avaliacao = ? WHERE nomedoItem ='" + nomeItem + "'";
         try (PreparedStatement insercao = this.c.prepareStatement(sql)) {
             insercao.setInt(1, novaAvaliacao);
-            insercao.setString(2, nomeItem);
             insercao.execute();
             return true;
         } catch (SQLException ex) {
