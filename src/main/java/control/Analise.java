@@ -255,7 +255,7 @@ public class Analise {
                 doc = (Document) Jsoup.connect("https://www.google.com/search?q=livros+de+" + pesquisa + "&sourceid=chrome&ie=UTF-8").get();
 
             }
-
+            
             int ÍndiceTítulos = 2, LimitePesquisas = 6;
 
             //<editor-fold defaultstate="collapsed" desc="Cálculos do Padrão e Limite">

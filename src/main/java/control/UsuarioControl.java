@@ -80,6 +80,7 @@ public class UsuarioControl {
 
         if (imagemBanco != null) {
             ByteArrayInputStream bais = new ByteArrayInputStream(imagemBanco.getImg());
+            System.out.println("nao null");
             try {
                 BufferedImage img = ImageIO.read(bais);
                 ImageIcon imgConvertida = new ImageIcon(img.getScaledInstance(361, 296, Image.SCALE_SMOOTH));
@@ -114,6 +115,21 @@ public class UsuarioControl {
     public Image cadastrarImagem(Imagem imgembyte, String endereco, File arquivo) {
 
         sa.cadastrarImagem(imgembyte, endereco);
+
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(arquivo);
+            Image imgFinal = img.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+
+            return imgFinal;
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPerfil.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    public Image CadastrarImagemPadrão(Imagem imgembyte, String endereco, File arquivo, String nome) {
+
+        sa.cadastrarImagemPadrao(imgembyte, endereco, nome);
 
         BufferedImage img = null;
         try {

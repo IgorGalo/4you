@@ -29,6 +29,8 @@ public class TelaPerfil extends javax.swing.JPanel {
 
     private UsuarioControl usuarioC = new UsuarioControl();
     private UsuarioDAO sa = new UsuarioDAO();
+    private File perfilFile;
+    private ImageIcon perfilIcon;
 
 //Construtor    
     public TelaPerfil() {
@@ -37,7 +39,7 @@ public class TelaPerfil extends javax.swing.JPanel {
         labelperfil.setIcon(imagemPerfilInicio);
         adicionarImagemDoBancoParaMudarIcon();
     }
-    
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -126,7 +128,7 @@ public class TelaPerfil extends javax.swing.JPanel {
             adicionarImagemDoBancoParaMudarIcon();
         }
     }//GEN-LAST:event_alteraBtnMouseClicked
-    
+
 //Adicionar imagem do banco para depois mudar icone do perfil   
     public void adicionarImagemDoBancoParaMudarIcon() {
 
@@ -135,9 +137,23 @@ public class TelaPerfil extends javax.swing.JPanel {
         ImageIcon imgConvertida = usuarioC.adicionarImagemDoBanco();
 
         if (imgConvertida == null) {
+            this.perfilFile = new File(getClass().getResource("/labelperfil.png").getPath());
+            this.perfilIcon = transformaFileIcon(this.perfilFile);
+            labelperfil.setIcon(this.perfilIcon);
 
         } else {
             labelperfil.setIcon(imgConvertida);
+        }
+    }
+
+    private ImageIcon transformaFileIcon(File estrela) {
+        if (estrela != null && estrela.exists()) {
+            // Cria um ImageIcon a partir do caminho do arquivo
+            return new ImageIcon(estrela.getAbsolutePath());
+        } else {
+            // Lida com o caso em que o arquivo não existe
+            System.err.println("Arquivo não encontrado: " + estrela);
+            return null;
         }
     }
 

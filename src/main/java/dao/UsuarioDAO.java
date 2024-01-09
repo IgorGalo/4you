@@ -17,7 +17,6 @@ import java.util.logging.Logger;
 import model.Imagem;
 
 //SQLs de inserção, consulta, delete e update no banco
-
 public class UsuarioDAO {
 
     static String user;
@@ -37,7 +36,6 @@ public class UsuarioDAO {
             insercao.setString(3, dados.getEmail());
             insercao.setString(4, dados.getSenha());
             insercao.execute();
-            c.close();
             return true;
         } catch (SQLException ex) {
             return false;
@@ -59,7 +57,40 @@ public class UsuarioDAO {
                 insercao.setString(1, user);
                 insercao.setBinaryStream(2, fis, (int) arquivo.length());
                 insercao.execute();
-                c.close();
+                return true;
+
+            } catch (SQLException ex) {
+                System.out.println("" + ex.getMessage());
+                return false;
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("" + ex.getMessage());
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } finally {
+            try {
+                fis.close();
+            } catch (IOException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    public boolean cadastrarImagemPadrao(Imagem dados, String arq, String nome) {
+
+        FileInputStream fis = null;
+        try {
+
+            String sql = "INSERT INTO fiyyou.IMAGENS (nomeusuario, imagem)"
+                    + " VALUES (?, ?)";
+            File arquivo = new File(arq);
+            fis = new FileInputStream(arquivo);
+            try (PreparedStatement insercao = c.prepareStatement(sql)) {
+
+                insercao.setString(1, nome);
+                insercao.setBinaryStream(2, fis, (int) arquivo.length());
+                insercao.execute();
                 return true;
 
             } catch (SQLException ex) {
@@ -113,7 +144,6 @@ public class UsuarioDAO {
             Statement consulta = c.createStatement();
             ResultSet resultado = consulta.executeQuery(sql);
 
-            c.close();
             if (resultado.next()) {
                 retorno = new Usuario(resultado.getString("nomeusuario"));
             }
@@ -126,20 +156,19 @@ public class UsuarioDAO {
     }
 
     public Imagem consultarImagem() {
+        Imagem retorno = null;
+
+        String sql = "SELECT * FROM fiyyou.imagens WHERE ";
+
+        if (user != null && !user.equalsIgnoreCase("")) {
+            sql += "nomeusuario = '" + user.trim() + "'";
+
+        }
         try {
-            Imagem retorno = null;
-
-            String sql = "SELECT * FROM fiyyou.imagens WHERE ";
-
-            if (user != null && !user.equalsIgnoreCase("")) {
-                sql += "nomeusuario = '" + user.trim() + "'";
-
-            }
 
             Statement consulta = c.createStatement();
             ResultSet resultado = consulta.executeQuery(sql);
 
-            c.close();
             if (resultado.next()) {
                 retorno = new Imagem(resultado.getBytes("imagem"));
             }
@@ -165,10 +194,10 @@ public class UsuarioDAO {
         }
         return retorno;
     }
-    
+
     public ArrayList<Usuario> buscaUsuarios(String texto) {
         String sql = "SELECT * FROM fiyyou.usuario WHERE nomeusuario LIKE '" + texto + "%'";
-        
+
         ArrayList<Usuario> todosUsuarios = new ArrayList<>();
         try (PreparedStatement trans = this.c.prepareStatement(sql)) {
             //vamos ao banco buscar os dados resultado da sql definida

@@ -167,6 +167,7 @@ public class TelaCadastrar extends javax.swing.JPanel {
 
 //Verifica e pegar as informações do usuário para cadastrá-lo posteriormente no banco de dados     
     private void nextBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseClicked
+
         UsuarioControl usuarioC = new UsuarioControl();
 
         Retornos resultado = usuarioC.cadastraUsuario(nomeTxt.getText(), usuarioTxt.getText(), senhaTxt.getText(), emailTxt.getText());
@@ -175,8 +176,17 @@ public class TelaCadastrar extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, resultado.getMensagem());
         } else {
             FramePrincipal.trocaPainel("tela inicio", new TelaInicio());
-            //usuarioC.cadastrarImagem(imgembyte, TOOL_TIP_TEXT_KEY, arquivo)
+            File img = new File(getClass().getResource("/labelPerfil.png").getPath());
+            try {
+                byte[] imgbyte = usuarioC.converterImagemParaByte(img);
+                Imagem imagem = new Imagem(imgbyte);
+                usuarioC.CadastrarImagemPadrão(imagem, (getClass().getResource("/labelPerfil.png").getPath()), img, nomeTxt.getText());
+                System.out.println("cadatrar");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TelaCadastrar.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+
 
     }//GEN-LAST:event_nextBtnMouseClicked
 
